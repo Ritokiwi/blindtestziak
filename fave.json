@@ -1,13 +1,5 @@
 [
   {
-    "id": "fave-1115222402",
-    "title": "Freestyle Noche 1",
-    "project": "Freestyle Noche 1",
-    "year": 2020,
-    "releaseDate": "2020-10-16",
-    "deezerTrackId": 1115222402
-  },
-  {
     "id": "fave-1561255522",
     "title": "côté passager",
     "project": "côté passager",
@@ -86,14 +78,6 @@
     "year": 2023,
     "releaseDate": "2023-01-06",
     "deezerTrackId": 2087692567
-  },
-  {
-    "id": "fave-2189026447",
-    "title": "NO LÈCHE",
-    "project": "NO LÈCHE",
-    "year": 2023,
-    "releaseDate": "2023-03-15",
-    "deezerTrackId": 2189026447
   },
   {
     "id": "fave-2294072455",
@@ -232,22 +216,6 @@
     "deezerTrackId": 2544346091
   },
   {
-    "id": "fave-2557497482",
-    "title": "Pas les mots",
-    "project": "Pas les mots",
-    "year": 2023,
-    "releaseDate": "2023-12-05",
-    "deezerTrackId": 2557497482
-  },
-  {
-    "id": "fave-2682904972",
-    "title": "Time",
-    "project": "Time",
-    "year": 2024,
-    "releaseDate": "2024-03-07",
-    "deezerTrackId": 2682904972
-  },
-  {
     "id": "fave-2827199162",
     "title": "TOSEINA",
     "project": "TOSEINA",
@@ -270,14 +238,6 @@
     "year": 2024,
     "releaseDate": "2024-05-31",
     "deezerTrackId": 2820075142
-  },
-  {
-    "id": "fave-3164206261",
-    "title": "No stress",
-    "project": "No stress",
-    "year": 2025,
-    "releaseDate": "2025-02-13",
-    "deezerTrackId": 3164206261
   },
   {
     "id": "fave-3252886271",
