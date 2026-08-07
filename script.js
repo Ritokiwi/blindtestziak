@@ -593,6 +593,7 @@ function toggleAudio() {
   if (state.current.deezerTrackId) {
     if (!state.deezerPreviewUrl) { ui.playerState.textContent = 'EXTRAIT EN CHARGEMENT'; return; }
     if (ui.audio.paused) {
+      ui.audio.currentTime = 0;
       ui.audio.play().catch(() => { ui.playerState.textContent = 'LECTURE BLOQUÉE'; });
       clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, (state.speed?.allowReplay ? state.speed.listen * 1000 : 20000));
     } else stopPlayback();
@@ -607,7 +608,7 @@ function toggleAudio() {
       sendSoundcloud('seekTo', Number(state.current.clipStart || 0) * 1000); sendSoundcloud('play');
     }
     clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, Number(state.current.clipDuration || 20) * 1000);
-  } else if (ui.audio.paused) ui.audio.play().catch(() => { ui.playerState.textContent = 'EXTRAIT INTROUVABLE'; }); else ui.audio.pause();
+  } else if (ui.audio.paused) { ui.audio.currentTime = 0; ui.audio.play().catch(() => { ui.playerState.textContent = 'EXTRAIT INTROUVABLE'; }); } else ui.audio.pause();
 }
 function checkGuess() {
   if (state.roundResolved) return false;
