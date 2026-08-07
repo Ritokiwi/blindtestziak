@@ -37,6 +37,6 @@ L'identifiant correspond au nombre situé à la fin de l'URL Deezer d'une piste 
 
 ## Déployer sur Vercel
 
-Importez ce dossier dans un dépôt Git, puis importez ce dépôt dans Vercel. Le projet est un site statique : aucun réglage de build n'est nécessaire. Vous pouvez aussi déposer le dossier directement avec la CLI Vercel après vous être connecté à votre compte.
+Le dépôt officiel est disponible sur [GitHub](https://github.com/Ritokiwi/blindtestziak) et est relié à Vercel. Chaque push sur `main` déclenche automatiquement un nouveau déploiement sur [blindtestziak.vercel.app](https://blindtestziak.vercel.app). Le projet est un site statique : aucun réglage de build n'est nécessaire.
 
 > N'ajoutez que des extraits audio que vous êtes autorisé à distribuer ou utiliser.
