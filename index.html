@@ -35,44 +35,49 @@
         <p class="intro">Lance l'extrait. Reconnais le morceau. Frappe fort au score.</p>
 
         <section class="artist-section" aria-labelledby="artistHeading">
-          <div class="artist-section-heading"><span id="artistHeading">CATÉGORIES</span><span id="activeArtistLabel">ZIAK</span></div>
+          <div class="artist-section-heading"><span id="artistHeading">01 / CATÉGORIE</span><span id="activeArtistLabel">CHOISIS TON ARTISTE</span></div>
+          <h2 class="category-title">SÉLECTIONNE<br /><span>TON UNIVERS</span></h2>
+          <p class="category-copy">Chaque artiste possède son catalogue, ses records et son classement Ranked.</p>
           <div id="artistGrid" class="artist-grid" role="group" aria-label="Choisir un artiste"></div>
           <p id="catalogStatus" class="catalog-status" role="status">Chargement des catégories…</p>
         </section>
 
-        <div class="mode-grid" role="group" aria-label="Choisir un mode de jeu">
-          <button class="mode-card selected" data-mode="solo" type="button">
-            <span class="mode-number">01</span>
-            <span class="mode-title">SOLO</span>
-            <span class="mode-description">Choisis ton nombre de manches.</span>
-          </button>
-          <button class="mode-card" data-mode="challenge" type="button">
-            <span class="mode-number">02</span>
-            <span class="mode-title">RANKED</span>
-            <span class="mode-description">Enchaîne un max de titres en 90 s.</span>
-          </button>
-        </div>
-
-        <div id="roundPicker" class="round-picker" aria-label="Nombre de manches">
-          <span>MANCHES</span>
-          <div>
-            <button class="round-option" data-rounds="5" type="button">05</button>
-            <button class="round-option selected" data-rounds="10" type="button">10</button>
-            <button class="round-option" data-rounds="20" type="button">20</button>
+        <section class="play-setup" aria-labelledby="modeHeading">
+          <p id="modeHeading" class="setup-step">02 / MODE DE JEU</p>
+          <div class="mode-grid" role="group" aria-label="Choisir un mode de jeu">
+            <button class="mode-card selected" data-mode="solo" type="button">
+              <span class="mode-number">01</span>
+              <span class="mode-title">SOLO</span>
+              <span class="mode-description">Choisis ton nombre de manches.</span>
+            </button>
+            <button class="mode-card" data-mode="challenge" type="button">
+              <span class="mode-number">02</span>
+              <span class="mode-title">RANKED</span>
+              <span class="mode-description">Enchaîne un max de titres en 90 s.</span>
+            </button>
           </div>
-        </div>
 
-        <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
-        <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
-        <section id="leaderboardPanel" class="leaderboard-panel" hidden>
-          <div class="leaderboard-heading"><div><p id="leaderboardEyebrow" class="eyebrow">CLASSEMENT · ZIAK RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
-          <div class="leaderboard-tabs" role="tablist" aria-label="Catégorie du classement">
-            <button class="leaderboard-tab selected" data-leaderboard="challengeRecord" role="tab" type="button">RECORD</button>
-            <button class="leaderboard-tab" data-leaderboard="challengeCorrect" role="tab" type="button">RÉPONSES</button>
-            <button class="leaderboard-tab" data-leaderboard="challengeTime" role="tab" type="button">TEMPS</button>
+          <div id="roundPicker" class="round-picker" aria-label="Nombre de manches">
+            <span>MANCHES</span>
+            <div>
+              <button class="round-option" data-rounds="5" type="button">05</button>
+              <button class="round-option selected" data-rounds="10" type="button">10</button>
+              <button class="round-option" data-rounds="20" type="button">20</button>
+            </div>
           </div>
-          <p id="leaderboardStatus" class="leaderboard-status" role="status">Connecte-toi pour voir le classement.</p>
-          <ol id="leaderboardList" class="leaderboard-list"></ol>
+
+          <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
+          <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
+          <section id="leaderboardPanel" class="leaderboard-panel" hidden>
+            <div class="leaderboard-heading"><div><p id="leaderboardEyebrow" class="eyebrow">CLASSEMENT · ZIAK RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
+            <div class="leaderboard-tabs" role="tablist" aria-label="Catégorie du classement">
+              <button class="leaderboard-tab selected" data-leaderboard="challengeRecord" role="tab" type="button">RECORD</button>
+              <button class="leaderboard-tab" data-leaderboard="challengeCorrect" role="tab" type="button">RÉPONSES</button>
+              <button class="leaderboard-tab" data-leaderboard="challengeTime" role="tab" type="button">TEMPS</button>
+            </div>
+            <p id="leaderboardStatus" class="leaderboard-status" role="status">Connecte-toi pour voir le classement.</p>
+            <ol id="leaderboardList" class="leaderboard-list"></ol>
+          </section>
         </section>
       </section>
 
