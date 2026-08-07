@@ -3,7 +3,28 @@
   Les champs requis sont id, title, project, year et audio.
 */
 const ROUND_SECONDS = 25;
-const CHALLENGE_SECONDS = 90;
+const CHALLENGE_SECONDS = 60;
+const RANK_TIERS = [
+  { name: 'BRONZE', min: 0 },
+  { name: 'ARGENT', min: 600 },
+  { name: 'OR', min: 1200 },
+  { name: 'PLATINE', min: 2000 },
+  { name: 'DIAMANT', min: 3000 },
+  { name: 'ÉLITE', min: 4200 },
+  { name: 'CHAMPION', min: 5500 },
+  { name: 'UNREAL', min: 7000 }
+];
+function getRank(score) {
+  const value = Math.max(0, Number(score) || 0);
+  let tierIndex = 0;
+  for (let i = 0; i < RANK_TIERS.length; i++) { if (value >= RANK_TIERS[i].min) tierIndex = i; else break; }
+  const tier = RANK_TIERS[tierIndex];
+  const next = RANK_TIERS[tierIndex + 1];
+  if (!next) return tier.name;
+  const progress = (value - tier.min) / (next.min - tier.min);
+  const division = progress < 1 / 3 ? 'III' : progress < 2 / 3 ? 'II' : 'I';
+  return `${tier.name} ${division}`;
+}
 const HINTS_PER_ROUND = 3;
 const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
 const SPEED_PRESETS = {
@@ -20,6 +41,7 @@ const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
   start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), recordMark: $('#recordMark'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
+  rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
   play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
   input: $('#guessInput'), validate: $('#validateButton'), feedback: $('#feedback'),
@@ -374,6 +396,7 @@ function nextRound() {
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
   ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
   ui.score.textContent = state.score;
+  if (ui.rankLabel) { ui.rankLabel.hidden = state.mode !== 'challenge'; if (state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score); }
   ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
   loadTrack(); prefetchUpcoming();
   renderHint(); ui.input.focus();
@@ -645,6 +668,7 @@ function resolveRound(correct, message = '', options = {}) {
   if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
+  if (ui.rankLabel && state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score);
   ui.feedback.textContent = correct
     ? `BIEN JOUÉ${options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : ''} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
     : `${message} : ${state.current.title}`;
@@ -663,6 +687,7 @@ async function endGame() {
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
   ui.resultMode.textContent = `${state.artist?.name || 'ARTISTE'} · ${state.mode === 'solo' ? 'SOLO' : 'RANKED'}`; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
+  if (ui.rankBadge) { ui.rankBadge.hidden = state.mode !== 'challenge'; if (state.mode === 'challenge' && ui.rankValue) ui.rankValue.textContent = getRank(state.score); }
   ui.played.innerHTML = state.played.map(song => `<li class="${song.correct ? '' : 'missed'}"><span>${song.correct ? '✓' : '×'} ${escapeHtml(song.title)}</span><span>${song.correct ? `+${song.points}` : 'MANQUÉ'}</span></li>`).join('') || '<li><span>Aucun morceau joué.</span></li>';
   show(ui.result);
 }
