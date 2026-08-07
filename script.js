@@ -475,6 +475,7 @@ async function endGame() {
 document.querySelectorAll('.mode-card').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.mode-card').forEach(item => item.classList.toggle('selected', item === button));
   ui.rounds.classList.toggle('hidden', button.dataset.mode === 'challenge');
+  ui.setup.classList.toggle('ranked-selected', button.dataset.mode === 'challenge');
 }));
 document.querySelectorAll('.round-option').forEach(button => button.addEventListener('click', () => document.querySelectorAll('.round-option').forEach(item => item.classList.toggle('selected', item === button))));
 ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', validateGuess); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') validateGuess(); });
