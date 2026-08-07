@@ -1,11 +1,28 @@
-# Ziak // Blind Test
+# Blind Test multi-artistes
 
-Jeu de blind test statique en HTML, CSS et JavaScript vanilla.
+Jeu de blind test statique en HTML, CSS et JavaScript vanilla. Ziak est la première catégorie, mais chaque artiste possède maintenant son propre catalogue et son propre classement Ranked.
 
-## Ajouter votre catalogue
+## Ajouter un artiste
+
+1. Créez un fichier catalogue, par exemple `catalogs/nekfeu.json`.
+2. Ajoutez l'artiste à `artists.json` :
+
+```json
+{
+  "id": "nekfeu",
+  "name": "Nekfeu",
+  "catalog": "catalogs/nekfeu.json",
+  "mark": "N",
+  "description": "Albums et singles"
+}
+```
+
+`id` doit être unique et ne contenir que des lettres, chiffres ou tirets. Le fichier `artists.json` est une liste : ajoutez cette entrée après celle de Ziak, séparée par une virgule.
+
+## Ajouter des morceaux à un catalogue
 
 1. Placez vos extraits audio autorisés (MP3, idéalement 15 à 20 secondes) dans `assets/audio/`.
-2. Ajoutez une entrée par morceau dans `songs.json` :
+2. Ajoutez une entrée par morceau dans le fichier catalogue de l'artiste (`songs.json` pour Ziak) :
 
 ```json
 [

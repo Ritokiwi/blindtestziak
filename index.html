@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#09090c" />
-    <meta name="description" content="Blind Test Ziak — devinez les morceaux à partir de vos extraits autorisés." />
-    <title>ZIAK // BLIND TEST</title>
+    <meta name="description" content="Blind Test musical — choisissez un artiste et devinez ses morceaux." />
+    <title>BLIND TEST</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
   <body>
     <main class="app-shell">
       <header class="topbar">
-        <a class="brand" href="/" aria-label="Revenir à l'accueil">ZIAK<span>//</span>BT</a>
+        <a class="brand" href="/" aria-label="Revenir à l'accueil">BLIND<span>//</span>TEST</a>
         <div class="topbar-actions">
           <div class="best-score">MEILLEUR <strong id="bestScore">0</strong> PTS</div>
           <div id="authArea" class="auth-area">
@@ -30,9 +30,15 @@
       </header>
 
       <section id="setupScreen" class="screen setup-screen">
-        <p class="eyebrow">DÉDIÉ À ZIAK</p>
+        <p class="eyebrow">CHOISIS TON ARTISTE</p>
         <h1>BLIND<br /><span>TEST</span></h1>
         <p class="intro">Lance l'extrait. Reconnais le morceau. Frappe fort au score.</p>
+
+        <section class="artist-section" aria-labelledby="artistHeading">
+          <div class="artist-section-heading"><span id="artistHeading">CATÉGORIES</span><span id="activeArtistLabel">ZIAK</span></div>
+          <div id="artistGrid" class="artist-grid" role="group" aria-label="Choisir un artiste"></div>
+          <p id="catalogStatus" class="catalog-status" role="status">Chargement des catégories…</p>
+        </section>
 
         <div class="mode-grid" role="group" aria-label="Choisir un mode de jeu">
           <button class="mode-card selected" data-mode="solo" type="button">
@@ -59,7 +65,7 @@
         <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
         <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
         <section id="leaderboardPanel" class="leaderboard-panel" hidden>
-          <div class="leaderboard-heading"><div><p class="eyebrow">CLASSEMENT · RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
+          <div class="leaderboard-heading"><div><p id="leaderboardEyebrow" class="eyebrow">CLASSEMENT · ZIAK RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
           <div class="leaderboard-tabs" role="tablist" aria-label="Catégorie du classement">
             <button class="leaderboard-tab selected" data-leaderboard="challengeRecord" role="tab" type="button">RECORD</button>
             <button class="leaderboard-tab" data-leaderboard="challengeCorrect" role="tab" type="button">RÉPONSES</button>
@@ -81,7 +87,7 @@
         </div>
 
         <div class="player-panel">
-          <div class="record-mark">Z</div>
+          <div id="recordMark" class="record-mark">Z</div>
           <div class="waveform" id="waveform" aria-hidden="true">
             <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>

@@ -9,7 +9,7 @@ const HINTS_PER_ROUND = 3;
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
-  start: $('#startButton'), catalog: $('#catalogStatus'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
+  start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), recordMark: $('#recordMark'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
   rounds: $('#roundPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
   play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
@@ -20,6 +20,8 @@ const ui = {
 };
 
 let songs = [];
+let artists = [];
+let selectedArtist = null;
 let state = {};
 let soundcloudMessageHandler = null;
 let currentUser = null;
@@ -46,8 +48,10 @@ function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
 }
 function storageUid() { return currentUser?.uid || localStorage.getItem('ziak-blindtest-last-uid') || 'guest'; }
-function bestKey(mode) { return `ziak-blindtest-best-${storageUid()}-${mode}`; }
-function statsKey() { return `ziak-blindtest-stats-${storageUid()}`; }
+function activeArtistId() { return selectedArtist?.id || state.artist?.id || 'ziak'; }
+function scorePrefix(artistId = activeArtistId()) { return artistId === 'ziak' ? 'ziak-blindtest' : `blindtest-${artistId}`; }
+function bestKey(mode, artistId = activeArtistId()) { return `${scorePrefix(artistId)}-best-${storageUid()}-${mode}`; }
+function statsKey(artistId = activeArtistId()) { return `${scorePrefix(artistId)}-stats-${storageUid()}`; }
 function getBest(mode) { return Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0); }
 function refreshBest() { ui.best.textContent = Math.max(getBest('solo'), getBest('challenge')); }
 function getVolume() {
@@ -95,50 +99,62 @@ function withTimeout(promise, milliseconds = 7000) {
   return Promise.race([promise, timeout]).finally(() => clearTimeout(timeoutId));
 }
 async function loadAccountBest(user) {
+  const artistId = activeArtistId();
   localStorage.setItem('ziak-blindtest-last-uid', user?.uid || '');
   accountBest = {
-    solo: Number(localStorage.getItem(`ziak-blindtest-best-${user?.uid || 'guest'}-solo`)) || 0,
-    challenge: Number(localStorage.getItem(`ziak-blindtest-best-${user?.uid || 'guest'}-challenge`)) || 0
+    solo: Number(localStorage.getItem(bestKey('solo', artistId))) || 0,
+    challenge: Number(localStorage.getItem(bestKey('challenge', artistId))) || 0
   };
   refreshBest();
   if (!firestoreDb || !user) { refreshBest(); return; }
   try {
     const snapshot = await withTimeout(firestoreDb.collection('users').doc(user.uid).get());
     if (snapshot.exists) {
+      const profile = snapshot.data();
+      const artistStats = profile.artistStats?.[artistId] || (artistId === 'ziak' ? profile : {});
       accountBest = {
-        solo: Math.max(accountBest.solo, Number(snapshot.data().bestSolo) || 0),
-        challenge: Math.max(accountBest.challenge, Number(snapshot.data().bestChallenge) || 0)
+        solo: Math.max(accountBest.solo, Number(artistStats.bestSolo) || 0),
+        challenge: Math.max(accountBest.challenge, Number(artistStats.bestChallenge) || 0)
       };
-      localStorage.setItem(`ziak-blindtest-best-${user.uid}-solo`, String(accountBest.solo));
-      localStorage.setItem(`ziak-blindtest-best-${user.uid}-challenge`, String(accountBest.challenge));
+      localStorage.setItem(bestKey('solo', artistId), String(accountBest.solo));
+      localStorage.setItem(bestKey('challenge', artistId), String(accountBest.challenge));
     }
   } catch { /* Firestore reste optionnel tant que ses règles ne sont pas activées. */ }
   refreshBest();
 }
 async function migrateGuestBest(user) {
   if (!firestoreDb || !user) return;
-  const guestSolo = Number(localStorage.getItem('ziak-blindtest-best-guest-solo')) || 0;
-  const guestChallenge = Number(localStorage.getItem('ziak-blindtest-best-guest-challenge')) || 0;
+  const artistId = activeArtistId();
+  const prefix = scorePrefix(artistId);
+  const guestSolo = Number(localStorage.getItem(`${prefix}-best-guest-solo`)) || 0;
+  const guestChallenge = Number(localStorage.getItem(`${prefix}-best-guest-challenge`)) || 0;
   if (!guestSolo && !guestChallenge) return;
   const userRef = firestoreDb.collection('users').doc(user.uid);
   try {
     await firestoreDb.runTransaction(async transaction => {
       const snapshot = await transaction.get(userRef);
       const previous = snapshot.exists ? snapshot.data() : {};
+      const previousArtist = previous.artistStats?.[artistId] || (artistId === 'ziak' ? previous : {});
       transaction.set(userRef, {
         uid: user.uid,
         displayName: user.displayName || '',
         email: user.email || '',
         photoURL: user.photoURL || '',
-        record: Math.max(Number(previous.record) || 0, guestSolo, guestChallenge),
-        bestSolo: Math.max(Number(previous.bestSolo) || 0, guestSolo),
-        bestChallenge: Math.max(Number(previous.bestChallenge) || 0, guestChallenge),
-        challengeRecord: Math.max(Number(previous.challengeRecord) || 0, guestChallenge),
+        artistStats: {
+          [artistId]: {
+            record: Math.max(Number(previousArtist.record) || 0, guestSolo, guestChallenge),
+            bestSolo: Math.max(Number(previousArtist.bestSolo) || 0, guestSolo),
+            bestChallenge: Math.max(Number(previousArtist.bestChallenge) || 0, guestChallenge),
+            challengeRecord: Math.max(Number(previousArtist.challengeRecord) || 0, guestChallenge),
+            artistId,
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          }
+        },
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true });
     });
-    localStorage.removeItem('ziak-blindtest-best-guest-solo');
-    localStorage.removeItem('ziak-blindtest-best-guest-challenge');
+    localStorage.removeItem(`${prefix}-best-guest-solo`);
+    localStorage.removeItem(`${prefix}-best-guest-challenge`);
     accountBest.solo = Math.max(accountBest.solo, guestSolo);
     accountBest.challenge = Math.max(accountBest.challenge, guestChallenge);
     refreshBest();
@@ -167,32 +183,42 @@ async function saveBest(mode, score, fastest, correctCount) {
   // to Firestore so two games played close together cannot overwrite each other.
   if (!firestoreDb || !currentUser) return { saved: false, reason: 'not-authenticated' };
   const userAtSave = currentUser;
+  const artistId = state.artist?.id || activeArtistId();
   const userRef = firestoreDb.collection('users').doc(userAtSave.uid);
   try {
     await firestoreDb.runTransaction(async transaction => {
       const snapshot = await transaction.get(userRef);
       const previous = snapshot.exists ? snapshot.data() : {};
-      const previousTime = Number(previous.bestTime);
+      const previousArtist = previous.artistStats?.[artistId] || (artistId === 'ziak' ? previous : {});
+      const previousTime = Number(previousArtist.bestTime);
       const updates = {
+        uid: userAtSave.uid,
+        artistId,
+        displayName: userAtSave.displayName || '',
+        email: userAtSave.email || '',
+        photoURL: userAtSave.photoURL || '',
+        record: Math.max(Number(previousArtist.record) || 0, knownBest, numericScore),
+        bestCorrect: Math.max(Number(previousArtist.bestCorrect) || 0, Number(correctCount) || 0),
+        [modeField]: Math.max(Number(previousArtist[modeField]) || 0, knownBest, numericScore),
+        lastScore: numericScore,
+        lastMode: mode,
+        totalGames: (Number(previousArtist.totalGames) || 0) + 1,
+        totalCorrect: (Number(previousArtist.totalCorrect) || 0) + (Number(correctCount) || 0),
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      if (mode === 'challenge') {
+        updates.challengeRecord = Math.max(Number(previousArtist.challengeRecord) || 0, numericScore);
+        updates.challengeCorrect = Math.max(Number(previousArtist.challengeCorrect) || 0, Number(correctCount) || 0);
+        if (Number.isFinite(Number(fastest))) updates.challengeTime = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
+      }
+      transaction.set(userRef, {
         uid: userAtSave.uid,
         displayName: userAtSave.displayName || '',
         email: userAtSave.email || '',
         photoURL: userAtSave.photoURL || '',
-        record: Math.max(Number(previous.record) || 0, knownBest, numericScore),
-        bestCorrect: Math.max(Number(previous.bestCorrect) || 0, Number(correctCount) || 0),
-        [modeField]: Math.max(Number(previous[modeField]) || 0, knownBest, numericScore),
-        lastScore: numericScore,
-        lastMode: mode,
-        totalGames: (Number(previous.totalGames) || 0) + 1,
-        totalCorrect: (Number(previous.totalCorrect) || 0) + (Number(correctCount) || 0),
+        artistStats: { [artistId]: updates },
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-      };
-      if (mode === 'challenge') {
-        updates.challengeRecord = Math.max(Number(previous.challengeRecord) || 0, numericScore);
-        updates.challengeCorrect = Math.max(Number(previous.challengeCorrect) || 0, Number(correctCount) || 0);
-        if (Number.isFinite(Number(fastest))) updates.challengeTime = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
-      }
-      transaction.set(userRef, updates, { merge: true });
+      }, { merge: true });
     });
     return { saved: true };
   } catch (error) {
@@ -219,8 +245,17 @@ async function loadLeaderboard(field = 'challengeRecord') {
   renderLocalLeaderboard(field, 'Synchronisation du classement cloud…');
   try {
     const direction = field === 'challengeTime' ? 'asc' : 'desc';
-    const snapshot = await withTimeout(firestoreDb.collection('users').orderBy(field, direction).limit(25).get(), 4500);
-    const rows = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })).filter(user => Number(user[field]) > 0).slice(0, 10);
+    const artistId = selectedArtist?.id || 'ziak';
+    const artistField = `artistStats.${artistId}.${field}`;
+    let snapshot = await withTimeout(firestoreDb.collection('users').orderBy(artistField, direction).limit(25).get(), 4500);
+    let rows = snapshot.docs.map(doc => {
+      const profile = doc.data(); const stats = profile.artistStats?.[artistId] || {};
+      return { id: doc.id, ...profile, ...stats };
+    }).filter(user => Number(user[field]) > 0).slice(0, 10);
+    if (!rows.length && artistId === 'ziak') {
+      snapshot = await withTimeout(firestoreDb.collection('users').orderBy(field, direction).limit(25).get(), 4500);
+      rows = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })).filter(user => Number(user[field]) > 0).slice(0, 10);
+    }
     if (!rows.length) { renderLocalLeaderboard(field, 'Aucun classement cloud — score local affiché.'); return; }
     ui.leaderboardStatus.textContent = `${rows.length} joueur${rows.length > 1 ? 's' : ''} classé${rows.length > 1 ? 's' : ''}`;
     ui.leaderboardList.innerHTML = rows.map((user, index) => `<li><span class="leader-rank">${String(index + 1).padStart(2, '0')}</span><span class="leader-user"><img src="${escapeHtml(user.photoURL || '')}" alt="" /><strong>${escapeHtml(user.displayName || user.email || 'Joueur')}</strong></span><span class="leader-value">${leaderboardLabel(field, user[field])}</span></li>`).join('');
@@ -229,21 +264,62 @@ async function loadLeaderboard(field = 'challengeRecord') {
 function show(screen) { [ui.setup, ui.game, ui.result].forEach(item => item.classList.toggle('hidden', item !== screen)); }
 function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
 
-async function loadSongs() {
+function updateArtistBrand(artist) {
+  const name = artist?.name || 'Blind Test';
+  document.title = `${name.toUpperCase()} // BLIND TEST`;
+  if (ui.activeArtist) ui.activeArtist.textContent = name.toUpperCase();
+  if (ui.recordMark) ui.recordMark.textContent = artist?.mark || name.charAt(0).toUpperCase();
+  if (ui.leaderboardEyebrow) ui.leaderboardEyebrow.textContent = `CLASSEMENT · ${name.toUpperCase()} RANKED`;
+}
+function renderArtists() {
+  if (!ui.artists) return;
+  ui.artists.innerHTML = artists.map(artist => `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><span class="artist-card-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong><small>${escapeHtml(artist.description || 'Catalogue musical')}</small></button>`).join('');
+  ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
+}
+async function selectArtist(artistId) {
+  const artist = artists.find(item => item.id === artistId);
+  if (!artist || (artist.id === selectedArtist?.id && songs.length)) return;
+  selectedArtist = artist;
+  localStorage.setItem('blindtest-selected-artist', artist.id);
+  updateArtistBrand(artist); renderArtists();
+  songs = []; ui.start.disabled = true;
+  await loadSongs();
+  if (currentUser) {
+    accountBestReady = loadAccountBest(currentUser).then(() => migrateGuestBest(currentUser));
+    if (!ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField);
+  } else refreshBest();
+}
+async function loadArtists() {
   try {
-    const response = await fetch('songs.json', { cache: 'no-store' });
+    const response = await fetch('artists.json', { cache: 'no-store' });
     if (!response.ok) throw new Error();
     const data = await response.json();
+    artists = Array.isArray(data) ? data.filter(artist => artist && artist.id && artist.name && artist.catalog) : [];
+  } catch { artists = []; }
+  if (!artists.length) artists = [{ id: 'ziak', name: 'Ziak', catalog: 'songs.json', mark: 'Z', description: 'Discographie complète' }];
+  const savedArtistId = localStorage.getItem('blindtest-selected-artist');
+  await selectArtist(artists.some(artist => artist.id === savedArtistId) ? savedArtistId : artists[0].id);
+}
+async function loadSongs() {
+  const artist = selectedArtist || { id: 'ziak', name: 'Ziak', catalog: 'songs.json', mark: 'Z' };
+  const loadingArtistId = artist.id;
+  try {
+    if (ui.catalog) ui.catalog.classList.remove('error');
+    const response = await fetch(artist.catalog, { cache: 'no-store' });
+    if (!response.ok) throw new Error();
+    const data = await response.json();
+    if (selectedArtist?.id !== loadingArtistId) return;
     songs = Array.isArray(data) ? data.filter(song => song && song.title && (song.audio || song.soundcloudUrl || song.deezerTrackId)) : [];
     if (songs.length) {
-      if (ui.catalog) ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
+      if (ui.catalog) ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} ${artist.name} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
       ui.start.disabled = false;
     } else {
-      if (ui.catalog) { ui.catalog.textContent = 'Catalogue vide — ajoutez vos extraits autorisés dans songs.json.'; ui.catalog.classList.add('error'); }
+      if (ui.catalog) { ui.catalog.textContent = `Catalogue ${artist.name} vide — ajoute tes extraits dans ${artist.catalog}.`; ui.catalog.classList.add('error'); }
       ui.start.disabled = true;
     }
   } catch {
-    if (ui.catalog) { ui.catalog.textContent = 'Impossible de charger songs.json. Vérifiez son format.'; ui.catalog.classList.add('error'); }
+    if (selectedArtist?.id !== loadingArtistId) return;
+    if (ui.catalog) { ui.catalog.textContent = `Impossible de charger ${artist.catalog}. Vérifie son format.`; ui.catalog.classList.add('error'); }
     ui.start.disabled = true;
   }
 }
@@ -255,7 +331,7 @@ function startGame() {
   }
   const mode = document.querySelector('.mode-card.selected').dataset.mode;
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
-  state = { mode, rounds, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeEndsAt: 0 };
+  state = { artist: selectedArtist, mode, rounds, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeEndsAt: 0 };
   show(ui.game);
   nextRound();
 }
@@ -270,7 +346,8 @@ function nextRound() {
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
   ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
-  ui.roundLabel.textContent = state.mode === 'solo' ? `MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `RANKED · ${state.played.length + 1}`;
+  const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
+  ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
   ui.score.textContent = state.score; loadTrack();
   renderHint(); startTimer(); ui.input.focus();
 }
@@ -467,7 +544,7 @@ async function endGame() {
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
-  ui.resultMode.textContent = state.mode === 'solo' ? 'SOLO' : 'RANKED'; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
+  ui.resultMode.textContent = `${state.artist?.name || 'ARTISTE'} · ${state.mode === 'solo' ? 'SOLO' : 'RANKED'}`; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
   ui.played.innerHTML = state.played.map(song => `<li class="${song.correct ? '' : 'missed'}"><span>${song.correct ? '✓' : '×'} ${escapeHtml(song.title)}</span><span>${song.correct ? `+${song.points}` : 'MANQUÉ'}</span></li>`).join('') || '<li><span>Aucun morceau joué.</span></li>';
   show(ui.result);
 }
@@ -494,7 +571,7 @@ ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidde
 ui.leaderboardClose.addEventListener('click', () => { ui.leaderboardPanel.hidden = true; });
 ui.leaderboardTabs.forEach(tab => tab.addEventListener('click', () => { leaderboardField = tab.dataset.leaderboard; ui.leaderboardTabs.forEach(item => item.classList.toggle('selected', item === tab)); loadLeaderboard(leaderboardField); }));
 
-setVolume(getVolume()); refreshBest(); loadSongs();
+setVolume(getVolume()); refreshBest(); loadArtists();
 
 function setupGoogleAuth() {
   const loginButton = $('#loginButton'); const logoutButton = $('#logoutButton'); const profileArea = $('#profileArea'); const profilePhoto = $('#profilePhoto'); const profileName = $('#profileName'); const authMessage = $('#authMessage');
