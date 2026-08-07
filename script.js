@@ -12,7 +12,7 @@ const ui = {
   start: $('#startButton'), catalog: $('#catalogStatus'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
   rounds: $('#roundPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
-  play: $('#playButton'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
+  play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
   input: $('#guessInput'), validate: $('#validateButton'), feedback: $('#feedback'),
   hint: $('#hintButton'), hintCount: $('#hintCount'), hintText: $('#hintText'), skip: $('#skipButton'),
   finalScore: $('#finalScore'), resultMode: $('#resultMode'), bestTime: $('#bestTime'),
@@ -27,6 +27,7 @@ let firestoreDb = null;
 let accountBest = { solo: 0, challenge: 0 };
 let leaderboardField = 'challengeRecord';
 let accountBestReady = Promise.resolve();
+const DEFAULT_VOLUME = 0.8;
 
 const firebaseConfig = {
   apiKey: "AIzaSyBP0wsYbCndSRTPU7kLQX8SDzYKUL-PFrc",
@@ -49,6 +50,40 @@ function bestKey(mode) { return `ziak-blindtest-best-${storageUid()}-${mode}`; }
 function statsKey() { return `ziak-blindtest-stats-${storageUid()}`; }
 function getBest(mode) { return Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0); }
 function refreshBest() { ui.best.textContent = Math.max(getBest('solo'), getBest('challenge')); }
+function getVolume() {
+  const saved = Number(localStorage.getItem('ziak-blindtest-volume'));
+  return Number.isFinite(saved) ? Math.min(1, Math.max(0, saved)) : DEFAULT_VOLUME;
+}
+function setVolume(value) {
+  const volume = Math.min(1, Math.max(0, Number(value) || 0));
+  ui.audio.volume = volume;
+  if (ui.volume) ui.volume.value = String(Math.round(volume * 100));
+  if (ui.volumeValue) ui.volumeValue.textContent = `${Math.round(volume * 100)}%`;
+  localStorage.setItem('ziak-blindtest-volume', String(volume));
+  if (state.scWidget?.setVolume) state.scWidget.setVolume(volume * 100);
+  else if (state.current?.soundcloudUrl) sendSoundcloud('setVolume', volume * 100);
+}
+function autoplayTrack(track) {
+  if (!state.current || state.current !== track || state.roundResolved || state.autoplayAttempted) return;
+  state.autoplayAttempted = true;
+  if (track.deezerTrackId || track.audio) {
+    ui.audio.play().then(() => {
+      setPlaying(true);
+      clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, 20000);
+    }).catch(() => {
+      state.autoplayAttempted = false;
+      ui.playerState.textContent = 'APPUYE POUR ÉCOUTER';
+    });
+  } else if (state.scReady) {
+    setVolume(getVolume());
+    if (state.scWidget) {
+      state.scWidget.seekTo(Number(track.clipStart || 0) * 1000); state.scWidget.play();
+    } else {
+      sendSoundcloud('seekTo', Number(track.clipStart || 0) * 1000); sendSoundcloud('play');
+    }
+    clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, Number(track.clipDuration || 20) * 1000);
+  }
+}
 function readLocalStats() {
   try { return JSON.parse(localStorage.getItem(statsKey()) || '{}') || {}; } catch { return {}; }
 }
@@ -274,6 +309,7 @@ function showTrackReveal() {
 }
 function loadTrack() {
   stopPlayback(); state.scReady = false; state.scWidget = null; state.isPlaying = false;
+  state.autoplayAttempted = false; setVolume(getVolume());
   state.trackMeta = null; state.revealVisible = false;
   ui.reveal.hidden = true; ui.playerPanel.classList.remove('revealed'); ui.revealCover.removeAttribute('src');
   if (soundcloudMessageHandler) window.removeEventListener('message', soundcloudMessageHandler);
@@ -294,7 +330,7 @@ function loadTrack() {
       .then(data => {
         if (state.current !== track || !data.preview) throw new Error('Aucun aperçu disponible');
         state.deezerPreviewUrl = data.preview; state.trackMeta = data;
-        ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT';
+        ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
         if (state.revealVisible) showTrackReveal();
       })
       .catch(() => { if (state.current === track) ui.playerState.textContent = 'APERÇU INDISPONIBLE'; });
@@ -309,7 +345,7 @@ function loadTrack() {
       try { message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data; } catch { return; }
       if (!message?.method) return;
       if (message.method === 'ready') {
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT';
+        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }
       if (message.method === 'play') setPlaying(true);
@@ -323,7 +359,7 @@ function loadTrack() {
       setTimeout(() => {
         if (state.current !== track) return;
         state.scReady = true;
-        if (!state.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT';
+        if (!state.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }, 500);
     };
@@ -333,7 +369,7 @@ function loadTrack() {
       state.scWidget = widget;
       widget.bind(window.SC.Widget.Events.READY, () => {
         if (state.current !== track || state.scWidget !== widget) return;
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT';
+        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
       });
       widget.bind(window.SC.Widget.Events.PLAY, () => { if (state.scWidget === widget) setPlaying(true); });
       widget.bind(window.SC.Widget.Events.PAUSE, () => { if (state.scWidget === widget) setPlaying(false); });
@@ -342,7 +378,7 @@ function loadTrack() {
   } else {
     ui.soundcloud.hidden = true; ui.soundcloud.classList.remove('visible'); ui.soundcloudCredit.classList.add('hidden');
     ui.play.classList.remove('hidden'); ui.waveform.classList.remove('hidden');
-    ui.audio.src = state.current.audio; ui.audio.load();
+    ui.audio.src = state.current.audio; ui.audio.load(); autoplayTrack(state.current);
   }
 }
 function startTimer() {
@@ -439,7 +475,7 @@ document.querySelectorAll('.mode-card').forEach(button => button.addEventListene
   ui.rounds.classList.toggle('hidden', button.dataset.mode === 'challenge');
 }));
 document.querySelectorAll('.round-option').forEach(button => button.addEventListener('click', () => document.querySelectorAll('.round-option').forEach(item => item.classList.toggle('selected', item === button))));
-ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.validate.addEventListener('click', validateGuess); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') validateGuess(); });
+ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', validateGuess); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') validateGuess(); });
 ui.audio.addEventListener('play', () => setPlaying(true));
 ui.audio.addEventListener('pause', () => { if (!state.roundResolved) setPlaying(false); });
 ui.audio.addEventListener('ended', () => { setPlaying(false); ui.playerState.textContent = 'EXTRAIT TERMINÉ'; });
@@ -455,7 +491,7 @@ ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidde
 ui.leaderboardClose.addEventListener('click', () => { ui.leaderboardPanel.hidden = true; });
 ui.leaderboardTabs.forEach(tab => tab.addEventListener('click', () => { leaderboardField = tab.dataset.leaderboard; ui.leaderboardTabs.forEach(item => item.classList.toggle('selected', item === tab)); loadLeaderboard(leaderboardField); }));
 
-refreshBest(); loadSongs();
+setVolume(getVolume()); refreshBest(); loadSongs();
 
 function setupGoogleAuth() {
   const loginButton = $('#loginButton'); const logoutButton = $('#logoutButton'); const profileArea = $('#profileArea'); const profilePhoto = $('#profilePhoto'); const profileName = $('#profileName'); const authMessage = $('#authMessage');

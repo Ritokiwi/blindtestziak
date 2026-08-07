@@ -93,7 +93,13 @@
               <p id="revealMeta"></p>
             </div>
           </div>
-          <button id="playButton" class="play-button" type="button" aria-label="Lire l'extrait"><span></span></button>
+          <div class="player-controls">
+            <button id="playButton" class="play-button" type="button" aria-label="Lire l'extrait"><span></span></button>
+            <label class="volume-control" for="volumeControl">
+              <span>VOL <strong id="volumeValue">80%</strong></span>
+              <input id="volumeControl" type="range" min="0" max="100" value="80" step="1" aria-label="Volume de l'extrait" />
+            </label>
+          </div>
           <p id="playerState">EXTRAIT PRÊT</p>
           <a id="soundcloudCredit" class="soundcloud-credit hidden" href="#" target="_blank" rel="noopener noreferrer">SOURCE : SOUNDCLOUD ↗</a>
           <iframe id="soundcloudPlayer" class="soundcloud-player" title="Lecteur SoundCloud" allow="autoplay" hidden></iframe>
