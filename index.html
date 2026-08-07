@@ -42,7 +42,7 @@
           </button>
           <button class="mode-card" data-mode="challenge" type="button">
             <span class="mode-number">02</span>
-            <span class="mode-title">DÉFI</span>
+            <span class="mode-title">RANKED</span>
             <span class="mode-description">Enchaîne un max de titres en 90 s.</span>
           </button>
         </div>
@@ -57,10 +57,9 @@
         </div>
 
         <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
-        <p id="catalogStatus" class="catalog-status" role="status"></p>
         <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
         <section id="leaderboardPanel" class="leaderboard-panel" hidden>
-          <div class="leaderboard-heading"><div><p class="eyebrow">CLASSEMENT · DÉFI</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
+          <div class="leaderboard-heading"><div><p class="eyebrow">CLASSEMENT · RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
           <div class="leaderboard-tabs" role="tablist" aria-label="Catégorie du classement">
             <button class="leaderboard-tab selected" data-leaderboard="challengeRecord" role="tab" type="button">RECORD</button>
             <button class="leaderboard-tab" data-leaderboard="challengeCorrect" role="tab" type="button">RÉPONSES</button>
@@ -69,7 +68,6 @@
           <p id="leaderboardStatus" class="leaderboard-status" role="status">Connecte-toi pour voir le classement.</p>
           <ol id="leaderboardList" class="leaderboard-list"></ol>
         </section>
-        <p class="legal-note">Ajoutez uniquement des extraits audio que vous êtes autorisé à utiliser dans <code>assets/audio</code>.</p>
       </section>
 
       <section id="gameScreen" class="screen game-screen hidden" aria-live="polite">

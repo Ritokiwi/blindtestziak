@@ -199,16 +199,14 @@ async function loadSongs() {
     const data = await response.json();
     songs = Array.isArray(data) ? data.filter(song => song && song.title && (song.audio || song.soundcloudUrl || song.deezerTrackId)) : [];
     if (songs.length) {
-      ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
+      if (ui.catalog) ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
       ui.start.disabled = false;
     } else {
-      ui.catalog.textContent = 'Catalogue vide — ajoutez vos extraits autorisés dans songs.json.';
-      ui.catalog.classList.add('error');
+      if (ui.catalog) { ui.catalog.textContent = 'Catalogue vide — ajoutez vos extraits autorisés dans songs.json.'; ui.catalog.classList.add('error'); }
       ui.start.disabled = true;
     }
   } catch {
-    ui.catalog.textContent = 'Impossible de charger songs.json. Vérifiez son format.';
-    ui.catalog.classList.add('error');
+    if (ui.catalog) { ui.catalog.textContent = 'Impossible de charger songs.json. Vérifiez son format.'; ui.catalog.classList.add('error'); }
     ui.start.disabled = true;
   }
 }
@@ -235,7 +233,7 @@ function nextRound() {
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
   ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
-  ui.roundLabel.textContent = state.mode === 'solo' ? `MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `DÉFI · ${state.played.length + 1}`;
+  ui.roundLabel.textContent = state.mode === 'solo' ? `MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `RANKED · ${state.played.length + 1}`;
   ui.score.textContent = state.score; loadTrack();
   renderHint(); startTimer(); ui.input.focus();
 }
@@ -431,7 +429,7 @@ async function endGame() {
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
-  ui.resultMode.textContent = state.mode === 'solo' ? 'SOLO' : 'DÉFI'; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
+  ui.resultMode.textContent = state.mode === 'solo' ? 'SOLO' : 'RANKED'; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
   ui.played.innerHTML = state.played.map(song => `<li class="${song.correct ? '' : 'missed'}"><span>${song.correct ? '✓' : '×'} ${escapeHtml(song.title)}</span><span>${song.correct ? `+${song.points}` : 'MANQUÉ'}</span></li>`).join('') || '<li><span>Aucun morceau joué.</span></li>';
   show(ui.result);
 }
