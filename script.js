@@ -5,12 +5,20 @@
 const ROUND_SECONDS = 25;
 const CHALLENGE_SECONDS = 90;
 const HINTS_PER_ROUND = 3;
+const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
+const SPEED_PRESETS = {
+  classic: { key: 'classic', label: 'CLASSIQUE', listen: null, answer: ROUND_SECONDS },
+  fast: { key: 'fast', label: 'RAPIDE', listen: 5, answer: 10 },
+  intense: { key: 'intense', label: 'INTENSE', listen: 10, answer: 10 },
+  ultra: { key: 'ultra', label: 'ULTRA', listen: 1, answer: 5 }
+};
+const previewCache = new Map();
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
   start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), recordMark: $('#recordMark'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
-  rounds: $('#roundPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
+  rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
   play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
   input: $('#guessInput'), validate: $('#validateButton'), feedback: $('#feedback'),
@@ -44,6 +52,15 @@ const firebaseConfig = {
 function normalise(value = '') {
   return value.toLocaleLowerCase('fr-FR').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/ß/g, 'ss').replace(/[^a-z0-9]/gi, '');
 }
+function wordsOf(value = '') {
+  return value.split(/\s+/).map(normalise).filter(Boolean);
+}
+function sameWordsAnyOrder(guessRaw, titleRaw) {
+  const guessWords = wordsOf(guessRaw).sort();
+  const titleWords = wordsOf(titleRaw).sort();
+  if (!guessWords.length || guessWords.length !== titleWords.length) return false;
+  return guessWords.every((word, index) => word === titleWords[index]);
+}
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
 }
@@ -70,7 +87,7 @@ function setVolume(value) {
   else if (state.current?.soundcloudUrl) sendSoundcloud('setVolume', volume * 100);
 }
 function autoplayTrack(track) {
-  if (!state.current || state.current !== track || state.roundResolved || state.autoplayAttempted) return;
+  if (!state.current || state.current !== track || state.roundResolved || state.autoplayAttempted || state.speed?.listen) return;
   state.autoplayAttempted = true;
   if (track.deezerTrackId || track.audio) {
     ui.audio.play().then(() => {
@@ -334,7 +351,9 @@ function startGame() {
   }
   const mode = document.querySelector('.mode-card.selected').dataset.mode;
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
-  state = { artist: selectedArtist, mode, rounds, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeEndsAt: 0 };
+  const speedKey = mode === 'solo' ? (document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic') : 'classic';
+  const speed = SPEED_PRESETS[speedKey] || SPEED_PRESETS.classic;
+  state = { artist: selectedArtist, mode, rounds, speed, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeEndsAt: 0 };
   show(ui.game);
   nextRound();
 }
@@ -347,12 +366,53 @@ function nextRound() {
   if (!state.active) return;
   if (state.mode === 'solo' && state.played.length >= state.rounds) return endGame();
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
+  state.timerStarted = false; state.trackReady = false; state.phase = 'listen'; state.scoreBudgetSeconds = 0;
   ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
+  ui.play.disabled = Boolean(state.speed?.listen);
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
   ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
-  ui.score.textContent = state.score; loadTrack();
-  renderHint(); startTimer(); ui.input.focus();
+  ui.score.textContent = state.score;
+  ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
+  loadTrack(); prefetchUpcoming();
+  renderHint(); ui.input.focus();
+}
+function prefetchUpcoming() {
+  const upcoming = state.deck[state.deckIndex];
+  if (upcoming?.deezerTrackId) prefetchDeezerTrack(upcoming.deezerTrackId);
+}
+function onTrackReady() {
+  if (!state.current || state.timerStarted || state.roundResolved) return;
+  state.timerStarted = true; state.trackReady = true;
+  if (state.speed?.listen) beginListenPhase(); else startTimer();
+}
+function beginListenPhase() {
+  state.phase = 'listen';
+  if (state.current.deezerTrackId || state.current.audio) ui.audio.play().catch(() => {});
+  state.startedAt = performance.now();
+  clearInterval(state.timerId);
+  state.timerId = setInterval(() => updatePhaseTimer('listen'), 50);
+  updatePhaseTimer('listen');
+}
+function beginAnswerPhase() {
+  state.phase = 'answer';
+  state.scoreBudgetSeconds = state.speed.answer;
+  state.startedAt = performance.now();
+  clearInterval(state.timerId);
+  state.timerId = setInterval(() => updatePhaseTimer('answer'), 50);
+  updatePhaseTimer('answer');
+}
+function updatePhaseTimer(phase) {
+  const now = performance.now();
+  const durationMs = (phase === 'listen' ? state.speed.listen : state.speed.answer) * 1000;
+  const left = Math.max(0, durationMs - (now - state.startedAt));
+  ui.timer.style.transform = `scaleX(${left / durationMs})`;
+  ui.timerText.textContent = `${phase === 'listen' ? 'ÉCOUTE ' : ''}${(left / 1000).toFixed(1)} S`;
+  if (left <= 0) {
+    clearInterval(state.timerId);
+    if (phase === 'listen') { stopPlayback(); beginAnswerPhase(); }
+    else resolveRound(false, 'Temps écoulé');
+  }
 }
 function setPlaying(isPlaying) {
   state.isPlaying = isPlaying;
@@ -389,6 +449,19 @@ function showTrackReveal() {
   ui.revealMeta.textContent = `${dateLabel.toUpperCase()} · ${year || '—'}`;
   ui.reveal.hidden = false; ui.playerPanel.classList.add('revealed'); ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden'); ui.playerState.textContent = 'RÉPONSE';
 }
+function prefetchDeezerTrack(id) {
+  const key = String(id);
+  if (!key || previewCache.has(key)) return;
+  previewCache.set(key, null);
+  fetch(`/api/deezer-track?id=${encodeURIComponent(key)}`)
+    .then(response => { if (!response.ok) throw new Error('Deezer indisponible'); return response.json(); })
+    .then(data => {
+      if (!data.preview) throw new Error('Aucun aperçu disponible');
+      previewCache.set(key, data);
+      const warm = new Audio(); warm.preload = 'auto'; warm.src = data.preview;
+    })
+    .catch(() => { previewCache.delete(key); });
+}
 function loadTrack() {
   stopPlayback(); state.scReady = false; state.scWidget = null; state.isPlaying = false;
   state.autoplayAttempted = false; setVolume(getVolume());
@@ -399,23 +472,33 @@ function loadTrack() {
   ui.play.classList.remove('is-playing'); ui.waveform.classList.remove('playing');
   ui.playerState.textContent = 'EXTRAIT PRÊT';
   if (state.current.deezerTrackId) {
-    const trackId = encodeURIComponent(state.current.deezerTrackId);
+    const trackId = String(state.current.deezerTrackId);
     const track = state.current;
     ui.audio.removeAttribute('src'); ui.audio.load(); state.deezerPreviewUrl = '';
     ui.soundcloud.hidden = true; ui.soundcloud.classList.remove('visible');
     ui.play.classList.remove('hidden'); ui.waveform.classList.remove('hidden');
     ui.soundcloudCredit.href = `https://www.deezer.com/track/${trackId}`;
     ui.soundcloudCredit.textContent = 'SOURCE : DEEZER ↗'; ui.soundcloudCredit.classList.remove('hidden');
-    ui.playerState.textContent = 'CHARGEMENT DE L’EXTRAIT';
-    fetch(`/api/deezer-track?id=${trackId}`)
-      .then(response => { if (!response.ok) throw new Error('Deezer indisponible'); return response.json(); })
-      .then(data => {
-        if (state.current !== track || !data.preview) throw new Error('Aucun aperçu disponible');
-        state.deezerPreviewUrl = data.preview; state.trackMeta = data;
-        ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
-        if (state.revealVisible) showTrackReveal();
-      })
-      .catch(() => { if (state.current === track) ui.playerState.textContent = 'APERÇU INDISPONIBLE'; });
+    const applyTrack = (data) => {
+      if (state.current !== track || !data?.preview) return false;
+      state.deezerPreviewUrl = data.preview; state.trackMeta = data;
+      ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
+      if (state.revealVisible) showTrackReveal();
+      return true;
+    };
+    const cached = previewCache.get(trackId);
+    if (cached) { applyTrack(cached); }
+    else {
+      ui.playerState.textContent = 'CHARGEMENT DE L’EXTRAIT';
+      fetch(`/api/deezer-track?id=${encodeURIComponent(trackId)}`)
+        .then(response => { if (!response.ok) throw new Error('Deezer indisponible'); return response.json(); })
+        .then(data => {
+          if (!data.preview) throw new Error('Aucun aperçu disponible');
+          previewCache.set(trackId, data);
+          if (!applyTrack(data)) throw new Error('Manche déjà changée');
+        })
+        .catch(() => { if (state.current === track) ui.playerState.textContent = 'APERÇU INDISPONIBLE'; });
+    }
   } else if (state.current.soundcloudUrl) {
     ui.audio.removeAttribute('src'); ui.audio.load(); ui.soundcloud.hidden = false; ui.soundcloud.classList.add('visible');
     ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden');
@@ -427,7 +510,7 @@ function loadTrack() {
       try { message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data; } catch { return; }
       if (!message?.method) return;
       if (message.method === 'ready') {
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
+        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }
       if (message.method === 'play') setPlaying(true);
@@ -441,7 +524,7 @@ function loadTrack() {
       setTimeout(() => {
         if (state.current !== track) return;
         state.scReady = true;
-        if (!state.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
+        if (!state.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }, 500);
     };
@@ -451,7 +534,7 @@ function loadTrack() {
       state.scWidget = widget;
       widget.bind(window.SC.Widget.Events.READY, () => {
         if (state.current !== track || state.scWidget !== widget) return;
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
+        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
       });
       widget.bind(window.SC.Widget.Events.PLAY, () => { if (state.scWidget === widget) setPlaying(true); });
       widget.bind(window.SC.Widget.Events.PAUSE, () => { if (state.scWidget === widget) setPlaying(false); });
@@ -465,6 +548,7 @@ function loadTrack() {
 }
 function startTimer() {
   clearInterval(state.timerId);
+  state.scoreBudgetSeconds = ROUND_SECONDS;
   state.startedAt = performance.now();
   if (state.mode === 'challenge' && !state.challengeEndsAt) state.challengeEndsAt = state.startedAt + CHALLENGE_SECONDS * 1000;
   state.timerId = setInterval(updateTimer, 50); updateTimer();
@@ -514,26 +598,45 @@ function toggleAudio() {
     clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, Number(state.current.clipDuration || 20) * 1000);
   } else if (ui.audio.paused) ui.audio.play().catch(() => { ui.playerState.textContent = 'EXTRAIT INTROUVABLE'; }); else ui.audio.pause();
 }
-function validateGuess() {
-  if (state.roundResolved) return;
-  const guess = normalise(ui.input.value);
-  if (!guess) return;
-  if (guess === normalise(state.current.title)) resolveRound(true); else {
-    ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
+function checkGuess() {
+  if (state.roundResolved) return false;
+  const rawGuess = ui.input.value;
+  const guess = normalise(rawGuess);
+  if (!guess) return false;
+  const title = state.current.title;
+  if (guess === normalise(title)) { resolveRound(true); return true; }
+  if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
+  ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
+  return false;
+}
+function handleGuessInput() {
+  if (state.roundResolved || !state.current) return;
+  const rawGuess = ui.input.value;
+  const guess = normalise(rawGuess);
+  if (!guess) { ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; return; }
+  const title = state.current.title;
+  const normalisedTitle = normalise(title);
+  if (guess === normalisedTitle) { resolveRound(true); return; }
+  if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
+  if (guess.length >= normalisedTitle.length) {
+    ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
+    ui.input.value = '';
   }
 }
-function resolveRound(correct, message = '') {
+function resolveRound(correct, message = '', options = {}) {
   if (state.roundResolved) return;
   state.roundResolved = true; clearInterval(state.timerId);
   if (!correct) stopPlayback();
   const seconds = (performance.now() - state.startedAt) / 1000;
-  const points = correct ? Math.max(100, Math.round((ROUND_SECONDS - Math.min(seconds, ROUND_SECONDS)) * 20) - state.hints * 35) : 0;
+  const budget = state.scoreBudgetSeconds || ROUND_SECONDS;
+  let points = correct ? Math.max(100, Math.round((budget - Math.min(seconds, budget)) * 20) - state.hints * 35) : 0;
+  if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
   ui.feedback.textContent = correct
-    ? `BIEN JOUÉ +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
+    ? `BIEN JOUÉ${options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : ''} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
     : `${message} : ${state.current.title}`;
-  ui.feedback.className = `feedback ${correct ? 'correct' : 'wrong'}`; ui.input.disabled = true; ui.validate.disabled = true; ui.hint.disabled = true; ui.skip.disabled = true;
+  ui.feedback.className = `feedback ${correct ? 'correct' : 'wrong'}`; ui.input.disabled = true; ui.validate.disabled = true; ui.hint.disabled = true; ui.skip.disabled = true; ui.play.disabled = true;
   ui.hintText.textContent = `${correct ? '✓' : '✕'} ${state.current.title.toUpperCase()}`;
   state.revealVisible = true; showTrackReveal();
   setTimeout(nextRound, 1700);
@@ -554,11 +657,17 @@ async function endGame() {
 
 document.querySelectorAll('.mode-card').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.mode-card').forEach(item => item.classList.toggle('selected', item === button));
-  ui.rounds.classList.toggle('hidden', button.dataset.mode === 'challenge');
-  ui.setup.classList.toggle('ranked-selected', button.dataset.mode === 'challenge');
+  const isChallenge = button.dataset.mode === 'challenge';
+  ui.rounds.classList.toggle('hidden', isChallenge);
+  if (ui.speedPicker) ui.speedPicker.classList.toggle('hidden', isChallenge);
+  ui.setup.classList.toggle('ranked-selected', isChallenge);
 }));
-document.querySelectorAll('.round-option').forEach(button => button.addEventListener('click', () => document.querySelectorAll('.round-option').forEach(item => item.classList.toggle('selected', item === button))));
-ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', validateGuess); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') validateGuess(); });
+document.querySelectorAll('.round-option').forEach(button => button.addEventListener('click', () => {
+  const group = button.closest('.round-picker');
+  (group ? group.querySelectorAll('.round-option') : document.querySelectorAll('.round-option')).forEach(item => item.classList.toggle('selected', item === button));
+}));
+ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput);
+ui.audio.addEventListener('canplay', onTrackReady);
 ui.audio.addEventListener('play', () => setPlaying(true));
 ui.audio.addEventListener('pause', () => { if (!state.roundResolved) setPlaying(false); });
 ui.audio.addEventListener('ended', () => { setPlaying(false); ui.playerState.textContent = 'EXTRAIT TERMINÉ'; });
