@@ -1,0 +1,530 @@
+[
+  {
+    "id": "fave-1115222402",
+    "title": "Freestyle Noche 1",
+    "project": "Freestyle Noche 1",
+    "year": 2020,
+    "releaseDate": "2020-10-16",
+    "deezerTrackId": 1115222402
+  },
+  {
+    "id": "fave-1561255522",
+    "title": "côté passager",
+    "project": "côté passager",
+    "year": 2021,
+    "releaseDate": "2021-11-25",
+    "deezerTrackId": 1561255522
+  },
+  {
+    "id": "fave-1561255262",
+    "title": "Sommet",
+    "project": "Sommet",
+    "year": 2021,
+    "releaseDate": "2021-11-25",
+    "deezerTrackId": 1561255262
+  },
+  {
+    "id": "fave-2042236727",
+    "title": "Mercedes",
+    "project": "Mercedes",
+    "year": 2022,
+    "releaseDate": "2022-04-08",
+    "deezerTrackId": 2042236727
+  },
+  {
+    "id": "fave-2042212527",
+    "title": "Mode Avion",
+    "project": "Mode Avion",
+    "year": 2022,
+    "releaseDate": "2022-06-21",
+    "deezerTrackId": 2042212527
+  },
+  {
+    "id": "fave-2036230417",
+    "title": "Urus",
+    "project": "Urus",
+    "year": 2022,
+    "releaseDate": "2022-10-12",
+    "deezerTrackId": 2036230417
+  },
+  {
+    "id": "fave-2040527677",
+    "title": "Urus (Enregistré à Paris)",
+    "project": "Deezer Sessions",
+    "year": 2022,
+    "releaseDate": "2022-11-30",
+    "deezerTrackId": 2040527677
+  },
+  {
+    "id": "fave-2087692637",
+    "title": "+ de sous",
+    "project": "+ de sous",
+    "year": 2023,
+    "releaseDate": "2023-01-05",
+    "deezerTrackId": 2087692637
+  },
+  {
+    "id": "fave-2087692957",
+    "title": "Toxic",
+    "project": "Toxic",
+    "year": 2023,
+    "releaseDate": "2023-01-05",
+    "deezerTrackId": 2087692957
+  },
+  {
+    "id": "fave-2087692597",
+    "title": "00h",
+    "project": "F4",
+    "year": 2023,
+    "releaseDate": "2023-01-06",
+    "deezerTrackId": 2087692597
+  },
+  {
+    "id": "fave-2087692567",
+    "title": "Mes raisons",
+    "project": "F4",
+    "year": 2023,
+    "releaseDate": "2023-01-06",
+    "deezerTrackId": 2087692567
+  },
+  {
+    "id": "fave-2189026447",
+    "title": "NO LÈCHE",
+    "project": "NO LÈCHE",
+    "year": 2023,
+    "releaseDate": "2023-03-15",
+    "deezerTrackId": 2189026447
+  },
+  {
+    "id": "fave-2294072455",
+    "title": "J'aime pas perdre #Freestyle",
+    "project": "J'aime pas perdre #Freestyle",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2294072455
+  },
+  {
+    "id": "fave-2332941935",
+    "title": "Vibes",
+    "project": "Vibes",
+    "year": 2023,
+    "releaseDate": "2023-06-23",
+    "deezerTrackId": 2332941935
+  },
+  {
+    "id": "fave-2441974865",
+    "title": "Flashback",
+    "project": "Flashback",
+    "year": 2023,
+    "releaseDate": "2023-09-15",
+    "deezerTrackId": 2441974865
+  },
+  {
+    "id": "fave-2490888761",
+    "title": "FAVELA",
+    "project": "FAVELA",
+    "year": 2023,
+    "releaseDate": "2023-10-12",
+    "deezerTrackId": 2490888761
+  },
+  {
+    "id": "fave-2490888661",
+    "title": "C.F.M.",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888661
+  },
+  {
+    "id": "fave-2490888671",
+    "title": "D'APRES TOI",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888671
+  },
+  {
+    "id": "fave-2490888601",
+    "title": "DERNIERE CHANCE",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888601
+  },
+  {
+    "id": "fave-2490888631",
+    "title": "EN VRAI",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888631
+  },
+  {
+    "id": "fave-2490888691",
+    "title": "ENSEMBLE CROCO",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888691
+  },
+  {
+    "id": "fave-2490888641",
+    "title": "GMAIL",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888641
+  },
+  {
+    "id": "fave-2490888521",
+    "title": "IL LE FALLAIT",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888521
+  },
+  {
+    "id": "fave-2490888551",
+    "title": "INVISIBLE",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888551
+  },
+  {
+    "id": "fave-2490888681",
+    "title": "MEME CHOSE",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888681
+  },
+  {
+    "id": "fave-2490888541",
+    "title": "MOMENTS DE GALERE",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888541
+  },
+  {
+    "id": "fave-2490888561",
+    "title": "NUAGES",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888561
+  },
+  {
+    "id": "fave-2490888621",
+    "title": "SUPER FAVE 3D",
+    "project": "IL LE FALLAIT",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2490888621
+  },
+  {
+    "id": "fave-2544346091",
+    "title": "Encore",
+    "project": "Encore",
+    "year": 2023,
+    "releaseDate": "2023-11-23",
+    "deezerTrackId": 2544346091
+  },
+  {
+    "id": "fave-2557497482",
+    "title": "Pas les mots",
+    "project": "Pas les mots",
+    "year": 2023,
+    "releaseDate": "2023-12-05",
+    "deezerTrackId": 2557497482
+  },
+  {
+    "id": "fave-2682904972",
+    "title": "Time",
+    "project": "Time",
+    "year": 2024,
+    "releaseDate": "2024-03-07",
+    "deezerTrackId": 2682904972
+  },
+  {
+    "id": "fave-2827199162",
+    "title": "TOSEINA",
+    "project": "TOSEINA",
+    "year": 2024,
+    "releaseDate": "2024-05-30",
+    "deezerTrackId": 2827199162
+  },
+  {
+    "id": "fave-2820075132",
+    "title": "NO LACK",
+    "project": "IL LE FALLAIT",
+    "year": 2024,
+    "releaseDate": "2024-05-31",
+    "deezerTrackId": 2820075132
+  },
+  {
+    "id": "fave-2820075142",
+    "title": "TEMPS",
+    "project": "IL LE FALLAIT",
+    "year": 2024,
+    "releaseDate": "2024-05-31",
+    "deezerTrackId": 2820075142
+  },
+  {
+    "id": "fave-3164206261",
+    "title": "No stress",
+    "project": "No stress",
+    "year": 2025,
+    "releaseDate": "2025-02-13",
+    "deezerTrackId": 3164206261
+  },
+  {
+    "id": "fave-3252886271",
+    "title": "Saturday",
+    "project": "Saturday",
+    "year": 2025,
+    "releaseDate": "2025-03-06",
+    "deezerTrackId": 3252886271
+  },
+  {
+    "id": "fave-3373522461",
+    "title": "Money Maker",
+    "project": "Money Maker",
+    "year": 2025,
+    "releaseDate": "2025-05-30",
+    "deezerTrackId": 3373522461
+  },
+  {
+    "id": "fave-3491909921",
+    "title": "Freestyle P.P #1",
+    "project": "Freestyle P.P #1",
+    "year": 2025,
+    "releaseDate": "2025-08-04",
+    "deezerTrackId": 3491909921
+  },
+  {
+    "id": "fave-3503158111",
+    "title": "Freestyle P.P #2",
+    "project": "Freestyle P.P #2",
+    "year": 2025,
+    "releaseDate": "2025-08-14",
+    "deezerTrackId": 3503158111
+  },
+  {
+    "id": "fave-3512954221",
+    "title": "Freestyle P.P #3",
+    "project": "Freestyle P.P #3",
+    "year": 2025,
+    "releaseDate": "2025-08-21",
+    "deezerTrackId": 3512954221
+  },
+  {
+    "id": "fave-3527632601",
+    "title": "BPM",
+    "project": "BPM",
+    "year": 2025,
+    "releaseDate": "2025-08-28",
+    "deezerTrackId": 3527632601
+  },
+  {
+    "id": "fave-3559635031",
+    "title": "Mc Laren",
+    "project": "Mc Laren",
+    "year": 2025,
+    "releaseDate": "2025-09-25",
+    "deezerTrackId": 3559635031
+  },
+  {
+    "id": "fave-3590331421",
+    "title": "Le bonheur s'achète",
+    "project": "Le bonheur s'achète",
+    "year": 2025,
+    "releaseDate": "2025-10-09",
+    "deezerTrackId": 3590331421
+  },
+  {
+    "id": "fave-3559635071",
+    "title": "Parle moi",
+    "project": "Parle moi",
+    "year": 2025,
+    "releaseDate": "2025-10-09",
+    "deezerTrackId": 3559635071
+  },
+  {
+    "id": "fave-3590331291",
+    "title": "Tsunami",
+    "project": "Tsunami",
+    "year": 2025,
+    "releaseDate": "2025-10-09",
+    "deezerTrackId": 3590331291
+  },
+  {
+    "id": "fave-3559633851",
+    "title": "5 Etoiles",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633851
+  },
+  {
+    "id": "fave-3559633891",
+    "title": "500K Interlude",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633891
+  },
+  {
+    "id": "fave-3559633941",
+    "title": "Bonbon",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633941
+  },
+  {
+    "id": "fave-3559633881",
+    "title": "Dernière Etoile",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633881
+  },
+  {
+    "id": "fave-3559633841",
+    "title": "Douloureux",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633841
+  },
+  {
+    "id": "fave-3559633801",
+    "title": "Eastpak",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633801
+  },
+  {
+    "id": "fave-3559633901",
+    "title": "Etranger",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633901
+  },
+  {
+    "id": "fave-3559633931",
+    "title": "Jeu",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633931
+  },
+  {
+    "id": "fave-3559633821",
+    "title": "No Plan B",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633821
+  },
+  {
+    "id": "fave-3559633961",
+    "title": "Pleins Phares",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633961
+  },
+  {
+    "id": "fave-3559633921",
+    "title": "Tout Donner",
+    "project": "Pleins Phares",
+    "year": 2025,
+    "releaseDate": "2025-10-10",
+    "deezerTrackId": 3559633921
+  },
+  {
+    "id": "fave-3956937471",
+    "title": "Alabama Barker",
+    "project": "Alabama Barker",
+    "year": 2026,
+    "releaseDate": "2026-04-17",
+    "deezerTrackId": 3956937471
+  },
+  {
+    "id": "fave-3979581611",
+    "title": "Comme Avant",
+    "project": "Comme Avant",
+    "year": 2026,
+    "releaseDate": "2026-04-30",
+    "deezerTrackId": 3979581611
+  },
+  {
+    "id": "fave-4004820591",
+    "title": "C'est Mort",
+    "project": "C'est Mort",
+    "year": 2026,
+    "releaseDate": "2026-05-13",
+    "deezerTrackId": 4004820591
+  },
+  {
+    "id": "fave-4013699201",
+    "title": "15 Plis",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699201
+  },
+  {
+    "id": "fave-4013699251",
+    "title": "Amber Rose",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699251
+  },
+  {
+    "id": "fave-4013699231",
+    "title": "Drogué, Jeune & Riche",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699231
+  },
+  {
+    "id": "fave-4013699291",
+    "title": "Lemon Haze",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699291
+  },
+  {
+    "id": "fave-4013699261",
+    "title": "Naomi",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699261
+  },
+  {
+    "id": "fave-4013699241",
+    "title": "Naufragé",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699241
+  },
+  {
+    "id": "fave-4013699211",
+    "title": "Ocean Drive",
+    "project": "Pleins Phares, pt. 2",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013699211
+  }
+]

@@ -14,5 +14,13 @@
     "mark": "MS",
     "image": "assets/artists/menace-santana.png",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "fave",
+    "name": "Favé",
+    "catalog": "fave.json",
+    "mark": "F",
+    "image": "assets/artists/fave.jpg",
+    "description": "Discographie Deezer"
   }
 ]
