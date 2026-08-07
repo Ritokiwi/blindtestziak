@@ -27,7 +27,7 @@ let firestoreDb = null;
 let accountBest = { solo: 0, challenge: 0 };
 let leaderboardField = 'challengeRecord';
 let accountBestReady = Promise.resolve();
-const DEFAULT_VOLUME = 0.8;
+const DEFAULT_VOLUME = 1;
 
 const firebaseConfig = {
   apiKey: "AIzaSyBP0wsYbCndSRTPU7kLQX8SDzYKUL-PFrc",
@@ -51,7 +51,9 @@ function statsKey() { return `ziak-blindtest-stats-${storageUid()}`; }
 function getBest(mode) { return Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0); }
 function refreshBest() { ui.best.textContent = Math.max(getBest('solo'), getBest('challenge')); }
 function getVolume() {
-  const saved = Number(localStorage.getItem('ziak-blindtest-volume'));
+  const raw = localStorage.getItem('ziak-blindtest-volume');
+  if (raw === null || raw === '') return DEFAULT_VOLUME;
+  const saved = Number(raw);
   return Number.isFinite(saved) ? Math.min(1, Math.max(0, saved)) : DEFAULT_VOLUME;
 }
 function setVolume(value) {
