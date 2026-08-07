@@ -273,7 +273,10 @@ function updateArtistBrand(artist) {
 }
 function renderArtists() {
   if (!ui.artists) return;
-  ui.artists.innerHTML = artists.map((artist, index) => `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><span class="mode-number">CAT. ${String(index + 1).padStart(2, '0')}</span><span class="artist-card-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong><small>${escapeHtml(artist.description || 'Catalogue musical')}</small></button>`).join('');
+  ui.artists.innerHTML = artists.map((artist, index) => {
+    const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" /></span>` : '';
+    return `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><span class="mode-number">CAT. ${String(index + 1).padStart(2, '0')}</span>${photo}<span class="artist-card-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong><small>${escapeHtml(artist.description || 'Catalogue musical')}</small></button>`;
+  }).join('');
   ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
 }
 async function selectArtist(artistId) {

@@ -4,6 +4,7 @@
     "name": "Ziak",
     "catalog": "songs.json",
     "mark": "Z",
+    "image": "assets/artists/ziak.png",
     "description": "Discographie complète"
   },
   {
@@ -11,6 +12,7 @@
     "name": "Menace Santana",
     "catalog": "menace-santana.json",
     "mark": "MS",
+    "image": "assets/artists/menace-santana.png",
     "description": "Discographie Deezer"
   }
 ]
