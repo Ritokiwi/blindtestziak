@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09090c" />
+    <meta name="description" content="Blind Test Ziak — devinez les morceaux à partir de vos extraits autorisés." />
+    <title>ZIAK // BLIND TEST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Revenir à l'accueil">ZIAK<span>//</span>BT</a>
+        <div class="topbar-actions">
+          <div class="best-score">MEILLEUR <strong id="bestScore">0</strong> PTS</div>
+          <div id="authArea" class="auth-area">
+            <button id="loginButton" class="auth-button" type="button"><span class="google-logo">G</span><span>SE CONNECTER</span><span class="auth-arrow">↗</span></button>
+            <div id="profileArea" class="profile-area" hidden>
+              <div class="profile-avatar"><img id="profilePhoto" alt="" /><i></i></div>
+              <div class="profile-copy"><strong id="profileName"></strong><small>COMPTE GOOGLE</small></div>
+              <button id="logoutButton" class="logout-button" type="button" aria-label="Se déconnecter">↪</button>
+            </div>
+            <p id="authMessage" class="auth-message" role="status"></p>
+          </div>
+        </div>
+      </header>
+
+      <section id="setupScreen" class="screen setup-screen">
+        <p class="eyebrow">DÉDIÉ À ZIAK</p>
+        <h1>BLIND<br /><span>TEST</span></h1>
+        <p class="intro">Lance l'extrait. Reconnais le morceau. Frappe fort au score.</p>
+
+        <div class="mode-grid" role="group" aria-label="Choisir un mode de jeu">
+          <button class="mode-card selected" data-mode="solo" type="button">
+            <span class="mode-number">01</span>
+            <span class="mode-title">SOLO</span>
+            <span class="mode-description">Choisis ton nombre de manches.</span>
+          </button>
+          <button class="mode-card" data-mode="challenge" type="button">
+            <span class="mode-number">02</span>
+            <span class="mode-title">DÉFI</span>
+            <span class="mode-description">Enchaîne un max de titres en 90 s.</span>
+          </button>
+        </div>
+
+        <div id="roundPicker" class="round-picker" aria-label="Nombre de manches">
+          <span>MANCHES</span>
+          <div>
+            <button class="round-option" data-rounds="5" type="button">05</button>
+            <button class="round-option selected" data-rounds="10" type="button">10</button>
+            <button class="round-option" data-rounds="20" type="button">20</button>
+          </div>
+        </div>
+
+        <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
+        <p id="catalogStatus" class="catalog-status" role="status"></p>
+        <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
+        <section id="leaderboardPanel" class="leaderboard-panel" hidden>
+          <div class="leaderboard-heading"><div><p class="eyebrow">CLASSEMENT · DÉFI</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
+          <div class="leaderboard-tabs" role="tablist" aria-label="Catégorie du classement">
+            <button class="leaderboard-tab selected" data-leaderboard="challengeRecord" role="tab" type="button">RECORD</button>
+            <button class="leaderboard-tab" data-leaderboard="challengeCorrect" role="tab" type="button">RÉPONSES</button>
+            <button class="leaderboard-tab" data-leaderboard="challengeTime" role="tab" type="button">TEMPS</button>
+          </div>
+          <p id="leaderboardStatus" class="leaderboard-status" role="status">Connecte-toi pour voir le classement.</p>
+          <ol id="leaderboardList" class="leaderboard-list"></ol>
+        </section>
+        <p class="legal-note">Ajoutez uniquement des extraits audio que vous êtes autorisé à utiliser dans <code>assets/audio</code>.</p>
+      </section>
+
+      <section id="gameScreen" class="screen game-screen hidden" aria-live="polite">
+        <div class="game-meta">
+          <span id="roundLabel">MANCHE 01 / 10</span>
+          <span id="scoreLabel">SCORE <strong>0</strong></span>
+        </div>
+        <div class="timer-wrap">
+          <div class="timer-line"><i id="timerProgress"></i></div>
+          <span id="timerText">25.0 S</span>
+        </div>
+
+        <div class="player-panel">
+          <div class="record-mark">Z</div>
+          <div class="waveform" id="waveform" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div id="trackReveal" class="track-reveal" hidden>
+            <img id="revealCover" alt="" />
+            <div class="reveal-copy">
+              <span id="revealType"></span>
+              <h3 id="revealTitle"></h3>
+              <p id="revealMeta"></p>
+            </div>
+          </div>
+          <button id="playButton" class="play-button" type="button" aria-label="Lire l'extrait"><span></span></button>
+          <p id="playerState">EXTRAIT PRÊT</p>
+          <a id="soundcloudCredit" class="soundcloud-credit hidden" href="#" target="_blank" rel="noopener noreferrer">SOURCE : SOUNDCLOUD ↗</a>
+          <iframe id="soundcloudPlayer" class="soundcloud-player" title="Lecteur SoundCloud" allow="autoplay" hidden></iframe>
+        </div>
+
+        <div class="guess-area">
+          <p id="hintText" class="hint-text">_ _ _ _ _ _ _</p>
+          <label class="sr-only" for="guessInput">Votre réponse</label>
+          <input id="guessInput" type="text" autocomplete="off" placeholder="NOM DU MORCEAU" />
+          <p id="feedback" class="feedback" role="status"></p>
+          <button id="validateButton" class="primary-button compact" type="button">VALIDER <span>↵</span></button>
+        </div>
+
+        <div class="game-actions">
+          <button id="hintButton" class="secondary-button" type="button">INDICE <span id="hintCount">×3</span></button>
+          <button id="skipButton" class="text-button" type="button">PASSER →</button>
+        </div>
+      </section>
+
+      <section id="resultScreen" class="screen result-screen hidden">
+        <p class="eyebrow">PARTIE TERMINÉE</p>
+        <h2>RÉSULTAT<br /><span id="resultMode">SOLO</span></h2>
+        <div class="result-score"><strong id="finalScore">0</strong><span>POINTS</span></div>
+        <div class="stat-grid">
+          <div><span>MEILLEUR TEMPS</span><strong id="bestTime">—</strong></div>
+          <div><span>BONNES RÉPONSES</span><strong id="correctCount">0</strong></div>
+          <div><span>RECORD</span><strong id="recordScore">0</strong></div>
+        </div>
+        <div class="played-list-wrap">
+          <h3>MORCEAUX JOUÉS</h3>
+          <ul id="playedList" class="played-list"></ul>
+        </div>
+        <button id="restartButton" class="primary-button" type="button">REJOUER <span>↻</span></button>
+        <button id="homeButton" class="text-button home-button" type="button">← ACCUEIL</button>
+      </section>
+    </main>
+    <audio id="audioPlayer" preload="auto"></audio>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
