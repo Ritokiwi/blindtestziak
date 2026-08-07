@@ -45,3 +45,7 @@ button { cursor: pointer; }
   .setup-screen.ranked-selected #startButton { margin-left: 0; margin-top: 24px; }
   .setup-screen.ranked-selected #leaderboardButton { margin-left: 0; margin-top: 18px; }
 }
+.site-footer { width: min(100%, 920px); margin: 34px auto 0; padding-top: 18px; display: flex; justify-content: flex-end; border-top: 1px solid rgba(246,244,239,.1); position: relative; z-index: 1; }
+.site-footer img { width: 42px; height: 42px; object-fit: contain; opacity: .8; mix-blend-mode: screen; filter: grayscale(1) contrast(1.15); transition: opacity .2s ease, transform .2s ease; }
+.site-footer img:hover { opacity: 1; transform: translateY(-2px); }
+@media (max-width: 550px) { .site-footer { margin-top: 28px; justify-content: center; } }
