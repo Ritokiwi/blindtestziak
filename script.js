@@ -309,7 +309,7 @@ async function loadSongs() {
     if (!response.ok) throw new Error();
     const data = await response.json();
     if (selectedArtist?.id !== loadingArtistId) return;
-    songs = Array.isArray(data) ? data.filter(song => song && song.title && (song.audio || song.soundcloudUrl || song.deezerTrackId)) : [];
+    songs = Array.isArray(data) ? data.filter(song => song && song.title && normalise(song.title) && (song.audio || song.soundcloudUrl || song.deezerTrackId)) : [];
     if (songs.length) {
       if (ui.catalog) ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} ${artist.name} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
       ui.start.disabled = false;

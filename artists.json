@@ -5,5 +5,12 @@
     "catalog": "songs.json",
     "mark": "Z",
     "description": "Discographie complète"
+  },
+  {
+    "id": "menace-santana",
+    "name": "Menace Santana",
+    "catalog": "menace-santana.json",
+    "mark": "MS",
+    "description": "Discographie Deezer"
   }
 ]
