@@ -10,6 +10,7 @@ const SPEED_PRESETS = {
   classic: { key: 'classic', label: 'CLASSIQUE', listen: null, answer: ROUND_SECONDS },
   fast: { key: 'fast', label: 'RAPIDE', listen: 5, answer: 10 },
   intense: { key: 'intense', label: 'INTENSE', listen: 10, answer: 10 },
+  expert: { key: 'expert', label: 'EXPERT', listen: 1, answer: null, scoreBudget: 5, allowReplay: true },
   ultra: { key: 'ultra', label: 'ULTRA', listen: 1, answer: 5 }
 };
 const previewCache = new Map();
@@ -368,7 +369,7 @@ function nextRound() {
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
   state.timerStarted = false; state.trackReady = false; state.phase = 'listen'; state.scoreBudgetSeconds = 0;
   ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
-  ui.play.disabled = Boolean(state.speed?.listen);
+  ui.play.disabled = Boolean(state.speed?.listen) && !state.speed?.allowReplay;
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
   ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
@@ -396,11 +397,21 @@ function beginListenPhase() {
 }
 function beginAnswerPhase() {
   state.phase = 'answer';
-  state.scoreBudgetSeconds = state.speed.answer;
+  state.scoreBudgetSeconds = state.speed.answer ?? state.speed.scoreBudget ?? ROUND_SECONDS;
   state.startedAt = performance.now();
   clearInterval(state.timerId);
-  state.timerId = setInterval(() => updatePhaseTimer('answer'), 50);
-  updatePhaseTimer('answer');
+  if (state.speed.answer == null) {
+    state.timerId = setInterval(updateUnlimitedTimer, 100);
+    updateUnlimitedTimer();
+  } else {
+    state.timerId = setInterval(() => updatePhaseTimer('answer'), 50);
+    updatePhaseTimer('answer');
+  }
+}
+function updateUnlimitedTimer() {
+  const elapsed = (performance.now() - state.startedAt) / 1000;
+  ui.timer.style.transform = 'scaleX(1)';
+  ui.timerText.textContent = `${elapsed.toFixed(1)} S`;
 }
 function updatePhaseTimer(phase) {
   const now = performance.now();
@@ -583,7 +594,7 @@ function toggleAudio() {
     if (!state.deezerPreviewUrl) { ui.playerState.textContent = 'EXTRAIT EN CHARGEMENT'; return; }
     if (ui.audio.paused) {
       ui.audio.play().catch(() => { ui.playerState.textContent = 'LECTURE BLOQUÉE'; });
-      clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, 20000);
+      clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, (state.speed?.allowReplay ? state.speed.listen * 1000 : 20000));
     } else stopPlayback();
     return;
   }
