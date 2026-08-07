@@ -47,7 +47,8 @@ const ui = {
   input: $('#guessInput'), validate: $('#validateButton'), feedback: $('#feedback'),
   hint: $('#hintButton'), hintCount: $('#hintCount'), hintText: $('#hintText'), skip: $('#skipButton'),
   finalScore: $('#finalScore'), resultMode: $('#resultMode'), bestTime: $('#bestTime'),
-  correct: $('#correctCount'), record: $('#recordScore'), played: $('#playedList'), restart: $('#restartButton'), home: $('#homeButton')
+  correct: $('#correctCount'), record: $('#recordScore'), played: $('#playedList'), restart: $('#restartButton'), home: $('#homeButton'),
+  statsButton: $('#statsButton'), statsOverlay: $('#statsOverlay'), statsClose: $('#statsClose'), statsStatus: $('#statsStatus'), statsList: $('#statsList')
 };
 
 let songs = [];
@@ -300,6 +301,40 @@ async function loadLeaderboard(field = 'challengeRecord') {
     ui.leaderboardStatus.textContent = `${rows.length} joueur${rows.length > 1 ? 's' : ''} classé${rows.length > 1 ? 's' : ''}`;
     ui.leaderboardList.innerHTML = rows.map((user, index) => `<li><span class="leader-rank">${String(index + 1).padStart(2, '0')}</span><span class="leader-user"><img src="${escapeHtml(user.photoURL || '')}" alt="" /><strong>${escapeHtml(user.displayName || user.email || 'Joueur')}</strong></span><span class="leader-value">${leaderboardLabel(field, user[field])}</span></li>`).join('');
   } catch { renderLocalLeaderboard(field, 'Firestore indisponible — publie les règles et vérifie la base Firestore.'); }
+}
+async function loadUserStats() {
+  if (!ui.statsList) return;
+  if (!currentUser) { ui.statsStatus.textContent = 'Connecte-toi avec Google pour voir tes stats.'; ui.statsList.innerHTML = ''; return; }
+  ui.statsStatus.textContent = 'Chargement…'; ui.statsList.innerHTML = '';
+  try {
+    const snapshot = await withTimeout(firestoreDb.collection('users').doc(currentUser.uid).get());
+    const profile = snapshot.exists ? snapshot.data() : {};
+    const rosterList = artists.length ? artists : [{ id: 'ziak', name: 'Ziak', mark: 'Z' }];
+    const rows = rosterList.map(artist => {
+      const stats = profile.artistStats?.[artist.id] || (artist.id === 'ziak' ? profile : {});
+      const bestSolo = Number(stats.bestSolo) || 0;
+      const bestChallenge = Number(stats.bestChallenge) || 0;
+      const totalGames = Number(stats.totalGames) || 0;
+      const totalCorrect = Number(stats.totalCorrect) || 0;
+      const challengeTime = Number(stats.challengeTime) || 0;
+      const rank = bestChallenge > 0 ? getRank(bestChallenge) : '—';
+      return `<li class="stats-row">
+        <div class="stats-artist"><span class="stats-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong></div>
+        <div class="stats-grid-mini">
+          <div><span>MEILLEUR SOLO</span><strong>${bestSolo}</strong></div>
+          <div><span>MEILLEUR RANKED</span><strong>${bestChallenge}</strong></div>
+          <div><span>RANG</span><strong>${rank}</strong></div>
+          <div><span>PARTIES JOUÉES</span><strong>${totalGames}</strong></div>
+          <div><span>BONNES RÉPONSES</span><strong>${totalCorrect}</strong></div>
+          <div><span>MEILLEUR TEMPS</span><strong>${challengeTime ? challengeTime.toFixed(1) + ' S' : '—'}</strong></div>
+        </div>
+      </li>`;
+    }).join('');
+    ui.statsList.innerHTML = rows;
+    ui.statsStatus.textContent = '';
+  } catch {
+    ui.statsStatus.textContent = 'Impossible de charger tes stats — vérifie ta connexion.';
+  }
 }
 function show(screen) { [ui.setup, ui.game, ui.result].forEach(item => item.classList.toggle('hidden', item !== screen)); }
 function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
@@ -719,6 +754,9 @@ ui.home.addEventListener('click', async () => {
 ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidden = !ui.leaderboardPanel.hidden; if (!ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField); });
 ui.leaderboardClose.addEventListener('click', () => { ui.leaderboardPanel.hidden = true; });
 ui.leaderboardTabs.forEach(tab => tab.addEventListener('click', () => { leaderboardField = tab.dataset.leaderboard; ui.leaderboardTabs.forEach(item => item.classList.toggle('selected', item === tab)); loadLeaderboard(leaderboardField); }));
+if (ui.statsButton) ui.statsButton.addEventListener('click', () => { ui.statsOverlay.hidden = false; loadUserStats(); });
+if (ui.statsClose) ui.statsClose.addEventListener('click', () => { ui.statsOverlay.hidden = true; });
+if (ui.statsOverlay) ui.statsOverlay.addEventListener('click', event => { if (event.target === ui.statsOverlay) ui.statsOverlay.hidden = true; });
 
 setVolume(getVolume()); refreshBest(); loadArtists();
 

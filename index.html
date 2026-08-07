@@ -22,12 +22,24 @@
             <div id="profileArea" class="profile-area" hidden>
               <div class="profile-avatar"><img id="profilePhoto" alt="" /><i></i></div>
               <div class="profile-copy"><strong id="profileName"></strong><small>COMPTE GOOGLE</small></div>
+              <button id="statsButton" class="stats-button" type="button" aria-label="Voir mes statistiques">▤</button>
               <button id="logoutButton" class="logout-button" type="button" aria-label="Se déconnecter">↪</button>
             </div>
             <p id="authMessage" class="auth-message" role="status"></p>
           </div>
         </div>
       </header>
+
+      <div id="statsOverlay" class="stats-overlay" hidden>
+        <section class="stats-panel" aria-labelledby="statsHeading">
+          <div class="stats-heading">
+            <div><p class="eyebrow">MON COMPTE</p><h3 id="statsHeading">MES STATS</h3></div>
+            <button id="statsClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button>
+          </div>
+          <p id="statsStatus" class="leaderboard-status" role="status"></p>
+          <ul id="statsList" class="stats-list"></ul>
+        </section>
+      </div>
 
       <section id="setupScreen" class="screen setup-screen">
         <p class="eyebrow">CHOISIS TON ARTISTE</p>
