@@ -470,6 +470,7 @@ function beginAnswerPhase() {
   state.phase = 'answer';
   state.scoreBudgetSeconds = state.speed.answer ?? state.speed.scoreBudget ?? ROUND_SECONDS;
   state.startedAt = performance.now();
+  if (!state.speed.allowReplay) ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE';
   clearInterval(state.timerId);
   if (state.speed.answer == null) {
     state.timerId = setInterval(updateUnlimitedTimer, 100);
@@ -489,7 +490,7 @@ function updatePhaseTimer(phase) {
   const durationMs = (phase === 'listen' ? state.speed.listen : state.speed.answer) * 1000;
   const left = Math.max(0, durationMs - (now - state.startedAt));
   ui.timer.style.transform = `scaleX(${left / durationMs})`;
-  ui.timerText.textContent = `${phase === 'listen' ? 'ÉCOUTE ' : ''}${(left / 1000).toFixed(1)} S`;
+  ui.timerText.textContent = phase === 'listen' ? `ÉCOUTE ${(left / 1000).toFixed(1)} S` : `TU AS ${(left / 1000).toFixed(1)} S POUR TROUVER !`;
   if (left <= 0) {
     clearInterval(state.timerId);
     if (phase === 'listen') { stopPlayback(); beginAnswerPhase(); }
@@ -499,7 +500,9 @@ function updatePhaseTimer(phase) {
 function setPlaying(isPlaying) {
   state.isPlaying = isPlaying;
   ui.play.classList.toggle('is-playing', isPlaying); ui.waveform.classList.toggle('playing', isPlaying);
-  if (!state.roundResolved) ui.playerState.textContent = isPlaying ? 'LECTURE EN COURS' : 'EXTRAIT EN PAUSE';
+  if (state.roundResolved) return;
+  if (!isPlaying && state.phase === 'answer' && state.speed?.listen && !state.speed?.allowReplay) { ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE'; return; }
+  ui.playerState.textContent = isPlaying ? 'LECTURE EN COURS' : 'EXTRAIT EN PAUSE';
 }
 function clearClipTimer() { clearTimeout(state.clipTimer); state.clipTimer = null; }
 function sendSoundcloud(method, value) {
