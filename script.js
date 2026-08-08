@@ -810,7 +810,9 @@ function handleGuessInput() {
   if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return; }
   if (guess.length >= normalisedTitle.length) {
     ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
-    ui.input.value = '';
+    const prefixEnd = freestylePrefixEnd(title);
+    ui.input.value = prefixEnd !== null ? title.slice(0, prefixEnd) : '';
+    ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length);
   }
 }
 function resolveRound(correct, message = '', options = {}) {
