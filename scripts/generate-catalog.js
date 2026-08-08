@@ -30,6 +30,15 @@ async function fetchJson(url, retries = 4) {
 // Titres à écarter : pas de vraies chansons distinctes pour un blind test.
 const EXCLUDE_TITLE_RE = /\b(remix|instrumental|acapella|karaok\w*|live)\b/i;
 
+// Retire les suffixes "(feat. X)" et les annotations de session Deezer
+// ("(Enregistré à Paris)") pour ne garder que le titre devinable.
+function cleanTitle(title) {
+  return title
+    .replace(/\s*[\(\[](?:feat\.?|ft\.?|featuring)\s+[^)\]]*[\)\]]/gi, '')
+    .replace(/\s*[\(\[]enregistr[ée]e?\s+[àa]\s+[^)\]]*[\)\]]/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 function normaliseTitle(title) {
   return title
     .toLowerCase()
@@ -95,7 +104,7 @@ async function generateCatalog(slug, artistId, log = console.log) {
       const year = releaseDate ? Number(releaseDate.slice(0, 4)) : null;
       const entry = {
         id: `${slug}-${track.id}`,
-        title: track.title,
+        title: cleanTitle(track.title),
         project: album.title,
         year,
         releaseDate,
@@ -140,7 +149,7 @@ async function fetchArtistImage(artist, slug) {
   throw lastError || new Error('Aucune image disponible');
 }
 
-module.exports = { generateCatalog, fetchArtistImage, fetchArtist, fetchJson, normaliseTitle };
+module.exports = { generateCatalog, fetchArtistImage, fetchArtist, fetchJson, normaliseTitle, cleanTitle };
 
 if (require.main === module) {
   const [slug, artistIdRaw] = process.argv.slice(2);

@@ -1,10 +1,367 @@
 [
   {
-    "title": "Capitale risque",
-    "project": "Essonne History X",
-    "year": 2025,
-    "releaseDate": "2025-06-30",
-    "deezerTrackId": 3427277991
+    "title": "Ronaldo",
+    "project": "Ronaldo",
+    "year": 2020,
+    "releaseDate": "2020-05-14",
+    "deezerTrackId": 949591922
+  },
+  {
+    "title": "Quatre",
+    "project": "Quatre",
+    "year": 2020,
+    "releaseDate": "2020-06-26",
+    "deezerTrackId": 993018082
+  },
+  {
+    "title": "C'est la vie",
+    "project": "C'est la vie",
+    "year": 2020,
+    "releaseDate": "2020-07-31",
+    "deezerTrackId": 1025244822
+  },
+  {
+    "title": "LG",
+    "project": "LG",
+    "year": 2020,
+    "releaseDate": "2020-10-09",
+    "deezerTrackId": 1089649982
+  },
+  {
+    "title": "Raspoutine",
+    "project": "Raspoutine",
+    "year": 2020,
+    "releaseDate": "2020-10-21",
+    "deezerTrackId": 1115056402
+  },
+  {
+    "title": "1 2 3 Soleil",
+    "project": "1 2 3 Soleil",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1166502152
+  },
+  {
+    "title": "Flocko",
+    "project": "Flocko",
+    "year": 2021,
+    "releaseDate": "2021-02-17",
+    "deezerTrackId": 1232199742
+  },
+  {
+    "title": "Double Dash",
+    "project": "Double Dash",
+    "year": 2021,
+    "releaseDate": "2021-03-12",
+    "deezerTrackId": 1262735312
+  },
+  {
+    "title": "Galerie",
+    "project": "Galerie",
+    "year": 2021,
+    "releaseDate": "2021-05-19",
+    "deezerTrackId": 1374406322
+  },
+  {
+    "title": "S.P.S",
+    "project": "S.P.S",
+    "year": 2021,
+    "releaseDate": "2021-07-15",
+    "deezerTrackId": 1429125072
+  },
+  {
+    "title": "Fixette",
+    "project": "Fixette",
+    "year": 2021,
+    "releaseDate": "2021-10-08",
+    "deezerTrackId": 1515818532
+  },
+  {
+    "title": "Brownie",
+    "project": "Brownie",
+    "year": 2021,
+    "releaseDate": "2021-10-08",
+    "deezerTrackId": 1518418722
+  },
+  {
+    "title": "Ca suffit",
+    "project": "Ca suffit",
+    "year": 2021,
+    "releaseDate": "2021-10-21",
+    "deezerTrackId": 1524843062
+  },
+  {
+    "title": "Akimbo",
+    "project": "Akimbo",
+    "year": 2021,
+    "releaseDate": "2021-10-28",
+    "deezerTrackId": 1532816922
+  },
+  {
+    "title": "Rhum & machette",
+    "project": "Rhum & machette",
+    "year": 2021,
+    "releaseDate": "2021-11-09",
+    "deezerTrackId": 1545828192
+  },
+  {
+    "title": "La zalousie (Interlude)",
+    "project": "Akimbo",
+    "year": 2021,
+    "releaseDate": "2021-11-11",
+    "deezerTrackId": 1547202572
+  },
+  {
+    "title": "Dans les règles",
+    "project": "Dans les règles",
+    "year": 2022,
+    "releaseDate": "2022-03-28",
+    "deezerTrackId": 1696395917
+  },
+  {
+    "title": "Parasite",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927697
+  },
+  {
+    "title": "La zalousie",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927707
+  },
+  {
+    "title": "Espace",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927737
+  },
+  {
+    "title": "Vrai / Faux",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927747
+  },
+  {
+    "title": "Gros lot",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927757
+  },
+  {
+    "title": "Shonen",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927777
+  },
+  {
+    "title": "Badman Trip",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927797
+  },
+  {
+    "title": "Coffre",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927807
+  },
+  {
+    "title": "Lloret de Mar",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927817
+  },
+  {
+    "title": "Lauiss",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927827
+  },
+  {
+    "title": "Le pacte",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927837
+  },
+  {
+    "title": "Prière",
+    "project": "Akimbo",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1749927847
+  },
+  {
+    "title": "You Know",
+    "project": "You Know",
+    "year": 2022,
+    "releaseDate": "2022-05-12",
+    "deezerTrackId": 1745175767
+  },
+  {
+    "title": "Peur",
+    "project": "Peur (feat. Ziak)",
+    "year": 2022,
+    "releaseDate": "2022-09-23",
+    "deezerTrackId": 1900208177
+  },
+  {
+    "title": "Talent",
+    "project": "Talent",
+    "year": 2022,
+    "releaseDate": "2022-10-21",
+    "deezerTrackId": 1963619057
+  },
+  {
+    "title": "Même pas un grincement",
+    "project": "Même pas un grincement",
+    "year": 2023,
+    "releaseDate": "2023-01-19",
+    "deezerTrackId": 2110027137
+  },
+  {
+    "title": "Chrome",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-02-21",
+    "deezerTrackId": 2154615957
+  },
+  {
+    "title": "Pistol & Zamal",
+    "project": "Pistol & Zamal",
+    "year": 2023,
+    "releaseDate": "2023-03-21",
+    "deezerTrackId": 2195850387
+  },
+  {
+    "title": "Halla",
+    "project": "Halla",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2290982135
+  },
+  {
+    "title": "Cette vie",
+    "project": "Cette vie",
+    "year": 2023,
+    "releaseDate": "2023-07-27",
+    "deezerTrackId": 2376675135
+  },
+  {
+    "title": "Démonstration",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249201
+  },
+  {
+    "title": "Tomb Raider",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249221
+  },
+  {
+    "title": "Op Ganté",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249241
+  },
+  {
+    "title": "Seinen",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249251
+  },
+  {
+    "title": "Ambiance vandale",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249261
+  },
+  {
+    "title": "Pourquoi",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249271
+  },
+  {
+    "title": "Le crime parfait",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249281
+  },
+  {
+    "title": "Mauvais jour",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249291
+  },
+  {
+    "title": "La plage",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249301
+  },
+  {
+    "title": "Pour une fois",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249311
+  },
+  {
+    "title": "Rappel des faits",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249321
+  },
+  {
+    "title": "Désolé",
+    "project": "Chrome",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249331
+  },
+  {
+    "title": "Vautours",
+    "project": "Vautours",
+    "year": 2023,
+    "releaseDate": "2023-10-05",
+    "deezerTrackId": 2477249181
+  },
+  {
+    "title": "T'aimerais",
+    "project": "T'aimerais (feat. Ziak)",
+    "year": 2023,
+    "releaseDate": "2023-12-15",
+    "deezerTrackId": 2574529452
+  },
+  {
+    "title": "Mauvaise mine",
+    "project": "Mauvaise mine",
+    "year": 2024,
+    "releaseDate": "2024-05-30",
+    "deezerTrackId": 2820151832
   },
   {
     "title": "Grabba",
@@ -12,6 +369,90 @@
     "year": 2025,
     "releaseDate": "2025-01-02",
     "deezerTrackId": 3167003961
+  },
+  {
+    "title": "Chassé-croisé",
+    "project": "Essonne History X",
+    "year": 2025,
+    "releaseDate": "2025-01-02",
+    "deezerTrackId": 3167003971
+  },
+  {
+    "title": "Habibi",
+    "project": "Habibi (feat. Ziak)",
+    "year": 2025,
+    "releaseDate": "2025-02-03",
+    "deezerTrackId": 3214870751
+  },
+  {
+    "title": "Manuel de vengeance",
+    "project": "Manuel de vengeance",
+    "year": 2025,
+    "releaseDate": "2025-05-12",
+    "deezerTrackId": 3354660891
+  },
+  {
+    "title": "Manuel de vengeance (Bonus)",
+    "project": "Essonne History X",
+    "year": 2025,
+    "releaseDate": "2025-05-12",
+    "deezerTrackId": 3356036381
+  },
+  {
+    "title": "Maudit Land",
+    "project": "Maudit Land",
+    "year": 2025,
+    "releaseDate": "2025-05-19",
+    "deezerTrackId": 3363379421
+  },
+  {
+    "title": "Rupture",
+    "project": "Rupture",
+    "year": 2025,
+    "releaseDate": "2025-05-26",
+    "deezerTrackId": 3374178851
+  },
+  {
+    "title": "Bad Bad",
+    "project": "Bad Bad",
+    "year": 2025,
+    "releaseDate": "2025-06-02",
+    "deezerTrackId": 3385136161
+  },
+  {
+    "title": "La tombe de Marley",
+    "project": "La tombe de Marley",
+    "year": 2025,
+    "releaseDate": "2025-06-09",
+    "deezerTrackId": 3395854561
+  },
+  {
+    "title": "La tombe de Marley (Bonus)",
+    "project": "Essonne History X",
+    "year": 2025,
+    "releaseDate": "2025-06-09",
+    "deezerTrackId": 3399660521
+  },
+  {
+    "title": "Sac à main",
+    "project": "Sac à main",
+    "year": 2025,
+    "releaseDate": "2025-06-16",
+    "deezerTrackId": 3407365961
+  },
+  {
+    "title": "J'suis en pétard",
+    "project": "J'suis en pétard",
+    "year": 2025,
+    "releaseDate": "2025-06-23",
+    "deezerTrackId": 3417283821
+  },
+  {
+    "title": "Capitale risque",
+    "project": "Essonne History X",
+    "year": 2025,
+    "releaseDate": "2025-06-30",
+    "deezerTrackId": 3427277991
   },
   {
     "title": "IOS",
@@ -98,13 +539,6 @@
     "deezerTrackId": 3427278121
   },
   {
-    "title": "Chassé-croisé",
-    "project": "Essonne History X",
-    "year": 2025,
-    "releaseDate": "2025-01-02",
-    "deezerTrackId": 3167003971
-  },
-  {
     "title": "Story",
     "project": "Essonne History X",
     "year": 2025,
@@ -119,55 +553,6 @@
     "deezerTrackId": 3427278151
   },
   {
-    "title": "Manuel de vengeance",
-    "project": "Manuel de vengeance",
-    "year": 2025,
-    "releaseDate": "2025-05-12",
-    "deezerTrackId": 3354660891
-  },
-  {
-    "title": "Maudit Land",
-    "project": "Maudit Land",
-    "year": 2025,
-    "releaseDate": "2025-05-19",
-    "deezerTrackId": 3363379421
-  },
-  {
-    "title": "Rupture",
-    "project": "Rupture",
-    "year": 2025,
-    "releaseDate": "2025-05-26",
-    "deezerTrackId": 3374178851
-  },
-  {
-    "title": "Bad Bad",
-    "project": "Bad Bad",
-    "year": 2025,
-    "releaseDate": "2025-06-02",
-    "deezerTrackId": 3385136161
-  },
-  {
-    "title": "La tombe de Marley",
-    "project": "La tombe de Marley",
-    "year": 2025,
-    "releaseDate": "2025-06-09",
-    "deezerTrackId": 3395854561
-  },
-  {
-    "title": "Sac à main",
-    "project": "Sac à main",
-    "year": 2025,
-    "releaseDate": "2025-06-16",
-    "deezerTrackId": 3407365961
-  },
-  {
-    "title": "J'suis en pétard",
-    "project": "J'suis en pétard",
-    "year": 2025,
-    "releaseDate": "2025-06-23",
-    "deezerTrackId": 3417283821
-  },
-  {
     "title": "Fin d'une ère",
     "project": "Fin d'une ère",
     "year": 2025,
@@ -175,284 +560,11 @@
     "deezerTrackId": 3427277391
   },
   {
-    "title": "Démonstration",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249201
-  },
-  {
-    "title": "Chrome",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-02-21",
-    "deezerTrackId": 2154615957
-  },
-  {
-    "title": "Tomb Raider",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249221
-  },
-  {
-    "title": "Même pas un grincement",
-    "project": "Même pas un grincement",
-    "year": 2023,
-    "releaseDate": "2023-01-19",
-    "deezerTrackId": 2110027137
-  },
-  {
-    "title": "Op Ganté",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249241
-  },
-  {
-    "title": "Seinen",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249251
-  },
-  {
-    "title": "Ambiance vandale",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249261
-  },
-  {
-    "title": "Pourquoi",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249271
-  },
-  {
-    "title": "Le crime parfait",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249281
-  },
-  {
-    "title": "Mauvais jour",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249291
-  },
-  {
-    "title": "La plage",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249301
-  },
-  {
-    "title": "Pour une fois",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249311
-  },
-  {
-    "title": "Rappel des faits",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249321
-  },
-  {
-    "title": "Désolé",
-    "project": "Chrome",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249331
-  },
-  {
-    "title": "Pistol & Zamal",
-    "project": "Pistol & Zamal",
-    "year": 2023,
-    "releaseDate": "2023-03-21",
-    "deezerTrackId": 2195850387
-  },
-  {
-    "title": "Halla",
-    "project": "Halla",
-    "year": 2023,
-    "releaseDate": "2023-05-26",
-    "deezerTrackId": 2290982135
-  },
-  {
-    "title": "Cette vie",
-    "project": "Cette vie",
-    "year": 2023,
-    "releaseDate": "2023-07-27",
-    "deezerTrackId": 2376675135
-  },
-  {
-    "title": "Vautours",
-    "project": "Vautours",
-    "year": 2023,
-    "releaseDate": "2023-10-05",
-    "deezerTrackId": 2477249181
-  },
-  {
-    "title": "Parasite",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927697
-  },
-  {
-    "title": "La zalousie",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927707
-  },
-  {
-    "title": "Akimbo",
-    "project": "Akimbo",
-    "year": 2021,
-    "releaseDate": "2021-10-28",
-    "deezerTrackId": 1532816922
-  },
-  {
-    "title": "Galerie",
-    "project": "Galerie",
-    "year": 2021,
-    "releaseDate": "2021-05-19",
-    "deezerTrackId": 1374406322
-  },
-  {
-    "title": "Espace",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927737
-  },
-  {
-    "title": "Vrai / Faux",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927747
-  },
-  {
-    "title": "Gros lot",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927757
-  },
-  {
-    "title": "Rhum & machette",
-    "project": "Rhum & machette",
-    "year": 2021,
-    "releaseDate": "2021-11-09",
-    "deezerTrackId": 1545828192
-  },
-  {
-    "title": "Shonen",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927777
-  },
-  {
-    "title": "S.P.S",
-    "project": "S.P.S",
-    "year": 2021,
-    "releaseDate": "2021-07-15",
-    "deezerTrackId": 1429125072
-  },
-  {
-    "title": "Badman Trip",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927797
-  },
-  {
-    "title": "Coffre",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927807
-  },
-  {
-    "title": "Lloret de Mar",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927817
-  },
-  {
-    "title": "Lauiss",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927827
-  },
-  {
-    "title": "Le pacte",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927837
-  },
-  {
-    "title": "Prière",
-    "project": "Akimbo",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1749927847
-  },
-  {
-    "title": "Fixette",
-    "project": "Fixette",
-    "year": 2021,
-    "releaseDate": "2021-10-08",
-    "deezerTrackId": 1515818532
-  },
-  {
-    "title": "Dans les règles",
-    "project": "Dans les règles",
-    "year": 2022,
-    "releaseDate": "2022-03-28",
-    "deezerTrackId": 1696395917
-  },
-  {
-    "title": "You Know",
-    "project": "You Know",
-    "year": 2022,
-    "releaseDate": "2022-05-12",
-    "deezerTrackId": 1745175767
-  },
-  {
-    "title": "FENG SHUI",
-    "project": "FENG SHUI",
-    "year": 2026,
-    "releaseDate": "2026-06-25",
-    "deezerTrackId": 4088157911
-  },
-  {
-    "title": "CATWALK",
-    "project": "CATWALK",
-    "year": 2026,
-    "releaseDate": "2026-05-22",
-    "deezerTrackId": 4001040691
-  },
-  {
-    "title": "EN BELLE",
-    "project": "EN BELLE (feat. Ziak)",
-    "year": 2026,
-    "releaseDate": "2026-04-23",
-    "deezerTrackId": 3949518491
+    "title": "Fin d'une ère (Bonus)",
+    "project": "Essonne History X",
+    "year": 2025,
+    "releaseDate": "2025-06-30",
+    "deezerTrackId": 3427278231
   },
   {
     "title": "Brazil",
@@ -462,101 +574,24 @@
     "deezerTrackId": 3770091832
   },
   {
-    "title": "Habibi",
-    "project": "Habibi (feat. Ziak)",
-    "year": 2025,
-    "releaseDate": "2025-02-03",
-    "deezerTrackId": 3214870751
+    "title": "EN BELLE",
+    "project": "EN BELLE (feat. Ziak)",
+    "year": 2026,
+    "releaseDate": "2026-04-23",
+    "deezerTrackId": 3949518491
   },
   {
-    "title": "Mauvaise mine",
-    "project": "Mauvaise mine",
-    "year": 2024,
-    "releaseDate": "2024-05-30",
-    "deezerTrackId": 2820151832
+    "title": "CATWALK",
+    "project": "CATWALK",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 4001040691
   },
   {
-    "title": "T'aimerais",
-    "project": "T'aimerais (feat. Ziak)",
-    "year": 2023,
-    "releaseDate": "2023-12-15",
-    "deezerTrackId": 2574529452
-  },
-  {
-    "title": "Talent",
-    "project": "Talent",
-    "year": 2022,
-    "releaseDate": "2022-10-21",
-    "deezerTrackId": 1963619057
-  },
-  {
-    "title": "Peur",
-    "project": "Peur (feat. Ziak)",
-    "year": 2022,
-    "releaseDate": "2022-09-23",
-    "deezerTrackId": 1900208177
-  },
-  {
-    "title": "Ca suffit",
-    "project": "Ca suffit",
-    "year": 2021,
-    "releaseDate": "2021-10-21",
-    "deezerTrackId": 1524843062
-  },
-  {
-    "title": "Brownie",
-    "project": "Brownie",
-    "year": 2021,
-    "releaseDate": "2021-10-08",
-    "deezerTrackId": 1518418722
-  },
-  {
-    "title": "Double Dash",
-    "project": "Double Dash",
-    "year": 2021,
-    "releaseDate": "2021-03-12",
-    "deezerTrackId": 1262735312
-  },
-  {
-    "title": "Flocko",
-    "project": "Flocko",
-    "year": 2021,
-    "releaseDate": "2021-02-17",
-    "deezerTrackId": 1232199742
-  },
-  {
-    "title": "1 2 3 Soleil",
-    "project": "1 2 3 Soleil",
-    "year": 2020,
-    "releaseDate": "2020-12-18",
-    "deezerTrackId": 1166502152
-  },
-  {
-    "title": "Raspoutine",
-    "project": "Raspoutine",
-    "year": 2020,
-    "releaseDate": "2020-10-21",
-    "deezerTrackId": 1115056402
-  },
-  {
-    "title": "LG",
-    "project": "LG",
-    "year": 2020,
-    "releaseDate": "2020-10-09",
-    "deezerTrackId": 1089649982
-  },
-  {
-    "title": "C'est la vie",
-    "project": "C'est la vie",
-    "year": 2020,
-    "releaseDate": "2020-07-31",
-    "deezerTrackId": 1025244822
-  },
-  {
-    "title": "Quatre",
-    "project": "Quatre",
-    "year": 2020,
-    "releaseDate": "2020-06-26",
-    "deezerTrackId": 993018082
+    "title": "FENG SHUI",
+    "project": "FENG SHUI",
+    "year": 2026,
+    "releaseDate": "2026-06-25",
+    "deezerTrackId": 4088157911
   }
 ]

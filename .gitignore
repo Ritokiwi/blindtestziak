@@ -1,3 +1,6 @@
 .vercel
 scripts/report.json
 scripts/generate.log
+scripts/completeness-report.json
+scripts/verify.log
+scripts/extra-check.log
