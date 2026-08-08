@@ -505,7 +505,9 @@ function nextRound() {
   if (state.mode === 'solo' && state.played.length >= state.rounds) return endGame();
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
   state.timerStarted = false; state.trackReady = false; state.phase = 'listen'; state.scoreBudgetSeconds = 0;
-  ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
+  const freestylePrefix = freestylePrefixEnd(state.current.title);
+  ui.input.value = freestylePrefix !== null ? state.current.title.slice(0, freestylePrefix) : '';
+  ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
   ui.play.disabled = Boolean(state.speed?.listen) && !state.speed?.allowReplay;
   ui.answerCountdown.hidden = true; ui.waveform.classList.remove('hidden'); ui.playerControls.classList.remove('hidden');
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
@@ -518,7 +520,7 @@ function nextRound() {
   }
   ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
   loadTrack(); prefetchUpcoming();
-  renderHint(); ui.input.focus();
+  renderHint(); ui.input.focus(); ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length);
 }
 function prefetchUpcoming() {
   const upcoming = state.deck[state.deckIndex];
@@ -742,10 +744,8 @@ function freestylePrefixEnd(titleRaw) {
 }
 function renderHint() {
   const title = state.current.title;
-  const revealFromIndex = freestylePrefixEnd(title);
   const display = [...title].map((char, index) => {
     if (char === ' ') return ' / ';
-    if (revealFromIndex !== null && index < revealFromIndex) return char.toUpperCase();
     return state.revealed.has(index) ? char.toUpperCase() : '_';
   }).join(' ');
   ui.hintText.textContent = state.hints === 3 ? `ANNÉE : ${state.current.year}` : display;
@@ -754,9 +754,7 @@ function useHint() {
   if (state.hints >= HINTS_PER_ROUND || state.roundResolved) return;
   state.hints++;
   if (state.hints < 3) {
-    const title = state.current.title;
-    const revealFromIndex = freestylePrefixEnd(title);
-    const candidates = [...title].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && (revealFromIndex === null || index >= revealFromIndex) && !state.revealed.has(index));
+    const candidates = [...state.current.title].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !state.revealed.has(index));
     if (candidates.length) state.revealed.add(candidates[Math.floor(Math.random() * candidates.length)].index);
   }
   ui.hintCount.textContent = `×${HINTS_PER_ROUND - state.hints}`; ui.hint.disabled = state.hints >= HINTS_PER_ROUND; renderHint();
