@@ -105,7 +105,11 @@ function levenshtein(a, b) {
   }
   return prev[b.length];
 }
+function isComplexTitle(titleRaw) {
+  return normalise(titleRaw).length >= 10 || /['’\/]/.test(titleRaw);
+}
 function fuzzyMatch(guessRaw, titleRaw) {
+  if (!isComplexTitle(titleRaw)) return false;
   const guess = normalise(guessRaw);
   const title = normalise(titleRaw);
   if (!guess || !title) return false;
@@ -753,7 +757,7 @@ function resolveRound(correct, message = '', options = {}) {
   const seconds = (performance.now() - state.startedAt) / 1000;
   const budget = state.scoreBudgetSeconds || ROUND_SECONDS;
   let points = correct ? Math.max(100, Math.round((budget - Math.min(seconds, budget)) * 20) - state.hints * 35) : 0;
-  if (correct && (options.outOfOrder || options.fuzzy)) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
+  if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
   if (ui.rankLabel && state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score);
