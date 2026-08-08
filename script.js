@@ -54,6 +54,13 @@ function describeSpeed(preset) {
   return `${preset.listen} s d'écoute forcée, puis ${answerPart}. ${replayPart}`;
 }
 const previewCache = new Map();
+function fetchJsonWithTimeout(url, timeoutMs = 10000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  return fetch(url, { signal: controller.signal })
+    .then(response => { if (!response.ok) throw new Error('Requête indisponible'); return response.json(); })
+    .finally(() => clearTimeout(timeoutId));
+}
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -595,8 +602,7 @@ function prefetchDeezerTrack(id) {
   const key = String(id);
   if (!key || previewCache.has(key)) return;
   previewCache.set(key, null);
-  fetch(`/api/deezer-track?id=${encodeURIComponent(key)}`)
-    .then(response => { if (!response.ok) throw new Error('Deezer indisponible'); return response.json(); })
+  fetchJsonWithTimeout(`/api/deezer-track?id=${encodeURIComponent(key)}`)
     .then(data => {
       if (!data.preview) throw new Error('Aucun aperçu disponible');
       previewCache.set(key, data);
@@ -624,7 +630,7 @@ function loadTrack() {
     const applyTrack = (data) => {
       if (state.current !== track || !data?.preview) return false;
       state.deezerPreviewUrl = data.preview; state.trackMeta = data;
-      ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track);
+      ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
       if (state.revealVisible) showTrackReveal();
       return true;
     };
@@ -632,14 +638,13 @@ function loadTrack() {
     if (cached) { applyTrack(cached); }
     else {
       ui.playerState.textContent = 'CHARGEMENT DE L’EXTRAIT';
-      fetch(`/api/deezer-track?id=${encodeURIComponent(trackId)}`)
-        .then(response => { if (!response.ok) throw new Error('Deezer indisponible'); return response.json(); })
+      fetchJsonWithTimeout(`/api/deezer-track?id=${encodeURIComponent(trackId)}`)
         .then(data => {
           if (!data.preview) throw new Error('Aucun aperçu disponible');
           previewCache.set(trackId, data);
           if (!applyTrack(data)) throw new Error('Manche déjà changée');
         })
-        .catch(() => { if (state.current === track) ui.playerState.textContent = 'APERÇU INDISPONIBLE'; });
+        .catch(() => { if (state.current === track) { ui.playerState.textContent = 'APERÇU INDISPONIBLE'; onTrackReady(); } });
     }
   } else if (state.current.soundcloudUrl) {
     ui.audio.removeAttribute('src'); ui.audio.load(); ui.soundcloud.hidden = false; ui.soundcloud.classList.add('visible');

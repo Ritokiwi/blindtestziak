@@ -22,5 +22,13 @@
     "mark": "F",
     "image": "assets/artists/fave.jpg",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "kerchak",
+    "name": "Kerchak",
+    "catalog": "kerchak.json",
+    "mark": "K",
+    "image": "assets/artists/kerchak.png",
+    "description": "Discographie Deezer"
   }
 ]
