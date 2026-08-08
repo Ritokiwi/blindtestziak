@@ -131,6 +131,13 @@ function fuzzyMatch(guessRaw, titleRaw) {
   const distance = levenshtein(guess, title);
   return distance > 0 && distance <= threshold;
 }
+function freestyleNumberMatch(guessRaw, titleRaw) {
+  if (!/freestyle/i.test(titleRaw)) return false;
+  const guessDigits = normalise(guessRaw);
+  if (!/^\d+$/.test(guessDigits)) return false;
+  const titleTrailing = normalise(titleRaw).match(/(\d+)$/);
+  return !!titleTrailing && guessDigits === titleTrailing[1];
+}
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
 }
@@ -774,6 +781,7 @@ function checkGuess() {
   if (!guess) return false;
   const title = state.current.title;
   if (guess === normalise(title)) { resolveRound(true); return true; }
+  if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return true; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
   if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return true; }
   ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
@@ -787,6 +795,7 @@ function handleGuessInput() {
   const title = state.current.title;
   const normalisedTitle = normalise(title);
   if (guess === normalisedTitle) { resolveRound(true); return; }
+  if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
   if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return; }
   if (guess.length >= normalisedTitle.length) {
