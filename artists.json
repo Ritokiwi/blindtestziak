@@ -30,5 +30,13 @@
     "mark": "K",
     "image": "assets/artists/kerchak.png",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "luther",
+    "name": "Luther",
+    "catalog": "luther.json",
+    "mark": "L",
+    "image": "assets/artists/luther.png",
+    "description": "Discographie Deezer"
   }
 ]
