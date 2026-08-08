@@ -91,6 +91,28 @@ function sameWordsAnyOrder(guessRaw, titleRaw) {
   if (!guessWords.length || guessWords.length !== titleWords.length) return false;
   return guessWords.every((word, index) => word === titleWords[index]);
 }
+function levenshtein(a, b) {
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const curr = [i];
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+    }
+    prev = curr;
+  }
+  return prev[b.length];
+}
+function fuzzyMatch(guessRaw, titleRaw) {
+  const guess = normalise(guessRaw);
+  const title = normalise(titleRaw);
+  if (!guess || !title) return false;
+  const threshold = Math.max(1, Math.floor(title.length / 6));
+  const distance = levenshtein(guess, title);
+  return distance > 0 && distance <= threshold;
+}
 function escapeHtml(value) {
   return String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
 }
@@ -705,6 +727,7 @@ function checkGuess() {
   const title = state.current.title;
   if (guess === normalise(title)) { resolveRound(true); return true; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
+  if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return true; }
   ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
   return false;
 }
@@ -717,6 +740,7 @@ function handleGuessInput() {
   const normalisedTitle = normalise(title);
   if (guess === normalisedTitle) { resolveRound(true); return; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
+  if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return; }
   if (guess.length >= normalisedTitle.length) {
     ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
     ui.input.value = '';
@@ -729,12 +753,13 @@ function resolveRound(correct, message = '', options = {}) {
   const seconds = (performance.now() - state.startedAt) / 1000;
   const budget = state.scoreBudgetSeconds || ROUND_SECONDS;
   let points = correct ? Math.max(100, Math.round((budget - Math.min(seconds, budget)) * 20) - state.hints * 35) : 0;
-  if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
+  if (correct && (options.outOfOrder || options.fuzzy)) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
   if (ui.rankLabel && state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score);
+  const qualifier = options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : options.fuzzy ? ' (ORTHOGRAPHE APPROXIMATIVE)' : '';
   ui.feedback.textContent = correct
-    ? `BIEN JOUÉ${options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : ''} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
+    ? `BIEN JOUÉ${qualifier} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
     : `${message} : ${state.current.title}`;
   ui.feedback.className = `feedback ${correct ? 'correct' : 'wrong'}`; ui.input.disabled = true; ui.validate.disabled = true; ui.hint.disabled = true; ui.skip.disabled = true; ui.play.disabled = true;
   ui.hintText.textContent = `${correct ? '✓' : '✕'} ${state.current.title.toUpperCase()}`;
