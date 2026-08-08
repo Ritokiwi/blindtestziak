@@ -29,18 +29,24 @@ const HINTS_PER_ROUND = 3;
 const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
 const SPEED_PRESETS = {
   classic: { key: 'classic', label: 'CLASSIQUE', listen: null, answer: ROUND_SECONDS },
-  fast: { key: 'fast', label: 'RAPIDE', listen: 5, answer: 10 },
-  intense: { key: 'intense', label: 'INTENSE', listen: 10, answer: 10 },
+  fast: { key: 'fast', label: 'RAPIDE', listen: 10, answer: 10 },
+  intense: { key: 'intense', label: 'INTENSE', listen: 5, answer: 10 },
   expert: { key: 'expert', label: 'EXPERT', listen: 1, answer: null, scoreBudget: 45, allowReplay: true },
   ultra: { key: 'ultra', label: 'ULTRA', listen: 1, answer: 5 }
 };
+function describeSpeed(preset) {
+  const replayPart = preset.allowReplay || !preset.listen ? 'Réécoute autorisée.' : 'Réécoute non autorisée.';
+  if (!preset.listen) return `Écoute libre pendant ${preset.answer} s pour répondre. ${replayPart}`;
+  const answerPart = preset.answer == null ? 'temps illimité pour trouver' : `${preset.answer} s pour trouver`;
+  return `${preset.listen} s d'écoute forcée, puis ${answerPart}. ${replayPart}`;
+}
 const previewCache = new Map();
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
   start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), recordMark: $('#recordMark'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
-  rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
+  rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), speedDescription: $('#speedDescription'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
   play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerControls: $('.player-controls'), answerCountdown: $('#answerCountdown'), answerCountdownValue: $('#answerCountdownValue'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
@@ -757,9 +763,15 @@ document.querySelectorAll('.mode-card').forEach(button => button.addEventListene
   if (ui.speedPicker) ui.speedPicker.classList.toggle('hidden', isChallenge);
   ui.setup.classList.toggle('ranked-selected', isChallenge);
 }));
+function updateSpeedDescription() {
+  if (!ui.speedDescription) return;
+  const key = document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic';
+  ui.speedDescription.textContent = describeSpeed(SPEED_PRESETS[key] || SPEED_PRESETS.classic);
+}
 document.querySelectorAll('.round-option').forEach(button => button.addEventListener('click', () => {
   const group = button.closest('.round-picker');
   (group ? group.querySelectorAll('.round-option') : document.querySelectorAll('.round-option')).forEach(item => item.classList.toggle('selected', item === button));
+  if (group && group.id === 'speedPicker') updateSpeedDescription();
 }));
 ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput);
 ui.audio.addEventListener('canplay', onTrackReady);
@@ -781,7 +793,7 @@ if (ui.statsButton) ui.statsButton.addEventListener('click', () => { ui.statsOve
 if (ui.statsClose) ui.statsClose.addEventListener('click', () => { ui.statsOverlay.hidden = true; });
 if (ui.statsOverlay) ui.statsOverlay.addEventListener('click', event => { if (event.target === ui.statsOverlay) ui.statsOverlay.hidden = true; });
 
-setVolume(getVolume()); refreshBest(); loadArtists();
+setVolume(getVolume()); refreshBest(); loadArtists(); updateSpeedDescription();
 
 function setupGoogleAuth() {
   const loginButton = $('#loginButton'); const logoutButton = $('#logoutButton'); const profileArea = $('#profileArea'); const profilePhoto = $('#profilePhoto'); const profileName = $('#profileName'); const authMessage = $('#authMessage');
