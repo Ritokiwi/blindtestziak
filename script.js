@@ -67,7 +67,8 @@ const ui = {
   hint: $('#hintButton'), hintCount: $('#hintCount'), hintText: $('#hintText'), skip: $('#skipButton'),
   finalScore: $('#finalScore'), resultMode: $('#resultMode'), bestTime: $('#bestTime'),
   correct: $('#correctCount'), record: $('#recordScore'), played: $('#playedList'), restart: $('#restartButton'), home: $('#homeButton'),
-  statsButton: $('#statsButton'), statsOverlay: $('#statsOverlay'), statsClose: $('#statsClose'), statsStatus: $('#statsStatus'), statsList: $('#statsList')
+  statsButton: $('#statsButton'), statsOverlay: $('#statsOverlay'), statsClose: $('#statsClose'), statsStatus: $('#statsStatus'), statsList: $('#statsList'),
+  loginButton: $('#loginButton'), loginPromptOverlay: $('#loginPromptOverlay'), loginPromptClose: $('#loginPromptClose'), loginPromptGoogle: $('#loginPromptGoogle'), loginPromptGuest: $('#loginPromptGuest')
 };
 
 let songs = [];
@@ -469,6 +470,11 @@ async function loadSongs() {
   }
 }
 
+function handleStartClick() {
+  if (!songs.length) return;
+  if (!currentUser) { ui.loginPromptOverlay.hidden = false; return; }
+  startGame();
+}
 function startGame() {
   if (!songs.length) return;
   if (!currentUser) {
@@ -707,7 +713,14 @@ function updateTimer() {
     const max = CHALLENGE_SECONDS * 1000;
     const left = Math.max(0, state.challengeRemainingMs - (now - state.startedAt));
     ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
-    if (left <= 0) { clearInterval(state.timerId); state.challengeRemainingMs = 0; endGame(); }
+    if (left <= 0) {
+      clearInterval(state.timerId); state.challengeRemainingMs = 0;
+      if (state.current && !state.roundResolved) {
+        state.roundResolved = true;
+        state.played.push({ ...state.current, correct: false, seconds: (now - state.startedAt) / 1000, points: 0 });
+      }
+      endGame();
+    }
     return;
   }
   const max = ROUND_SECONDS * 1000;
@@ -842,12 +855,16 @@ document.querySelectorAll('.round-option').forEach(button => button.addEventList
   (group ? group.querySelectorAll('.round-option') : document.querySelectorAll('.round-option')).forEach(item => item.classList.toggle('selected', item === button));
   if (group && group.id === 'speedPicker') updateSpeedDescription();
 }));
-ui.start.addEventListener('click', startGame); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput);
+ui.start.addEventListener('click', handleStartClick); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput);
 ui.audio.addEventListener('canplay', onTrackReady);
 ui.audio.addEventListener('play', () => setPlaying(true));
 ui.audio.addEventListener('pause', () => { if (!state.roundResolved) setPlaying(false); });
 ui.audio.addEventListener('ended', () => { setPlaying(false); ui.playerState.textContent = 'EXTRAIT TERMINÉ'; });
-ui.restart.addEventListener('click', startGame);
+ui.restart.addEventListener('click', handleStartClick);
+if (ui.loginPromptClose) ui.loginPromptClose.addEventListener('click', () => { ui.loginPromptOverlay.hidden = true; });
+if (ui.loginPromptOverlay) ui.loginPromptOverlay.addEventListener('click', event => { if (event.target === ui.loginPromptOverlay) ui.loginPromptOverlay.hidden = true; });
+if (ui.loginPromptGuest) ui.loginPromptGuest.addEventListener('click', () => { ui.loginPromptOverlay.hidden = true; startGame(); });
+if (ui.loginPromptGoogle) ui.loginPromptGoogle.addEventListener('click', () => { ui.loginPromptOverlay.hidden = true; ui.loginButton?.click(); });
 ui.home.addEventListener('click', async () => {
   // Si l'utilisateur quitte une manche avant l'écran de résultat, on clôture
   // d'abord la partie pour ne jamais perdre son score.
