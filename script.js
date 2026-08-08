@@ -123,6 +123,7 @@ function isComplexTitle(titleRaw) {
   return normalise(titleRaw).length >= 10 || /['’\/]/.test(titleRaw);
 }
 function fuzzyMatch(guessRaw, titleRaw) {
+  if (freestylePrefixEnd(titleRaw) !== null) return false;
   if (!isComplexTitle(titleRaw)) return false;
   const guess = normalise(guessRaw);
   const title = normalise(titleRaw);
