@@ -744,6 +744,8 @@ function freestylePrefixEnd(titleRaw) {
 }
 function renderHint() {
   const title = state.current.title;
+  if (freestylePrefixEnd(title) !== null && state.hints < 3) { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
+  ui.hintText.hidden = false;
   const display = [...title].map((char, index) => {
     if (char === ' ') return ' / ';
     return state.revealed.has(index) ? char.toUpperCase() : '_';
