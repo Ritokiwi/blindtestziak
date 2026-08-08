@@ -30,7 +30,7 @@ const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
 const SPEED_PRESETS = {
   classic: { key: 'classic', label: 'CLASSIQUE', listen: null, answer: ROUND_SECONDS },
   fast: { key: 'fast', label: 'RAPIDE', listen: 10, answer: 10 },
-  intense: { key: 'intense', label: 'INTENSE', listen: 5, answer: 10 },
+  intense: { key: 'intense', label: 'INTENSE', listen: 5, answer: 5 },
   expert: { key: 'expert', label: 'EXPERT', listen: 1, answer: null, scoreBudget: 45, allowReplay: true },
   ultra: { key: 'ultra', label: 'ULTRA', listen: 1, answer: 5 }
 };
