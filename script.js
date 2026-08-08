@@ -43,7 +43,7 @@ const ui = {
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
-  play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
+  play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerControls: $('.player-controls'), answerCountdown: $('#answerCountdown'), answerCountdownValue: $('#answerCountdownValue'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
   input: $('#guessInput'), validate: $('#validateButton'), feedback: $('#feedback'),
   hint: $('#hintButton'), hintCount: $('#hintCount'), hintText: $('#hintText'), skip: $('#skipButton'),
   finalScore: $('#finalScore'), resultMode: $('#resultMode'), bestTime: $('#bestTime'),
@@ -440,6 +440,7 @@ function nextRound() {
   state.timerStarted = false; state.trackReady = false; state.phase = 'listen'; state.scoreBudgetSeconds = 0;
   ui.input.value = ''; ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
   ui.play.disabled = Boolean(state.speed?.listen) && !state.speed?.allowReplay;
+  ui.answerCountdown.hidden = true; ui.waveform.classList.remove('hidden'); ui.playerControls.classList.remove('hidden');
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
   ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
@@ -470,7 +471,11 @@ function beginAnswerPhase() {
   state.phase = 'answer';
   state.scoreBudgetSeconds = state.speed.answer ?? state.speed.scoreBudget ?? ROUND_SECONDS;
   state.startedAt = performance.now();
-  if (!state.speed.allowReplay) ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE';
+  if (!state.speed.allowReplay) {
+    ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE';
+    ui.waveform.classList.add('hidden'); ui.playerControls.classList.add('hidden');
+    ui.answerCountdown.hidden = false;
+  }
   clearInterval(state.timerId);
   if (state.speed.answer == null) {
     state.timerId = setInterval(updateUnlimitedTimer, 100);
@@ -490,7 +495,9 @@ function updatePhaseTimer(phase) {
   const durationMs = (phase === 'listen' ? state.speed.listen : state.speed.answer) * 1000;
   const left = Math.max(0, durationMs - (now - state.startedAt));
   ui.timer.style.transform = `scaleX(${left / durationMs})`;
-  ui.timerText.textContent = phase === 'listen' ? `ÉCOUTE ${(left / 1000).toFixed(1)} S` : `TU AS ${(left / 1000).toFixed(1)} S POUR TROUVER !`;
+  const secondsLabel = `${(left / 1000).toFixed(1)} S`;
+  ui.timerText.textContent = phase === 'listen' ? `ÉCOUTE ${secondsLabel}` : secondsLabel;
+  if (phase === 'answer' && ui.answerCountdownValue) ui.answerCountdownValue.textContent = secondsLabel;
   if (left <= 0) {
     clearInterval(state.timerId);
     if (phase === 'listen') { stopPlayback(); beginAnswerPhase(); }
@@ -532,7 +539,7 @@ function showTrackReveal() {
   ui.revealType.textContent = isSingle ? 'SINGLE' : `ALBUM · ${albumTitle || 'PROJET'}`;
   ui.revealTitle.textContent = title;
   ui.revealMeta.textContent = `${dateLabel.toUpperCase()} · ${year || '—'}`;
-  ui.reveal.hidden = false; ui.playerPanel.classList.add('revealed'); ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden'); ui.playerState.textContent = 'RÉPONSE';
+  ui.reveal.hidden = false; ui.playerPanel.classList.add('revealed'); ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden'); ui.answerCountdown.hidden = true; ui.playerState.textContent = 'RÉPONSE';
 }
 function prefetchDeezerTrack(id) {
   const key = String(id);
