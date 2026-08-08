@@ -208,5 +208,12 @@
     "catalog": "jolagreen23.json",
     "image": "assets/artists/jolagreen23.jpg",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "la-f",
+    "name": "La F",
+    "catalog": "la-f.json",
+    "image": "assets/artists/la-f.jpg",
+    "description": "Discographie Deezer"
   }
 ]
