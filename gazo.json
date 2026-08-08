@@ -1,0 +1,586 @@
+[
+  {
+    "id": "gazo-802944382",
+    "title": "Drill FR",
+    "project": "Drill FR",
+    "year": 2019,
+    "releaseDate": "2019-11-09",
+    "deezerTrackId": 802944382
+  },
+  {
+    "id": "gazo-919442552",
+    "title": "Drill time",
+    "project": "Drill time",
+    "year": 2020,
+    "releaseDate": "2020-04-03",
+    "deezerTrackId": 919442552
+  },
+  {
+    "id": "gazo-991862392",
+    "title": "Acte de Burberry",
+    "project": "Acte de Burberry",
+    "year": 2020,
+    "releaseDate": "2020-06-16",
+    "deezerTrackId": 991862392
+  },
+  {
+    "id": "gazo-991623302",
+    "title": "Drill FR 4 (feat. Freeze Corleone)",
+    "project": "Drill FR 4 (feat. Freeze Corleone)",
+    "year": 2020,
+    "releaseDate": "2020-06-18",
+    "deezerTrackId": 991623302
+  },
+  {
+    "id": "gazo-1051652512",
+    "title": "Inceste",
+    "project": "Inceste",
+    "year": 2020,
+    "releaseDate": "2020-08-27",
+    "deezerTrackId": 1051652512
+  },
+  {
+    "id": "gazo-1090072212",
+    "title": "DRILL FR 5 (feat. Hamza)",
+    "project": "DRILL FR 5 (feat. Hamza)",
+    "year": 2020,
+    "releaseDate": "2020-10-02",
+    "deezerTrackId": 1090072212
+  },
+  {
+    "id": "gazo-1161319652",
+    "title": "TCHIN 2X",
+    "project": "TCHIN 2X",
+    "year": 2020,
+    "releaseDate": "2020-12-11",
+    "deezerTrackId": 1161319652
+  },
+  {
+    "id": "gazo-1198840162",
+    "title": "KASSAV (feat. Tiakola)",
+    "project": "KASSAV (feat. Tiakola)",
+    "year": 2021,
+    "releaseDate": "2021-01-14",
+    "deezerTrackId": 1198840162
+  },
+  {
+    "id": "gazo-1231386562",
+    "title": "BOOSKA POIGNARD",
+    "project": "BOOSKA POIGNARD",
+    "year": 2021,
+    "releaseDate": "2021-02-19",
+    "deezerTrackId": 1231386562
+  },
+  {
+    "id": "gazo-1232901392",
+    "title": "A$AP",
+    "project": "A$AP",
+    "year": 2021,
+    "releaseDate": "2021-02-25",
+    "deezerTrackId": 1232901392
+  },
+  {
+    "id": "gazo-1250701972",
+    "title": "ON A (feat. Luciano)",
+    "project": "ON A (feat. Luciano)",
+    "year": 2021,
+    "releaseDate": "2021-02-25",
+    "deezerTrackId": 1250701972
+  },
+  {
+    "id": "gazo-1250702032",
+    "title": "CACHE COU (feat. Hache-P)",
+    "project": "CACHE COU (feat. Hache-P)",
+    "year": 2021,
+    "releaseDate": "2021-02-25",
+    "deezerTrackId": 1250702032
+  },
+  {
+    "id": "gazo-1253550392",
+    "title": "MON CHER (feat. Unknown T & Pa Salieu)",
+    "project": "MON CHER (feat. Unknown T & Pa Salieu)",
+    "year": 2021,
+    "releaseDate": "2021-02-25",
+    "deezerTrackId": 1253550392
+  },
+  {
+    "id": "gazo-1230140122",
+    "title": "INTRO",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140122
+  },
+  {
+    "id": "gazo-1230140142",
+    "title": "PARKINSON",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140142
+  },
+  {
+    "id": "gazo-1230140182",
+    "title": "GO (feat. Franglish & Landy)",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140182
+  },
+  {
+    "id": "gazo-1230140212",
+    "title": "HAINE&SEX",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140212
+  },
+  {
+    "id": "gazo-1230140222",
+    "title": "INHUMAIN",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140222
+  },
+  {
+    "id": "gazo-1230140232",
+    "title": "BSB",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140232
+  },
+  {
+    "id": "gazo-1230140242",
+    "title": "EUPHON",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140242
+  },
+  {
+    "id": "gazo-1230140262",
+    "title": "MALAGANGX",
+    "project": "DRILL FR",
+    "year": 2021,
+    "releaseDate": "2021-02-26",
+    "deezerTrackId": 1230140262
+  },
+  {
+    "id": "gazo-1509745952",
+    "title": "GROKUWA",
+    "project": "GROKUWA",
+    "year": 2021,
+    "releaseDate": "2021-10-08",
+    "deezerTrackId": 1509745952
+  },
+  {
+    "id": "gazo-1533654582",
+    "title": "Big Meech",
+    "project": "Big Meech",
+    "year": 2021,
+    "releaseDate": "2021-10-28",
+    "deezerTrackId": 1533654582
+  },
+  {
+    "id": "gazo-1543866902",
+    "title": "MAUVAIS 2X (feat. Ninho)",
+    "project": "MAUVAIS 2X (feat. Ninho)",
+    "year": 2021,
+    "releaseDate": "2021-11-19",
+    "deezerTrackId": 1543866902
+  },
+  {
+    "id": "gazo-1742492627",
+    "title": "CELINE 3X",
+    "project": "CELINE 3X",
+    "year": 2022,
+    "releaseDate": "2022-05-11",
+    "deezerTrackId": 1742492627
+  },
+  {
+    "id": "gazo-1757980907",
+    "title": "MOLLY - A COLORS SHOW",
+    "project": "MOLLY - A COLORS SHOW",
+    "year": 2022,
+    "releaseDate": "2022-05-30",
+    "deezerTrackId": 1757980907
+  },
+  {
+    "id": "gazo-1801216177",
+    "title": "RAPPEL",
+    "project": "RAPPEL",
+    "year": 2022,
+    "releaseDate": "2022-06-28",
+    "deezerTrackId": 1801216177
+  },
+  {
+    "id": "gazo-1803024537",
+    "title": "M.A.L.A (feat. M Huncho)",
+    "project": "M.A.L.A (feat. M Huncho)",
+    "year": 2022,
+    "releaseDate": "2022-06-30",
+    "deezerTrackId": 1803024537
+  },
+  {
+    "id": "gazo-1803025257",
+    "title": "BODIES (feat. Damso)",
+    "project": "BODIES (feat. Damso)",
+    "year": 2022,
+    "releaseDate": "2022-06-30",
+    "deezerTrackId": 1803025257
+  },
+  {
+    "id": "gazo-1803027757",
+    "title": "FLEURS (feat. Tiakola)",
+    "project": "FLEURS (feat. Tiakola)",
+    "year": 2022,
+    "releaseDate": "2022-06-30",
+    "deezerTrackId": 1803027757
+  },
+  {
+    "id": "gazo-1798369967",
+    "title": "BECTE",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798369967
+  },
+  {
+    "id": "gazo-1798369987",
+    "title": "LETTRE À UN OPPS",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798369987
+  },
+  {
+    "id": "gazo-1798370007",
+    "title": "JEUX DANGEREUX",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370007
+  },
+  {
+    "id": "gazo-1798370027",
+    "title": "GRA GRA BOOM (feat. Skread)",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370027
+  },
+  {
+    "id": "gazo-1798370037",
+    "title": "HENNESSY",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370037
+  },
+  {
+    "id": "gazo-1798370047",
+    "title": "IMPACT",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370047
+  },
+  {
+    "id": "gazo-1798370057",
+    "title": "DIE",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370057
+  },
+  {
+    "id": "gazo-1798370067",
+    "title": "BOSS",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370067
+  },
+  {
+    "id": "gazo-1798370087",
+    "title": "MOLLY",
+    "project": "KMT",
+    "year": 2022,
+    "releaseDate": "2022-07-01",
+    "deezerTrackId": 1798370087
+  },
+  {
+    "id": "gazo-1906681127",
+    "title": "BECTE (Enregistré à Paris)",
+    "project": "Deezer Sessions",
+    "year": 2022,
+    "releaseDate": "2022-09-14",
+    "deezerTrackId": 1906681127
+  },
+  {
+    "id": "gazo-2189026447",
+    "title": "NO LÈCHE",
+    "project": "NO LÈCHE",
+    "year": 2023,
+    "releaseDate": "2023-03-15",
+    "deezerTrackId": 2189026447
+  },
+  {
+    "id": "gazo-2373020985",
+    "title": "Drill Fr 6 (S.M.B)",
+    "project": "Drill Fr 6 (S.M.B)",
+    "year": 2023,
+    "releaseDate": "2023-07-20",
+    "deezerTrackId": 2373020985
+  },
+  {
+    "id": "gazo-2563821812",
+    "title": "A.V.S.D",
+    "project": "A.V.S.D",
+    "year": 2023,
+    "releaseDate": "2023-11-30",
+    "deezerTrackId": 2563821812
+  },
+  {
+    "id": "gazo-2563822672",
+    "title": "AMBITIONS",
+    "project": "AMBITIONS",
+    "year": 2023,
+    "releaseDate": "2023-11-30",
+    "deezerTrackId": 2563822672
+  },
+  {
+    "id": "gazo-2583473652",
+    "title": "24/34 (Enregistré à Paris)",
+    "project": "Deezer Sessions",
+    "year": 2023,
+    "releaseDate": "2023-11-30",
+    "deezerTrackId": 2583473652
+  },
+  {
+    "id": "gazo-2561981912",
+    "title": "24/34",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981912
+  },
+  {
+    "id": "gazo-2561981922",
+    "title": "SOBAD",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981922
+  },
+  {
+    "id": "gazo-2561981942",
+    "title": "CARTIER",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981942
+  },
+  {
+    "id": "gazo-2561981952",
+    "title": "NOTRE DAME",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981952
+  },
+  {
+    "id": "gazo-2561981962",
+    "title": "INTERLUDE",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981962
+  },
+  {
+    "id": "gazo-2561981972",
+    "title": "AFRIKANBADMAN",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981972
+  },
+  {
+    "id": "gazo-2561981982",
+    "title": "100K",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561981982
+  },
+  {
+    "id": "gazo-2561982012",
+    "title": "MAMI WATA",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561982012
+  },
+  {
+    "id": "gazo-2561982022",
+    "title": "OUTRO",
+    "project": "LA MELO EST GANGX",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2561982022
+  },
+  {
+    "id": "gazo-3045282991",
+    "title": "POP (feat. La Mano 1.9)",
+    "project": "POP (feat. La Mano 1.9)",
+    "year": 2024,
+    "releaseDate": "2024-10-23",
+    "deezerTrackId": 3045282991
+  },
+  {
+    "id": "gazo-3077474561",
+    "title": "PROBATION",
+    "project": "PROBATION",
+    "year": 2024,
+    "releaseDate": "2024-11-08",
+    "deezerTrackId": 3077474561
+  },
+  {
+    "id": "gazo-3112646511",
+    "title": "PURE CODEI (feat. Yamê)",
+    "project": "PURE CODEI (feat. Yamê)",
+    "year": 2024,
+    "releaseDate": "2024-11-28",
+    "deezerTrackId": 3112646511
+  },
+  {
+    "id": "gazo-3112647511",
+    "title": "FIESTA (feat. Morad)",
+    "project": "FIESTA (feat. Morad)",
+    "year": 2024,
+    "releaseDate": "2024-11-28",
+    "deezerTrackId": 3112647511
+  },
+  {
+    "id": "gazo-3112647531",
+    "title": "OPTIMALE (feat. Orelsan)",
+    "project": "OPTIMALE (feat. Orelsan)",
+    "year": 2024,
+    "releaseDate": "2024-11-28",
+    "deezerTrackId": 3112647531
+  },
+  {
+    "id": "gazo-3112647551",
+    "title": "SELELE (feat. Fally Ipupa)",
+    "project": "SELELE (feat. Fally Ipupa)",
+    "year": 2024,
+    "releaseDate": "2024-11-28",
+    "deezerTrackId": 3112647551
+  },
+  {
+    "id": "gazo-3102004011",
+    "title": "TOKI",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004011
+  },
+  {
+    "id": "gazo-3102004021",
+    "title": "ENCORE PLUS FORT ELLE AIME ÇA",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004021
+  },
+  {
+    "id": "gazo-3102004031",
+    "title": "LA BELLE ET LA BÊTE",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004031
+  },
+  {
+    "id": "gazo-3102004051",
+    "title": "NANANI NANANA",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004051
+  },
+  {
+    "id": "gazo-3102004071",
+    "title": "WEMBY (feat. Offset)",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004071
+  },
+  {
+    "id": "gazo-3102004081",
+    "title": "BIRTHDAY (feat. Jul)",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004081
+  },
+  {
+    "id": "gazo-3102004121",
+    "title": "WAYANS",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004121
+  },
+  {
+    "id": "gazo-3102004131",
+    "title": "SEVICE",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004131
+  },
+  {
+    "id": "gazo-3102004151",
+    "title": "iLUV",
+    "project": "APOCALYPSE",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102004151
+  },
+  {
+    "id": "gazo-3250357681",
+    "title": "HERMES",
+    "project": "HERMES",
+    "year": 2025,
+    "releaseDate": "2025-02-28",
+    "deezerTrackId": 3250357681
+  },
+  {
+    "id": "gazo-3433971181",
+    "title": "KAT (feat. La Rvfleuze)",
+    "project": "KAT (feat. La Rvfleuze)",
+    "year": 2025,
+    "releaseDate": "2025-07-11",
+    "deezerTrackId": 3433971181
+  },
+  {
+    "id": "gazo-3526289211",
+    "title": "Job",
+    "project": "Job",
+    "year": 2025,
+    "releaseDate": "2025-09-05",
+    "deezerTrackId": 3526289211
+  },
+  {
+    "id": "gazo-3773729102",
+    "title": "QUE DES FAITS",
+    "project": "QUE DES FAITS",
+    "year": 2026,
+    "releaseDate": "2026-01-23",
+    "deezerTrackId": 3773729102
+  }
+]

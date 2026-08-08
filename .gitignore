@@ -1,1 +1,3 @@
 .vercel
+scripts/report.json
+scripts/generate.log

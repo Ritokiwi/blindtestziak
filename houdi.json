@@ -1,0 +1,842 @@
+[
+  {
+    "id": "houdi-2330697195",
+    "title": "CALMÉ",
+    "project": "CALMÉ",
+    "year": 2022,
+    "releaseDate": "2022-04-02",
+    "deezerTrackId": 2330697195
+  },
+  {
+    "id": "houdi-2330697685",
+    "title": "CAUCHEMAR 3",
+    "project": "CAUCHEMAR 3",
+    "year": 2022,
+    "releaseDate": "2022-04-13",
+    "deezerTrackId": 2330697685
+  },
+  {
+    "id": "houdi-2330697715",
+    "title": "ENCHANTÉ",
+    "project": "ENCHANTÉ",
+    "year": 2022,
+    "releaseDate": "2022-04-27",
+    "deezerTrackId": 2330697715
+  },
+  {
+    "id": "houdi-2330697725",
+    "title": "FPH #0",
+    "project": "FPH #0",
+    "year": 2022,
+    "releaseDate": "2022-05-15",
+    "deezerTrackId": 2330697725
+  },
+  {
+    "id": "houdi-2330697185",
+    "title": "FPH #1",
+    "project": "FPH #1",
+    "year": 2022,
+    "releaseDate": "2022-05-22",
+    "deezerTrackId": 2330697185
+  },
+  {
+    "id": "houdi-2330697695",
+    "title": "FPH #2",
+    "project": "FPH #2",
+    "year": 2022,
+    "releaseDate": "2022-05-29",
+    "deezerTrackId": 2330697695
+  },
+  {
+    "id": "houdi-2330697705",
+    "title": "FPH#3",
+    "project": "FPH#3",
+    "year": 2022,
+    "releaseDate": "2022-06-08",
+    "deezerTrackId": 2330697705
+  },
+  {
+    "id": "houdi-2330696875",
+    "title": "CORRECTION",
+    "project": "CORRECTION",
+    "year": 2022,
+    "releaseDate": "2022-07-15",
+    "deezerTrackId": 2330696875
+  },
+  {
+    "id": "houdi-2330697005",
+    "title": "NEW JERSEY",
+    "project": "NEW JERSEY",
+    "year": 2022,
+    "releaseDate": "2022-07-21",
+    "deezerTrackId": 2330697005
+  },
+  {
+    "id": "houdi-2330696775",
+    "title": "RÜDIGER",
+    "project": "RÜDIGER",
+    "year": 2022,
+    "releaseDate": "2022-07-28",
+    "deezerTrackId": 2330696775
+  },
+  {
+    "id": "houdi-2330697635",
+    "title": "TROUBLE FÊTE",
+    "project": "WOKA",
+    "year": 2022,
+    "releaseDate": "2022-08-05",
+    "deezerTrackId": 2330697635
+  },
+  {
+    "id": "houdi-2330697645",
+    "title": "BLEU",
+    "project": "WOKA",
+    "year": 2022,
+    "releaseDate": "2022-08-05",
+    "deezerTrackId": 2330697645
+  },
+  {
+    "id": "houdi-2330697655",
+    "title": "CHERRY",
+    "project": "WOKA",
+    "year": 2022,
+    "releaseDate": "2022-08-05",
+    "deezerTrackId": 2330697655
+  },
+  {
+    "id": "houdi-2330697665",
+    "title": "WOKA",
+    "project": "WOKA",
+    "year": 2022,
+    "releaseDate": "2022-08-05",
+    "deezerTrackId": 2330697665
+  },
+  {
+    "id": "houdi-2330696995",
+    "title": "CALMADA",
+    "project": "CALMADA",
+    "year": 2022,
+    "releaseDate": "2022-09-17",
+    "deezerTrackId": 2330696995
+  },
+  {
+    "id": "houdi-2330697215",
+    "title": "DANS ÇA",
+    "project": "DANS ÇA",
+    "year": 2022,
+    "releaseDate": "2022-09-24",
+    "deezerTrackId": 2330697215
+  },
+  {
+    "id": "houdi-2330696985",
+    "title": "DISPARAÎTRE",
+    "project": "DISPARAÎTRE",
+    "year": 2022,
+    "releaseDate": "2022-10-01",
+    "deezerTrackId": 2330696985
+  },
+  {
+    "id": "houdi-2330824875",
+    "title": "MAUVAIS RÊVE",
+    "project": "MAUVAIS RÊVE",
+    "year": 2022,
+    "releaseDate": "2022-10-08",
+    "deezerTrackId": 2330824875
+  },
+  {
+    "id": "houdi-2330696355",
+    "title": "SOCIOPATHE",
+    "project": "SOCIOPATHE",
+    "year": 2022,
+    "releaseDate": "2022-10-15",
+    "deezerTrackId": 2330696355
+  },
+  {
+    "id": "houdi-2330696625",
+    "title": "CHOUCHOU DES MADAMES",
+    "project": "CHOUCHOU DES MADAMES",
+    "year": 2022,
+    "releaseDate": "2022-10-22",
+    "deezerTrackId": 2330696625
+  },
+  {
+    "id": "houdi-2330698215",
+    "title": "TÉNÉBREUX",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698215
+  },
+  {
+    "id": "houdi-2330698225",
+    "title": "RIP",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698225
+  },
+  {
+    "id": "houdi-2330698235",
+    "title": "FLEUR",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698235
+  },
+  {
+    "id": "houdi-2330698245",
+    "title": "B&B",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698245
+  },
+  {
+    "id": "houdi-2330698255",
+    "title": "LA BÊTE (interlude)",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698255
+  },
+  {
+    "id": "houdi-2330698265",
+    "title": "TRABAJAW",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698265
+  },
+  {
+    "id": "houdi-2330698275",
+    "title": "JEUNE MATRIXÉ",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698275
+  },
+  {
+    "id": "houdi-2330698285",
+    "title": "BONUS EFFRAYANT",
+    "project": "LA BÊTE",
+    "year": 2022,
+    "releaseDate": "2022-10-23",
+    "deezerTrackId": 2330698285
+  },
+  {
+    "id": "houdi-2330695715",
+    "title": "CALMITO",
+    "project": "CALMITO",
+    "year": 2023,
+    "releaseDate": "2023-01-07",
+    "deezerTrackId": 2330695715
+  },
+  {
+    "id": "houdi-2101788197",
+    "title": "EN DIDI (Freestyle)",
+    "project": "EN DIDI (Freestyle)",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2101788197
+  },
+  {
+    "id": "houdi-2250056117",
+    "title": "CRACK",
+    "project": "CRACK",
+    "year": 2023,
+    "releaseDate": "2023-01-25",
+    "deezerTrackId": 2250056117
+  },
+  {
+    "id": "houdi-2330696305",
+    "title": "GRHÜNT #77",
+    "project": "GRHÜNT",
+    "year": 2023,
+    "releaseDate": "2023-01-28",
+    "deezerTrackId": 2330696305
+  },
+  {
+    "id": "houdi-2330696315",
+    "title": "PILE OU FACE",
+    "project": "GRHÜNT",
+    "year": 2023,
+    "releaseDate": "2023-01-28",
+    "deezerTrackId": 2330696315
+  },
+  {
+    "id": "houdi-2330696325",
+    "title": "TRANQUILLEMENT",
+    "project": "GRHÜNT",
+    "year": 2023,
+    "releaseDate": "2023-01-28",
+    "deezerTrackId": 2330696325
+  },
+  {
+    "id": "houdi-2330696335",
+    "title": "77ÈME ÉTAGE",
+    "project": "GRHÜNT",
+    "year": 2023,
+    "releaseDate": "2023-01-28",
+    "deezerTrackId": 2330696335
+  },
+  {
+    "id": "houdi-2330695785",
+    "title": "LE 12 ÈME",
+    "project": "LE 12 ÈME",
+    "year": 2023,
+    "releaseDate": "2023-02-16",
+    "deezerTrackId": 2330695785
+  },
+  {
+    "id": "houdi-2554678582",
+    "title": "LA FOLIE DES GRANDEURS",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678582
+  },
+  {
+    "id": "houdi-2554678592",
+    "title": "MUSIQUE GROSSE QUANTITÉ",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678592
+  },
+  {
+    "id": "houdi-2554678602",
+    "title": "20 ANS",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678602
+  },
+  {
+    "id": "houdi-2554678612",
+    "title": "CALMOS",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678612
+  },
+  {
+    "id": "houdi-2554678622",
+    "title": "CIEL",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678622
+  },
+  {
+    "id": "houdi-2554678632",
+    "title": "MONACO",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678632
+  },
+  {
+    "id": "houdi-2554678642",
+    "title": "SOUS LE MANTEAU",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678642
+  },
+  {
+    "id": "houdi-2554678652",
+    "title": "LA SEULE JOIE",
+    "project": "LA FOLIE DES GRANDEURS",
+    "year": 2023,
+    "releaseDate": "2023-03-03",
+    "deezerTrackId": 2554678652
+  },
+  {
+    "id": "houdi-2324071685",
+    "title": "DOPE - La Relève",
+    "project": "DOPE - La Relève",
+    "year": 2023,
+    "releaseDate": "2023-06-16",
+    "deezerTrackId": 2324071685
+  },
+  {
+    "id": "houdi-2334750965",
+    "title": "MÉDICALE",
+    "project": "MÉDICALE",
+    "year": 2023,
+    "releaseDate": "2023-06-30",
+    "deezerTrackId": 2334750965
+  },
+  {
+    "id": "houdi-2554977372",
+    "title": "SENSATION",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977372
+  },
+  {
+    "id": "houdi-2554977392",
+    "title": "M'EFFACER",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977392
+  },
+  {
+    "id": "houdi-2554977402",
+    "title": "AVANT TOI",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977402
+  },
+  {
+    "id": "houdi-2554977412",
+    "title": "SCOOTER",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977412
+  },
+  {
+    "id": "houdi-2554977422",
+    "title": "RAPPEL",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977422
+  },
+  {
+    "id": "houdi-2554977432",
+    "title": "SUN7",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977432
+  },
+  {
+    "id": "houdi-2554977442",
+    "title": "SORCIÈRE",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977442
+  },
+  {
+    "id": "houdi-2554977452",
+    "title": "HOUTRO",
+    "project": "SUN7",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2554977452
+  },
+  {
+    "id": "houdi-2589505702",
+    "title": "100",
+    "project": "100",
+    "year": 2023,
+    "releaseDate": "2023-11-16",
+    "deezerTrackId": 2589505702
+  },
+  {
+    "id": "houdi-2575851022",
+    "title": "BELLE CHANSON",
+    "project": "BELLE CHANSON",
+    "year": 2023,
+    "releaseDate": "2023-12-21",
+    "deezerTrackId": 2575851022
+  },
+  {
+    "id": "houdi-2589497292",
+    "title": "DÉRAPAGES",
+    "project": "DÉRAPAGES",
+    "year": 2024,
+    "releaseDate": "2024-01-04",
+    "deezerTrackId": 2589497292
+  },
+  {
+    "id": "houdi-2589521522",
+    "title": "NUAGES",
+    "project": "NUAGES",
+    "year": 2024,
+    "releaseDate": "2024-01-04",
+    "deezerTrackId": 2589521522
+  },
+  {
+    "id": "houdi-2589535822",
+    "title": "À PERTE",
+    "project": "À PERTE",
+    "year": 2024,
+    "releaseDate": "2024-01-04",
+    "deezerTrackId": 2589535822
+  },
+  {
+    "id": "houdi-2589578972",
+    "title": "MODE HARDCORE",
+    "project": "MODE HARDCORE",
+    "year": 2024,
+    "releaseDate": "2024-01-04",
+    "deezerTrackId": 2589578972
+  },
+  {
+    "id": "houdi-2589517102",
+    "title": "HLM PARASOL",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517102
+  },
+  {
+    "id": "houdi-2589517152",
+    "title": "PEINE",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517152
+  },
+  {
+    "id": "houdi-2589517202",
+    "title": "HOOD",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517202
+  },
+  {
+    "id": "houdi-2589517252",
+    "title": "OP",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517252
+  },
+  {
+    "id": "houdi-2589517312",
+    "title": "BABYLONE",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517312
+  },
+  {
+    "id": "houdi-2589517382",
+    "title": "BONUS INQUIÉTANT",
+    "project": "HOOD VOLUME.1",
+    "year": 2024,
+    "releaseDate": "2024-01-05",
+    "deezerTrackId": 2589517382
+  },
+  {
+    "id": "houdi-2856776622",
+    "title": "RAP CONSCIENT",
+    "project": "RAP CONSCIENT",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2856776622
+  },
+  {
+    "id": "houdi-2887754382",
+    "title": "TOTALLY SPIES",
+    "project": "TOTALLY SPIES",
+    "year": 2024,
+    "releaseDate": "2024-07-23",
+    "deezerTrackId": 2887754382
+  },
+  {
+    "id": "houdi-2958390501",
+    "title": "CONTRE LA GALERE",
+    "project": "CONTRE LA GALERE",
+    "year": 2024,
+    "releaseDate": "2024-09-11",
+    "deezerTrackId": 2958390501
+  },
+  {
+    "id": "houdi-2958623031",
+    "title": "DALIDA",
+    "project": "DALIDA",
+    "year": 2024,
+    "releaseDate": "2024-09-12",
+    "deezerTrackId": 2958623031
+  },
+  {
+    "id": "houdi-2958663341",
+    "title": "PAPILLON",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663341
+  },
+  {
+    "id": "houdi-2958663361",
+    "title": "AVEC OU SANS TOI",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663361
+  },
+  {
+    "id": "houdi-2958663381",
+    "title": "UNE PLAQUETTE A MARBELLA",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663381
+  },
+  {
+    "id": "houdi-2958663401",
+    "title": "BARA",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663401
+  },
+  {
+    "id": "houdi-2958663411",
+    "title": "LE DERNIER RAYON DE SOLEIL",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663411
+  },
+  {
+    "id": "houdi-2958663421",
+    "title": "PETITE SOEUR",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663421
+  },
+  {
+    "id": "houdi-2958663441",
+    "title": "BANLIEUE DE PARIS",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663441
+  },
+  {
+    "id": "houdi-2958663451",
+    "title": "JE T’AIME",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663451
+  },
+  {
+    "id": "houdi-2958663461",
+    "title": "LAISSE MOI",
+    "project": "LE DERNIER RAYON DE SOLEIL",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2958663461
+  },
+  {
+    "id": "houdi-3200319981",
+    "title": "INTÉRIEUR",
+    "project": "INTÉRIEUR",
+    "year": 2025,
+    "releaseDate": "2025-01-31",
+    "deezerTrackId": 3200319981
+  },
+  {
+    "id": "houdi-3228530001",
+    "title": "RIBÉRY",
+    "project": "RIBÉRY",
+    "year": 2025,
+    "releaseDate": "2025-02-26",
+    "deezerTrackId": 3228530001
+  },
+  {
+    "id": "houdi-3525863011",
+    "title": "SUNSEX",
+    "project": "SUNSEX",
+    "year": 2025,
+    "releaseDate": "2025-06-05",
+    "deezerTrackId": 3525863011
+  },
+  {
+    "id": "houdi-3517132011",
+    "title": "AILLEURS",
+    "project": "AILLEURS",
+    "year": 2025,
+    "releaseDate": "2025-08-28",
+    "deezerTrackId": 3517132011
+  },
+  {
+    "id": "houdi-3539166831",
+    "title": "ENSEMBLE",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166831
+  },
+  {
+    "id": "houdi-3539166841",
+    "title": "CANDIDAT",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166841
+  },
+  {
+    "id": "houdi-3539166871",
+    "title": "GRANDES AFFAIRES",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166871
+  },
+  {
+    "id": "houdi-3539166881",
+    "title": "DIAMOND",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166881
+  },
+  {
+    "id": "houdi-3539166891",
+    "title": "PLATA",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166891
+  },
+  {
+    "id": "houdi-3539166901",
+    "title": "LE TOUR DE LA PLANÈTE",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166901
+  },
+  {
+    "id": "houdi-3539166911",
+    "title": "TU VERRAS",
+    "project": "SIROCCO",
+    "year": 2025,
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3539166911
+  },
+  {
+    "id": "houdi-3855422631",
+    "title": "PAS DE PROBLÈME",
+    "project": "PAS DE PROBLÈME",
+    "year": 2026,
+    "releaseDate": "2026-02-19",
+    "deezerTrackId": 3855422631
+  },
+  {
+    "id": "houdi-3769651922",
+    "title": "SCORE",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651922
+  },
+  {
+    "id": "houdi-3769651932",
+    "title": "EKKO",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651932
+  },
+  {
+    "id": "houdi-3769651942",
+    "title": "BONBONNE",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651942
+  },
+  {
+    "id": "houdi-3769651952",
+    "title": "LES HEURES",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651952
+  },
+  {
+    "id": "houdi-3769651972",
+    "title": "RÉPÉTER",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651972
+  },
+  {
+    "id": "houdi-3769651982",
+    "title": "TÉLÉPHONE",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651982
+  },
+  {
+    "id": "houdi-3769651992",
+    "title": "PEINTURE",
+    "project": "SIROCCO +",
+    "year": 2026,
+    "releaseDate": "2026-02-20",
+    "deezerTrackId": 3769651992
+  },
+  {
+    "id": "houdi-3957684861",
+    "title": "HOUDSIDER",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957684861
+  },
+  {
+    "id": "houdi-3957684901",
+    "title": "SOURIRE MÉCANIQUE",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957684901
+  },
+  {
+    "id": "houdi-3957684931",
+    "title": "J'ÉTEINS TOUT",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957684931
+  },
+  {
+    "id": "houdi-3957684971",
+    "title": "ILLÉGALEMENT",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957684971
+  },
+  {
+    "id": "houdi-3957685001",
+    "title": "FREESTYLE D'AMOUR",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957685001
+  },
+  {
+    "id": "houdi-3957685031",
+    "title": "INTERLUDE",
+    "project": "HOUDSIDER",
+    "year": 2026,
+    "releaseDate": "2026-04-21",
+    "deezerTrackId": 3957685031
+  },
+  {
+    "id": "houdi-4004703631",
+    "title": "MÉDICAMENT",
+    "project": "MÉDICAMENT",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 4004703631
+  }
+]

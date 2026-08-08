@@ -1,0 +1,618 @@
+[
+  {
+    "id": "beendo-z-1148822422",
+    "title": "Débrouillard pas bandit",
+    "project": "Débrouillard pas bandit",
+    "year": 2020,
+    "releaseDate": "2020-11-27",
+    "deezerTrackId": 1148822422
+  },
+  {
+    "id": "beendo-z-1340430152",
+    "title": "ᚠ. INSPIRÉ DE FAITS RÉELS #1",
+    "project": "ᚠ. INSPIRÉ DE FAITS RÉELS #1",
+    "year": 2021,
+    "releaseDate": "2021-04-14",
+    "deezerTrackId": 1340430152
+  },
+  {
+    "id": "beendo-z-1394833362",
+    "title": "ᛉ. INSPIRÉ DE FAITS RÉELS #2",
+    "project": "ᛉ. INSPIRÉ DE FAITS RÉELS #2",
+    "year": 2021,
+    "releaseDate": "2021-06-04",
+    "deezerTrackId": 1394833362
+  },
+  {
+    "id": "beendo-z-1437980242",
+    "title": "MIAMI",
+    "project": "MIAMI",
+    "year": 2021,
+    "releaseDate": "2021-07-16",
+    "deezerTrackId": 1437980242
+  },
+  {
+    "id": "beendo-z-1507265722",
+    "title": "ᛃ. INSPIRÉ DE FAITS RÉELS #3",
+    "project": "ᛃ. INSPIRÉ DE FAITS RÉELS #3",
+    "year": 2021,
+    "releaseDate": "2021-09-30",
+    "deezerTrackId": 1507265722
+  },
+  {
+    "id": "beendo-z-1706797427",
+    "title": "ᛋ. INSPIRÉ DE FAITS RÉELS #4",
+    "project": "ᛋ. INSPIRÉ DE FAITS RÉELS #4",
+    "year": 2022,
+    "releaseDate": "2022-01-07",
+    "deezerTrackId": 1706797427
+  },
+  {
+    "id": "beendo-z-1706749857",
+    "title": "GTA #24",
+    "project": "GTA #24",
+    "year": 2022,
+    "releaseDate": "2022-02-02",
+    "deezerTrackId": 1706749857
+  },
+  {
+    "id": "beendo-z-1706116317",
+    "title": "C'est comme le Soleil",
+    "project": "C'est comme le Soleil",
+    "year": 2022,
+    "releaseDate": "2022-03-03",
+    "deezerTrackId": 1706116317
+  },
+  {
+    "id": "beendo-z-1731722757",
+    "title": "EDL 75",
+    "project": "EDL 75",
+    "year": 2022,
+    "releaseDate": "2022-05-04",
+    "deezerTrackId": 1731722757
+  },
+  {
+    "id": "beendo-z-1757736057",
+    "title": "Booska Z",
+    "project": "Booska Z",
+    "year": 2022,
+    "releaseDate": "2022-05-23",
+    "deezerTrackId": 1757736057
+  },
+  {
+    "id": "beendo-z-1782689217",
+    "title": "17 Joints",
+    "project": "17 Joints",
+    "year": 2022,
+    "releaseDate": "2022-06-10",
+    "deezerTrackId": 1782689217
+  },
+  {
+    "id": "beendo-z-1784208157",
+    "title": "L'Élu",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-16",
+    "deezerTrackId": 1784208157
+  },
+  {
+    "id": "beendo-z-1805434967",
+    "title": "Le Papa",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805434967
+  },
+  {
+    "id": "beendo-z-1805434977",
+    "title": "Comics",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805434977
+  },
+  {
+    "id": "beendo-z-1805434997",
+    "title": "Est-ce que c'est vrai ? (feat. La Fève)",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805434997
+  },
+  {
+    "id": "beendo-z-1805435017",
+    "title": "Chrome",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435017
+  },
+  {
+    "id": "beendo-z-1805435037",
+    "title": "Cas Contact",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435037
+  },
+  {
+    "id": "beendo-z-1805435047",
+    "title": "Ngannou",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435047
+  },
+  {
+    "id": "beendo-z-1805435057",
+    "title": "1ère Pierre",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435057
+  },
+  {
+    "id": "beendo-z-1805435067",
+    "title": "Houdini",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435067
+  },
+  {
+    "id": "beendo-z-1805435097",
+    "title": "Pas bête",
+    "project": "L'Élu",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1805435097
+  },
+  {
+    "id": "beendo-z-1929510917",
+    "title": "Signer pour 10k",
+    "project": "Signer pour 10k",
+    "year": 2022,
+    "releaseDate": "2022-09-28",
+    "deezerTrackId": 1929510917
+  },
+  {
+    "id": "beendo-z-2017472287",
+    "title": "RR",
+    "project": "RR",
+    "year": 2022,
+    "releaseDate": "2022-11-24",
+    "deezerTrackId": 2017472287
+  },
+  {
+    "id": "beendo-z-2109822927",
+    "title": "ᚩ. INSPIRÉ DE FAITS RÉELS #5",
+    "project": "ᚩ. INSPIRÉ DE FAITS RÉELS #5",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2109822927
+  },
+  {
+    "id": "beendo-z-2136531597",
+    "title": "Nature morte",
+    "project": "Nature morte",
+    "year": 2023,
+    "releaseDate": "2023-02-09",
+    "deezerTrackId": 2136531597
+  },
+  {
+    "id": "beendo-z-2183837467",
+    "title": "Nouvelle ère",
+    "project": "Nouvelle ère",
+    "year": 2023,
+    "releaseDate": "2023-03-17",
+    "deezerTrackId": 2183837467
+  },
+  {
+    "id": "beendo-z-2258628507",
+    "title": "Mbappé",
+    "project": "Mbappé",
+    "year": 2023,
+    "releaseDate": "2023-05-19",
+    "deezerTrackId": 2258628507
+  },
+  {
+    "id": "beendo-z-2306079675",
+    "title": "POUR LA CULTURE #1",
+    "project": "POUR LA CULTURE #1",
+    "year": 2023,
+    "releaseDate": "2023-05-30",
+    "deezerTrackId": 2306079675
+  },
+  {
+    "id": "beendo-z-2362388925",
+    "title": "Ne dis pas non",
+    "project": "Ne dis pas non",
+    "year": 2023,
+    "releaseDate": "2023-07-26",
+    "deezerTrackId": 2362388925
+  },
+  {
+    "id": "beendo-z-2429511305",
+    "title": "ᚷ. INSPIRÉ DE FAITS RÉELS #6",
+    "project": "ᚷ. INSPIRÉ DE FAITS RÉELS #6",
+    "year": 2023,
+    "releaseDate": "2023-09-01",
+    "deezerTrackId": 2429511305
+  },
+  {
+    "id": "beendo-z-2450151845",
+    "title": "Différent",
+    "project": "Différent",
+    "year": 2023,
+    "releaseDate": "2023-09-15",
+    "deezerTrackId": 2450151845
+  },
+  {
+    "id": "beendo-z-2465478315",
+    "title": "Garde à vue",
+    "project": "Garde à vue",
+    "year": 2023,
+    "releaseDate": "2023-09-29",
+    "deezerTrackId": 2465478315
+  },
+  {
+    "id": "beendo-z-2497004381",
+    "title": "Mauvais Mélange",
+    "project": "Mauvais Mélange",
+    "year": 2023,
+    "releaseDate": "2023-10-12",
+    "deezerTrackId": 2497004381
+  },
+  {
+    "id": "beendo-z-2497004451",
+    "title": "Money Amor",
+    "project": "Money Amor",
+    "year": 2023,
+    "releaseDate": "2023-10-12",
+    "deezerTrackId": 2497004451
+  },
+  {
+    "id": "beendo-z-2497004481",
+    "title": "Haller",
+    "project": "Haller",
+    "year": 2023,
+    "releaseDate": "2023-10-12",
+    "deezerTrackId": 2497004481
+  },
+  {
+    "id": "beendo-z-2497004511",
+    "title": "Performance",
+    "project": "Performance",
+    "year": 2023,
+    "releaseDate": "2023-10-12",
+    "deezerTrackId": 2497004511
+  },
+  {
+    "id": "beendo-z-2491836511",
+    "title": "SS",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836511
+  },
+  {
+    "id": "beendo-z-2491836521",
+    "title": "Offre/Demande",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836521
+  },
+  {
+    "id": "beendo-z-2491836531",
+    "title": "De la fontaine",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836531
+  },
+  {
+    "id": "beendo-z-2491836551",
+    "title": "Début du mois",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836551
+  },
+  {
+    "id": "beendo-z-2491836561",
+    "title": "Ailleurs & chez les meilleurs",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836561
+  },
+  {
+    "id": "beendo-z-2491836571",
+    "title": "McGregor",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836571
+  },
+  {
+    "id": "beendo-z-2491836591",
+    "title": "Matin Midi Soir",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836591
+  },
+  {
+    "id": "beendo-z-2491836621",
+    "title": "Pendule",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836621
+  },
+  {
+    "id": "beendo-z-2491836631",
+    "title": "La Pièce",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836631
+  },
+  {
+    "id": "beendo-z-2491836641",
+    "title": "T-Pain",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836641
+  },
+  {
+    "id": "beendo-z-2491836651",
+    "title": "Jordy",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-10-13",
+    "deezerTrackId": 2491836651
+  },
+  {
+    "id": "beendo-z-2522265331",
+    "title": "Double B",
+    "project": "De la fontaine",
+    "year": 2023,
+    "releaseDate": "2023-11-03",
+    "deezerTrackId": 2522265331
+  },
+  {
+    "id": "beendo-z-2856721152",
+    "title": "Γ. INSPIRÉ DE FAITS RÉELS #7",
+    "project": "Γ. INSPIRÉ DE FAITS RÉELS #7",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2856721152
+  },
+  {
+    "id": "beendo-z-2875916182",
+    "title": "ISCO",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916182
+  },
+  {
+    "id": "beendo-z-2875916212",
+    "title": "POTO",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916212
+  },
+  {
+    "id": "beendo-z-2875916232",
+    "title": "CHAQUE JOUR",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916232
+  },
+  {
+    "id": "beendo-z-2875916262",
+    "title": "CRIMINALS",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916262
+  },
+  {
+    "id": "beendo-z-2875916282",
+    "title": "C'EST NOUS",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916282
+  },
+  {
+    "id": "beendo-z-2875916302",
+    "title": "TUEURS",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2875916302
+  },
+  {
+    "id": "beendo-z-2912139661",
+    "title": "TOOTATIS (Bonus)",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-26",
+    "deezerTrackId": 2912139661
+  },
+  {
+    "id": "beendo-z-2912139671",
+    "title": "#FREESTYLE12JUILLET - 1 (Bonus)",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-26",
+    "deezerTrackId": 2912139671
+  },
+  {
+    "id": "beendo-z-2912139681",
+    "title": "#FREESTYLE12JUILLET - 2 (Bonus)",
+    "project": "CONNU POUR EXTORSION",
+    "year": 2024,
+    "releaseDate": "2024-07-26",
+    "deezerTrackId": 2912139681
+  },
+  {
+    "id": "beendo-z-3185949731",
+    "title": "Quitter la partie",
+    "project": "Quitter la partie",
+    "year": 2025,
+    "releaseDate": "2025-01-24",
+    "deezerTrackId": 3185949731
+  },
+  {
+    "id": "beendo-z-3210057461",
+    "title": "Manifestation",
+    "project": "Manifestation",
+    "year": 2025,
+    "releaseDate": "2025-02-14",
+    "deezerTrackId": 3210057461
+  },
+  {
+    "id": "beendo-z-3216812871",
+    "title": "Tellement tourné",
+    "project": "Tellement tourné",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3216812871
+  },
+  {
+    "id": "beendo-z-3218451261",
+    "title": "Prada",
+    "project": "Prada",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3218451261
+  },
+  {
+    "id": "beendo-z-3230914351",
+    "title": "Elle me demande",
+    "project": "Elle me demande",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3230914351
+  },
+  {
+    "id": "beendo-z-3230653621",
+    "title": "La dote",
+    "project": "PROPA",
+    "year": 2025,
+    "releaseDate": "2025-02-21",
+    "deezerTrackId": 3230653621
+  },
+  {
+    "id": "beendo-z-3230653641",
+    "title": "Tour de magie",
+    "project": "PROPA",
+    "year": 2025,
+    "releaseDate": "2025-02-21",
+    "deezerTrackId": 3230653641
+  },
+  {
+    "id": "beendo-z-3230653661",
+    "title": "Balmain",
+    "project": "PROPA",
+    "year": 2025,
+    "releaseDate": "2025-02-21",
+    "deezerTrackId": 3230653661
+  },
+  {
+    "id": "beendo-z-3637227402",
+    "title": "INSPIRÉ DE FAITS RÉELS #8",
+    "project": "INSPIRÉ DE FAITS RÉELS #8",
+    "year": 2025,
+    "releaseDate": "2025-11-12",
+    "deezerTrackId": 3637227402
+  },
+  {
+    "id": "beendo-z-3826746081",
+    "title": "Monopole",
+    "project": "Monopole",
+    "year": 2026,
+    "releaseDate": "2026-02-12",
+    "deezerTrackId": 3826746081
+  },
+  {
+    "id": "beendo-z-3863825611",
+    "title": "J'en Parle",
+    "project": "J'en Parle",
+    "year": 2026,
+    "releaseDate": "2026-03-12",
+    "deezerTrackId": 3863825611
+  },
+  {
+    "id": "beendo-z-3962102811",
+    "title": "Génération Z",
+    "project": "Génération Z",
+    "year": 2026,
+    "releaseDate": "2026-04-29",
+    "deezerTrackId": 3962102811
+  },
+  {
+    "id": "beendo-z-4024124601",
+    "title": "Mal luné",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124601
+  },
+  {
+    "id": "beendo-z-4024124611",
+    "title": "Mon Blaze",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124611
+  },
+  {
+    "id": "beendo-z-4024124631",
+    "title": "Une vie",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124631
+  },
+  {
+    "id": "beendo-z-4024124641",
+    "title": "HATTORI HANZO",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124641
+  },
+  {
+    "id": "beendo-z-4024124651",
+    "title": "Vague Interlude",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124651
+  },
+  {
+    "id": "beendo-z-4024124661",
+    "title": "Choeur en pierre",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124661
+  },
+  {
+    "id": "beendo-z-4024124671",
+    "title": "Crypto",
+    "project": "Éclipse",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4024124671
+  }
+]

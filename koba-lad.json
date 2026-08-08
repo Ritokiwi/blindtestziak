@@ -1,0 +1,730 @@
+[
+  {
+    "id": "koba-lad-497405412",
+    "title": "Ténébreux #1",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405412
+  },
+  {
+    "id": "koba-lad-497405422",
+    "title": "Ténébreux #2",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405422
+  },
+  {
+    "id": "koba-lad-497405432",
+    "title": "Ténébreux #3",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405432
+  },
+  {
+    "id": "koba-lad-497405442",
+    "title": "Ténébreux #4",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405442
+  },
+  {
+    "id": "koba-lad-497405452",
+    "title": "Ténébreux #5",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405452
+  },
+  {
+    "id": "koba-lad-497405462",
+    "title": "Double D",
+    "project": "Ténébreux",
+    "year": 2018,
+    "releaseDate": "2018-05-12",
+    "deezerTrackId": 497405462
+  },
+  {
+    "id": "koba-lad-519003792",
+    "title": "Train de vie",
+    "project": "Train de vie",
+    "year": 2018,
+    "releaseDate": "2018-06-30",
+    "deezerTrackId": 519003792
+  },
+  {
+    "id": "koba-lad-528316431",
+    "title": "J’encaisse",
+    "project": "J’encaisse",
+    "year": 2018,
+    "releaseDate": "2018-07-19",
+    "deezerTrackId": 528316431
+  },
+  {
+    "id": "koba-lad-540681462",
+    "title": "La C",
+    "project": "La C",
+    "year": 2018,
+    "releaseDate": "2018-08-16",
+    "deezerTrackId": 540681462
+  },
+  {
+    "id": "koba-lad-552690642",
+    "title": "Oyé",
+    "project": "Oyé",
+    "year": 2018,
+    "releaseDate": "2018-09-13",
+    "deezerTrackId": 552690642
+  },
+  {
+    "id": "koba-lad-602436442",
+    "title": "Intro",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436442
+  },
+  {
+    "id": "koba-lad-602436452",
+    "title": "Chambre 122",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436452
+  },
+  {
+    "id": "koba-lad-602436462",
+    "title": "Honey",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436462
+  },
+  {
+    "id": "koba-lad-602436472",
+    "title": "Moments durs",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436472
+  },
+  {
+    "id": "koba-lad-602436482",
+    "title": "Everyday",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436482
+  },
+  {
+    "id": "koba-lad-602436502",
+    "title": "Suge",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436502
+  },
+  {
+    "id": "koba-lad-602436512",
+    "title": "Tout",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436512
+  },
+  {
+    "id": "koba-lad-602436532",
+    "title": "Rachète",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436532
+  },
+  {
+    "id": "koba-lad-602436542",
+    "title": "Recul",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436542
+  },
+  {
+    "id": "koba-lad-602436562",
+    "title": "Seven Binks",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436562
+  },
+  {
+    "id": "koba-lad-602436572",
+    "title": "J'en veux",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436572
+  },
+  {
+    "id": "koba-lad-602436582",
+    "title": "ORgueilleux",
+    "project": "VII",
+    "year": 2018,
+    "releaseDate": "2018-12-14",
+    "deezerTrackId": 602436582
+  },
+  {
+    "id": "koba-lad-624035732",
+    "title": "FeFe",
+    "project": "FeFe",
+    "year": 2019,
+    "releaseDate": "2019-01-29",
+    "deezerTrackId": 624035732
+  },
+  {
+    "id": "koba-lad-631209412",
+    "title": "Aventador",
+    "project": "Aventador",
+    "year": 2019,
+    "releaseDate": "2019-02-14",
+    "deezerTrackId": 631209412
+  },
+  {
+    "id": "koba-lad-643904382",
+    "title": "R44",
+    "project": "R44",
+    "year": 2019,
+    "releaseDate": "2019-03-07",
+    "deezerTrackId": 643904382
+  },
+  {
+    "id": "koba-lad-649690082",
+    "title": "Cellophané",
+    "project": "Cellophané",
+    "year": 2019,
+    "releaseDate": "2019-03-21",
+    "deezerTrackId": 649690082
+  },
+  {
+    "id": "koba-lad-667799802",
+    "title": "RR 9.1",
+    "project": "RR 9.1",
+    "year": 2019,
+    "releaseDate": "2019-04-18",
+    "deezerTrackId": 667799802
+  },
+  {
+    "id": "koba-lad-736945882",
+    "title": "Koba du 7",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945882
+  },
+  {
+    "id": "koba-lad-736945902",
+    "title": "Quadrillé",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945902
+  },
+  {
+    "id": "koba-lad-736945912",
+    "title": "Matin",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945912
+  },
+  {
+    "id": "koba-lad-736945922",
+    "title": "C’est moi",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945922
+  },
+  {
+    "id": "koba-lad-736945932",
+    "title": "Amitiés gâchées",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945932
+  },
+  {
+    "id": "koba-lad-736945942",
+    "title": "Mélange",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945942
+  },
+  {
+    "id": "koba-lad-736945952",
+    "title": "Demain j’arrête",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945952
+  },
+  {
+    "id": "koba-lad-736945962",
+    "title": "Quotidien",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945962
+  },
+  {
+    "id": "koba-lad-736945972",
+    "title": "Quand j’étais petit",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945972
+  },
+  {
+    "id": "koba-lad-736945982",
+    "title": "Le magot",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945982
+  },
+  {
+    "id": "koba-lad-736945992",
+    "title": "O.G",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736945992
+  },
+  {
+    "id": "koba-lad-736946002",
+    "title": "Guedro",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736946002
+  },
+  {
+    "id": "koba-lad-736946022",
+    "title": "Pour toi",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736946022
+  },
+  {
+    "id": "koba-lad-736946032",
+    "title": "Four",
+    "project": "L' Affranchi",
+    "year": 2019,
+    "releaseDate": "2019-08-22",
+    "deezerTrackId": 736946032
+  },
+  {
+    "id": "koba-lad-809987872",
+    "title": "Marie",
+    "project": "L'Affranchi (Deluxe)",
+    "year": 2019,
+    "releaseDate": "2019-11-20",
+    "deezerTrackId": 809987872
+  },
+  {
+    "id": "koba-lad-809987882",
+    "title": "La détaille",
+    "project": "L'Affranchi (Deluxe)",
+    "year": 2019,
+    "releaseDate": "2019-11-20",
+    "deezerTrackId": 809987882
+  },
+  {
+    "id": "koba-lad-809987892",
+    "title": "Pas comme les autres",
+    "project": "L'Affranchi (Deluxe)",
+    "year": 2019,
+    "releaseDate": "2019-11-20",
+    "deezerTrackId": 809987892
+  },
+  {
+    "id": "koba-lad-809987912",
+    "title": "Mortel",
+    "project": "L'Affranchi (Deluxe)",
+    "year": 2019,
+    "releaseDate": "2019-11-20",
+    "deezerTrackId": 809987912
+  },
+  {
+    "id": "koba-lad-911988032",
+    "title": "Ca ira mieux demain",
+    "project": "Ca ira mieux demain",
+    "year": 2020,
+    "releaseDate": "2020-03-26",
+    "deezerTrackId": 911988032
+  },
+  {
+    "id": "koba-lad-1007167692",
+    "title": "Laisse tomber",
+    "project": "Laisse tomber",
+    "year": 2020,
+    "releaseDate": "2020-07-02",
+    "deezerTrackId": 1007167692
+  },
+  {
+    "id": "koba-lad-1054197772",
+    "title": "Ohlolo",
+    "project": "Ohlolo",
+    "year": 2020,
+    "releaseDate": "2020-08-20",
+    "deezerTrackId": 1054197772
+  },
+  {
+    "id": "koba-lad-1067694022",
+    "title": "Beldia",
+    "project": "Beldia",
+    "year": 2020,
+    "releaseDate": "2020-09-03",
+    "deezerTrackId": 1067694022
+  },
+  {
+    "id": "koba-lad-1087651172",
+    "title": "7 sur 7",
+    "project": "7 sur 7",
+    "year": 2020,
+    "releaseDate": "2020-09-23",
+    "deezerTrackId": 1087651172
+  },
+  {
+    "id": "koba-lad-1114793212",
+    "title": "Coffre plein",
+    "project": "Coffre plein",
+    "year": 2020,
+    "releaseDate": "2020-10-22",
+    "deezerTrackId": 1114793212
+  },
+  {
+    "id": "koba-lad-1137779712",
+    "title": "Temps plein (Freestyle Rapelite)",
+    "project": "Temps plein (Freestyle Rapelite)",
+    "year": 2020,
+    "releaseDate": "2020-11-13",
+    "deezerTrackId": 1137779712
+  },
+  {
+    "id": "koba-lad-1151751212",
+    "title": "Tous les jours (Extrait du projet Carbozo Vol. 1)",
+    "project": "Tous les jours (Extrait du projet Carbozo Vol. 1)",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1151751212
+  },
+  {
+    "id": "koba-lad-1389073012",
+    "title": "Tue ça",
+    "project": "Tue ça",
+    "year": 2021,
+    "releaseDate": "2021-06-03",
+    "deezerTrackId": 1389073012
+  },
+  {
+    "id": "koba-lad-1399249922",
+    "title": "Booska'Cartel (Freestyle Booska'P)",
+    "project": "Booska'Cartel (Freestyle Booska'P)",
+    "year": 2021,
+    "releaseDate": "2021-06-11",
+    "deezerTrackId": 1399249922
+  },
+  {
+    "id": "koba-lad-1404533092",
+    "title": "M Power",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533092
+  },
+  {
+    "id": "koba-lad-1404533102",
+    "title": "Batards",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533102
+  },
+  {
+    "id": "koba-lad-1404533112",
+    "title": "Kilos de beuh",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533112
+  },
+  {
+    "id": "koba-lad-1404533122",
+    "title": "Cramé",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533122
+  },
+  {
+    "id": "koba-lad-1404533132",
+    "title": "Daddy chocolat",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533132
+  },
+  {
+    "id": "koba-lad-1404533142",
+    "title": "Chercher l'or",
+    "project": "Cartel : volume 1",
+    "year": 2021,
+    "releaseDate": "2021-06-17",
+    "deezerTrackId": 1404533142
+  },
+  {
+    "id": "koba-lad-1467036922",
+    "title": "Nintch",
+    "project": "Nintch",
+    "year": 2021,
+    "releaseDate": "2021-09-03",
+    "deezerTrackId": 1467036922
+  },
+  {
+    "id": "koba-lad-1503139122",
+    "title": "Or noir (Extrait de la BO de \"Or Noir\")",
+    "project": "Or noir (Extrait de la BO de \"Or Noir\")",
+    "year": 2021,
+    "releaseDate": "2021-09-23",
+    "deezerTrackId": 1503139122
+  },
+  {
+    "id": "koba-lad-1536491052",
+    "title": "Le classico organisé",
+    "project": "Le classico organisé",
+    "year": 2021,
+    "releaseDate": "2021-11-04",
+    "deezerTrackId": 1536491052
+  },
+  {
+    "id": "koba-lad-1545852372",
+    "title": "Shoot",
+    "project": "Shoot",
+    "year": 2021,
+    "releaseDate": "2021-11-11",
+    "deezerTrackId": 1545852372
+  },
+  {
+    "id": "koba-lad-1578183982",
+    "title": "Doudou",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578183982
+  },
+  {
+    "id": "koba-lad-1578183992",
+    "title": "Traffic",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578183992
+  },
+  {
+    "id": "koba-lad-1578184002",
+    "title": "Mission",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578184002
+  },
+  {
+    "id": "koba-lad-1578184012",
+    "title": "Gros bonnets",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578184012
+  },
+  {
+    "id": "koba-lad-1578184032",
+    "title": "Mon bébé",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578184032
+  },
+  {
+    "id": "koba-lad-1578184042",
+    "title": "TCPLT",
+    "project": "Cartel : volume 1 & 2",
+    "year": 2021,
+    "releaseDate": "2021-12-09",
+    "deezerTrackId": 1578184042
+  },
+  {
+    "id": "koba-lad-1621826692",
+    "title": "Sombre",
+    "project": "Sombre",
+    "year": 2022,
+    "releaseDate": "2022-01-13",
+    "deezerTrackId": 1621826692
+  },
+  {
+    "id": "koba-lad-1792362067",
+    "title": "En gros",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362067
+  },
+  {
+    "id": "koba-lad-1792362077",
+    "title": "Dans l’avion",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362077
+  },
+  {
+    "id": "koba-lad-1792362087",
+    "title": "Pas de reine",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362087
+  },
+  {
+    "id": "koba-lad-1792362097",
+    "title": "Chambre d’hotel",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362097
+  },
+  {
+    "id": "koba-lad-1792362107",
+    "title": "5H55",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362107
+  },
+  {
+    "id": "koba-lad-1792362117",
+    "title": "Feux éteints",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362117
+  },
+  {
+    "id": "koba-lad-1792362137",
+    "title": "Bedodo",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362137
+  },
+  {
+    "id": "koba-lad-1792362147",
+    "title": "Cité",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362147
+  },
+  {
+    "id": "koba-lad-1792362157",
+    "title": "Encore",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362157
+  },
+  {
+    "id": "koba-lad-1792362167",
+    "title": "Céramique",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362167
+  },
+  {
+    "id": "koba-lad-1792362177",
+    "title": "Omar",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362177
+  },
+  {
+    "id": "koba-lad-1792362187",
+    "title": "Helsinki",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362187
+  },
+  {
+    "id": "koba-lad-1792362207",
+    "title": "Déclic",
+    "project": "Détail",
+    "year": 2022,
+    "releaseDate": "2022-06-17",
+    "deezerTrackId": 1792362207
+  },
+  {
+    "id": "koba-lad-2642992762",
+    "title": "Synthèse",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992762
+  },
+  {
+    "id": "koba-lad-2642992832",
+    "title": "Tic-Tac",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992832
+  },
+  {
+    "id": "koba-lad-2642992852",
+    "title": "Toujours là",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992852
+  },
+  {
+    "id": "koba-lad-2830395722",
+    "title": "Freestyle BMF #1",
+    "project": "Freestyle BMF #1",
+    "year": 2024,
+    "releaseDate": "2024-06-07",
+    "deezerTrackId": 2830395722
+  },
+  {
+    "id": "koba-lad-2843881482",
+    "title": "Freestyle BMF #2",
+    "project": "Freestyle BMF #2",
+    "year": 2024,
+    "releaseDate": "2024-06-26",
+    "deezerTrackId": 2843881482
+  },
+  {
+    "id": "koba-lad-2863174272",
+    "title": "Un peu d'amour",
+    "project": "Un peu d'amour",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 2863174272
+  }
+]

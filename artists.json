@@ -3,7 +3,6 @@
     "id": "ziak",
     "name": "Ziak",
     "catalog": "songs.json",
-    "mark": "Z",
     "image": "assets/artists/ziak.png",
     "description": "Discographie complète"
   },
@@ -11,7 +10,6 @@
     "id": "menace-santana",
     "name": "menace Santana",
     "catalog": "menace-santana.json",
-    "mark": "mS",
     "image": "assets/artists/menace-santana.png",
     "description": "Discographie Deezer"
   },
@@ -19,7 +17,6 @@
     "id": "fave",
     "name": "Favé",
     "catalog": "fave.json",
-    "mark": "F",
     "image": "assets/artists/fave.jpg",
     "description": "Discographie Deezer"
   },
@@ -27,7 +24,6 @@
     "id": "kerchak",
     "name": "Kerchak",
     "catalog": "kerchak.json",
-    "mark": "K",
     "image": "assets/artists/kerchak.png",
     "description": "Discographie Deezer"
   },
@@ -35,7 +31,6 @@
     "id": "luther",
     "name": "Luther",
     "catalog": "luther.json",
-    "mark": "L",
     "image": "assets/artists/luther.png",
     "description": "Discographie Deezer"
   },
@@ -43,8 +38,175 @@
     "id": "ven1",
     "name": "VEN1",
     "catalog": "ven1.json",
-    "mark": "V1",
     "image": "assets/artists/ven1.png",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "ninho",
+    "name": "Ninho",
+    "catalog": "ninho.json",
+    "image": "assets/artists/ninho.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "la-mano19",
+    "name": "La Mano1.9",
+    "catalog": "la-mano19.json",
+    "image": "assets/artists/la-mano19.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "pnl",
+    "name": "PNL",
+    "catalog": "pnl.json",
+    "image": "assets/artists/pnl.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "gazo",
+    "name": "Gazo",
+    "catalog": "gazo.json",
+    "image": "assets/artists/gazo.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "werenoi",
+    "name": "Werenoi",
+    "catalog": "werenoi.json",
+    "image": "assets/artists/werenoi.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "koba-lad",
+    "name": "Koba LaD",
+    "catalog": "koba-lad.json",
+    "image": "assets/artists/koba-lad.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "la-rvfleuze",
+    "name": "La Rvfleuze",
+    "catalog": "la-rvfleuze.json",
+    "image": "assets/artists/la-rvfleuze.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "sdm",
+    "name": "SDM",
+    "catalog": "sdm.json",
+    "image": "assets/artists/sdm.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "tiakola",
+    "name": "Tiakola",
+    "catalog": "tiakola.json",
+    "image": "assets/artists/tiakola.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "zola",
+    "name": "Zola",
+    "catalog": "zola.json",
+    "image": "assets/artists/zola.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "mhd",
+    "name": "MHD",
+    "catalog": "mhd.json",
+    "image": "assets/artists/mhd.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "gambi",
+    "name": "Gambi",
+    "catalog": "gambi.json",
+    "image": "assets/artists/gambi.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "beendo-z",
+    "name": "Beendo Z",
+    "catalog": "beendo-z.json",
+    "image": "assets/artists/beendo-z.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "gims",
+    "name": "GIMS",
+    "catalog": "gims.json",
+    "image": "assets/artists/gims.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "plk",
+    "name": "PLK",
+    "catalog": "plk.json",
+    "image": "assets/artists/plk.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "niska",
+    "name": "Niska",
+    "catalog": "niska.json",
+    "image": "assets/artists/niska.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "houdi",
+    "name": "Houdi",
+    "catalog": "houdi.json",
+    "image": "assets/artists/houdi.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "vald",
+    "name": "Vald",
+    "catalog": "vald.json",
+    "image": "assets/artists/vald.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "theodora",
+    "name": "Theodora",
+    "catalog": "theodora.json",
+    "image": "assets/artists/theodora.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "nono-la-grinta",
+    "name": "Nono la Grinta",
+    "catalog": "nono-la-grinta.json",
+    "image": "assets/artists/nono-la-grinta.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "black-cat",
+    "name": "Black Cat",
+    "catalog": "black-cat.json",
+    "image": "assets/artists/black-cat.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "l2b",
+    "name": "L2B",
+    "catalog": "l2b.json",
+    "image": "assets/artists/l2b.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "damso",
+    "name": "Damso",
+    "catalog": "damso.json",
+    "image": "assets/artists/damso.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "jolagreen23",
+    "name": "Jolagreen23",
+    "catalog": "jolagreen23.json",
+    "image": "assets/artists/jolagreen23.jpg",
     "description": "Discographie Deezer"
   }
 ]

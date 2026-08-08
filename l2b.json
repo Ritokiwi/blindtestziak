@@ -1,0 +1,754 @@
+[
+  {
+    "id": "l2b-442555832",
+    "title": "Guette le flow",
+    "project": "Guette le flow",
+    "year": 2017,
+    "releaseDate": "2017-12-18",
+    "deezerTrackId": 442555832
+  },
+  {
+    "id": "l2b-476880912",
+    "title": "Cartel de Cali",
+    "project": "Cartel de Cali",
+    "year": 2018,
+    "releaseDate": "2018-03-25",
+    "deezerTrackId": 476880912
+  },
+  {
+    "id": "l2b-515490332",
+    "title": "Qui nous l'empêche",
+    "project": "Qui nous l'empêche",
+    "year": 2018,
+    "releaseDate": "2018-05-27",
+    "deezerTrackId": 515490332
+  },
+  {
+    "id": "l2b-522966862",
+    "title": "C.W.F",
+    "project": "C.W.F",
+    "year": 2018,
+    "releaseDate": "2018-06-28",
+    "deezerTrackId": 522966862
+  },
+  {
+    "id": "l2b-572519562",
+    "title": "Ce soir",
+    "project": "Ce soir",
+    "year": 2018,
+    "releaseDate": "2018-10-21",
+    "deezerTrackId": 572519562
+  },
+  {
+    "id": "l2b-605143992",
+    "title": "Cash",
+    "project": "Cash",
+    "year": 2018,
+    "releaseDate": "2018-12-23",
+    "deezerTrackId": 605143992
+  },
+  {
+    "id": "l2b-644918352",
+    "title": "Beaucoup plus",
+    "project": "Beaucoup plus",
+    "year": 2019,
+    "releaseDate": "2019-03-08",
+    "deezerTrackId": 644918352
+  },
+  {
+    "id": "l2b-674803792",
+    "title": "Drive by",
+    "project": "Drive by",
+    "year": 2019,
+    "releaseDate": "2019-05-03",
+    "deezerTrackId": 674803792
+  },
+  {
+    "id": "l2b-707404582",
+    "title": "Hold Up",
+    "project": "Hold Up",
+    "year": 2019,
+    "releaseDate": "2019-07-05",
+    "deezerTrackId": 707404582
+  },
+  {
+    "id": "l2b-798346962",
+    "title": "C'est rien c'est la caille",
+    "project": "C'est rien c'est la caille",
+    "year": 2019,
+    "releaseDate": "2019-11-15",
+    "deezerTrackId": 798346962
+  },
+  {
+    "id": "l2b-827419232",
+    "title": "Vaisseau Mère",
+    "project": "Vaisseau Mère",
+    "year": 2019,
+    "releaseDate": "2019-12-11",
+    "deezerTrackId": 827419232
+  },
+  {
+    "id": "l2b-905278812",
+    "title": "Konoha #1",
+    "project": "Konoha #1",
+    "year": 2020,
+    "releaseDate": "2020-03-18",
+    "deezerTrackId": 905278812
+  },
+  {
+    "id": "l2b-929565742",
+    "title": "Famous Dex",
+    "project": "Famous Dex",
+    "year": 2020,
+    "releaseDate": "2020-04-13",
+    "deezerTrackId": 929565742
+  },
+  {
+    "id": "l2b-930225782",
+    "title": "Billets Mauves",
+    "project": "Billets Mauves",
+    "year": 2020,
+    "releaseDate": "2020-04-13",
+    "deezerTrackId": 930225782
+  },
+  {
+    "id": "l2b-975680682",
+    "title": "Trahison",
+    "project": "Trahison",
+    "year": 2020,
+    "releaseDate": "2020-05-29",
+    "deezerTrackId": 975680682
+  },
+  {
+    "id": "l2b-1159106472",
+    "title": "Black Ops",
+    "project": "Black Ops",
+    "year": 2020,
+    "releaseDate": "2020-12-11",
+    "deezerTrackId": 1159106472
+  },
+  {
+    "id": "l2b-1209803702",
+    "title": "Melvin Williams",
+    "project": "Melvin Williams",
+    "year": 2021,
+    "releaseDate": "2021-01-27",
+    "deezerTrackId": 1209803702
+  },
+  {
+    "id": "l2b-1242322892",
+    "title": "Tuba",
+    "project": "94 Bois",
+    "year": 2021,
+    "releaseDate": "2021-03-05",
+    "deezerTrackId": 1242322892
+  },
+  {
+    "id": "l2b-1242322902",
+    "title": "Toto riina",
+    "project": "94 Bois",
+    "year": 2021,
+    "releaseDate": "2021-03-05",
+    "deezerTrackId": 1242322902
+  },
+  {
+    "id": "l2b-1242322912",
+    "title": "Mailler",
+    "project": "94 Bois",
+    "year": 2021,
+    "releaseDate": "2021-03-05",
+    "deezerTrackId": 1242322912
+  },
+  {
+    "id": "l2b-1242322922",
+    "title": "Noir",
+    "project": "94 Bois",
+    "year": 2021,
+    "releaseDate": "2021-03-05",
+    "deezerTrackId": 1242322922
+  },
+  {
+    "id": "l2b-1372550152",
+    "title": "Bwalab",
+    "project": "94 Bois",
+    "year": 2021,
+    "releaseDate": "2021-05-20",
+    "deezerTrackId": 1372550152
+  },
+  {
+    "id": "l2b-1525164252",
+    "title": "Amis d'enfance",
+    "project": "Amis d'enfance",
+    "year": 2021,
+    "releaseDate": "2021-10-29",
+    "deezerTrackId": 1525164252
+  },
+  {
+    "id": "l2b-1578335222",
+    "title": "Montant",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335222
+  },
+  {
+    "id": "l2b-1578335242",
+    "title": "Équipe de Daddy",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335242
+  },
+  {
+    "id": "l2b-1578335262",
+    "title": "Jeune Banlieusard",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335262
+  },
+  {
+    "id": "l2b-1578335272",
+    "title": "Bitume",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335272
+  },
+  {
+    "id": "l2b-1578335282",
+    "title": "Mec D'ici",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335282
+  },
+  {
+    "id": "l2b-1578335292",
+    "title": "Mauvais Djo",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335292
+  },
+  {
+    "id": "l2b-1578335302",
+    "title": "Elle & Moi",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335302
+  },
+  {
+    "id": "l2b-1578335312",
+    "title": "VDA",
+    "project": "94 bois, Vol. 2",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1578335312
+  },
+  {
+    "id": "l2b-1807651107",
+    "title": "Fais Le",
+    "project": "Fais Le",
+    "year": 2022,
+    "releaseDate": "2022-07-06",
+    "deezerTrackId": 1807651107
+  },
+  {
+    "id": "l2b-2122361707",
+    "title": "5 Étoiles",
+    "project": "5 Étoiles",
+    "year": 2023,
+    "releaseDate": "2023-02-10",
+    "deezerTrackId": 2122361707
+  },
+  {
+    "id": "l2b-2170454447",
+    "title": "Dans La Chambre / Money",
+    "project": "Dans La Chambre / Money",
+    "year": 2023,
+    "releaseDate": "2023-03-17",
+    "deezerTrackId": 2170454447
+  },
+  {
+    "id": "l2b-2245963267",
+    "title": "Money",
+    "project": "Dans La Chambre / Money",
+    "year": 2023,
+    "releaseDate": "2023-04-28",
+    "deezerTrackId": 2245963267
+  },
+  {
+    "id": "l2b-2242741737",
+    "title": "Benze",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741737
+  },
+  {
+    "id": "l2b-2242741747",
+    "title": "Visionnaire",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741747
+  },
+  {
+    "id": "l2b-2242741757",
+    "title": "En Vérité",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741757
+  },
+  {
+    "id": "l2b-2242741767",
+    "title": "Cocktail Molotov",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741767
+  },
+  {
+    "id": "l2b-2242741777",
+    "title": "Tcheba",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741777
+  },
+  {
+    "id": "l2b-2242741797",
+    "title": "Inna",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741797
+  },
+  {
+    "id": "l2b-2242741817",
+    "title": "Cité D'Or",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741817
+  },
+  {
+    "id": "l2b-2242741827",
+    "title": "10 Min",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741827
+  },
+  {
+    "id": "l2b-2242741837",
+    "title": "La Zone",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741837
+  },
+  {
+    "id": "l2b-2242741847",
+    "title": "Harden",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741847
+  },
+  {
+    "id": "l2b-2242741857",
+    "title": "2004",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741857
+  },
+  {
+    "id": "l2b-2242741867",
+    "title": "Temps Perdu",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741867
+  },
+  {
+    "id": "l2b-2242741877",
+    "title": "Pour Toi",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741877
+  },
+  {
+    "id": "l2b-2242741887",
+    "title": "Maturité",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741887
+  },
+  {
+    "id": "l2b-2242741897",
+    "title": "Plus Comme Avant",
+    "project": "Plus Comme Avant",
+    "year": 2023,
+    "releaseDate": "2023-05-12",
+    "deezerTrackId": 2242741897
+  },
+  {
+    "id": "l2b-2566596332",
+    "title": "Boom !",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596332
+  },
+  {
+    "id": "l2b-2566596342",
+    "title": "Réflexes",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596342
+  },
+  {
+    "id": "l2b-2566596352",
+    "title": "Insomnie",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596352
+  },
+  {
+    "id": "l2b-2566596362",
+    "title": "Choisi",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596362
+  },
+  {
+    "id": "l2b-2566596372",
+    "title": "Jack Honey",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596372
+  },
+  {
+    "id": "l2b-2566596382",
+    "title": "Analyse",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596382
+  },
+  {
+    "id": "l2b-2566596392",
+    "title": "Bueno",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596392
+  },
+  {
+    "id": "l2b-2566596402",
+    "title": "Toute La Night",
+    "project": "Plus Comme Avant (Réedition)",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2566596402
+  },
+  {
+    "id": "l2b-2757069511",
+    "title": "Touché Coulé",
+    "project": "Touché Coulé",
+    "year": 2024,
+    "releaseDate": "2024-04-25",
+    "deezerTrackId": 2757069511
+  },
+  {
+    "id": "l2b-3038510331",
+    "title": "Movie",
+    "project": "Movie",
+    "year": 2024,
+    "releaseDate": "2024-10-23",
+    "deezerTrackId": 3038510331
+  },
+  {
+    "id": "l2b-3137735811",
+    "title": "Check",
+    "project": "Check",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3137735811
+  },
+  {
+    "id": "l2b-3230221521",
+    "title": "Pélican",
+    "project": "Pélican",
+    "year": 2025,
+    "releaseDate": "2025-02-13",
+    "deezerTrackId": 3230221521
+  },
+  {
+    "id": "l2b-3233107321",
+    "title": "Intro",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107321
+  },
+  {
+    "id": "l2b-3233107331",
+    "title": "Daily Paper",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107331
+  },
+  {
+    "id": "l2b-3233107361",
+    "title": "No Chance",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107361
+  },
+  {
+    "id": "l2b-3233107371",
+    "title": "SOS",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107371
+  },
+  {
+    "id": "l2b-3233107381",
+    "title": "Overbooking",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107381
+  },
+  {
+    "id": "l2b-3233107391",
+    "title": "Tendance",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107391
+  },
+  {
+    "id": "l2b-3233107401",
+    "title": "Palerme",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107401
+  },
+  {
+    "id": "l2b-3233107411",
+    "title": "Point G",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107411
+  },
+  {
+    "id": "l2b-3233107421",
+    "title": "Essentiel",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107421
+  },
+  {
+    "id": "l2b-3233107431",
+    "title": "Real Bad Man",
+    "project": "Nés Pour Briller : Book I",
+    "year": 2025,
+    "releaseDate": "2025-02-20",
+    "deezerTrackId": 3233107431
+  },
+  {
+    "id": "l2b-3268051911",
+    "title": "Tourner en Rond",
+    "project": "Tourner en Rond",
+    "year": 2025,
+    "releaseDate": "2025-03-13",
+    "deezerTrackId": 3268051911
+  },
+  {
+    "id": "l2b-3282889891",
+    "title": "Freestyle CKO",
+    "project": "Freestyle CKO",
+    "year": 2025,
+    "releaseDate": "2025-03-20",
+    "deezerTrackId": 3282889891
+  },
+  {
+    "id": "l2b-3310190031",
+    "title": "Tout Pour L'équipe",
+    "project": "Tout Pour L’Equipe",
+    "year": 2025,
+    "releaseDate": "2025-04-09",
+    "deezerTrackId": 3310190031
+  },
+  {
+    "id": "l2b-3319650071",
+    "title": "C'est Quoi Ton Délire",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650071
+  },
+  {
+    "id": "l2b-3319650081",
+    "title": "Tu M'en Veux",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650081
+  },
+  {
+    "id": "l2b-3319650091",
+    "title": "Billionaire",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650091
+  },
+  {
+    "id": "l2b-3319650101",
+    "title": "Sur Moi",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650101
+  },
+  {
+    "id": "l2b-3319650111",
+    "title": "Men In Black",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650111
+  },
+  {
+    "id": "l2b-3319650121",
+    "title": "C'est Carré",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650121
+  },
+  {
+    "id": "l2b-3319650131",
+    "title": "Méchant",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650131
+  },
+  {
+    "id": "l2b-3319650141",
+    "title": "Tout Recommencer",
+    "project": "Nés Pour Briller : Book II",
+    "year": 2025,
+    "releaseDate": "2025-04-17",
+    "deezerTrackId": 3319650141
+  },
+  {
+    "id": "l2b-3377836451",
+    "title": "Jump",
+    "project": "Jump",
+    "year": 2025,
+    "releaseDate": "2025-05-28",
+    "deezerTrackId": 3377836451
+  },
+  {
+    "id": "l2b-3408021311",
+    "title": "Book III",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021311
+  },
+  {
+    "id": "l2b-3408021331",
+    "title": "Benzo",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021331
+  },
+  {
+    "id": "l2b-3408021341",
+    "title": "Only",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021341
+  },
+  {
+    "id": "l2b-3408021351",
+    "title": "David Douillet",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021351
+  },
+  {
+    "id": "l2b-3408021361",
+    "title": "Empire",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021361
+  },
+  {
+    "id": "l2b-3408021371",
+    "title": "Cama/Sosa",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021371
+  },
+  {
+    "id": "l2b-3408021381",
+    "title": "Obstacle",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021381
+  },
+  {
+    "id": "l2b-3408021391",
+    "title": "Bla Bla",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021391
+  },
+  {
+    "id": "l2b-3408021401",
+    "title": "Gov",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021401
+  },
+  {
+    "id": "l2b-3408021411",
+    "title": "Commentaires",
+    "project": "Nés Pour Briller : Book III",
+    "year": 2025,
+    "releaseDate": "2025-06-12",
+    "deezerTrackId": 3408021411
+  }
+]

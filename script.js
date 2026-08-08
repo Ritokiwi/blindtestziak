@@ -53,6 +53,8 @@ function describeSpeed(preset) {
   const answerPart = preset.answer == null ? 'temps illimité pour trouver' : `${preset.answer} s pour trouver`;
   return `${preset.listen} s d'écoute forcée, puis ${answerPart}. ${replayPart}`;
 }
+function soloRecordField(speedKey) { return `soloRecord${speedKey.charAt(0).toUpperCase()}${speedKey.slice(1)}`; }
+function leaderboardModeLabel(mode) { return mode === 'challenge' ? 'RANKED' : (SPEED_PRESETS[mode]?.label || mode.toUpperCase()); }
 const previewCache = new Map();
 function fetchJsonWithTimeout(url, timeoutMs = 10000) {
   const controller = new AbortController();
@@ -65,7 +67,8 @@ function fetchJsonWithTimeout(url, timeoutMs = 10000) {
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
-  start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), recordMark: $('#recordMark'), best: $('#bestScore'), authMessage: $('#authMessage'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardTabs: document.querySelectorAll('.leaderboard-tab'),
+  start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), best: $('#bestScore'), authMessage: $('#authMessage'),
+  artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'),
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), speedDescription: $('#speedDescription'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
@@ -86,7 +89,9 @@ let soundcloudMessageHandler = null;
 let currentUser = null;
 let firestoreDb = null;
 let accountBest = { solo: 0, challenge: 0 };
-let leaderboardField = 'challengeRecord';
+let leaderboardMode = 'classic';
+let leaderboardMetric = 'challengeRecord';
+function currentLeaderboardField() { return leaderboardMode === 'challenge' ? leaderboardMetric : soloRecordField(leaderboardMode); }
 let accountBestReady = Promise.resolve();
 const DEFAULT_VOLUME = 1;
 
@@ -248,7 +253,7 @@ async function migrateGuestBest(user) {
     console.error('Impossible de migrer le score local vers Firebase', error);
   }
 }
-async function saveBest(mode, score, fastest, correctCount, rankResult = null) {
+async function saveBest(mode, score, fastest, correctCount, rankResult = null, speedKey = 'classic') {
   const numericScore = Math.max(0, Number(score) || 0);
   const modeField = mode === 'solo' ? 'bestSolo' : 'bestChallenge';
   const knownBest = Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0);
@@ -262,6 +267,9 @@ async function saveBest(mode, score, fastest, correctCount, rankResult = null) {
     localStats.challengeCorrect = Math.max(Number(localStats.challengeCorrect) || 0, Number(correctCount) || 0);
     if (Number.isFinite(Number(fastest))) localStats.challengeTime = localStats.challengeTime > 0 ? Math.min(Number(localStats.challengeTime), Number(fastest)) : Number(fastest);
     if (rankResult) { localStats.rankPoints = rankResult.points; localStats.rankGames = rankResult.games; }
+  } else if (mode === 'solo') {
+    const soloField = soloRecordField(speedKey);
+    localStats[soloField] = Math.max(Number(localStats[soloField]) || 0, numericScore);
   }
   localStorage.setItem(statsKey(), JSON.stringify(localStats));
   refreshBest();
@@ -298,6 +306,9 @@ async function saveBest(mode, score, fastest, correctCount, rankResult = null) {
         updates.challengeCorrect = Math.max(Number(previousArtist.challengeCorrect) || 0, Number(correctCount) || 0);
         if (Number.isFinite(Number(fastest))) updates.challengeTime = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
         if (rankResult) { updates.rankPoints = rankResult.points; updates.rankGames = rankResult.games; }
+      } else if (mode === 'solo') {
+        const soloField = soloRecordField(speedKey);
+        updates[soloField] = Math.max(Number(previousArtist[soloField]) || 0, numericScore);
       }
       transaction.set(userRef, {
         uid: userAtSave.uid,
@@ -321,10 +332,10 @@ function leaderboardLabel(field, value) {
 }
 function renderLocalLeaderboard(field, status = 'Classement cloud indisponible — score local affiché.') {
   const localStats = readLocalStats();
-  const values = { challengeRecord: Number(localStats.challengeRecord) || 0, challengeCorrect: Number(localStats.challengeCorrect) || 0, challengeTime: Number(localStats.challengeTime) || 0 };
-  if (!currentUser || !values[field]) { ui.leaderboardStatus.textContent = status; ui.leaderboardList.innerHTML = ''; return; }
+  const value = Number(localStats[field]) || 0;
+  if (!currentUser || !value) { ui.leaderboardStatus.textContent = status; ui.leaderboardList.innerHTML = ''; return; }
   ui.leaderboardStatus.textContent = status;
-  ui.leaderboardList.innerHTML = `<li><span class="leader-rank">01</span><span class="leader-user"><img src="${escapeHtml(currentUser.photoURL || '')}" alt="" /><strong>${escapeHtml(currentUser.displayName || currentUser.email || 'Moi')}</strong></span><span class="leader-value">${leaderboardLabel(field, values[field])}</span></li>`;
+  ui.leaderboardList.innerHTML = `<li><span class="leader-rank">01</span><span class="leader-user"><img src="${escapeHtml(currentUser.photoURL || '')}" alt="" /><strong>${escapeHtml(currentUser.displayName || currentUser.email || 'Moi')}</strong></span><span class="leader-value">${leaderboardLabel(field, value)}</span></li>`;
 }
 async function loadLeaderboard(field = 'challengeRecord') {
   if (!currentUser || !firestoreDb) { ui.leaderboardStatus.textContent = 'Connecte-toi avec Google pour voir le classement.'; ui.leaderboardList.innerHTML = ''; return; }
@@ -364,14 +375,14 @@ async function loadUserStats() {
     ui.statsStatus.textContent = 'Impossible de charger tes stats — vérifie ta connexion.';
   }
 }
-function statsRoster() { return artists.length ? artists : [{ id: 'ziak', name: 'Ziak', mark: 'Z' }]; }
+function statsRoster() { return artists.length ? artists : [{ id: 'ziak', name: 'Ziak' }]; }
 function renderStatsMenu() {
   ui.statsList.className = 'stats-list stats-menu';
-  ui.statsList.innerHTML = statsRoster().map(artist => `<li><button class="stats-menu-item" type="button" data-artist-id="${escapeHtml(artist.id)}"><span class="stats-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong><span class="stats-menu-arrow">→</span></button></li>`).join('');
+  ui.statsList.innerHTML = statsRoster().map(artist => `<li><button class="stats-menu-item" type="button" data-artist-id="${escapeHtml(artist.id)}"><strong>${escapeHtml(artist.name)}</strong><span class="stats-menu-arrow">→</span></button></li>`).join('');
   ui.statsList.querySelectorAll('.stats-menu-item').forEach(button => button.addEventListener('click', () => renderStatsDetail(button.dataset.artistId)));
 }
 function renderStatsDetail(artistId) {
-  const artist = statsRoster().find(item => item.id === artistId) || { id: artistId, name: artistId, mark: artistId.charAt(0).toUpperCase() };
+  const artist = statsRoster().find(item => item.id === artistId) || { id: artistId, name: artistId };
   const stats = statsProfile?.artistStats?.[artist.id] || (artist.id === 'ziak' ? statsProfile : {}) || {};
   const bestSolo = Number(stats.bestSolo) || 0;
   const bestChallenge = Number(stats.bestChallenge) || 0;
@@ -383,7 +394,7 @@ function renderStatsDetail(artistId) {
   ui.statsList.innerHTML = `<li>
     <button class="stats-back" type="button">← ARTISTES</button>
     <div class="stats-row">
-      <div class="stats-artist"><span class="stats-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong></div>
+      <div class="stats-artist"><strong>${escapeHtml(artist.name)}</strong></div>
       <div class="stats-grid-mini">
         <div><span>MEILLEUR SOLO</span><strong>${bestSolo}</strong></div>
         <div><span>MEILLEUR RANKED</span><strong>${bestChallenge}</strong></div>
@@ -403,16 +414,34 @@ function updateArtistBrand(artist) {
   const name = artist?.name || 'Blind Test';
   document.title = `${name.toUpperCase()} // BLIND TEST`;
   if (ui.activeArtist) ui.activeArtist.textContent = name.toUpperCase();
-  if (ui.recordMark) ui.recordMark.textContent = artist?.mark || name.charAt(0).toUpperCase();
-  if (ui.leaderboardEyebrow) ui.leaderboardEyebrow.textContent = `CLASSEMENT · ${name.toUpperCase()} RANKED`;
+  updateLeaderboardEyebrow();
+}
+function updateLeaderboardEyebrow() {
+  if (!ui.leaderboardEyebrow) return;
+  const name = (selectedArtist?.name || 'Blind Test').toUpperCase();
+  ui.leaderboardEyebrow.textContent = `CLASSEMENT · ${name} · ${leaderboardModeLabel(leaderboardMode)}`;
+}
+let artistSearchQuery = '';
+let artistSortMode = 'default';
+function visibleArtists() {
+  const query = normalise(artistSearchQuery);
+  let list = query ? artists.filter(artist => normalise(artist.name).includes(query)) : artists.slice();
+  if (artistSortMode === 'alpha') list.sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
+  return list;
 }
 function renderArtists() {
   if (!ui.artists) return;
-  ui.artists.innerHTML = artists.map((artist, index) => {
-    const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" /></span>` : '';
-    return `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<span class="artist-card-mark">${escapeHtml(artist.mark || artist.name.charAt(0).toUpperCase())}</span><strong>${escapeHtml(artist.name)}</strong></button>`;
+  const list = visibleArtists();
+  ui.artists.innerHTML = list.map(artist => {
+    const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" loading="lazy" /></span>` : '';
+    return `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong></button>`;
   }).join('');
   ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
+  if (ui.artistEmptyState) {
+    ui.artistEmptyState.hidden = list.length > 0 || !artistSearchQuery;
+    ui.artists.hidden = list.length === 0 && Boolean(artistSearchQuery);
+    if (ui.artistEmptyQuery) ui.artistEmptyQuery.textContent = artistSearchQuery;
+  }
 }
 async function selectArtist(artistId) {
   const artist = artists.find(item => item.id === artistId);
@@ -424,7 +453,7 @@ async function selectArtist(artistId) {
   await loadSongs();
   if (currentUser) {
     accountBestReady = loadAccountBest(currentUser).then(() => migrateGuestBest(currentUser));
-    if (!ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField);
+    if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField());
   } else refreshBest();
 }
 async function loadArtists() {
@@ -825,7 +854,7 @@ async function endGame() {
     const before = state.rankBefore || { points: 0, games: 0 };
     rankResult = { points: nextRankPoints(before.points, before.games, state.score), games: before.games + 1, isPlacement: before.games === 0 };
   }
-  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length, rankResult);
+  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length, rankResult, state.speed?.key);
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
@@ -838,6 +867,12 @@ async function endGame() {
   show(ui.result);
 }
 
+if (ui.artistSearch) ui.artistSearch.addEventListener('input', event => { artistSearchQuery = event.target.value; renderArtists(); });
+ui.artistSortOptions.forEach(button => button.addEventListener('click', () => {
+  artistSortMode = button.dataset.sort;
+  ui.artistSortOptions.forEach(item => item.classList.toggle('selected', item === button));
+  renderArtists();
+}));
 document.querySelectorAll('.mode-card').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.mode-card').forEach(item => item.classList.toggle('selected', item === button));
   const isChallenge = button.dataset.mode === 'challenge';
@@ -871,11 +906,22 @@ ui.home.addEventListener('click', async () => {
   // d'abord la partie pour ne jamais perdre son score.
   if (state.active && state.played?.length) await endGame();
   stopPlayback(); show(ui.setup);
-  if (currentUser && !ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField);
+  if (currentUser && !ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField());
 });
-ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidden = !ui.leaderboardPanel.hidden; if (!ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField); });
+ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidden = !ui.leaderboardPanel.hidden; if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField()); });
 ui.leaderboardClose.addEventListener('click', () => { ui.leaderboardPanel.hidden = true; });
-ui.leaderboardTabs.forEach(tab => tab.addEventListener('click', () => { leaderboardField = tab.dataset.leaderboard; ui.leaderboardTabs.forEach(item => item.classList.toggle('selected', item === tab)); loadLeaderboard(leaderboardField); }));
+ui.leaderboardModeTabs.forEach(tab => tab.addEventListener('click', () => {
+  leaderboardMode = tab.dataset.mode;
+  ui.leaderboardModeTabs.forEach(item => item.classList.toggle('selected', item === tab));
+  if (ui.leaderboardMetricGroup) ui.leaderboardMetricGroup.hidden = leaderboardMode !== 'challenge';
+  updateLeaderboardEyebrow();
+  loadLeaderboard(currentLeaderboardField());
+}));
+ui.leaderboardMetricTabs.forEach(tab => tab.addEventListener('click', () => {
+  leaderboardMetric = tab.dataset.leaderboard;
+  ui.leaderboardMetricTabs.forEach(item => item.classList.toggle('selected', item === tab));
+  loadLeaderboard(currentLeaderboardField());
+}));
 if (ui.statsButton) ui.statsButton.addEventListener('click', () => { ui.statsOverlay.hidden = false; loadUserStats(); });
 if (ui.statsClose) ui.statsClose.addEventListener('click', () => { ui.statsOverlay.hidden = true; });
 if (ui.statsOverlay) ui.statsOverlay.addEventListener('click', event => { if (event.target === ui.statsOverlay) ui.statsOverlay.hidden = true; });
@@ -892,7 +938,7 @@ function setupGoogleAuth() {
     const setMessage = (message = '') => { authMessage.textContent = message; };
     auth.onAuthStateChanged(user => {
       currentUser = user || null; loginButton.hidden = Boolean(user); profileArea.hidden = !user;
-      if (user) { profileName.textContent = user.displayName || user.email || 'Compte Google'; profilePhoto.src = user.photoURL || ''; accountBestReady = loadAccountBest(user).then(() => migrateGuestBest(user)); if (!ui.leaderboardPanel.hidden) loadLeaderboard(leaderboardField); setMessage(''); }
+      if (user) { profileName.textContent = user.displayName || user.email || 'Compte Google'; profilePhoto.src = user.photoURL || ''; accountBestReady = loadAccountBest(user).then(() => migrateGuestBest(user)); if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField()); setMessage(''); }
       else { accountBestReady = Promise.resolve(); localStorage.removeItem('ziak-blindtest-last-uid'); accountBest = { solo: 0, challenge: 0 }; profilePhoto.removeAttribute('src'); refreshBest(); }
     });
     loginButton.addEventListener('click', async () => {

@@ -1,0 +1,650 @@
+[
+  {
+    "id": "zola-452139432",
+    "title": "Honey",
+    "project": "Honey",
+    "year": 2018,
+    "releaseDate": "2018-01-19",
+    "deezerTrackId": 452139432
+  },
+  {
+    "id": "zola-479176262",
+    "title": "Extasy",
+    "project": "Extasy",
+    "year": 2018,
+    "releaseDate": "2018-03-30",
+    "deezerTrackId": 479176262
+  },
+  {
+    "id": "zola-483115352",
+    "title": "California Girl",
+    "project": "California Girl (Extrait de la BOF de \"Taxi 5\")",
+    "year": 2018,
+    "releaseDate": "2018-04-07",
+    "deezerTrackId": 483115352
+  },
+  {
+    "id": "zola-512256632",
+    "title": "Bernard Tapie",
+    "project": "Bernard Tapie",
+    "year": 2018,
+    "releaseDate": "2018-06-15",
+    "deezerTrackId": 512256632
+  },
+  {
+    "id": "zola-526555902",
+    "title": "Scarface",
+    "project": "Scarface",
+    "year": 2018,
+    "releaseDate": "2018-07-12",
+    "deezerTrackId": 526555902
+  },
+  {
+    "id": "zola-562138962",
+    "title": "Ouais ouais",
+    "project": "Ouais ouais",
+    "year": 2018,
+    "releaseDate": "2018-10-05",
+    "deezerTrackId": 562138962
+  },
+  {
+    "id": "zola-570479202",
+    "title": "Spiderman (Freestyle OKLM)",
+    "project": "Spiderman (Freestyle OKLM)",
+    "year": 2018,
+    "releaseDate": "2018-10-23",
+    "deezerTrackId": 570479202
+  },
+  {
+    "id": "zola-622836692",
+    "title": "Booska Rocket",
+    "project": "Booska Rocket",
+    "year": 2019,
+    "releaseDate": "2019-01-30",
+    "deezerTrackId": 622836692
+  },
+  {
+    "id": "zola-632566712",
+    "title": "Zolabeille",
+    "project": "Zolabeille",
+    "year": 2019,
+    "releaseDate": "2019-02-22",
+    "deezerTrackId": 632566712
+  },
+  {
+    "id": "zola-651543102",
+    "title": "Baby Boy",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543102
+  },
+  {
+    "id": "zola-651543112",
+    "title": "Fuckboi",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543112
+  },
+  {
+    "id": "zola-651543122",
+    "title": "Mojo",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543122
+  },
+  {
+    "id": "zola-651543142",
+    "title": "Jamais",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543142
+  },
+  {
+    "id": "zola-651543152",
+    "title": "Club",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543152
+  },
+  {
+    "id": "zola-651543162",
+    "title": "Papers (feat. Ninho)",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543162
+  },
+  {
+    "id": "zola-651543182",
+    "title": "Kinshasa",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543182
+  },
+  {
+    "id": "zola-651543192",
+    "title": "Astroboy",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543192
+  },
+  {
+    "id": "zola-651543212",
+    "title": "7.65",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543212
+  },
+  {
+    "id": "zola-651543222",
+    "title": "Alloicizolaski4 (feat. No Name & Key Largo)",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543222
+  },
+  {
+    "id": "zola-651543232",
+    "title": "L1 L2",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543232
+  },
+  {
+    "id": "zola-651543242",
+    "title": "Cicatrices",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543242
+  },
+  {
+    "id": "zola-651543252",
+    "title": "B.A.L",
+    "project": "Cicatrices",
+    "year": 2019,
+    "releaseDate": "2019-04-05",
+    "deezerTrackId": 651543252
+  },
+  {
+    "id": "zola-946232492",
+    "title": "Bro Bro",
+    "project": "Bro Bro",
+    "year": 2020,
+    "releaseDate": "2020-05-08",
+    "deezerTrackId": 946232492
+  },
+  {
+    "id": "zola-1013609612",
+    "title": "Wow",
+    "project": "Wow",
+    "year": 2020,
+    "releaseDate": "2020-07-17",
+    "deezerTrackId": 1013609612
+  },
+  {
+    "id": "zola-1129251122",
+    "title": "Booska'Sten",
+    "project": "Booska'Sten",
+    "year": 2020,
+    "releaseDate": "2020-11-05",
+    "deezerTrackId": 1129251122
+  },
+  {
+    "id": "zola-1162967492",
+    "title": "Le sauveur",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967492
+  },
+  {
+    "id": "zola-1162967502",
+    "title": "Pistou",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967502
+  },
+  {
+    "id": "zola-1162967512",
+    "title": "Papillon",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967512
+  },
+  {
+    "id": "zola-1162967522",
+    "title": "Ma jolie (feat. Leto)",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967522
+  },
+  {
+    "id": "zola-1162967532",
+    "title": "TLMA",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967532
+  },
+  {
+    "id": "zola-1162967552",
+    "title": "Madame",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967552
+  },
+  {
+    "id": "zola-1162967562",
+    "title": "Pollos Hermanos",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967562
+  },
+  {
+    "id": "zola-1162967572",
+    "title": "9 1 1 3 (feat. SCH)",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967572
+  },
+  {
+    "id": "zola-1162967592",
+    "title": "Mula",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967592
+  },
+  {
+    "id": "zola-1162967602",
+    "title": "Money Train",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967602
+  },
+  {
+    "id": "zola-1162967612",
+    "title": "Tu connais l'gang",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967612
+  },
+  {
+    "id": "zola-1162967622",
+    "title": "Cache Cash",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967622
+  },
+  {
+    "id": "zola-1162967632",
+    "title": "Les puristes",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967632
+  },
+  {
+    "id": "zola-1162967642",
+    "title": "Sanchez",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967642
+  },
+  {
+    "id": "zola-1162967652",
+    "title": "Vista",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967652
+  },
+  {
+    "id": "zola-1162967662",
+    "title": "Bad Bi",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967662
+  },
+  {
+    "id": "zola-1162967672",
+    "title": "Mauvais choix",
+    "project": "Survie",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1162967672
+  },
+  {
+    "id": "zola-1788584017",
+    "title": "PAPEL",
+    "project": "PAPEL",
+    "year": 2022,
+    "releaseDate": "2022-07-08",
+    "deezerTrackId": 1788584017
+  },
+  {
+    "id": "zola-2005008037",
+    "title": "AMBER",
+    "project": "AMBER",
+    "year": 2022,
+    "releaseDate": "2022-11-18",
+    "deezerTrackId": 2005008037
+  },
+  {
+    "id": "zola-2045327247",
+    "title": "CARTIER PANTHÈRE (feat. PRINC€)",
+    "project": "CARTIER PANTHÈRE (feat. PRINC€)",
+    "year": 2022,
+    "releaseDate": "2022-12-16",
+    "deezerTrackId": 2045327247
+  },
+  {
+    "id": "zola-2124174027",
+    "title": "TOUTE LA JOURNÉE (feat. Tiakola)",
+    "project": "TOUTE LA JOURNÉE (feat. Tiakola)",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2124174027
+  },
+  {
+    "id": "zola-2192929457",
+    "title": "COEUR DE ICE (feat. Damso & PRINC€)",
+    "project": "COEUR DE ICE (feat. Damso & PRINC€)",
+    "year": 2023,
+    "releaseDate": "2023-03-15",
+    "deezerTrackId": 2192929457
+  },
+  {
+    "id": "zola-2192942297",
+    "title": "FINISH HIM (feat. Ateyaba)",
+    "project": "FINISH HIM (feat. Ateyaba)",
+    "year": 2023,
+    "releaseDate": "2023-03-16",
+    "deezerTrackId": 2192942297
+  },
+  {
+    "id": "zola-2288330637",
+    "title": "NOCHEY",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330637
+  },
+  {
+    "id": "zola-2288330667",
+    "title": "L'ARMOIRE",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330667
+  },
+  {
+    "id": "zola-2288330677",
+    "title": "FROSTIES",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330677
+  },
+  {
+    "id": "zola-2288330687",
+    "title": "ZAZA (feat. PRINC€)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330687
+  },
+  {
+    "id": "zola-2288330697",
+    "title": "BRÛLURES INDIENNES",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330697
+  },
+  {
+    "id": "zola-2288330727",
+    "title": "ENVIE7VIE",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330727
+  },
+  {
+    "id": "zola-2288330737",
+    "title": "GORGÉE POUR LES MORTS (feat. PRINC€)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330737
+  },
+  {
+    "id": "zola-2288330747",
+    "title": "ELECTRO",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330747
+  },
+  {
+    "id": "zola-2288330757",
+    "title": "MAKE UP (feat. PRINC€)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330757
+  },
+  {
+    "id": "zola-2288330767",
+    "title": "CÔTÉ HUBLOT",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330767
+  },
+  {
+    "id": "zola-2288330777",
+    "title": "LA LUMIÈRE",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330777
+  },
+  {
+    "id": "zola-2288330797",
+    "title": "CAUCHEMAR (FREESTYLE MIEUX REVENIR)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330797
+  },
+  {
+    "id": "zola-2288330807",
+    "title": "GAS (feat. PRINC€) (FREESTYLE SKYROCK)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330807
+  },
+  {
+    "id": "zola-2288330817",
+    "title": "NIKE AIR (feat. PRINC€) (FREESTYLE SKYROCK)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330817
+  },
+  {
+    "id": "zola-2288330827",
+    "title": "ADERALL (FREESTYLE SKYROCK)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330827
+  },
+  {
+    "id": "zola-2288330837",
+    "title": "BALLAS",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330837
+  },
+  {
+    "id": "zola-2288330847",
+    "title": "URGENCE",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330847
+  },
+  {
+    "id": "zola-2288330857",
+    "title": "SKU",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330857
+  },
+  {
+    "id": "zola-2288330867",
+    "title": "SLIME",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330867
+  },
+  {
+    "id": "zola-2288330877",
+    "title": "DÈS LE MATIN (feat. PRINC€)",
+    "project": "DIAMANT DU BLED",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2288330877
+  },
+  {
+    "id": "zola-2561965002",
+    "title": "Aller sans retour",
+    "project": "Aller sans retour",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2561965002
+  },
+  {
+    "id": "zola-2605419612",
+    "title": "Temps en temps",
+    "project": "Temps en temps",
+    "year": 2024,
+    "releaseDate": "2024-01-12",
+    "deezerTrackId": 2605419612
+  },
+  {
+    "id": "zola-2642992722",
+    "title": "Amiri jeans",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992722
+  },
+  {
+    "id": "zola-2642992742",
+    "title": "C'est non",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992742
+  },
+  {
+    "id": "zola-2642992752",
+    "title": "Parano",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992752
+  },
+  {
+    "id": "zola-2642992772",
+    "title": "Mexicana",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992772
+  },
+  {
+    "id": "zola-2642992782",
+    "title": "Un billet",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992782
+  },
+  {
+    "id": "zola-2642992792",
+    "title": "Roulette russe",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992792
+  },
+  {
+    "id": "zola-2642992802",
+    "title": "Dans la nuit",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992802
+  },
+  {
+    "id": "zola-2642992812",
+    "title": "Frères ennemis",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992812
+  },
+  {
+    "id": "zola-2642992822",
+    "title": "Café",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992822
+  },
+  {
+    "id": "zola-2642992842",
+    "title": "La Main dans le Sac",
+    "project": "Frères Ennemis",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2642992842
+  },
+  {
+    "id": "zola-4047900401",
+    "title": "NETFLIX CHILL",
+    "project": "NETFLIX CHILL",
+    "year": 2026,
+    "releaseDate": "2026-05-28",
+    "deezerTrackId": 4047900401
+  }
+]
