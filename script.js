@@ -25,6 +25,19 @@ function getRank(score) {
   const division = progress < 1 / 3 ? 'III' : progress < 2 / 3 ? 'II' : 'I';
   return `${tier.name} ${division}`;
 }
+const RANK_PLACEMENT_CAP = 999;
+const RANK_CLIMB_RATE = 0.35;
+const RANK_MAX_STEP = 450;
+function nextRankPoints(previousPoints, gamesPlayed, matchScore) {
+  if (gamesPlayed <= 0) return Math.max(0, Math.min(matchScore, RANK_PLACEMENT_CAP));
+  const delta = Math.round((matchScore - previousPoints) * RANK_CLIMB_RATE);
+  const clampedDelta = Math.max(-RANK_MAX_STEP, Math.min(RANK_MAX_STEP, delta));
+  return Math.max(0, previousPoints + clampedDelta);
+}
+function getPersistentRank() {
+  const stats = readLocalStats();
+  return { points: Number(stats.rankPoints) || 0, games: Number(stats.rankGames) || 0 };
+}
 const HINTS_PER_ROUND = 3;
 const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
 const SPEED_PRESETS = {
@@ -191,6 +204,13 @@ async function loadAccountBest(user) {
       };
       localStorage.setItem(bestKey('solo', artistId), String(accountBest.solo));
       localStorage.setItem(bestKey('challenge', artistId), String(accountBest.challenge));
+      const cloudRankGames = Number(artistStats.rankGames) || 0;
+      const localStatsNow = readLocalStats();
+      if (cloudRankGames > (Number(localStatsNow.rankGames) || 0)) {
+        localStatsNow.rankPoints = Number(artistStats.rankPoints) || 0;
+        localStatsNow.rankGames = cloudRankGames;
+        localStorage.setItem(statsKey(), JSON.stringify(localStatsNow));
+      }
     }
   } catch { /* Firestore reste optionnel tant que ses règles ne sont pas activées. */ }
   refreshBest();
@@ -235,7 +255,7 @@ async function migrateGuestBest(user) {
     console.error('Impossible de migrer le score local vers Firebase', error);
   }
 }
-async function saveBest(mode, score, fastest, correctCount) {
+async function saveBest(mode, score, fastest, correctCount, rankResult = null) {
   const numericScore = Math.max(0, Number(score) || 0);
   const modeField = mode === 'solo' ? 'bestSolo' : 'bestChallenge';
   const knownBest = Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0);
@@ -248,6 +268,7 @@ async function saveBest(mode, score, fastest, correctCount) {
     localStats.challengeRecord = Math.max(Number(localStats.challengeRecord) || 0, numericScore);
     localStats.challengeCorrect = Math.max(Number(localStats.challengeCorrect) || 0, Number(correctCount) || 0);
     if (Number.isFinite(Number(fastest))) localStats.challengeTime = localStats.challengeTime > 0 ? Math.min(Number(localStats.challengeTime), Number(fastest)) : Number(fastest);
+    if (rankResult) { localStats.rankPoints = rankResult.points; localStats.rankGames = rankResult.games; }
   }
   localStorage.setItem(statsKey(), JSON.stringify(localStats));
   refreshBest();
@@ -283,6 +304,7 @@ async function saveBest(mode, score, fastest, correctCount) {
         updates.challengeRecord = Math.max(Number(previousArtist.challengeRecord) || 0, numericScore);
         updates.challengeCorrect = Math.max(Number(previousArtist.challengeCorrect) || 0, Number(correctCount) || 0);
         if (Number.isFinite(Number(fastest))) updates.challengeTime = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
+        if (rankResult) { updates.rankPoints = rankResult.points; updates.rankGames = rankResult.games; }
       }
       transaction.set(userRef, {
         uid: userAtSave.uid,
@@ -456,7 +478,7 @@ function startGame() {
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
   const speedKey = mode === 'solo' ? (document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic') : 'classic';
   const speed = SPEED_PRESETS[speedKey] || SPEED_PRESETS.classic;
-  state = { artist: selectedArtist, mode, rounds, speed, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeEndsAt: 0 };
+  state = { artist: selectedArtist, mode, rounds, speed, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank() : null };
   show(ui.game);
   nextRound();
 }
@@ -477,7 +499,10 @@ function nextRound() {
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
   ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
   ui.score.textContent = state.score;
-  if (ui.rankLabel) { ui.rankLabel.hidden = state.mode !== 'challenge'; if (state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score); }
+  if (ui.rankLabel) {
+    ui.rankLabel.hidden = state.mode !== 'challenge';
+    if (state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = state.rankBefore?.games ? getRank(state.rankBefore.points) : 'NON CLASSÉ';
+  }
   ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
   loadTrack(); prefetchUpcoming();
   renderHint(); ui.input.focus();
@@ -674,15 +699,21 @@ function startTimer() {
   clearInterval(state.timerId);
   state.scoreBudgetSeconds = ROUND_SECONDS;
   state.startedAt = performance.now();
-  if (state.mode === 'challenge' && !state.challengeEndsAt) state.challengeEndsAt = state.startedAt + CHALLENGE_SECONDS * 1000;
   state.timerId = setInterval(updateTimer, 50); updateTimer();
 }
 function updateTimer() {
   const now = performance.now();
-  const max = state.mode === 'challenge' ? CHALLENGE_SECONDS * 1000 : ROUND_SECONDS * 1000;
-  const left = state.mode === 'challenge' ? Math.max(0, state.challengeEndsAt - now) : Math.max(0, max - (now - state.startedAt));
+  if (state.mode === 'challenge') {
+    const max = CHALLENGE_SECONDS * 1000;
+    const left = Math.max(0, state.challengeRemainingMs - (now - state.startedAt));
+    ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
+    if (left <= 0) { clearInterval(state.timerId); state.challengeRemainingMs = 0; endGame(); }
+    return;
+  }
+  const max = ROUND_SECONDS * 1000;
+  const left = Math.max(0, max - (now - state.startedAt));
   ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
-  if (left <= 0) { clearInterval(state.timerId); state.mode === 'challenge' ? endGame() : resolveRound(false, 'Temps écoulé'); }
+  if (left <= 0) { clearInterval(state.timerId); resolveRound(false, 'Temps écoulé'); }
 }
 function renderHint() {
   const title = state.current.title;
@@ -753,6 +784,7 @@ function handleGuessInput() {
 function resolveRound(correct, message = '', options = {}) {
   if (state.roundResolved) return;
   state.roundResolved = true; clearInterval(state.timerId);
+  if (state.mode === 'challenge') state.challengeRemainingMs = Math.max(0, state.challengeRemainingMs - (performance.now() - state.startedAt));
   if (!correct) stopPlayback();
   const seconds = (performance.now() - state.startedAt) / 1000;
   const budget = state.scoreBudgetSeconds || ROUND_SECONDS;
@@ -760,7 +792,6 @@ function resolveRound(correct, message = '', options = {}) {
   if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
-  if (ui.rankLabel && state.mode === 'challenge' && ui.rankLabelValue) ui.rankLabelValue.textContent = getRank(state.score);
   const qualifier = options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : options.fuzzy ? ' (ORTHOGRAPHE APPROXIMATIVE)' : '';
   ui.feedback.textContent = correct
     ? `BIEN JOUÉ${qualifier} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
@@ -775,12 +806,20 @@ async function endGame() {
   state.active = false; clearInterval(state.timerId); stopPlayback();
   const previousBest = getBest(state.mode); const record = Math.max(previousBest, state.score);
   const correct = state.played.filter(song => song.correct); const fastest = correct.length ? Math.min(...correct.map(song => song.seconds)) : null;
-  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length);
+  let rankResult = null;
+  if (state.mode === 'challenge') {
+    const before = state.rankBefore || { points: 0, games: 0 };
+    rankResult = { points: nextRankPoints(before.points, before.games, state.score), games: before.games + 1, isPlacement: before.games === 0 };
+  }
+  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length, rankResult);
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
   ui.resultMode.textContent = `${state.artist?.name || 'ARTISTE'} · ${state.mode === 'solo' ? 'SOLO' : 'RANKED'}`; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
-  if (ui.rankBadge) { ui.rankBadge.hidden = state.mode !== 'challenge'; if (state.mode === 'challenge' && ui.rankValue) ui.rankValue.textContent = getRank(state.score); }
+  if (ui.rankBadge) {
+    ui.rankBadge.hidden = state.mode !== 'challenge';
+    if (state.mode === 'challenge' && ui.rankValue) ui.rankValue.textContent = rankResult.isPlacement ? `${getRank(rankResult.points)} (PLACEMENT)` : getRank(rankResult.points);
+  }
   ui.played.innerHTML = state.played.map(song => `<li class="${song.correct ? '' : 'missed'}"><span>${song.correct ? '✓' : '×'} ${escapeHtml(song.title)}</span><span>${song.correct ? `+${song.points}` : 'MANQUÉ'}</span></li>`).join('') || '<li><span>Aucun morceau joué.</span></li>';
   show(ui.result);
 }
@@ -790,6 +829,7 @@ document.querySelectorAll('.mode-card').forEach(button => button.addEventListene
   const isChallenge = button.dataset.mode === 'challenge';
   ui.rounds.classList.toggle('hidden', isChallenge);
   if (ui.speedPicker) ui.speedPicker.classList.toggle('hidden', isChallenge);
+  if (ui.speedDescription) ui.speedDescription.classList.toggle('hidden', isChallenge);
   ui.setup.classList.toggle('ranked-selected', isChallenge);
 }));
 function updateSpeedDescription() {
