@@ -99,38 +99,15 @@ function normalise(value = '') {
 function wordsOf(value = '') {
   return value.split(/\s+/).map(normalise).filter(Boolean);
 }
+function isComplexTitle(titleRaw) {
+  return normalise(titleRaw).length >= 10 || /['’\/]/.test(titleRaw);
+}
 function sameWordsAnyOrder(guessRaw, titleRaw) {
+  if (!isComplexTitle(titleRaw)) return false;
   const guessWords = wordsOf(guessRaw).sort();
   const titleWords = wordsOf(titleRaw).sort();
   if (!guessWords.length || guessWords.length !== titleWords.length) return false;
   return guessWords.every((word, index) => word === titleWords[index]);
-}
-function levenshtein(a, b) {
-  if (!a.length) return b.length;
-  if (!b.length) return a.length;
-  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
-  for (let i = 1; i <= a.length; i++) {
-    const curr = [i];
-    for (let j = 1; j <= b.length; j++) {
-      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-      curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
-    }
-    prev = curr;
-  }
-  return prev[b.length];
-}
-function isComplexTitle(titleRaw) {
-  return normalise(titleRaw).length >= 10 || /['’\/]/.test(titleRaw);
-}
-function fuzzyMatch(guessRaw, titleRaw) {
-  if (freestylePrefixEnd(titleRaw) !== null) return false;
-  if (!isComplexTitle(titleRaw)) return false;
-  const guess = normalise(guessRaw);
-  const title = normalise(titleRaw);
-  if (!guess || !title) return false;
-  const threshold = Math.max(1, Math.floor(title.length / 6));
-  const distance = levenshtein(guess, title);
-  return distance > 0 && distance <= threshold;
 }
 function freestyleNumberMatch(guessRaw, titleRaw) {
   if (!/freestyle/i.test(titleRaw)) return false;
@@ -793,7 +770,6 @@ function checkGuess() {
   if (guess === normalise(title)) { resolveRound(true); return true; }
   if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return true; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
-  if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return true; }
   ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
   return false;
 }
@@ -807,7 +783,6 @@ function handleGuessInput() {
   if (guess === normalisedTitle) { resolveRound(true); return; }
   if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
-  if (fuzzyMatch(rawGuess, title)) { resolveRound(true, '', { fuzzy: true }); return; }
   if (guess.length >= normalisedTitle.length) {
     ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
     const prefixEnd = freestylePrefixEnd(title);
@@ -826,7 +801,7 @@ function resolveRound(correct, message = '', options = {}) {
   if (correct && options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
   if (correct) state.score += points;
   state.played.push({ ...state.current, correct, seconds, points }); ui.score.textContent = state.score;
-  const qualifier = options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : options.fuzzy ? ' (ORTHOGRAPHE APPROXIMATIVE)' : '';
+  const qualifier = options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : '';
   ui.feedback.textContent = correct
     ? `BIEN JOUÉ${qualifier} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
     : `${message} : ${state.current.title}`;
