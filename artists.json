@@ -38,5 +38,13 @@
     "mark": "L",
     "image": "assets/artists/luther.png",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "ven1",
+    "name": "VEN1",
+    "catalog": "ven1.json",
+    "mark": "V1",
+    "image": "assets/artists/ven1.png",
+    "description": "Discographie Deezer"
   }
 ]
