@@ -735,10 +735,17 @@ function updateTimer() {
   ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
   if (left <= 0) { clearInterval(state.timerId); resolveRound(false, 'Temps écoulé'); }
 }
+function freestylePrefixEnd(titleRaw) {
+  if (!/freestyle/i.test(titleRaw)) return null;
+  const match = titleRaw.match(/(\d+)\s*$/);
+  return match ? match.index : null;
+}
 function renderHint() {
   const title = state.current.title;
+  const revealFromIndex = freestylePrefixEnd(title);
   const display = [...title].map((char, index) => {
     if (char === ' ') return ' / ';
+    if (revealFromIndex !== null && index < revealFromIndex) return char.toUpperCase();
     return state.revealed.has(index) ? char.toUpperCase() : '_';
   }).join(' ');
   ui.hintText.textContent = state.hints === 3 ? `ANNÉE : ${state.current.year}` : display;
@@ -747,7 +754,9 @@ function useHint() {
   if (state.hints >= HINTS_PER_ROUND || state.roundResolved) return;
   state.hints++;
   if (state.hints < 3) {
-    const candidates = [...state.current.title].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !state.revealed.has(index));
+    const title = state.current.title;
+    const revealFromIndex = freestylePrefixEnd(title);
+    const candidates = [...title].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && (revealFromIndex === null || index >= revealFromIndex) && !state.revealed.has(index));
     if (candidates.length) state.revealed.add(candidates[Math.floor(Math.random() * candidates.length)].index);
   }
   ui.hintCount.textContent = `×${HINTS_PER_ROUND - state.hints}`; ui.hint.disabled = state.hints >= HINTS_PER_ROUND; renderHint();
