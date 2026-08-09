@@ -220,6 +220,12 @@
     "id": "cat-rapfr",
     "name": "RAP FR",
     "catalog": "category-rapfr.json",
+    "image": "assets/categories/rapfr-center.png",
+    "heroArt": {
+      "left": "assets/categories/rapfr-left.png",
+      "center": "assets/categories/rapfr-center.png",
+      "right": "assets/categories/rapfr-right.png"
+    },
     "description": "Tous les artistes mélangés",
     "category": true
   },
@@ -227,6 +233,12 @@
     "id": "cat-moment",
     "name": "SONS DU MOMENT",
     "catalog": "category-moment.json",
+    "image": "assets/categories/moment-center.png",
+    "heroArt": {
+      "left": "assets/categories/moment-right.png",
+      "center": "assets/categories/moment-center.png",
+      "right": "assets/categories/moment-left.png"
+    },
     "description": "Les sorties les plus récentes",
     "category": true
   },
@@ -234,6 +246,12 @@
     "id": "cat-top100",
     "name": "TOP 100 MONDE",
     "catalog": "category-top100.json",
+    "image": "assets/categories/top100-center.png",
+    "heroArt": {
+      "left": "assets/categories/top100-right.png",
+      "center": "assets/categories/top100-center.png",
+      "right": "assets/categories/top100-left.png"
+    },
     "description": "Le classement Deezer mondial",
     "category": true
   }

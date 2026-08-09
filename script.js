@@ -412,7 +412,7 @@ function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
 
 function updateArtistBrand(artist) {
   const name = artist?.name || 'Blind Test';
-  document.title = `${name.toUpperCase()} // BLIND TEST`;
+  document.title = `${name.toUpperCase()} // RAP KULTUUR`;
   if (ui.activeArtist) ui.activeArtist.textContent = name.toUpperCase();
   updateLeaderboardEyebrow();
 }
@@ -435,8 +435,22 @@ function renderArtists() {
   if (!ui.artists) return;
   const list = visibleArtists();
   ui.artists.innerHTML = list.map(artist => {
+    const description = artist.category && artist.description ? `<small>${escapeHtml(artist.description)}</small>` : '';
+    if (artist.category) {
+      let art = '';
+      if (artist.heroArt) {
+        art = `<span class="category-card-figures">
+          <img class="category-card-figure figure-left" src="${escapeHtml(artist.heroArt.left)}" alt="" />
+          <img class="category-card-figure figure-right" src="${escapeHtml(artist.heroArt.right)}" alt="" />
+          <img class="category-card-figure figure-center" src="${escapeHtml(artist.heroArt.center)}" alt="" />
+        </span>`;
+      } else if (artist.image) {
+        art = `<img class="category-card-art" src="${escapeHtml(artist.image)}" alt="" loading="lazy" />`;
+      }
+      return `<button class="artist-card category-card ${artist.image || artist.heroArt ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><strong>${escapeHtml(artist.name)}</strong>${description}${art}</button>`;
+    }
     const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" loading="lazy" /></span>` : '';
-    return `<button class="artist-card ${artist.image ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong>${artist.category && artist.description ? `<small>${escapeHtml(artist.description)}</small>` : ''}</button>`;
+    return `<button class="artist-card ${artist.image ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong></button>`;
   }).join('');
   ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
   if (ui.artistEmptyState) {
@@ -445,12 +459,18 @@ function renderArtists() {
     if (ui.artistEmptyQuery) ui.artistEmptyQuery.textContent = artistSearchQuery;
   }
 }
+function updateSelectedCardHighlight() {
+  if (!ui.artists) return;
+  ui.artists.querySelectorAll('.artist-card').forEach(button => {
+    button.classList.toggle('selected', button.dataset.artistId === selectedArtist?.id);
+  });
+}
 async function selectArtist(artistId) {
   const artist = artists.find(item => item.id === artistId);
   if (!artist || (artist.id === selectedArtist?.id && songs.length)) return;
   selectedArtist = artist;
   localStorage.setItem('blindtest-selected-artist', artist.id);
-  updateArtistBrand(artist); renderArtists();
+  updateArtistBrand(artist); updateSelectedCardHighlight();
   songs = []; ui.start.disabled = true;
   await loadSongs();
   if (currentUser) {
@@ -466,6 +486,7 @@ async function loadArtists() {
     artists = Array.isArray(data) ? data.filter(artist => artist && artist.id && artist.name && artist.catalog) : [];
   } catch { artists = []; }
   if (!artists.length) artists = [{ id: 'ziak', name: 'Ziak', catalog: 'songs.json', mark: 'Z', description: 'Discographie complète' }];
+  renderArtists();
   const savedArtistId = localStorage.getItem('blindtest-selected-artist');
   await selectArtist(artists.some(artist => artist.id === savedArtistId) ? savedArtistId : artists[0].id);
 }

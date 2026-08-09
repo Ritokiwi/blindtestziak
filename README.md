@@ -1,4 +1,4 @@
-# Blind Test multi-artistes
+# RAP Kultuur — blind test multi-artistes
 
 Jeu de blind test statique en HTML, CSS et JavaScript vanilla. Ziak est la première catégorie, mais chaque artiste possède maintenant son propre catalogue et son propre classement Ranked.
 
