@@ -67,8 +67,8 @@ function fetchJsonWithTimeout(url, timeoutMs = 10000) {
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
-  start: $('#startButton'), catalog: $('#catalogStatus'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), best: $('#bestScore'), authMessage: $('#authMessage'),
-  artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'),
+  start: $('#startButton'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), best: $('#bestScore'), authMessage: $('#authMessage'),
+  artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), sourceTabs: document.querySelectorAll('.source-tab'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'),
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), speedDescription: $('#speedDescription'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
@@ -423,9 +423,11 @@ function updateLeaderboardEyebrow() {
 }
 let artistSearchQuery = '';
 let artistSortMode = 'default';
+let sourceTab = 'artists';
 function visibleArtists() {
   const query = normalise(artistSearchQuery);
-  let list = query ? artists.filter(artist => normalise(artist.name).includes(query)) : artists.slice();
+  const pool = artists.filter(artist => Boolean(artist.category) === (sourceTab === 'categories'));
+  let list = query ? pool.filter(artist => normalise(artist.name).includes(query)) : pool.slice();
   if (artistSortMode === 'alpha') list.sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
   return list;
 }
@@ -434,7 +436,7 @@ function renderArtists() {
   const list = visibleArtists();
   ui.artists.innerHTML = list.map(artist => {
     const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" loading="lazy" /></span>` : '';
-    return `<button class="artist-card ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong></button>`;
+    return `<button class="artist-card ${artist.image ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong>${artist.category && artist.description ? `<small>${escapeHtml(artist.description)}</small>` : ''}</button>`;
   }).join('');
   ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
   if (ui.artistEmptyState) {
@@ -471,22 +473,14 @@ async function loadSongs() {
   const artist = selectedArtist || { id: 'ziak', name: 'Ziak', catalog: 'songs.json', mark: 'Z' };
   const loadingArtistId = artist.id;
   try {
-    if (ui.catalog) ui.catalog.classList.remove('error');
     const response = await fetch(artist.catalog, { cache: 'no-store' });
     if (!response.ok) throw new Error();
     const data = await response.json();
     if (selectedArtist?.id !== loadingArtistId) return;
     songs = Array.isArray(data) ? data.filter(song => song && song.title && normalise(song.title) && (song.audio || song.soundcloudUrl || song.deezerTrackId)) : [];
-    if (songs.length) {
-      if (ui.catalog) ui.catalog.textContent = `${songs.length} extrait${songs.length > 1 ? 's' : ''} ${artist.name} chargé${songs.length > 1 ? 's' : ''}. Prêt à jouer.`;
-      ui.start.disabled = false;
-    } else {
-      if (ui.catalog) { ui.catalog.textContent = `Catalogue ${artist.name} vide — ajoute tes extraits dans ${artist.catalog}.`; ui.catalog.classList.add('error'); }
-      ui.start.disabled = true;
-    }
+    ui.start.disabled = !songs.length;
   } catch {
     if (selectedArtist?.id !== loadingArtistId) return;
-    if (ui.catalog) { ui.catalog.textContent = `Impossible de charger ${artist.catalog}. Vérifie son format.`; ui.catalog.classList.add('error'); }
     ui.start.disabled = true;
   }
 }
@@ -620,9 +614,10 @@ function showTrackReveal() {
   const albumTitle = meta.albumTitle || song.project || '';
   const isSingle = meta.albumTracks === 1 || albumTitle.toLocaleLowerCase() === title.toLocaleLowerCase() || /single/i.test(song.project || '');
   const dateLabel = releaseDate ? new Date(`${releaseDate}T12:00:00`).toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }) : (year || 'Date inconnue');
+  const performerLabel = song.artist ? `${song.artist.toUpperCase()} · ` : '';
   ui.revealCover.src = cover;
   ui.revealCover.alt = `Cover de ${title}`;
-  ui.revealType.textContent = isSingle ? 'SINGLE' : `ALBUM · ${albumTitle || 'PROJET'}`;
+  ui.revealType.textContent = `${performerLabel}${isSingle ? 'SINGLE' : `ALBUM · ${albumTitle || 'PROJET'}`}`;
   ui.revealTitle.textContent = title;
   ui.revealMeta.textContent = `${dateLabel.toUpperCase()} · ${year || '—'}`;
   ui.reveal.hidden = false; ui.playerPanel.classList.add('revealed'); ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden'); ui.answerCountdown.hidden = true; ui.playerState.textContent = 'RÉPONSE';
@@ -867,6 +862,13 @@ async function endGame() {
   show(ui.result);
 }
 
+if (ui.sourceTabs) ui.sourceTabs.forEach(button => button.addEventListener('click', () => {
+  sourceTab = button.dataset.source;
+  ui.sourceTabs.forEach(item => item.classList.toggle('selected', item === button));
+  artistSearchQuery = '';
+  if (ui.artistSearch) ui.artistSearch.value = '';
+  renderArtists();
+}));
 if (ui.artistSearch) ui.artistSearch.addEventListener('input', event => { artistSearchQuery = event.target.value; renderArtists(); });
 ui.artistSortOptions.forEach(button => button.addEventListener('click', () => {
   artistSortMode = button.dataset.sort;

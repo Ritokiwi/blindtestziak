@@ -64,6 +64,10 @@
           <div class="artist-section-heading"><span id="artistHeading">01 / CATÉGORIE</span><span id="activeArtistLabel">CHOISIS TON ARTISTE</span></div>
           <h2 class="category-title">SÉLECTIONNE<br /><span>TON UNIVERS</span></h2>
           <p class="category-copy">Chaque artiste possède son catalogue, ses records et son classement Ranked.</p>
+          <div class="source-tabs" role="tablist" aria-label="Type de sélection">
+            <button class="source-tab selected" data-source="artists" type="button">ARTISTES</button>
+            <button class="source-tab" data-source="categories" type="button">CATÉGORIES</button>
+          </div>
           <div class="artist-toolbar">
             <label class="artist-search">
               <span class="artist-search-icon" aria-hidden="true">⌕</span>
@@ -76,7 +80,6 @@
           </div>
           <div id="artistGrid" class="artist-grid" role="group" aria-label="Choisir un artiste"></div>
           <p id="artistEmptyState" class="catalog-status" role="status" hidden>Aucun artiste trouvé pour « <span id="artistEmptyQuery"></span> ».</p>
-          <p id="catalogStatus" class="catalog-status" role="status">Chargement des catégories…</p>
         </section>
 
         <section class="play-setup" aria-labelledby="modeHeading">

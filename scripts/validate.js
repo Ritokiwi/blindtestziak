@@ -65,7 +65,7 @@ for (const artist of artists) {
   if (badEntries) fail(`${badEntries} morceau(x) avec des champs manquants dans ${artist.catalog}`);
   else console.log(`  ✓ ${songs.length} morceaux valides`);
 
-  if (!artist.image) { fail('champ "image" manquant'); }
+  if (!artist.image) { if (!artist.category) fail('champ "image" manquant'); }
   else {
     const imagePath = path.join(ROOT, artist.image);
     if (!isImageFile(imagePath)) fail(`image manquante ou invalide: ${artist.image}`);

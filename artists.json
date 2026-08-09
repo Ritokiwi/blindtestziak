@@ -215,5 +215,26 @@
     "catalog": "la-f.json",
     "image": "assets/artists/la-f.jpg",
     "description": "Discographie Deezer"
+  },
+  {
+    "id": "cat-rapfr",
+    "name": "RAP FR",
+    "catalog": "category-rapfr.json",
+    "description": "Tous les artistes mélangés",
+    "category": true
+  },
+  {
+    "id": "cat-moment",
+    "name": "SONS DU MOMENT",
+    "catalog": "category-moment.json",
+    "description": "Les sorties les plus récentes",
+    "category": true
+  },
+  {
+    "id": "cat-top100",
+    "name": "TOP 100 MONDE",
+    "catalog": "category-top100.json",
+    "description": "Le classement Deezer mondial",
+    "category": true
   }
 ]
