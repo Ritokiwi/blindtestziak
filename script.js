@@ -53,6 +53,12 @@ function describeSpeed(preset) {
   const answerPart = preset.answer == null ? 'temps illimité pour trouver' : `${preset.answer} s pour trouver`;
   return `${preset.listen} s d'écoute forcée, puis ${answerPart}. ${replayPart}`;
 }
+const ROUND_TYPES = {
+  title: { key: 'title', label: 'TITRE LIBRE' },
+  qcm: { key: 'qcm', label: '4 CHOIX' },
+  artist: { key: 'artist', label: "TROUVE L'ARTISTE" }
+};
+const ARTIST_ROUND_FALLBACK_ID = 'cat-rapfr';
 function soloRecordField(speedKey) { return `soloRecord${speedKey.charAt(0).toUpperCase()}${speedKey.slice(1)}`; }
 function leaderboardModeLabel(mode) { return mode === 'challenge' ? 'RANKED' : (SPEED_PRESETS[mode]?.label || mode.toUpperCase()); }
 const previewCache = new Map();
@@ -70,6 +76,7 @@ const ui = {
   start: $('#startButton'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), best: $('#bestScore'), authMessage: $('#authMessage'),
   artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), sourceTabs: document.querySelectorAll('.source-tab'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'),
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), speedDescription: $('#speedDescription'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
+  roundTypeOptions: document.querySelectorAll('.round-type-option'), qcmChoices: $('#qcmChoices'), guessArea: $('.guess-area'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
   timer: $('#timerProgress'), timerText: $('#timerText'), audio: $('#audioPlayer'),
   play: $('#playButton'), volume: $('#volumeControl'), volumeValue: $('#volumeValue'), waveform: $('#waveform'), playerControls: $('.player-controls'), answerCountdown: $('#answerCountdown'), answerCountdownValue: $('#answerCountdownValue'), playerState: $('#playerState'), soundcloud: $('#soundcloudPlayer'), soundcloudCredit: $('#soundcloudCredit'), reveal: $('#trackReveal'), revealCover: $('#revealCover'), revealType: $('#revealType'), revealTitle: $('#revealTitle'), revealMeta: $('#revealMeta'), playerPanel: $('.player-panel'),
@@ -511,8 +518,14 @@ function handleStartClick() {
   if (!currentUser) { ui.loginPromptOverlay.hidden = false; return; }
   startGame();
 }
-function startGame() {
+async function startGame() {
   if (!songs.length) return;
+  const roundType = document.querySelector('.round-type-option.selected')?.dataset.roundType || 'title';
+  if (roundType === 'artist' && !selectedArtist?.category) {
+    const fallback = artists.find(item => item.id === ARTIST_ROUND_FALLBACK_ID) || artists.find(item => item.category);
+    if (fallback) await selectArtist(fallback.id);
+    if (!songs.length) return;
+  }
   if (!currentUser) {
     ui.authMessage.textContent = 'Mode invité : connecte-toi avec Google pour synchroniser ton score.';
   }
@@ -520,7 +533,7 @@ function startGame() {
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
   const speedKey = mode === 'solo' ? (document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic') : 'classic';
   const speed = SPEED_PRESETS[speedKey] || SPEED_PRESETS.classic;
-  state = { artist: selectedArtist, mode, rounds, speed, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank() : null };
+  state = { artist: selectedArtist, mode, rounds, speed, roundType, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank() : null };
   show(ui.game);
   nextRound();
 }
@@ -534,14 +547,20 @@ function nextRound() {
   if (state.mode === 'solo' && state.played.length >= state.rounds) return endGame();
   state.current = nextSong(); state.hints = 0; state.revealed = new Set(); state.roundResolved = false;
   state.timerStarted = false; state.trackReady = false; state.phase = 'listen'; state.scoreBudgetSeconds = 0;
-  const freestylePrefix = freestylePrefixEnd(state.current.title);
+  const isQcm = state.roundType === 'qcm';
+  const freestylePrefix = state.roundType === 'title' ? freestylePrefixEnd(state.current.title) : null;
   ui.input.value = freestylePrefix !== null ? state.current.title.slice(0, freestylePrefix) : '';
-  ui.input.disabled = false; ui.validate.disabled = false; ui.hint.disabled = false; ui.skip.disabled = false;
+  ui.input.placeholder = state.roundType === 'artist' ? "NOM DE L'ARTISTE" : 'NOM DU MORCEAU';
+  ui.input.disabled = isQcm; ui.validate.disabled = isQcm; ui.hint.disabled = isQcm; ui.skip.disabled = false;
+  ui.input.hidden = isQcm; ui.validate.hidden = isQcm; ui.hint.hidden = isQcm;
+  ui.qcmChoices.hidden = !isQcm;
+  if (isQcm) renderQcmChoices();
   ui.play.disabled = Boolean(state.speed?.listen) && !state.speed?.allowReplay;
   ui.answerCountdown.hidden = true; ui.waveform.classList.remove('hidden'); ui.playerControls.classList.remove('hidden');
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
   const artistLabel = state.artist?.name ? `${state.artist.name.toUpperCase()} · ` : '';
-  ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}RANKED · ${state.played.length + 1}`;
+  const roundTypeLabel = ROUND_TYPES[state.roundType] ? `${ROUND_TYPES[state.roundType].label} · ` : '';
+  ui.roundLabel.textContent = state.mode === 'solo' ? `${artistLabel}${roundTypeLabel}MANCHE ${String(state.played.length + 1).padStart(2, '0')} / ${state.rounds}` : `${artistLabel}${roundTypeLabel}RANKED · ${state.played.length + 1}`;
   ui.score.textContent = state.score;
   if (ui.rankLabel) {
     ui.rankLabel.hidden = state.mode !== 'challenge';
@@ -549,7 +568,8 @@ function nextRound() {
   }
   ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
   loadTrack(); prefetchUpcoming();
-  renderHint(); ui.input.focus(); ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length);
+  renderHint();
+  if (!isQcm) { ui.input.focus(); ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length); }
 }
 function prefetchUpcoming() {
   const upcoming = state.deck[state.deckIndex];
@@ -770,9 +790,53 @@ function freestylePrefixEnd(titleRaw) {
   const match = titleRaw.match(/(\d+)\s*$/);
   return match ? match.index : null;
 }
+function roundTargetText() {
+  if (state.roundType === 'artist') return state.current.artist || state.artist?.name || '';
+  return state.current.title;
+}
+function qcmDistractorSongs(song) {
+  const usedKeys = new Set([normalise(song.title)]);
+  const distractors = [];
+  const collect = (pool) => {
+    for (const candidate of pool) {
+      const key = normalise(candidate.title);
+      if (usedKeys.has(key)) continue;
+      usedKeys.add(key); distractors.push(candidate);
+      if (distractors.length === 3) break;
+    }
+  };
+  collect(shuffled(songs.filter(item => item !== song && (!item.artist || !song.artist || item.artist === song.artist))));
+  if (distractors.length < 3) collect(shuffled(songs.filter(item => item !== song)));
+  return distractors;
+}
+function qcmCoverUrl(song) { return song.deezerTrackId ? `/api/deezer-cover?id=${encodeURIComponent(song.deezerTrackId)}` : ''; }
+function renderQcmChoices() {
+  const song = state.current;
+  const options = shuffled([song, ...qcmDistractorSongs(song)]);
+  ui.qcmChoices.innerHTML = options.map(item => {
+    const coverUrl = qcmCoverUrl(item);
+    const cover = coverUrl ? `<img class="qcm-choice-cover" src="${escapeHtml(coverUrl)}" alt="" loading="lazy" />` : '<span class="qcm-choice-cover"></span>';
+    return `<button class="qcm-choice" type="button" data-title="${escapeHtml(item.title)}">${cover}<span class="qcm-choice-title">${escapeHtml(item.title)}</span></button>`;
+  }).join('');
+}
+function disableQcmChoices(correctTitle, clickedButton = null) {
+  ui.qcmChoices.querySelectorAll('.qcm-choice').forEach(button => {
+    button.disabled = true;
+    if (normalise(button.dataset.title) === normalise(correctTitle)) button.classList.add('correct');
+    else if (button === clickedButton) button.classList.add('wrong');
+  });
+}
+function handleQcmChoiceClick(event) {
+  const button = event.target.closest('.qcm-choice');
+  if (!button || state.roundResolved) return;
+  const correct = normalise(button.dataset.title) === normalise(state.current.title);
+  disableQcmChoices(state.current.title, button);
+  resolveRound(correct);
+}
 function renderHint() {
-  const title = state.current.title;
-  if (freestylePrefixEnd(title) !== null && state.hints < 3) { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
+  if (state.roundType === 'qcm') { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
+  const title = roundTargetText();
+  if (state.roundType !== 'artist' && freestylePrefixEnd(title) !== null && state.hints < 3) { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
   ui.hintText.hidden = false;
   const display = [...title].map((char, index) => {
     if (char === ' ') return ' / ';
@@ -781,10 +845,11 @@ function renderHint() {
   ui.hintText.textContent = state.hints === 3 ? `ANNÉE : ${state.current.year}` : display;
 }
 function useHint() {
-  if (state.hints >= HINTS_PER_ROUND || state.roundResolved) return;
+  if (state.hints >= HINTS_PER_ROUND || state.roundResolved || state.roundType === 'qcm') return;
   state.hints++;
   if (state.hints < 3) {
-    const candidates = [...state.current.title].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !state.revealed.has(index));
+    const target = roundTargetText();
+    const candidates = [...target].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !state.revealed.has(index));
     if (candidates.length) state.revealed.add(candidates[Math.floor(Math.random() * candidates.length)].index);
   }
   ui.hintCount.textContent = `×${HINTS_PER_ROUND - state.hints}`; ui.hint.disabled = state.hints >= HINTS_PER_ROUND; renderHint();
@@ -812,30 +877,30 @@ function toggleAudio() {
   } else if (ui.audio.paused) { ui.audio.currentTime = 0; ui.audio.play().catch(() => { ui.playerState.textContent = 'EXTRAIT INTROUVABLE'; }); } else ui.audio.pause();
 }
 function checkGuess() {
-  if (state.roundResolved) return false;
+  if (state.roundResolved || state.roundType === 'qcm') return false;
   const rawGuess = ui.input.value;
   const guess = normalise(rawGuess);
   if (!guess) return false;
-  const title = state.current.title;
+  const title = roundTargetText();
   if (guess === normalise(title)) { resolveRound(true); return true; }
-  if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return true; }
+  if (state.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return true; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
   ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
   return false;
 }
 function handleGuessInput() {
-  if (state.roundResolved || !state.current) return;
+  if (state.roundResolved || !state.current || state.roundType === 'qcm') return;
   const rawGuess = ui.input.value;
   const guess = normalise(rawGuess);
   if (!guess) { ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; return; }
-  const title = state.current.title;
+  const title = roundTargetText();
   const normalisedTitle = normalise(title);
   if (guess === normalisedTitle) { resolveRound(true); return; }
-  if (freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return; }
+  if (state.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return; }
   if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
   if (guess.length >= normalisedTitle.length) {
     ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
-    const prefixEnd = freestylePrefixEnd(title);
+    const prefixEnd = state.roundType === 'title' ? freestylePrefixEnd(title) : null;
     ui.input.value = prefixEnd !== null ? title.slice(0, prefixEnd) : '';
     ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length);
   }
@@ -854,9 +919,10 @@ function resolveRound(correct, message = '', options = {}) {
   const qualifier = options.outOfOrder ? ' (ORDRE MÉLANGÉ)' : '';
   ui.feedback.textContent = correct
     ? `BIEN JOUÉ${qualifier} +${points} PTS · ${state.current.project || 'Projet inconnu'} (${state.current.year || '—'})`
-    : `${message} : ${state.current.title}`;
+    : `${message} : ${roundTargetText()}`;
   ui.feedback.className = `feedback ${correct ? 'correct' : 'wrong'}`; ui.input.disabled = true; ui.validate.disabled = true; ui.hint.disabled = true; ui.skip.disabled = true; ui.play.disabled = true;
-  ui.hintText.textContent = `${correct ? '✓' : '✕'} ${state.current.title.toUpperCase()}`;
+  if (state.roundType === 'qcm') disableQcmChoices(state.current.title);
+  else ui.hintText.textContent = `${correct ? '✓' : '✕'} ${roundTargetText().toUpperCase()}`;
   state.revealVisible = true; showTrackReveal();
   setTimeout(nextRound, 1700);
 }
@@ -874,7 +940,8 @@ async function endGame() {
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
-  ui.resultMode.textContent = `${state.artist?.name || 'ARTISTE'} · ${state.mode === 'solo' ? 'SOLO' : 'RANKED'}`; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
+  const roundTypeLabel = ROUND_TYPES[state.roundType]?.label || '';
+  ui.resultMode.textContent = `${state.artist?.name || 'ARTISTE'} · ${roundTypeLabel} · ${state.mode === 'solo' ? 'SOLO' : 'RANKED'}`; ui.finalScore.textContent = state.score; ui.bestTime.textContent = fastest ? `${fastest.toFixed(1)} S` : '—'; ui.correct.textContent = correct.length; ui.record.textContent = record;
   if (ui.rankBadge) {
     ui.rankBadge.hidden = state.mode !== 'challenge';
     if (state.mode === 'challenge' && ui.rankValue) ui.rankValue.textContent = rankResult.isPlacement ? `${getRank(rankResult.points)} (PLACEMENT)` : getRank(rankResult.points);
@@ -883,12 +950,23 @@ async function endGame() {
   show(ui.result);
 }
 
+function updateArtistRoundTypeAvailability() {
+  const option = document.querySelector('.round-type-option[data-round-type="artist"]');
+  if (!option) return;
+  const available = sourceTab === 'categories';
+  option.hidden = !available;
+  if (!available && option.classList.contains('selected')) {
+    option.classList.remove('selected');
+    document.querySelector('.round-type-option[data-round-type="title"]')?.classList.add('selected');
+  }
+}
 if (ui.sourceTabs) ui.sourceTabs.forEach(button => button.addEventListener('click', () => {
   sourceTab = button.dataset.source;
   ui.sourceTabs.forEach(item => item.classList.toggle('selected', item === button));
   artistSearchQuery = '';
   if (ui.artistSearch) ui.artistSearch.value = '';
   renderArtists();
+  updateArtistRoundTypeAvailability();
 }));
 if (ui.artistSearch) ui.artistSearch.addEventListener('input', event => { artistSearchQuery = event.target.value; renderArtists(); });
 ui.artistSortOptions.forEach(button => button.addEventListener('click', () => {
@@ -904,6 +982,9 @@ document.querySelectorAll('.mode-card').forEach(button => button.addEventListene
   if (ui.speedDescription) ui.speedDescription.classList.toggle('hidden', isChallenge);
   ui.setup.classList.toggle('ranked-selected', isChallenge);
 }));
+ui.roundTypeOptions.forEach(button => button.addEventListener('click', () => {
+  ui.roundTypeOptions.forEach(item => item.classList.toggle('selected', item === button));
+}));
 function updateSpeedDescription() {
   if (!ui.speedDescription) return;
   const key = document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic';
@@ -914,7 +995,7 @@ document.querySelectorAll('.round-option').forEach(button => button.addEventList
   (group ? group.querySelectorAll('.round-option') : document.querySelectorAll('.round-option')).forEach(item => item.classList.toggle('selected', item === button));
   if (group && group.id === 'speedPicker') updateSpeedDescription();
 }));
-ui.start.addEventListener('click', handleStartClick); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput);
+ui.start.addEventListener('click', handleStartClick); ui.play.addEventListener('click', toggleAudio); ui.volume.addEventListener('input', event => setVolume(Number(event.target.value) / 100)); ui.validate.addEventListener('click', () => checkGuess()); ui.hint.addEventListener('click', useHint); ui.skip.addEventListener('click', () => resolveRound(false, 'Réponse')); ui.input.addEventListener('keydown', event => { if (event.key === 'Enter') checkGuess(); }); ui.input.addEventListener('input', handleGuessInput); ui.qcmChoices.addEventListener('click', handleQcmChoiceClick);
 ui.audio.addEventListener('canplay', onTrackReady);
 ui.audio.addEventListener('play', () => setPlaying(true));
 ui.audio.addEventListener('pause', () => { if (!state.roundResolved) setPlaying(false); });
@@ -949,7 +1030,7 @@ if (ui.statsButton) ui.statsButton.addEventListener('click', () => { ui.statsOve
 if (ui.statsClose) ui.statsClose.addEventListener('click', () => { ui.statsOverlay.hidden = true; });
 if (ui.statsOverlay) ui.statsOverlay.addEventListener('click', event => { if (event.target === ui.statsOverlay) ui.statsOverlay.hidden = true; });
 
-setVolume(getVolume()); refreshBest(); loadArtists(); updateSpeedDescription();
+setVolume(getVolume()); refreshBest(); loadArtists(); updateSpeedDescription(); updateArtistRoundTypeAvailability();
 
 function setupGoogleAuth() {
   const loginButton = $('#loginButton'); const logoutButton = $('#logoutButton'); const profileArea = $('#profileArea'); const profilePhoto = $('#profilePhoto'); const profileName = $('#profileName'); const authMessage = $('#authMessage');

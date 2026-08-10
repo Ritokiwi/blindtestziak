@@ -82,8 +82,27 @@
           <p id="artistEmptyState" class="catalog-status" role="status" hidden>Aucun artiste trouvé pour « <span id="artistEmptyQuery"></span> ».</p>
         </section>
 
-        <section class="play-setup" aria-labelledby="modeHeading">
-          <p id="modeHeading" class="setup-step">02 / MODE DE JEU</p>
+        <section class="play-setup" aria-labelledby="roundTypeHeading">
+          <p id="roundTypeHeading" class="setup-step">02 / TYPE DE MANCHE</p>
+          <div id="roundTypePicker" class="mode-grid mode-grid-triple" role="group" aria-label="Choisir un type de manche">
+            <button class="round-type-option selected" data-round-type="title" type="button">
+              <span class="mode-number">01</span>
+              <span class="mode-title">TITRE LIBRE</span>
+              <span class="mode-description">Écris le titre du morceau.</span>
+            </button>
+            <button class="round-type-option" data-round-type="qcm" type="button">
+              <span class="mode-number">02</span>
+              <span class="mode-title">4 CHOIX</span>
+              <span class="mode-description">Retrouve le titre parmi 4 propositions du même artiste.</span>
+            </button>
+            <button class="round-type-option" data-round-type="artist" type="button" hidden>
+              <span class="mode-number">03</span>
+              <span class="mode-title">TROUVE L'ARTISTE</span>
+              <span class="mode-description">Devine qui interprète l'extrait parmi les artistes de la catégorie.</span>
+            </button>
+          </div>
+
+          <p id="modeHeading" class="setup-step">03 / MODE DE JEU</p>
           <div class="mode-grid" role="group" aria-label="Choisir un mode de jeu">
             <button class="mode-card selected" data-mode="solo" type="button">
               <span class="mode-number">01</span>
@@ -185,6 +204,7 @@
           <p id="hintText" class="hint-text">_ _ _ _ _ _ _</p>
           <label class="sr-only" for="guessInput">Votre réponse</label>
           <input id="guessInput" type="text" autocomplete="off" placeholder="NOM DU MORCEAU" />
+          <div id="qcmChoices" class="qcm-choices" hidden></div>
           <p id="feedback" class="feedback" role="status"></p>
           <button id="validateButton" class="primary-button compact" type="button">VALIDER <span>↵</span></button>
         </div>
