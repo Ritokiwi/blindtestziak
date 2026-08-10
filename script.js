@@ -34,9 +34,9 @@ function nextRankPoints(previousPoints, gamesPlayed, matchScore) {
   const clampedDelta = Math.max(-RANK_MAX_STEP, Math.min(RANK_MAX_STEP, delta));
   return Math.max(0, previousPoints + clampedDelta);
 }
-function getPersistentRank() {
+function getPersistentRank(roundType) {
   const stats = readLocalStats();
-  return { points: Number(stats.rankPoints) || 0, games: Number(stats.rankGames) || 0 };
+  return { points: Number(stats[rankPointsField(roundType)]) || 0, games: Number(stats[rankGamesField(roundType)]) || 0 };
 }
 const HINTS_PER_ROUND = 3;
 const OUT_OF_ORDER_PENALTY_RATIO = 0.7;
@@ -59,7 +59,12 @@ const ROUND_TYPES = {
   artist: { key: 'artist', label: "TROUVE L'ARTISTE" }
 };
 const ARTIST_ROUND_FALLBACK_ID = 'cat-rapfr';
-function soloRecordField(speedKey) { return `soloRecord${speedKey.charAt(0).toUpperCase()}${speedKey.slice(1)}`; }
+function capitalizeKey(value) { return value.charAt(0).toUpperCase() + value.slice(1); }
+function soloRecordField(speedKey, roundType) { return `soloRecord${capitalizeKey(speedKey)}${capitalizeKey(roundType)}`; }
+function challengeMetricField(metric, roundType) { return `${metric}${capitalizeKey(roundType)}`; }
+function rankPointsField(roundType) { return `rankPoints${capitalizeKey(roundType)}`; }
+function rankGamesField(roundType) { return `rankGames${capitalizeKey(roundType)}`; }
+function bestField(mode, roundType) { return mode === 'solo' ? `bestSolo${capitalizeKey(roundType)}` : `bestChallenge${capitalizeKey(roundType)}`; }
 function leaderboardModeLabel(mode) { return mode === 'challenge' ? 'RANKED' : (SPEED_PRESETS[mode]?.label || mode.toUpperCase()); }
 const previewCache = new Map();
 function fetchJsonWithTimeout(url, timeoutMs = 10000) {
@@ -74,7 +79,7 @@ const $ = (selector) => document.querySelector(selector);
 const ui = {
   setup: $('#setupScreen'), game: $('#gameScreen'), result: $('#resultScreen'),
   start: $('#startButton'), artists: $('#artistGrid'), activeArtist: $('#activeArtistLabel'), best: $('#bestScore'), authMessage: $('#authMessage'),
-  artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), sourceTabs: document.querySelectorAll('.source-tab'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'),
+  artistSearch: $('#artistSearch'), artistEmptyState: $('#artistEmptyState'), artistEmptyQuery: $('#artistEmptyQuery'), artistSortOptions: document.querySelectorAll('.artist-sort-option'), sourceTabs: document.querySelectorAll('.source-tab'), leaderboardButton: $('#leaderboardButton'), leaderboardPanel: $('#leaderboardPanel'), leaderboardClose: $('#leaderboardClose'), leaderboardEyebrow: $('#leaderboardEyebrow'), leaderboardStatus: $('#leaderboardStatus'), leaderboardList: $('#leaderboardList'), leaderboardModeTabs: document.querySelectorAll('#leaderboardModeTabs .leaderboard-tab'), leaderboardMetricGroup: $('#leaderboardMetricTabs'), leaderboardMetricTabs: document.querySelectorAll('#leaderboardMetricTabs .leaderboard-tab'), leaderboardRoundTypeTabs: document.querySelectorAll('#leaderboardRoundTypeTabs .leaderboard-tab'),
   rounds: $('#roundPicker'), speedPicker: $('#speedPicker'), speedDescription: $('#speedDescription'), roundLabel: $('#roundLabel'), score: $('#scoreLabel strong'),
   roundTypeOptions: document.querySelectorAll('.round-type-option'), qcmChoices: $('#qcmChoices'), guessArea: $('.guess-area'),
   rankLabel: $('#rankLabel'), rankLabelValue: $('#rankLabel strong'), rankBadge: $('#rankBadge'), rankValue: $('#rankValue'),
@@ -95,10 +100,12 @@ let state = {};
 let soundcloudMessageHandler = null;
 let currentUser = null;
 let firestoreDb = null;
-let accountBest = { solo: 0, challenge: 0 };
+let accountBest = { solo: {}, challenge: {} };
 let leaderboardMode = 'classic';
 let leaderboardMetric = 'challengeRecord';
-function currentLeaderboardField() { return leaderboardMode === 'challenge' ? leaderboardMetric : soloRecordField(leaderboardMode); }
+let leaderboardRoundType = 'title';
+let statsRoundType = 'title';
+function currentLeaderboardField() { return leaderboardMode === 'challenge' ? challengeMetricField(leaderboardMetric, leaderboardRoundType) : soloRecordField(leaderboardMode, leaderboardRoundType); }
 let accountBestReady = Promise.resolve();
 const DEFAULT_VOLUME = 1;
 
@@ -141,10 +148,14 @@ function escapeHtml(value) {
 function storageUid() { return currentUser?.uid || localStorage.getItem('ziak-blindtest-last-uid') || 'guest'; }
 function activeArtistId() { return selectedArtist?.id || state.artist?.id || 'ziak'; }
 function scorePrefix(artistId = activeArtistId()) { return artistId === 'ziak' ? 'ziak-blindtest' : `blindtest-${artistId}`; }
-function bestKey(mode, artistId = activeArtistId()) { return `${scorePrefix(artistId)}-best-${storageUid()}-${mode}`; }
+function bestKey(mode, roundType, artistId = activeArtistId()) { return `${scorePrefix(artistId)}-best-${storageUid()}-${mode}-${roundType}`; }
+function guestBestKey(mode, roundType, artistId = activeArtistId()) { return `${scorePrefix(artistId)}-best-guest-${mode}-${roundType}`; }
 function statsKey(artistId = activeArtistId()) { return `${scorePrefix(artistId)}-stats-${storageUid()}`; }
-function getBest(mode) { return Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0); }
-function refreshBest() { ui.best.textContent = Math.max(getBest('solo'), getBest('challenge')); }
+function getBest(mode, roundType) { return Math.max(Number(localStorage.getItem(bestKey(mode, roundType))) || 0, Number(accountBest[mode]?.[roundType]) || 0); }
+function refreshBest() {
+  const values = Object.keys(ROUND_TYPES).flatMap(rt => [getBest('solo', rt), getBest('challenge', rt)]);
+  ui.best.textContent = Math.max(0, ...values);
+}
 function getVolume() {
   const raw = localStorage.getItem('ziak-blindtest-volume');
   if (raw === null || raw === '') return DEFAULT_VOLUME;
@@ -191,11 +202,13 @@ function withTimeout(promise, milliseconds = 7000) {
 }
 async function loadAccountBest(user) {
   const artistId = activeArtistId();
+  const types = Object.keys(ROUND_TYPES);
   localStorage.setItem('ziak-blindtest-last-uid', user?.uid || '');
-  accountBest = {
-    solo: Number(localStorage.getItem(bestKey('solo', artistId))) || 0,
-    challenge: Number(localStorage.getItem(bestKey('challenge', artistId))) || 0
-  };
+  accountBest = { solo: {}, challenge: {} };
+  types.forEach(rt => {
+    accountBest.solo[rt] = Number(localStorage.getItem(bestKey('solo', rt, artistId))) || 0;
+    accountBest.challenge[rt] = Number(localStorage.getItem(bestKey('challenge', rt, artistId))) || 0;
+  });
   refreshBest();
   if (!firestoreDb || !user) { refreshBest(); return; }
   try {
@@ -203,19 +216,21 @@ async function loadAccountBest(user) {
     if (snapshot.exists) {
       const profile = snapshot.data();
       const artistStats = profile.artistStats?.[artistId] || (artistId === 'ziak' ? profile : {});
-      accountBest = {
-        solo: Math.max(accountBest.solo, Number(artistStats.bestSolo) || 0),
-        challenge: Math.max(accountBest.challenge, Number(artistStats.bestChallenge) || 0)
-      };
-      localStorage.setItem(bestKey('solo', artistId), String(accountBest.solo));
-      localStorage.setItem(bestKey('challenge', artistId), String(accountBest.challenge));
-      const cloudRankGames = Number(artistStats.rankGames) || 0;
       const localStatsNow = readLocalStats();
-      if (cloudRankGames > (Number(localStatsNow.rankGames) || 0)) {
-        localStatsNow.rankPoints = Number(artistStats.rankPoints) || 0;
-        localStatsNow.rankGames = cloudRankGames;
-        localStorage.setItem(statsKey(), JSON.stringify(localStatsNow));
-      }
+      let statsChanged = false;
+      types.forEach(rt => {
+        accountBest.solo[rt] = Math.max(accountBest.solo[rt], Number(artistStats[bestField('solo', rt)]) || 0);
+        accountBest.challenge[rt] = Math.max(accountBest.challenge[rt], Number(artistStats[bestField('challenge', rt)]) || 0);
+        localStorage.setItem(bestKey('solo', rt, artistId), String(accountBest.solo[rt]));
+        localStorage.setItem(bestKey('challenge', rt, artistId), String(accountBest.challenge[rt]));
+        const cloudRankGames = Number(artistStats[rankGamesField(rt)]) || 0;
+        if (cloudRankGames > (Number(localStatsNow[rankGamesField(rt)]) || 0)) {
+          localStatsNow[rankPointsField(rt)] = Number(artistStats[rankPointsField(rt)]) || 0;
+          localStatsNow[rankGamesField(rt)] = cloudRankGames;
+          statsChanged = true;
+        }
+      });
+      if (statsChanged) localStorage.setItem(statsKey(), JSON.stringify(localStatsNow));
     }
   } catch { /* Firestore reste optionnel tant que ses règles ne sont pas activées. */ }
   refreshBest();
@@ -224,58 +239,74 @@ async function migrateGuestBest(user) {
   if (!firestoreDb || !user) return;
   const artistId = activeArtistId();
   const prefix = scorePrefix(artistId);
-  const guestSolo = Number(localStorage.getItem(`${prefix}-best-guest-solo`)) || 0;
-  const guestChallenge = Number(localStorage.getItem(`${prefix}-best-guest-challenge`)) || 0;
-  if (!guestSolo && !guestChallenge) return;
+  const types = Object.keys(ROUND_TYPES);
+  const guestValues = {};
+  let hasAny = false;
+  types.forEach(rt => {
+    guestValues[rt] = {
+      solo: Number(localStorage.getItem(guestBestKey('solo', rt, artistId))) || 0,
+      challenge: Number(localStorage.getItem(guestBestKey('challenge', rt, artistId))) || 0
+    };
+    if (guestValues[rt].solo || guestValues[rt].challenge) hasAny = true;
+  });
+  if (!hasAny) return;
   const userRef = firestoreDb.collection('users').doc(user.uid);
   try {
     await firestoreDb.runTransaction(async transaction => {
       const snapshot = await transaction.get(userRef);
       const previous = snapshot.exists ? snapshot.data() : {};
       const previousArtist = previous.artistStats?.[artistId] || (artistId === 'ziak' ? previous : {});
+      const artistUpdate = { artistId, updatedAt: firebase.firestore.FieldValue.serverTimestamp() };
+      let overallRecord = Number(previousArtist.record) || 0;
+      types.forEach(rt => {
+        const soloField = bestField('solo', rt); const challengeField = bestField('challenge', rt);
+        const recordField = challengeMetricField('challengeRecord', rt);
+        artistUpdate[soloField] = Math.max(Number(previousArtist[soloField]) || 0, guestValues[rt].solo);
+        artistUpdate[challengeField] = Math.max(Number(previousArtist[challengeField]) || 0, guestValues[rt].challenge);
+        artistUpdate[recordField] = Math.max(Number(previousArtist[recordField]) || 0, guestValues[rt].challenge);
+        overallRecord = Math.max(overallRecord, guestValues[rt].solo, guestValues[rt].challenge);
+      });
+      artistUpdate.record = overallRecord;
       transaction.set(userRef, {
         uid: user.uid,
         displayName: user.displayName || '',
         email: user.email || '',
         photoURL: user.photoURL || '',
-        artistStats: {
-          [artistId]: {
-            record: Math.max(Number(previousArtist.record) || 0, guestSolo, guestChallenge),
-            bestSolo: Math.max(Number(previousArtist.bestSolo) || 0, guestSolo),
-            bestChallenge: Math.max(Number(previousArtist.bestChallenge) || 0, guestChallenge),
-            challengeRecord: Math.max(Number(previousArtist.challengeRecord) || 0, guestChallenge),
-            artistId,
-            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-          }
-        },
+        artistStats: { [artistId]: artistUpdate },
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       }, { merge: true });
     });
-    localStorage.removeItem(`${prefix}-best-guest-solo`);
-    localStorage.removeItem(`${prefix}-best-guest-challenge`);
-    accountBest.solo = Math.max(accountBest.solo, guestSolo);
-    accountBest.challenge = Math.max(accountBest.challenge, guestChallenge);
+    types.forEach(rt => {
+      localStorage.removeItem(guestBestKey('solo', rt, artistId));
+      localStorage.removeItem(guestBestKey('challenge', rt, artistId));
+      accountBest.solo[rt] = Math.max(Number(accountBest.solo[rt]) || 0, guestValues[rt].solo);
+      accountBest.challenge[rt] = Math.max(Number(accountBest.challenge[rt]) || 0, guestValues[rt].challenge);
+    });
     refreshBest();
   } catch (error) {
     console.error('Impossible de migrer le score local vers Firebase', error);
   }
 }
-async function saveBest(mode, score, fastest, correctCount, rankResult = null, speedKey = 'classic') {
+async function saveBest(mode, score, fastest, correctCount, rankResult = null, speedKey = 'classic', roundType = 'title') {
   const numericScore = Math.max(0, Number(score) || 0);
-  const modeField = mode === 'solo' ? 'bestSolo' : 'bestChallenge';
-  const knownBest = Math.max(Number(localStorage.getItem(bestKey(mode))) || 0, Number(accountBest[mode]) || 0);
+  const modeField = bestField(mode, roundType);
+  const knownBest = Math.max(Number(localStorage.getItem(bestKey(mode, roundType))) || 0, Number(accountBest[mode]?.[roundType]) || 0);
   const localBest = Math.max(knownBest, numericScore);
-  localStorage.setItem(bestKey(mode), String(localBest));
-  accountBest[mode] = Math.max(Number(accountBest[mode]) || 0, numericScore);
+  localStorage.setItem(bestKey(mode, roundType), String(localBest));
+  accountBest[mode] = accountBest[mode] || {};
+  accountBest[mode][roundType] = Math.max(Number(accountBest[mode][roundType]) || 0, numericScore);
   const localStats = readLocalStats();
   localStats.record = Math.max(Number(localStats.record) || 0, numericScore);
   if (mode === 'challenge') {
-    localStats.challengeRecord = Math.max(Number(localStats.challengeRecord) || 0, numericScore);
-    localStats.challengeCorrect = Math.max(Number(localStats.challengeCorrect) || 0, Number(correctCount) || 0);
-    if (Number.isFinite(Number(fastest))) localStats.challengeTime = localStats.challengeTime > 0 ? Math.min(Number(localStats.challengeTime), Number(fastest)) : Number(fastest);
-    if (rankResult) { localStats.rankPoints = rankResult.points; localStats.rankGames = rankResult.games; }
+    const recordField = challengeMetricField('challengeRecord', roundType);
+    const correctField = challengeMetricField('challengeCorrect', roundType);
+    const timeField = challengeMetricField('challengeTime', roundType);
+    localStats[recordField] = Math.max(Number(localStats[recordField]) || 0, numericScore);
+    localStats[correctField] = Math.max(Number(localStats[correctField]) || 0, Number(correctCount) || 0);
+    if (Number.isFinite(Number(fastest))) localStats[timeField] = localStats[timeField] > 0 ? Math.min(Number(localStats[timeField]), Number(fastest)) : Number(fastest);
+    if (rankResult) { localStats[rankPointsField(roundType)] = rankResult.points; localStats[rankGamesField(roundType)] = rankResult.games; }
   } else if (mode === 'solo') {
-    const soloField = soloRecordField(speedKey);
+    const soloField = soloRecordField(speedKey, roundType);
     localStats[soloField] = Math.max(Number(localStats[soloField]) || 0, numericScore);
   }
   localStorage.setItem(statsKey(), JSON.stringify(localStats));
@@ -292,7 +323,8 @@ async function saveBest(mode, score, fastest, correctCount, rankResult = null, s
       const snapshot = await transaction.get(userRef);
       const previous = snapshot.exists ? snapshot.data() : {};
       const previousArtist = previous.artistStats?.[artistId] || (artistId === 'ziak' ? previous : {});
-      const previousTime = Number(previousArtist.bestTime);
+      const timeField = challengeMetricField('challengeTime', roundType);
+      const previousTime = Number(previousArtist[timeField]);
       const updates = {
         uid: userAtSave.uid,
         artistId,
@@ -304,17 +336,20 @@ async function saveBest(mode, score, fastest, correctCount, rankResult = null, s
         [modeField]: Math.max(Number(previousArtist[modeField]) || 0, knownBest, numericScore),
         lastScore: numericScore,
         lastMode: mode,
+        lastRoundType: roundType,
         totalGames: (Number(previousArtist.totalGames) || 0) + 1,
         totalCorrect: (Number(previousArtist.totalCorrect) || 0) + (Number(correctCount) || 0),
         updatedAt: firebase.firestore.FieldValue.serverTimestamp()
       };
       if (mode === 'challenge') {
-        updates.challengeRecord = Math.max(Number(previousArtist.challengeRecord) || 0, numericScore);
-        updates.challengeCorrect = Math.max(Number(previousArtist.challengeCorrect) || 0, Number(correctCount) || 0);
-        if (Number.isFinite(Number(fastest))) updates.challengeTime = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
-        if (rankResult) { updates.rankPoints = rankResult.points; updates.rankGames = rankResult.games; }
+        const recordField = challengeMetricField('challengeRecord', roundType);
+        const correctField = challengeMetricField('challengeCorrect', roundType);
+        updates[recordField] = Math.max(Number(previousArtist[recordField]) || 0, numericScore);
+        updates[correctField] = Math.max(Number(previousArtist[correctField]) || 0, Number(correctCount) || 0);
+        if (Number.isFinite(Number(fastest))) updates[timeField] = previousTime > 0 ? Math.min(previousTime, Number(fastest)) : Number(fastest);
+        if (rankResult) { updates[rankPointsField(roundType)] = rankResult.points; updates[rankGamesField(roundType)] = rankResult.games; }
       } else if (mode === 'solo') {
-        const soloField = soloRecordField(speedKey);
+        const soloField = soloRecordField(speedKey, roundType);
         updates[soloField] = Math.max(Number(previousArtist[soloField]) || 0, numericScore);
       }
       transaction.set(userRef, {
@@ -333,8 +368,8 @@ async function saveBest(mode, score, fastest, correctCount, rankResult = null, s
   }
 }
 function leaderboardLabel(field, value) {
-  if (field === 'challengeTime') return `${Number(value).toFixed(1)} S`;
-  if (field === 'challengeCorrect') return `${value} BONNES`;
+  if (field.startsWith('challengeTime')) return `${Number(value).toFixed(1)} S`;
+  if (field.startsWith('challengeCorrect')) return `${value} BONNES`;
   return `${value} PTS`;
 }
 function renderLocalLeaderboard(field, status = 'Classement cloud indisponible — score local affiché.') {
@@ -350,7 +385,7 @@ async function loadLeaderboard(field = 'challengeRecord') {
   // Ainsi le panneau ne reste jamais vide pendant le démarrage de Firestore.
   renderLocalLeaderboard(field, 'Synchronisation du classement cloud…');
   try {
-    const direction = field === 'challengeTime' ? 'asc' : 'desc';
+    const direction = field.startsWith('challengeTime') ? 'asc' : 'desc';
     const artistId = selectedArtist?.id || 'ziak';
     const artistField = `artistStats.${artistId}.${field}`;
     let snapshot = await withTimeout(firestoreDb.collection('users').orderBy(artistField, direction).limit(25).get(), 4500);
@@ -372,6 +407,7 @@ async function loadUserStats() {
   if (!ui.statsList) return;
   statsProfile = null;
   if (!currentUser) { ui.statsStatus.textContent = 'Connecte-toi avec Google pour voir tes stats.'; ui.statsList.innerHTML = ''; return; }
+  statsRoundType = 'title';
   ui.statsStatus.textContent = 'Chargement…'; ui.statsList.innerHTML = '';
   try {
     const snapshot = await withTimeout(firestoreDb.collection('users').doc(currentUser.uid).get());
@@ -391,17 +427,21 @@ function renderStatsMenu() {
 function renderStatsDetail(artistId) {
   const artist = statsRoster().find(item => item.id === artistId) || { id: artistId, name: artistId };
   const stats = statsProfile?.artistStats?.[artist.id] || (artist.id === 'ziak' ? statsProfile : {}) || {};
-  const bestSolo = Number(stats.bestSolo) || 0;
-  const bestChallenge = Number(stats.bestChallenge) || 0;
+  const availableTypes = Object.keys(ROUND_TYPES).filter(rt => rt !== 'artist' || Boolean(artist.category));
+  if (!availableTypes.includes(statsRoundType)) statsRoundType = 'title';
+  const bestSolo = Number(stats[bestField('solo', statsRoundType)]) || 0;
+  const bestChallenge = Number(stats[bestField('challenge', statsRoundType)]) || 0;
   const totalGames = Number(stats.totalGames) || 0;
   const totalCorrect = Number(stats.totalCorrect) || 0;
-  const challengeTime = Number(stats.challengeTime) || 0;
+  const challengeTime = Number(stats[challengeMetricField('challengeTime', statsRoundType)]) || 0;
   const rank = bestChallenge > 0 ? getRank(bestChallenge) : '—';
+  const roundTypeTabs = availableTypes.map(rt => `<button class="leaderboard-tab ${rt === statsRoundType ? 'selected' : ''}" type="button" data-round-type="${rt}">${escapeHtml(ROUND_TYPES[rt].label)}</button>`).join('');
   ui.statsList.className = 'stats-list stats-detail-wrap';
   ui.statsList.innerHTML = `<li>
     <button class="stats-back" type="button">← ARTISTES</button>
     <div class="stats-row">
       <div class="stats-artist"><strong>${escapeHtml(artist.name)}</strong></div>
+      <div class="leaderboard-tabs leaderboard-subtabs">${roundTypeTabs}</div>
       <div class="stats-grid-mini">
         <div><span>MEILLEUR SOLO</span><strong>${bestSolo}</strong></div>
         <div><span>MEILLEUR RANKED</span><strong>${bestChallenge}</strong></div>
@@ -413,6 +453,7 @@ function renderStatsDetail(artistId) {
     </div>
   </li>`;
   ui.statsList.querySelector('.stats-back').addEventListener('click', renderStatsMenu);
+  ui.statsList.querySelectorAll('.leaderboard-tab').forEach(button => button.addEventListener('click', () => { statsRoundType = button.dataset.roundType; renderStatsDetail(artistId); }));
 }
 function show(screen) { [ui.setup, ui.game, ui.result].forEach(item => item.classList.toggle('hidden', item !== screen)); }
 function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
@@ -426,7 +467,20 @@ function updateArtistBrand(artist) {
 function updateLeaderboardEyebrow() {
   if (!ui.leaderboardEyebrow) return;
   const name = (selectedArtist?.name || 'Blind Test').toUpperCase();
-  ui.leaderboardEyebrow.textContent = `CLASSEMENT · ${name} · ${leaderboardModeLabel(leaderboardMode)}`;
+  const roundTypeLabel = ROUND_TYPES[leaderboardRoundType]?.label || '';
+  ui.leaderboardEyebrow.textContent = `CLASSEMENT · ${name} · ${roundTypeLabel} · ${leaderboardModeLabel(leaderboardMode)}`;
+}
+function updateLeaderboardRoundTypeAvailability() {
+  const tab = document.querySelector('#leaderboardRoundTypeTabs .leaderboard-tab[data-round-type="artist"]');
+  if (!tab) return;
+  const available = Boolean(selectedArtist?.category);
+  tab.hidden = !available;
+  if (!available && tab.classList.contains('selected')) {
+    tab.classList.remove('selected');
+    leaderboardRoundType = 'title';
+    document.querySelector('#leaderboardRoundTypeTabs .leaderboard-tab[data-round-type="title"]')?.classList.add('selected');
+    updateLeaderboardEyebrow();
+  }
 }
 let artistSearchQuery = '';
 let artistSortMode = 'default';
@@ -477,7 +531,7 @@ async function selectArtist(artistId) {
   if (!artist || (artist.id === selectedArtist?.id && songs.length)) return;
   selectedArtist = artist;
   localStorage.setItem('blindtest-selected-artist', artist.id);
-  updateArtistBrand(artist); updateSelectedCardHighlight();
+  updateArtistBrand(artist); updateSelectedCardHighlight(); updateLeaderboardRoundTypeAvailability();
   songs = []; ui.start.disabled = true;
   await loadSongs();
   if (currentUser) {
@@ -533,7 +587,7 @@ async function startGame() {
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
   const speedKey = mode === 'solo' ? (document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic') : 'classic';
   const speed = SPEED_PRESETS[speedKey] || SPEED_PRESETS.classic;
-  state = { artist: selectedArtist, mode, rounds, speed, roundType, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank() : null };
+  state = { artist: selectedArtist, mode, rounds, speed, roundType, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank(roundType) : null };
   show(ui.game);
   nextRound();
 }
@@ -929,14 +983,14 @@ function resolveRound(correct, message = '', options = {}) {
 async function endGame() {
   if (!state.active) return;
   state.active = false; clearInterval(state.timerId); stopPlayback();
-  const previousBest = getBest(state.mode); const record = Math.max(previousBest, state.score);
+  const previousBest = getBest(state.mode, state.roundType); const record = Math.max(previousBest, state.score);
   const correct = state.played.filter(song => song.correct); const fastest = correct.length ? Math.min(...correct.map(song => song.seconds)) : null;
   let rankResult = null;
   if (state.mode === 'challenge') {
     const before = state.rankBefore || { points: 0, games: 0 };
     rankResult = { points: nextRankPoints(before.points, before.games, state.score), games: before.games + 1, isPlacement: before.games === 0 };
   }
-  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length, rankResult, state.speed?.key);
+  const saveResult = await saveBest(state.mode, state.score, fastest, correct.length, rankResult, state.speed?.key, state.roundType);
   if (saveResult.saved) ui.authMessage.textContent = 'Score sauvegardé sur ton compte Google.';
   else if (saveResult.reason === 'not-authenticated') ui.authMessage.textContent = 'Connecte-toi avec Google pour sauvegarder tes scores.';
   else ui.authMessage.textContent = 'Score gardé localement. Publie les règles Firestore pour le synchroniser.';
@@ -1012,8 +1066,14 @@ ui.home.addEventListener('click', async () => {
   stopPlayback(); show(ui.setup);
   if (currentUser && !ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField());
 });
-ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidden = !ui.leaderboardPanel.hidden; if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField()); });
+ui.leaderboardButton.addEventListener('click', () => { ui.leaderboardPanel.hidden = !ui.leaderboardPanel.hidden; if (!ui.leaderboardPanel.hidden) { updateLeaderboardRoundTypeAvailability(); loadLeaderboard(currentLeaderboardField()); } });
 ui.leaderboardClose.addEventListener('click', () => { ui.leaderboardPanel.hidden = true; });
+ui.leaderboardRoundTypeTabs.forEach(tab => tab.addEventListener('click', () => {
+  leaderboardRoundType = tab.dataset.roundType;
+  ui.leaderboardRoundTypeTabs.forEach(item => item.classList.toggle('selected', item === tab));
+  updateLeaderboardEyebrow();
+  loadLeaderboard(currentLeaderboardField());
+}));
 ui.leaderboardModeTabs.forEach(tab => tab.addEventListener('click', () => {
   leaderboardMode = tab.dataset.mode;
   ui.leaderboardModeTabs.forEach(item => item.classList.toggle('selected', item === tab));
