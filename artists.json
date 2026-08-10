@@ -217,6 +217,55 @@
     "description": "Discographie Deezer"
   },
   {
+    "id": "saif",
+    "name": "Saif",
+    "catalog": "saif.json",
+    "image": "assets/artists/saif.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "boro700",
+    "name": "BORO700",
+    "catalog": "boro700.json",
+    "image": "assets/artists/boro700.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "theodort",
+    "name": "THEODORT",
+    "catalog": "theodort.json",
+    "image": "assets/artists/theodort.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "jul",
+    "name": "Jul",
+    "catalog": "jul.json",
+    "image": "assets/artists/jul.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "sexion-dassaut",
+    "name": "Sexion d'Assaut",
+    "catalog": "sexion-dassaut.json",
+    "image": "assets/artists/sexion-dassaut.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "konieur",
+    "name": "Konieur",
+    "catalog": "konieur.json",
+    "image": "assets/artists/konieur.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "bello-dallas",
+    "name": "Bello&Dallas",
+    "catalog": "bello-dallas.json",
+    "image": "assets/artists/bello-dallas.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
     "id": "cat-rapfr",
     "name": "RAP FR",
     "catalog": "category-rapfr.json",
