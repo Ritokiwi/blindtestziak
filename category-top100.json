@@ -45,15 +45,6 @@
     "deezerTrackId": 3650665212
   },
   {
-    "id": "cat-top100-3940103361",
-    "title": "Pineapple",
-    "artist": "Leto",
-    "project": "Pineapple",
-    "year": 2026,
-    "releaseDate": "2026-04-10",
-    "deezerTrackId": 3940103361
-  },
-  {
     "id": "cat-top100-3784724892",
     "title": "Talk To You",
     "artist": "ANOTR",
@@ -63,13 +54,13 @@
     "deezerTrackId": 3784724892
   },
   {
-    "id": "cat-top100-4045099331",
-    "title": "Maladie",
-    "artist": "Mauvais Djo",
-    "project": "Maladie",
+    "id": "cat-top100-3940103361",
+    "title": "Pineapple",
+    "artist": "Leto",
+    "project": "Pineapple",
     "year": 2026,
-    "releaseDate": "2026-03-20",
-    "deezerTrackId": 4045099331
+    "releaseDate": "2026-04-10",
+    "deezerTrackId": 3940103361
   },
   {
     "id": "cat-top100-66609426",
@@ -79,6 +70,15 @@
     "year": 2013,
     "releaseDate": "2013-04-19",
     "deezerTrackId": 66609426
+  },
+  {
+    "id": "cat-top100-4045099331",
+    "title": "Maladie",
+    "artist": "Mauvais Djo",
+    "project": "Maladie",
+    "year": 2026,
+    "releaseDate": "2026-03-20",
+    "deezerTrackId": 4045099331
   },
   {
     "id": "cat-top100-3995047821",
@@ -126,15 +126,6 @@
     "deezerTrackId": 3889748961
   },
   {
-    "id": "cat-top100-3602329332",
-    "title": "Loser",
-    "artist": "Tame Impala",
-    "project": "Deadbeat",
-    "year": 2025,
-    "releaseDate": "2025-10-17",
-    "deezerTrackId": 3602329332
-  },
-  {
     "id": "cat-top100-3558373981",
     "title": "melodrama",
     "artist": "disiz",
@@ -171,13 +162,22 @@
     "deezerTrackId": 4155445532
   },
   {
-    "id": "cat-top100-2758844701",
-    "title": "Stargazing",
-    "artist": "Myles Smith",
-    "project": "Stargazing",
-    "year": 2024,
-    "releaseDate": "2024-05-10",
-    "deezerTrackId": 2758844701
+    "id": "cat-top100-3171002981",
+    "title": "NUEVAYoL",
+    "artist": "Bad Bunny",
+    "project": "DeBÍ TiRAR MáS FOToS",
+    "year": 2025,
+    "releaseDate": "2025-01-05",
+    "deezerTrackId": 3171002981
+  },
+  {
+    "id": "cat-top100-3602329332",
+    "title": "Loser",
+    "artist": "Tame Impala",
+    "project": "Deadbeat",
+    "year": 2025,
+    "releaseDate": "2025-10-17",
+    "deezerTrackId": 3602329332
   },
   {
     "id": "cat-top100-4763165",
@@ -189,13 +189,22 @@
     "deezerTrackId": 4763165
   },
   {
-    "id": "cat-top100-3171002981",
-    "title": "NUEVAYoL",
-    "artist": "Bad Bunny",
-    "project": "DeBÍ TiRAR MáS FOToS",
-    "year": 2025,
-    "releaseDate": "2025-01-05",
-    "deezerTrackId": 3171002981
+    "id": "cat-top100-4762941",
+    "title": "J'irai où tu iras (with Jean-Jacques Goldman)",
+    "artist": "Céline Dion",
+    "project": "D'eux - Édition 15ème Anniversaire",
+    "year": 2009,
+    "releaseDate": "2009-11-27",
+    "deezerTrackId": 4762941
+  },
+  {
+    "id": "cat-top100-2758844701",
+    "title": "Stargazing",
+    "artist": "Myles Smith",
+    "project": "Stargazing",
+    "year": 2024,
+    "releaseDate": "2024-05-10",
+    "deezerTrackId": 2758844701
   },
   {
     "id": "cat-top100-4019797791",
@@ -205,15 +214,6 @@
     "year": 2026,
     "releaseDate": "2026-05-22",
     "deezerTrackId": 4019797791
-  },
-  {
-    "id": "cat-top100-4762941",
-    "title": "J'irai où tu iras (with Jean-Jacques Goldman)",
-    "artist": "Céline Dion",
-    "project": "D'eux - Édition 15ème Anniversaire",
-    "year": 2009,
-    "releaseDate": "2009-11-27",
-    "deezerTrackId": 4762941
   },
   {
     "id": "cat-top100-4033909541",
@@ -243,15 +243,6 @@
     "deezerTrackId": 3589389921
   },
   {
-    "id": "cat-top100-65723649",
-    "title": "Another Love",
-    "artist": "Tom Odell",
-    "project": "Long Way Down (Deluxe)",
-    "year": 2013,
-    "releaseDate": "2013-06-24",
-    "deezerTrackId": 65723649
-  },
-  {
     "id": "cat-top100-1411181832",
     "title": "Pepas",
     "artist": "Farruko",
@@ -259,6 +250,15 @@
     "year": 2021,
     "releaseDate": "2021-06-24",
     "deezerTrackId": 1411181832
+  },
+  {
+    "id": "cat-top100-65723649",
+    "title": "Another Love",
+    "artist": "Tom Odell",
+    "project": "Long Way Down (Deluxe)",
+    "year": 2013,
+    "releaseDate": "2013-06-24",
+    "deezerTrackId": 65723649
   },
   {
     "id": "cat-top100-3758716202",
@@ -270,15 +270,6 @@
     "deezerTrackId": 3758716202
   },
   {
-    "id": "cat-top100-1426733732",
-    "title": "C'est la cité",
-    "artist": "Jul",
-    "project": "Demain ça ira",
-    "year": 2021,
-    "releaseDate": "2021-06-25",
-    "deezerTrackId": 1426733732
-  },
-  {
     "id": "cat-top100-3814069442",
     "title": "Comme Caroline",
     "artist": "Zaho",
@@ -288,40 +279,13 @@
     "deezerTrackId": 3814069442
   },
   {
-    "id": "cat-top100-2553265",
-    "title": "Halo",
-    "artist": "Beyoncé",
-    "project": "I AM...SASHA FIERCE",
-    "year": 2008,
-    "releaseDate": "2008-11-14",
-    "deezerTrackId": 2553265
-  },
-  {
-    "id": "cat-top100-71403230",
-    "title": "Timber",
-    "artist": "Pitbull",
-    "project": "Timber",
-    "year": 2013,
-    "releaseDate": "2013-10-07",
-    "deezerTrackId": 71403230
-  },
-  {
-    "id": "cat-top100-103996098",
-    "title": "How Deep Is Your Love",
-    "artist": "Calvin Harris",
-    "project": "How Deep Is Your Love",
-    "year": 2015,
-    "releaseDate": "2015-07-17",
-    "deezerTrackId": 103996098
-  },
-  {
-    "id": "cat-top100-2463676415",
-    "title": "Y Que Fue?",
-    "artist": "Don Miguelo",
-    "project": "Y Que Fue?",
-    "year": 2020,
-    "releaseDate": "2020-07-29",
-    "deezerTrackId": 2463676415
+    "id": "cat-top100-1426733732",
+    "title": "C'est la cité",
+    "artist": "Jul",
+    "project": "Demain ça ira",
+    "year": 2021,
+    "releaseDate": "2021-06-25",
+    "deezerTrackId": 1426733732
   },
   {
     "id": "cat-top100-3867905101",
@@ -342,6 +306,60 @@
     "deezerTrackId": 3871739701
   },
   {
+    "id": "cat-top100-71403230",
+    "title": "Timber",
+    "artist": "Pitbull",
+    "project": "Timber",
+    "year": 2013,
+    "releaseDate": "2013-10-07",
+    "deezerTrackId": 71403230
+  },
+  {
+    "id": "cat-top100-3979633611",
+    "title": "Le Petit Pêcheur",
+    "artist": "Manon Lisa",
+    "project": "Le Petit Pêcheur",
+    "year": 2026,
+    "releaseDate": "2026-02-11",
+    "deezerTrackId": 3979633611
+  },
+  {
+    "id": "cat-top100-103996098",
+    "title": "How Deep Is Your Love",
+    "artist": "Calvin Harris",
+    "project": "How Deep Is Your Love",
+    "year": 2015,
+    "releaseDate": "2015-07-17",
+    "deezerTrackId": 103996098
+  },
+  {
+    "id": "cat-top100-2463676415",
+    "title": "Y Que Fue?",
+    "artist": "Don Miguelo",
+    "project": "Y Que Fue?",
+    "year": 2020,
+    "releaseDate": "2020-07-29",
+    "deezerTrackId": 2463676415
+  },
+  {
+    "id": "cat-top100-2553265",
+    "title": "Halo",
+    "artist": "Beyoncé",
+    "project": "I AM...SASHA FIERCE",
+    "year": 2008,
+    "releaseDate": "2008-11-14",
+    "deezerTrackId": 2553265
+  },
+  {
+    "id": "cat-top100-3301821051",
+    "title": "Melrose Place",
+    "artist": "KeBlack",
+    "project": "Melrose Place",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3301821051
+  },
+  {
     "id": "cat-top100-3862146511",
     "title": "Pocahontas",
     "artist": "PLK",
@@ -360,24 +378,6 @@
     "deezerTrackId": 985745702
   },
   {
-    "id": "cat-top100-3979633611",
-    "title": "Le Petit Pêcheur",
-    "artist": "Manon Lisa",
-    "project": "Le Petit Pêcheur",
-    "year": 2026,
-    "releaseDate": "2026-02-11",
-    "deezerTrackId": 3979633611
-  },
-  {
-    "id": "cat-top100-3301821051",
-    "title": "Melrose Place",
-    "artist": "KeBlack",
-    "project": "Melrose Place",
-    "year": 2025,
-    "releaseDate": "2025-04-03",
-    "deezerTrackId": 3301821051
-  },
-  {
     "id": "cat-top100-701987352",
     "title": "Sous la lune",
     "artist": "Jul",
@@ -385,15 +385,6 @@
     "year": 2019,
     "releaseDate": "2019-06-28",
     "deezerTrackId": 701987352
-  },
-  {
-    "id": "cat-top100-1899060227",
-    "title": "End of Beginning",
-    "artist": "Djo",
-    "project": "DECIDE",
-    "year": 2022,
-    "releaseDate": "2022-09-16",
-    "deezerTrackId": 1899060227
   },
   {
     "id": "cat-top100-4762933",
@@ -405,15 +396,6 @@
     "deezerTrackId": 4762933
   },
   {
-    "id": "cat-top100-4001032461",
-    "title": "YAPAQUE",
-    "artist": "Farruko",
-    "project": "YAPAQUE",
-    "year": 2026,
-    "releaseDate": "2026-05-07",
-    "deezerTrackId": 4001032461
-  },
-  {
     "id": "cat-top100-600108042",
     "title": "Asalto",
     "artist": "Jul",
@@ -423,121 +405,13 @@
     "deezerTrackId": 600108042
   },
   {
-    "id": "cat-top100-4013762661",
-    "title": "Le monde est à moi",
-    "artist": "Jul",
-    "project": "Oubliez-moi",
-    "year": 2026,
-    "releaseDate": "2026-05-15",
-    "deezerTrackId": 4013762661
-  },
-  {
-    "id": "cat-top100-75867418",
-    "title": "J'oublie tout",
-    "artist": "Jul",
-    "project": "Dans ma paranoïa",
-    "year": 2014,
-    "releaseDate": "2014-02-24",
-    "deezerTrackId": 75867418
-  },
-  {
-    "id": "cat-top100-3835893541",
-    "title": "ELLE VOULAIT",
-    "artist": "RnBoi",
-    "project": "My Eyes Only - Flashback",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3835893541
-  },
-  {
-    "id": "cat-top100-1049999812",
-    "title": "Bande organisée",
-    "artist": "Kofs",
-    "project": "Bande organisée",
-    "year": 2020,
-    "releaseDate": "2020-10-08",
-    "deezerTrackId": 1049999812
-  },
-  {
-    "id": "cat-top100-3171003131",
-    "title": "DtMF",
-    "artist": "Bad Bunny",
-    "project": "DeBÍ TiRAR MáS FOToS",
-    "year": 2025,
-    "releaseDate": "2025-01-05",
-    "deezerTrackId": 3171003131
-  },
-  {
-    "id": "cat-top100-4064189131",
-    "title": "Sicario",
-    "artist": "Timal",
-    "project": "Sicario",
-    "year": 2026,
-    "releaseDate": "2026-06-26",
-    "deezerTrackId": 4064189131
-  },
-  {
-    "id": "cat-top100-3313220951",
-    "title": "Jalouse",
-    "artist": "Werenoi",
-    "project": "Jalouse",
-    "year": 2025,
-    "releaseDate": "2025-04-10",
-    "deezerTrackId": 3313220951
-  },
-  {
-    "id": "cat-top100-3899366131",
-    "title": "Balek",
-    "artist": "TRIANGLE DES BERMUDES",
-    "project": "404",
-    "year": 2026,
-    "releaseDate": "2026-04-03",
-    "deezerTrackId": 3899366131
-  },
-  {
-    "id": "cat-top100-3567385391",
-    "title": "Dracula",
-    "artist": "Tame Impala",
-    "project": "Dracula",
-    "year": 2025,
-    "releaseDate": "2025-09-26",
-    "deezerTrackId": 3567385391
-  },
-  {
-    "id": "cat-top100-3460711121",
-    "title": "VIANO",
-    "artist": "RK",
-    "project": "ENCORE / VIANO",
-    "year": 2025,
-    "releaseDate": "2025-07-18",
-    "deezerTrackId": 3460711121
-  },
-  {
-    "id": "cat-top100-4034363911",
-    "title": "Séminaire",
-    "artist": "Bello&Dallas",
-    "project": "Sarah B.",
-    "year": 2026,
-    "releaseDate": "2026-06-05",
-    "deezerTrackId": 4034363911
-  },
-  {
-    "id": "cat-top100-3964004371",
-    "title": "Juste un peu",
-    "artist": "Jungeli",
-    "project": "Juste un peu",
-    "year": 2026,
-    "releaseDate": "2026-04-16",
-    "deezerTrackId": 3964004371
-  },
-  {
-    "id": "cat-top100-142706538",
-    "title": "Something Just Like This",
-    "artist": "Coldplay",
-    "project": "Something Just Like This",
-    "year": 2017,
-    "releaseDate": "2017-02-22",
-    "deezerTrackId": 142706538
+    "id": "cat-top100-1899060227",
+    "title": "End of Beginning",
+    "artist": "Djo",
+    "project": "DECIDE",
+    "year": 2022,
+    "releaseDate": "2022-09-16",
+    "deezerTrackId": 1899060227
   },
   {
     "id": "cat-top100-3898660811",
@@ -549,31 +423,112 @@
     "deezerTrackId": 3898660811
   },
   {
-    "id": "cat-top100-3899366101",
-    "title": "À l'aise",
+    "id": "cat-top100-3460711121",
+    "title": "VIANO",
+    "artist": "RK",
+    "project": "ENCORE / VIANO",
+    "year": 2025,
+    "releaseDate": "2025-07-18",
+    "deezerTrackId": 3460711121
+  },
+  {
+    "id": "cat-top100-1049999812",
+    "title": "Bande organisée",
+    "artist": "Kofs",
+    "project": "Bande organisée",
+    "year": 2020,
+    "releaseDate": "2020-10-08",
+    "deezerTrackId": 1049999812
+  },
+  {
+    "id": "cat-top100-75867418",
+    "title": "J'oublie tout",
+    "artist": "Jul",
+    "project": "Dans ma paranoïa",
+    "year": 2014,
+    "releaseDate": "2014-02-24",
+    "deezerTrackId": 75867418
+  },
+  {
+    "id": "cat-top100-3171003131",
+    "title": "DtMF",
+    "artist": "Bad Bunny",
+    "project": "DeBÍ TiRAR MáS FOToS",
+    "year": 2025,
+    "releaseDate": "2025-01-05",
+    "deezerTrackId": 3171003131
+  },
+  {
+    "id": "cat-top100-3835893541",
+    "title": "ELLE VOULAIT",
+    "artist": "RnBoi",
+    "project": "My Eyes Only - Flashback",
+    "year": 2026,
+    "releaseDate": "2026-03-27",
+    "deezerTrackId": 3835893541
+  },
+  {
+    "id": "cat-top100-4013762661",
+    "title": "Le monde est à moi",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762661
+  },
+  {
+    "id": "cat-top100-3964004371",
+    "title": "Juste un peu",
+    "artist": "Jungeli",
+    "project": "Juste un peu",
+    "year": 2026,
+    "releaseDate": "2026-04-16",
+    "deezerTrackId": 3964004371
+  },
+  {
+    "id": "cat-top100-4064189131",
+    "title": "Sicario",
+    "artist": "Timal",
+    "project": "Sicario",
+    "year": 2026,
+    "releaseDate": "2026-06-26",
+    "deezerTrackId": 4064189131
+  },
+  {
+    "id": "cat-top100-3899366131",
+    "title": "Balek",
     "artist": "TRIANGLE DES BERMUDES",
     "project": "404",
     "year": 2026,
     "releaseDate": "2026-04-03",
-    "deezerTrackId": 3899366101
+    "deezerTrackId": 3899366131
   },
   {
-    "id": "cat-top100-117708444",
-    "title": "Unstoppable",
-    "artist": "Sia",
-    "project": "Unstoppable",
-    "year": 2016,
-    "releaseDate": "2016-01-21",
-    "deezerTrackId": 117708444
-  },
-  {
-    "id": "cat-top100-4045817471",
-    "title": "hate that i made you love me",
-    "artist": "Ariana Grande",
-    "project": "hate that i made you love me",
+    "id": "cat-top100-4034363911",
+    "title": "Séminaire",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
     "year": 2026,
-    "releaseDate": "2026-05-29",
-    "deezerTrackId": 4045817471
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363911
+  },
+  {
+    "id": "cat-top100-3330178491",
+    "title": "KYKY2BONDY",
+    "artist": "Hamza",
+    "project": "KYKY2BONDY",
+    "year": 2025,
+    "releaseDate": "2025-05-02",
+    "deezerTrackId": 3330178491
+  },
+  {
+    "id": "cat-top100-3313220951",
+    "title": "Jalouse",
+    "artist": "Werenoi",
+    "project": "Jalouse",
+    "year": 2025,
+    "releaseDate": "2025-04-10",
+    "deezerTrackId": 3313220951
   },
   {
     "id": "cat-top100-4070114711",
@@ -585,13 +540,40 @@
     "deezerTrackId": 4070114711
   },
   {
-    "id": "cat-top100-4204153972",
-    "title": "This & That",
-    "artist": "Stray Kids",
-    "project": "THIS & THAT",
+    "id": "cat-top100-3567385391",
+    "title": "Dracula",
+    "artist": "Tame Impala",
+    "project": "Dracula",
+    "year": 2025,
+    "releaseDate": "2025-09-26",
+    "deezerTrackId": 3567385391
+  },
+  {
+    "id": "cat-top100-3899366101",
+    "title": "À l'aise",
+    "artist": "TRIANGLE DES BERMUDES",
+    "project": "404",
     "year": 2026,
-    "releaseDate": "2026-08-07",
-    "deezerTrackId": 4204153972
+    "releaseDate": "2026-04-03",
+    "deezerTrackId": 3899366101
+  },
+  {
+    "id": "cat-top100-1101732",
+    "title": "Ain't No Mountain High Enough",
+    "artist": "Marvin Gaye",
+    "project": "The 50 Greatest Songs",
+    "year": 2007,
+    "releaseDate": "2007-10-29",
+    "deezerTrackId": 1101732
+  },
+  {
+    "id": "cat-top100-142706538",
+    "title": "Something Just Like This",
+    "artist": "Coldplay",
+    "project": "Something Just Like This",
+    "year": 2017,
+    "releaseDate": "2017-02-22",
+    "deezerTrackId": 142706538
   },
   {
     "id": "cat-top100-118986142",
@@ -612,112 +594,13 @@
     "deezerTrackId": 3314018771
   },
   {
-    "id": "cat-top100-3330178491",
-    "title": "KYKY2BONDY",
-    "artist": "Hamza",
-    "project": "KYKY2BONDY",
-    "year": 2025,
-    "releaseDate": "2025-05-02",
-    "deezerTrackId": 3330178491
-  },
-  {
-    "id": "cat-top100-4078598061",
-    "title": "Mi Chico (Official - Jason Derulo x Melody)",
-    "artist": "DJ Goja",
-    "project": "Mi Chico (Official - Jason Derulo x Melody)",
+    "id": "cat-top100-4045817471",
+    "title": "hate that i made you love me",
+    "artist": "Ariana Grande",
+    "project": "hate that i made you love me",
     "year": 2026,
-    "releaseDate": "2026-06-26",
-    "deezerTrackId": 4078598061
-  },
-  {
-    "id": "cat-top100-4199703912",
-    "title": "Wagyu",
-    "artist": "Mauvais Djo",
-    "project": "Wagyu",
-    "year": 2026,
-    "releaseDate": "2026-08-07",
-    "deezerTrackId": 4199703912
-  },
-  {
-    "id": "cat-top100-3921078891",
-    "title": "RENÉ CAOVILLA",
-    "artist": "Gambi",
-    "project": "RENÉ CAOVILLA",
-    "year": 2026,
-    "releaseDate": "2026-04-03",
-    "deezerTrackId": 3921078891
-  },
-  {
-    "id": "cat-top100-4603400",
-    "title": "Smooth Criminal (Remastered Radio Edit)",
-    "artist": "Michael Jackson",
-    "project": "Michael Jackson's This Is It",
-    "year": 2009,
-    "releaseDate": "2009-10-26",
-    "deezerTrackId": 4603400
-  },
-  {
-    "id": "cat-top100-3731410",
-    "title": "Hotel Room Service",
-    "artist": "Pitbull",
-    "project": "Hotel Room Service",
-    "year": 2009,
-    "releaseDate": "2009-06-11",
-    "deezerTrackId": 3731410
-  },
-  {
-    "id": "cat-top100-3250035161",
-    "title": "Mood",
-    "artist": "KeBlack",
-    "project": "Mood",
-    "year": 2025,
-    "releaseDate": "2025-02-27",
-    "deezerTrackId": 3250035161
-  },
-  {
-    "id": "cat-top100-1101732",
-    "title": "Ain't No Mountain High Enough",
-    "artist": "Marvin Gaye",
-    "project": "The 50 Greatest Songs",
-    "year": 2007,
-    "releaseDate": "2007-10-29",
-    "deezerTrackId": 1101732
-  },
-  {
-    "id": "cat-top100-600108222",
-    "title": "Pour un violet",
-    "artist": "Jul",
-    "project": "La zone en personne",
-    "year": 2018,
-    "releaseDate": "2018-12-07",
-    "deezerTrackId": 600108222
-  },
-  {
-    "id": "cat-top100-3412534581",
-    "title": "Golden",
-    "artist": "HUNTR/X",
-    "project": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
-    "year": 2025,
-    "releaseDate": "2025-06-20",
-    "deezerTrackId": 3412534581
-  },
-  {
-    "id": "cat-top100-3548216281",
-    "title": "WHERE IS MY HUSBAND!",
-    "artist": "Raye",
-    "project": "WHERE IS MY HUSBAND!",
-    "year": 2025,
-    "releaseDate": "2025-09-19",
-    "deezerTrackId": 3548216281
-  },
-  {
-    "id": "cat-top100-123883254",
-    "title": "This Is What You Came For",
-    "artist": "Calvin Harris",
-    "project": "This Is What You Came For",
-    "year": 2016,
-    "releaseDate": "2016-04-29",
-    "deezerTrackId": 123883254
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4045817471
   },
   {
     "id": "cat-top100-3651885972",
@@ -729,22 +612,58 @@
     "deezerTrackId": 3651885972
   },
   {
-    "id": "cat-top100-1425844092",
-    "title": "STAY",
-    "artist": "The Kid Laroi",
-    "project": "STAY",
-    "year": 2021,
-    "releaseDate": "2021-07-09",
-    "deezerTrackId": 1425844092
+    "id": "cat-top100-4603400",
+    "title": "Smooth Criminal (Remastered Radio Edit)",
+    "artist": "Michael Jackson",
+    "project": "Michael Jackson's This Is It",
+    "year": 2009,
+    "releaseDate": "2009-10-26",
+    "deezerTrackId": 4603400
   },
   {
-    "id": "cat-top100-4077099861",
-    "title": "Olivia Valere",
-    "artist": "Lagui",
-    "project": "En Croix",
+    "id": "cat-top100-3921078891",
+    "title": "RENÉ CAOVILLA",
+    "artist": "Gambi",
+    "project": "RENÉ CAOVILLA",
     "year": 2026,
-    "releaseDate": "2026-06-19",
-    "deezerTrackId": 4077099861
+    "releaseDate": "2026-04-03",
+    "deezerTrackId": 3921078891
+  },
+  {
+    "id": "cat-top100-4078598061",
+    "title": "Mi Chico (Official - Jason Derulo x Melody)",
+    "artist": "DJ Goja",
+    "project": "Mi Chico (Official - Jason Derulo x Melody)",
+    "year": 2026,
+    "releaseDate": "2026-06-26",
+    "deezerTrackId": 4078598061
+  },
+  {
+    "id": "cat-top100-117708444",
+    "title": "Unstoppable",
+    "artist": "Sia",
+    "project": "Unstoppable",
+    "year": 2016,
+    "releaseDate": "2016-01-21",
+    "deezerTrackId": 117708444
+  },
+  {
+    "id": "cat-top100-3412534581",
+    "title": "Golden",
+    "artist": "HUNTR/X",
+    "project": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3412534581
+  },
+  {
+    "id": "cat-top100-3731410",
+    "title": "Hotel Room Service",
+    "artist": "Pitbull",
+    "project": "Hotel Room Service",
+    "year": 2009,
+    "releaseDate": "2009-06-11",
+    "deezerTrackId": 3731410
   },
   {
     "id": "cat-top100-69962764",
@@ -756,40 +675,13 @@
     "deezerTrackId": 69962764
   },
   {
-    "id": "cat-top100-3689236742",
-    "title": "Je suis love",
-    "artist": "Jul",
-    "project": "TP sur TP",
+    "id": "cat-top100-3548216281",
+    "title": "WHERE IS MY HUSBAND!",
+    "artist": "Raye",
+    "project": "WHERE IS MY HUSBAND!",
     "year": 2025,
-    "releaseDate": "2025-12-05",
-    "deezerTrackId": 3689236742
-  },
-  {
-    "id": "cat-top100-92719900",
-    "title": "Highway to Hell",
-    "artist": "AC/DC",
-    "project": "Highway to Hell",
-    "year": 1979,
-    "releaseDate": "1979-07-27",
-    "deezerTrackId": 92719900
-  },
-  {
-    "id": "cat-top100-3571311501",
-    "title": "La recette",
-    "artist": "Jeck",
-    "project": "Oxygène",
-    "year": 2025,
-    "releaseDate": "2025-10-24",
-    "deezerTrackId": 3571311501
-  },
-  {
-    "id": "cat-top100-3148151",
-    "title": "Hier encore",
-    "artist": "Charles Aznavour",
-    "project": "40 Chansons D'or",
-    "year": 2006,
-    "releaseDate": "2006-01-01",
-    "deezerTrackId": 3148151
+    "releaseDate": "2025-09-19",
+    "deezerTrackId": 3548216281
   },
   {
     "id": "cat-top100-3509269611",
@@ -801,40 +693,31 @@
     "deezerTrackId": 3509269611
   },
   {
-    "id": "cat-top100-2459444615",
-    "title": "Tu connais",
-    "artist": "Werenoi",
-    "project": "Telegram 2",
-    "year": 2023,
-    "releaseDate": "2023-09-22",
-    "deezerTrackId": 2459444615
+    "id": "cat-top100-600108222",
+    "title": "Pour un violet",
+    "artist": "Jul",
+    "project": "La zone en personne",
+    "year": 2018,
+    "releaseDate": "2018-12-07",
+    "deezerTrackId": 600108222
   },
   {
-    "id": "cat-top100-4059400101",
-    "title": "Mélo Décalé",
-    "artist": "Tiakola",
-    "project": "Mélo Décalé",
-    "year": 2026,
-    "releaseDate": "2026-06-12",
-    "deezerTrackId": 4059400101
+    "id": "cat-top100-3250035161",
+    "title": "Mood",
+    "artist": "KeBlack",
+    "project": "Mood",
+    "year": 2025,
+    "releaseDate": "2025-02-27",
+    "deezerTrackId": 3250035161
   },
   {
-    "id": "cat-top100-3809346722",
-    "title": "B.M.S (by my side)",
-    "artist": "Rambo Goyard",
-    "project": "B.M.S (by my side)",
-    "year": 2026,
-    "releaseDate": "2026-01-30",
-    "deezerTrackId": 3809346722
-  },
-  {
-    "id": "cat-top100-1015656",
-    "title": "Je Sais Pas",
-    "artist": "Céline Dion",
-    "project": "D'Eux",
-    "year": 1995,
-    "releaseDate": "1995-03-27",
-    "deezerTrackId": 1015656
+    "id": "cat-top100-92719900",
+    "title": "Highway to Hell",
+    "artist": "AC/DC",
+    "project": "Highway to Hell",
+    "year": 1979,
+    "releaseDate": "1979-07-27",
+    "deezerTrackId": 92719900
   },
   {
     "id": "cat-top100-3242688291",
@@ -846,31 +729,94 @@
     "deezerTrackId": 3242688291
   },
   {
-    "id": "cat-top100-3884482901",
-    "title": "Picasso",
-    "artist": "Bigflo & Oli",
-    "project": "Karma",
+    "id": "cat-top100-4059400101",
+    "title": "Mélo Décalé",
+    "artist": "Tiakola",
+    "project": "Mélo Décalé",
     "year": 2026,
-    "releaseDate": "2026-03-12",
-    "deezerTrackId": 3884482901
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4059400101
   },
   {
-    "id": "cat-top100-1584416372",
-    "title": "Gangsta's Paradise",
-    "artist": "Coolio",
-    "project": "Gangsta's Paradise",
-    "year": 1995,
-    "releaseDate": "1995-10-31",
-    "deezerTrackId": 1584416372
+    "id": "cat-top100-123883254",
+    "title": "This Is What You Came For",
+    "artist": "Calvin Harris",
+    "project": "This Is What You Came For",
+    "year": 2016,
+    "releaseDate": "2016-04-29",
+    "deezerTrackId": 123883254
   },
   {
-    "id": "cat-top100-411109542",
-    "title": "Leave a Light On",
-    "artist": "Tom Walker",
-    "project": "Leave a Light On",
-    "year": 2017,
-    "releaseDate": "2017-10-13",
-    "deezerTrackId": 411109542
+    "id": "cat-top100-4077099861",
+    "title": "Olivia Valere",
+    "artist": "Lagui",
+    "project": "En Croix",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4077099861
+  },
+  {
+    "id": "cat-top100-4199703912",
+    "title": "Wagyu",
+    "artist": "Mauvais Djo",
+    "project": "Wagyu",
+    "year": 2026,
+    "releaseDate": "2026-08-07",
+    "deezerTrackId": 4199703912
+  },
+  {
+    "id": "cat-top100-3974298731",
+    "title": "Emprise",
+    "artist": "GIMS",
+    "project": "Emprise",
+    "year": 2026,
+    "releaseDate": "2026-04-24",
+    "deezerTrackId": 3974298731
+  },
+  {
+    "id": "cat-top100-3148151",
+    "title": "Hier encore",
+    "artist": "Charles Aznavour",
+    "project": "40 Chansons D'or",
+    "year": 2006,
+    "releaseDate": "2006-01-01",
+    "deezerTrackId": 3148151
+  },
+  {
+    "id": "cat-top100-3484365861",
+    "title": "PARISIENNE",
+    "artist": "GIMS",
+    "project": "PARISIENNE",
+    "year": 2025,
+    "releaseDate": "2025-08-01",
+    "deezerTrackId": 3484365861
+  },
+  {
+    "id": "cat-top100-3809346722",
+    "title": "B.M.S (by my side)",
+    "artist": "Rambo Goyard",
+    "project": "B.M.S (by my side)",
+    "year": 2026,
+    "releaseDate": "2026-01-30",
+    "deezerTrackId": 3809346722
+  },
+  {
+    "id": "cat-top100-3689236742",
+    "title": "Je suis love",
+    "artist": "Jul",
+    "project": "TP sur TP",
+    "year": 2025,
+    "releaseDate": "2025-12-05",
+    "deezerTrackId": 3689236742
+  },
+  {
+    "id": "cat-top100-3571311501",
+    "title": "La recette",
+    "artist": "Jeck",
+    "project": "Oxygène",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 3571311501
   },
   {
     "id": "cat-top100-3602108062",
@@ -882,12 +828,66 @@
     "deezerTrackId": 3602108062
   },
   {
-    "id": "cat-top100-3023385241",
-    "title": "Pétunias",
-    "artist": "Werenoi",
-    "project": "Pétunias",
-    "year": 2024,
-    "releaseDate": "2024-10-04",
-    "deezerTrackId": 3023385241
+    "id": "cat-top100-3862691491",
+    "title": "Save Me Tonight",
+    "artist": "Jennifer Lopez",
+    "project": "Save Me Tonight",
+    "year": 2026,
+    "releaseDate": "2026-03-06",
+    "deezerTrackId": 3862691491
+  },
+  {
+    "id": "cat-top100-3675222292",
+    "title": "méli-mélo",
+    "artist": "kulturr",
+    "project": "HOPE. : Imani",
+    "year": 2025,
+    "releaseDate": "2025-12-12",
+    "deezerTrackId": 3675222292
+  },
+  {
+    "id": "cat-top100-1425844092",
+    "title": "STAY",
+    "artist": "The Kid Laroi",
+    "project": "STAY",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1425844092
+  },
+  {
+    "id": "cat-top100-4034126871",
+    "title": "Été avec toi",
+    "artist": "Adèle Castillon",
+    "project": "Été avec toi",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4034126871
+  },
+  {
+    "id": "cat-top100-3674551372",
+    "title": "OG",
+    "artist": "Genezio",
+    "project": "LES DENTS DU BONHEUR",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3674551372
+  },
+  {
+    "id": "cat-top100-3380338381",
+    "title": "ZOU BISOU",
+    "artist": "Theodora",
+    "project": "MEGA BBL",
+    "year": 2025,
+    "releaseDate": "2025-05-29",
+    "deezerTrackId": 3380338381
+  },
+  {
+    "id": "cat-top100-3278913111",
+    "title": "Soleil Bleu",
+    "artist": "Bleu Soleil",
+    "project": "Soleil Bleu",
+    "year": 2025,
+    "releaseDate": "2025-04-11",
+    "deezerTrackId": 3278913111
   }
 ]

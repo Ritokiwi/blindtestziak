@@ -1,5 +1,59 @@
 [
   {
+    "id": "cat-saisai-4209803702",
+    "title": "Saisai Kulit",
+    "artist": "Saisai",
+    "project": "Saisai Kulit",
+    "year": 2026,
+    "releaseDate": "2026-08-07",
+    "deezerTrackId": 4209803702
+  },
+  {
+    "id": "cat-saisai-4209803772",
+    "title": "Chess is Torture",
+    "artist": "Saisai",
+    "project": "Chess is Torture",
+    "year": 2026,
+    "releaseDate": "2026-08-07",
+    "deezerTrackId": 4209803772
+  },
+  {
+    "id": "cat-saisai-4200688722",
+    "title": "Mahal Kong Anak Saisai",
+    "artist": "Saisai",
+    "project": "Mahal Kong Anak Saisai",
+    "year": 2026,
+    "releaseDate": "2026-08-04",
+    "deezerTrackId": 4200688722
+  },
+  {
+    "id": "cat-saisai-4202298702",
+    "title": "Maging Mabuti Paglaki",
+    "artist": "Saisai",
+    "project": "Maging Mabuti Paglaki",
+    "year": 2026,
+    "releaseDate": "2026-08-04",
+    "deezerTrackId": 4202298702
+  },
+  {
+    "id": "cat-saisai-4198208972",
+    "title": "Saisai kong Bituin",
+    "artist": "Saisai",
+    "project": "Saisai kong Bituin",
+    "year": 2026,
+    "releaseDate": "2026-08-03",
+    "deezerTrackId": 4198208972
+  },
+  {
+    "id": "cat-saisai-4190646482",
+    "title": "Sofa Dog",
+    "artist": "Saisai",
+    "project": "Sofa Dog",
+    "year": 2026,
+    "releaseDate": "2026-07-30",
+    "deezerTrackId": 4190646482
+  },
+  {
     "id": "cat-gims-4165859712",
     "title": "FANTAISIE",
     "artist": "GIMS",
@@ -54,6 +108,33 @@
     "deezerTrackId": 4155445532
   },
   {
+    "id": "cat-jul-4158758242",
+    "title": "On oublie pas",
+    "artist": "Jul",
+    "project": "On oublie pas",
+    "year": 2026,
+    "releaseDate": "2026-07-17",
+    "deezerTrackId": 4158758242
+  },
+  {
+    "id": "cat-jul-4157789562",
+    "title": "Les soucis",
+    "artist": "Jul",
+    "project": "Les soucis",
+    "year": 2026,
+    "releaseDate": "2026-07-16",
+    "deezerTrackId": 4157789562
+  },
+  {
+    "id": "cat-konieur-4142917701",
+    "title": "ATALAKU",
+    "artist": "Konieur",
+    "project": "ATALAKU",
+    "year": 2026,
+    "releaseDate": "2026-07-15",
+    "deezerTrackId": 4142917701
+  },
+  {
     "id": "cat-la-mano19-4128939461",
     "title": "FBI",
     "artist": "La Mano1.9",
@@ -61,6 +142,15 @@
     "year": 2026,
     "releaseDate": "2026-07-10",
     "deezerTrackId": 4128939461
+  },
+  {
+    "id": "cat-boro700-4134549171",
+    "title": "M*R*H",
+    "artist": "BORO700",
+    "project": "M*R*H",
+    "year": 2026,
+    "releaseDate": "2026-07-07",
+    "deezerTrackId": 4134549171
   },
   {
     "id": "cat-ven1-4128882401",
@@ -207,6 +297,15 @@
     "deezerTrackId": 4053010181
   },
   {
+    "id": "cat-boro700-4090737861",
+    "title": "Davaï",
+    "artist": "BORO700",
+    "project": "Davaï",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4090737861
+  },
+  {
     "id": "cat-jolagreen23-4071062871",
     "title": "WWE 2K26",
     "artist": "Jolagreen23",
@@ -216,6 +315,15 @@
     "deezerTrackId": 4071062871
   },
   {
+    "id": "cat-konieur-4077803871",
+    "title": "GUTEN TAG",
+    "artist": "Konieur",
+    "project": "GUTEN TAG",
+    "year": 2026,
+    "releaseDate": "2026-06-17",
+    "deezerTrackId": 4077803871
+  },
+  {
     "id": "cat-tiakola-4059400101",
     "title": "Mélo Décalé",
     "artist": "Tiakola",
@@ -223,6 +331,69 @@
     "year": 2026,
     "releaseDate": "2026-06-12",
     "deezerTrackId": 4059400101
+  },
+  {
+    "id": "cat-konieur-4075516561",
+    "title": "Ça blesse",
+    "artist": "Konieur",
+    "project": "Ça blesse",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516561
+  },
+  {
+    "id": "cat-konieur-4075516461",
+    "title": "Tema l'aura #1 (John Abruzzi)",
+    "artist": "Konieur",
+    "project": "Tema l'aura #1 (John Abruzzi)",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516461
+  },
+  {
+    "id": "cat-konieur-4075516441",
+    "title": "Allo",
+    "artist": "Konieur",
+    "project": "Allo",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516441
+  },
+  {
+    "id": "cat-konieur-4075516431",
+    "title": "Muchachos",
+    "artist": "Konieur",
+    "project": "Muchachos",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516431
+  },
+  {
+    "id": "cat-konieur-4075516401",
+    "title": "PAS RANGÉ",
+    "artist": "Konieur",
+    "project": "PAS RANGÉ",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516401
+  },
+  {
+    "id": "cat-konieur-4075516421",
+    "title": "JOUE PAS AU CON",
+    "artist": "Konieur",
+    "project": "JOUE PAS AU CON",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516421
+  },
+  {
+    "id": "cat-konieur-4075516411",
+    "title": "À TA SANTÉ",
+    "artist": "Konieur",
+    "project": "À TA SANTÉ",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4075516411
   },
   {
     "id": "cat-gims-4054048701",
@@ -241,6 +412,213 @@
     "year": 2026,
     "releaseDate": "2026-06-05",
     "deezerTrackId": 4058961011
+  },
+  {
+    "id": "cat-saif-4050106851",
+    "title": "Murmures",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106851
+  },
+  {
+    "id": "cat-saif-4050106871",
+    "title": "La vie est belle",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106871
+  },
+  {
+    "id": "cat-saif-4050106881",
+    "title": "La méthode",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106881
+  },
+  {
+    "id": "cat-saif-4050106901",
+    "title": "Vengeance personnelle",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106901
+  },
+  {
+    "id": "cat-saif-4050106911",
+    "title": "Si vous saviez",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106911
+  },
+  {
+    "id": "cat-saif-4050106921",
+    "title": "Méchant loup",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106921
+  },
+  {
+    "id": "cat-saif-4050106941",
+    "title": "La tempête",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106941
+  },
+  {
+    "id": "cat-saif-4050106951",
+    "title": "N’oublie rien",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106951
+  },
+  {
+    "id": "cat-saif-4050106961",
+    "title": "Jean Reno",
+    "artist": "Saif",
+    "project": "Si vous saviez",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4050106961
+  },
+  {
+    "id": "cat-bello-dallas-4034363811",
+    "title": "Sales mômes",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363811
+  },
+  {
+    "id": "cat-bello-dallas-4034363831",
+    "title": "Chéla",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363831
+  },
+  {
+    "id": "cat-bello-dallas-4034363841",
+    "title": "Démon",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363841
+  },
+  {
+    "id": "cat-bello-dallas-4034363851",
+    "title": "Contaminé",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363851
+  },
+  {
+    "id": "cat-bello-dallas-4034363861",
+    "title": "PILI PILI",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363861
+  },
+  {
+    "id": "cat-bello-dallas-4034363891",
+    "title": "MJ",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363891
+  },
+  {
+    "id": "cat-bello-dallas-4034363901",
+    "title": "Carolina Herrera",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363901
+  },
+  {
+    "id": "cat-bello-dallas-4034363911",
+    "title": "Séminaire",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363911
+  },
+  {
+    "id": "cat-bello-dallas-4034363921",
+    "title": "Shoko",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363921
+  },
+  {
+    "id": "cat-bello-dallas-4034363931",
+    "title": "Messagerie",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363931
+  },
+  {
+    "id": "cat-bello-dallas-4034363941",
+    "title": "Outro",
+    "artist": "Bello&Dallas",
+    "project": "Sarah B.",
+    "year": 2026,
+    "releaseDate": "2026-06-05",
+    "deezerTrackId": 4034363941
+  },
+  {
+    "id": "cat-saif-4050104931",
+    "title": "La soeur de la vie",
+    "artist": "Saif",
+    "project": "La soeur de la vie (feat. Khali)",
+    "year": 2026,
+    "releaseDate": "2026-06-03",
+    "deezerTrackId": 4050104931
+  },
+  {
+    "id": "cat-saif-4050105041",
+    "title": "Hier encore",
+    "artist": "Saif",
+    "project": "Hier encore (feat. Pato)",
+    "year": 2026,
+    "releaseDate": "2026-06-03",
+    "deezerTrackId": 4050105041
+  },
+  {
+    "id": "cat-boro700-4058242141",
+    "title": "NDDB #8",
+    "artist": "BORO700",
+    "project": "NDDB #8",
+    "year": 2026,
+    "releaseDate": "2026-06-03",
+    "deezerTrackId": 4058242141
   },
   {
     "id": "cat-beendo-z-4024124601",
@@ -304,6 +682,15 @@
     "year": 2026,
     "releaseDate": "2026-05-29",
     "deezerTrackId": 4024124671
+  },
+  {
+    "id": "cat-bello-dallas-4034755501",
+    "title": "Face à la mer (Freestyle Booska-P)",
+    "artist": "Bello&Dallas",
+    "project": "Face à la mer (Freestyle Booska-P)",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4034755501
   },
   {
     "id": "cat-zola-4047900401",
@@ -459,6 +846,15 @@
     "deezerTrackId": 4007300871
   },
   {
+    "id": "cat-saif-3921397801",
+    "title": "RAP d’arabe",
+    "artist": "Saif",
+    "project": "RAP d’arabe",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 3921397801
+  },
+  {
     "id": "cat-ven1-4022613221",
     "title": "22",
     "artist": "VEN1",
@@ -549,6 +945,177 @@
     "deezerTrackId": 4013699211
   },
   {
+    "id": "cat-jul-4013762621",
+    "title": "Je pardonne tout",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762621
+  },
+  {
+    "id": "cat-jul-4013762631",
+    "title": "Je t'aime",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762631
+  },
+  {
+    "id": "cat-jul-4013762641",
+    "title": "Cantona",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762641
+  },
+  {
+    "id": "cat-jul-4013762651",
+    "title": "C'est dur d'aimer",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762651
+  },
+  {
+    "id": "cat-jul-4013762661",
+    "title": "Le monde est à moi",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762661
+  },
+  {
+    "id": "cat-jul-4013762671",
+    "title": "À la vie, à la mort",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762671
+  },
+  {
+    "id": "cat-jul-4013762691",
+    "title": "Tié un tigre",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762691
+  },
+  {
+    "id": "cat-jul-4013762711",
+    "title": "1000 RR",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762711
+  },
+  {
+    "id": "cat-jul-4013762721",
+    "title": "Ne me déçois pas",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762721
+  },
+  {
+    "id": "cat-jul-4013762731",
+    "title": "Je les laisse croire",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762731
+  },
+  {
+    "id": "cat-jul-4013762741",
+    "title": "No se porque",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762741
+  },
+  {
+    "id": "cat-jul-4013762751",
+    "title": "Romanzo criminel",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762751
+  },
+  {
+    "id": "cat-jul-4013762761",
+    "title": "Marseillais",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762761
+  },
+  {
+    "id": "cat-jul-4013762771",
+    "title": "Paix à toi",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762771
+  },
+  {
+    "id": "cat-jul-4013762791",
+    "title": "J'ai pas d'associé",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762791
+  },
+  {
+    "id": "cat-jul-4013762801",
+    "title": "Coucher du soleil",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762801
+  },
+  {
+    "id": "cat-jul-4013762811",
+    "title": "Ils sont pas carré",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762811
+  },
+  {
+    "id": "cat-jul-4013762821",
+    "title": "Je te sens pas",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762821
+  },
+  {
+    "id": "cat-jul-4013762831",
+    "title": "On parlera plus ensemble",
+    "artist": "Jul",
+    "project": "Oubliez-moi",
+    "year": 2026,
+    "releaseDate": "2026-05-15",
+    "deezerTrackId": 4013762831
+  },
+  {
     "id": "cat-gims-4010224201",
     "title": "LABUBU (Latin Version)",
     "artist": "GIMS",
@@ -556,6 +1123,15 @@
     "year": 2026,
     "releaseDate": "2026-05-14",
     "deezerTrackId": 4010224201
+  },
+  {
+    "id": "cat-jul-4013762861",
+    "title": "La calle",
+    "artist": "Jul",
+    "project": "La calle",
+    "year": 2026,
+    "releaseDate": "2026-05-14",
+    "deezerTrackId": 4013762861
   },
   {
     "id": "cat-fave-4004820591",
@@ -567,6 +1143,24 @@
     "deezerTrackId": 4004820591
   },
   {
+    "id": "cat-saisai-4022355581",
+    "title": "Fiché S 2",
+    "artist": "Saisai",
+    "project": "Fiché S 2",
+    "year": 2026,
+    "releaseDate": "2026-05-13",
+    "deezerTrackId": 4022355581
+  },
+  {
+    "id": "cat-bello-dallas-3988327671",
+    "title": "Arena de Cuba",
+    "artist": "Bello&Dallas",
+    "project": "Arena de Cuba",
+    "year": 2026,
+    "releaseDate": "2026-05-08",
+    "deezerTrackId": 3988327671
+  },
+  {
     "id": "cat-tiakola-3990178371",
     "title": "Savage",
     "artist": "Tiakola",
@@ -574,6 +1168,15 @@
     "year": 2026,
     "releaseDate": "2026-05-07",
     "deezerTrackId": 3990178371
+  },
+  {
+    "id": "cat-jul-4000942341",
+    "title": "Parasite",
+    "artist": "Jul",
+    "project": "Parasite",
+    "year": 2026,
+    "releaseDate": "2026-05-06",
+    "deezerTrackId": 4000942341
   },
   {
     "id": "cat-kerchak-3972866851",
@@ -745,608 +1348,5 @@
     "year": 2026,
     "releaseDate": "2026-04-23",
     "deezerTrackId": 3949518491
-  },
-  {
-    "id": "cat-kerchak-3961868421",
-    "title": "LOVE",
-    "artist": "Kerchak",
-    "project": "LOVE",
-    "year": 2026,
-    "releaseDate": "2026-04-23",
-    "deezerTrackId": 3961868421
-  },
-  {
-    "id": "cat-houdi-3957684861",
-    "title": "HOUDSIDER",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957684861
-  },
-  {
-    "id": "cat-houdi-3957684901",
-    "title": "SOURIRE MÉCANIQUE",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957684901
-  },
-  {
-    "id": "cat-houdi-3957684931",
-    "title": "J'ÉTEINS TOUT",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957684931
-  },
-  {
-    "id": "cat-houdi-3957684971",
-    "title": "ILLÉGALEMENT",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957684971
-  },
-  {
-    "id": "cat-houdi-3957685001",
-    "title": "FREESTYLE D'AMOUR",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957685001
-  },
-  {
-    "id": "cat-houdi-3957685031",
-    "title": "INTERLUDE",
-    "artist": "Houdi",
-    "project": "HOUDSIDER",
-    "year": 2026,
-    "releaseDate": "2026-04-21",
-    "deezerTrackId": 3957685031
-  },
-  {
-    "id": "cat-fave-3956937471",
-    "title": "Alabama Barker",
-    "artist": "Favé",
-    "project": "Alabama Barker",
-    "year": 2026,
-    "releaseDate": "2026-04-17",
-    "deezerTrackId": 3956937471
-  },
-  {
-    "id": "cat-la-mano19-3952342211",
-    "title": "Chanel",
-    "artist": "La Mano1.9",
-    "project": "Chanel",
-    "year": 2026,
-    "releaseDate": "2026-04-15",
-    "deezerTrackId": 3952342211
-  },
-  {
-    "id": "cat-nono-la-grinta-3932446571",
-    "title": "FLASH-BACK",
-    "artist": "Nono la Grinta",
-    "project": "FLASH-BACK",
-    "year": 2026,
-    "releaseDate": "2026-04-09",
-    "deezerTrackId": 3932446571
-  },
-  {
-    "id": "cat-gambi-3921078891",
-    "title": "RENÉ CAOVILLA",
-    "artist": "Gambi",
-    "project": "RENÉ CAOVILLA",
-    "year": 2026,
-    "releaseDate": "2026-04-03",
-    "deezerTrackId": 3921078891
-  },
-  {
-    "id": "cat-gims-3935276381",
-    "title": "Soleil",
-    "artist": "GIMS",
-    "project": "Soleil",
-    "year": 2026,
-    "releaseDate": "2026-04-03",
-    "deezerTrackId": 3935276381
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003831",
-    "title": "MACHIAVEL",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003831
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003841",
-    "title": "312-391",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003841
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003851",
-    "title": "FITNESS PARK",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003851
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003881",
-    "title": "BÊTISE",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003881
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003901",
-    "title": "COACH",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003901
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003911",
-    "title": "TCHOURAYE",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003911
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003931",
-    "title": "PARLU",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003931
-  },
-  {
-    "id": "cat-la-rvfleuze-3911003951",
-    "title": "ARGENT SALE",
-    "artist": "La Rvfleuze",
-    "project": "Numéro d'écrou",
-    "year": 2026,
-    "releaseDate": "2026-03-27",
-    "deezerTrackId": 3911003951
-  },
-  {
-    "id": "cat-la-rvfleuze-3911000101",
-    "title": "CRYPTO",
-    "artist": "La Rvfleuze",
-    "project": "CRYPTO",
-    "year": 2026,
-    "releaseDate": "2026-03-26",
-    "deezerTrackId": 3911000101
-  },
-  {
-    "id": "cat-la-rvfleuze-3911001261",
-    "title": "PROMENADE",
-    "artist": "La Rvfleuze",
-    "project": "PROMENADE",
-    "year": 2026,
-    "releaseDate": "2026-03-26",
-    "deezerTrackId": 3911001261
-  },
-  {
-    "id": "cat-la-rvfleuze-3911002051",
-    "title": "RKO",
-    "artist": "La Rvfleuze",
-    "project": "RKO",
-    "year": 2026,
-    "releaseDate": "2026-03-26",
-    "deezerTrackId": 3911002051
-  },
-  {
-    "id": "cat-la-rvfleuze-3871100661",
-    "title": "VERISURE",
-    "artist": "La Rvfleuze",
-    "project": "VERISURE",
-    "year": 2026,
-    "releaseDate": "2026-03-25",
-    "deezerTrackId": 3871100661
-  },
-  {
-    "id": "cat-plk-3862146501",
-    "title": "Tu crois j'suis con ou quoi",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146501
-  },
-  {
-    "id": "cat-plk-3862146511",
-    "title": "Pocahontas",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146511
-  },
-  {
-    "id": "cat-plk-3862146521",
-    "title": "Business class",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146521
-  },
-  {
-    "id": "cat-plk-3862146541",
-    "title": "Sacré quotidien",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146541
-  },
-  {
-    "id": "cat-plk-3862146551",
-    "title": "Façon d'penser",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146551
-  },
-  {
-    "id": "cat-plk-3862146571",
-    "title": "Henri cimer",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146571
-  },
-  {
-    "id": "cat-plk-3862146581",
-    "title": "Le cœur des hommes",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146581
-  },
-  {
-    "id": "cat-plk-3862146601",
-    "title": "Toi",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146601
-  },
-  {
-    "id": "cat-plk-3862146611",
-    "title": "Tu dors ?",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146611
-  },
-  {
-    "id": "cat-plk-3862146621",
-    "title": "Sac à dos",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146621
-  },
-  {
-    "id": "cat-plk-3862146631",
-    "title": "Plus j'avance",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146631
-  },
-  {
-    "id": "cat-plk-3862146661",
-    "title": "Pas comme eux",
-    "artist": "PLK",
-    "project": "Grand Garçon",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3862146661
-  },
-  {
-    "id": "cat-black-cat-3894282581",
-    "title": "CDG",
-    "artist": "Black Cat",
-    "project": "CDG",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3894282581
-  },
-  {
-    "id": "cat-jolagreen23-3835575611",
-    "title": "MONSTRES&DEMONS",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575611
-  },
-  {
-    "id": "cat-jolagreen23-3835575621",
-    "title": "JAPANEXPO",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575621
-  },
-  {
-    "id": "cat-jolagreen23-3835575641",
-    "title": "CRUELLA",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575641
-  },
-  {
-    "id": "cat-jolagreen23-3835575651",
-    "title": "PHANTOM",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575651
-  },
-  {
-    "id": "cat-jolagreen23-3835575661",
-    "title": "KADYROV",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575661
-  },
-  {
-    "id": "cat-jolagreen23-3835575671",
-    "title": "MON CARTOON",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575671
-  },
-  {
-    "id": "cat-jolagreen23-3835575681",
-    "title": "BLEUDECHANEL",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575681
-  },
-  {
-    "id": "cat-jolagreen23-3835575691",
-    "title": "2319",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575691
-  },
-  {
-    "id": "cat-jolagreen23-3835575701",
-    "title": "INAZUMA11",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575701
-  },
-  {
-    "id": "cat-jolagreen23-3835575721",
-    "title": "LA QUÊTE",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575721
-  },
-  {
-    "id": "cat-jolagreen23-3835575731",
-    "title": "PAR LA FENÊTRE",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575731
-  },
-  {
-    "id": "cat-jolagreen23-3835575741",
-    "title": "M1030",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575741
-  },
-  {
-    "id": "cat-jolagreen23-3835575751",
-    "title": "PARIS7",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575751
-  },
-  {
-    "id": "cat-jolagreen23-3835575761",
-    "title": "2 TEMPS EN TEMPS",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575761
-  },
-  {
-    "id": "cat-jolagreen23-3835575771",
-    "title": "JME SENS DIFFERENT",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575771
-  },
-  {
-    "id": "cat-jolagreen23-3835575781",
-    "title": "FOUTULESEUM",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575781
-  },
-  {
-    "id": "cat-jolagreen23-3835575791",
-    "title": "MARIA",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575791
-  },
-  {
-    "id": "cat-jolagreen23-3835575801",
-    "title": "FAUX SOURIRE",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575801
-  },
-  {
-    "id": "cat-jolagreen23-3835575811",
-    "title": "MADARASKIT",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575811
-  },
-  {
-    "id": "cat-jolagreen23-3835575831",
-    "title": "23JOURSPLUSTARD",
-    "artist": "Jolagreen23",
-    "project": "23 JOURS PLUS TARD",
-    "year": 2026,
-    "releaseDate": "2026-03-13",
-    "deezerTrackId": 3835575831
-  },
-  {
-    "id": "cat-beendo-z-3863825611",
-    "title": "J'en Parle",
-    "artist": "Beendo Z",
-    "project": "J'en Parle",
-    "year": 2026,
-    "releaseDate": "2026-03-12",
-    "deezerTrackId": 3863825611
-  },
-  {
-    "id": "cat-theodora-3884172321",
-    "title": "Miss Kitoko",
-    "artist": "Theodora",
-    "project": "Miss Kitoko",
-    "year": 2026,
-    "releaseDate": "2026-03-12",
-    "deezerTrackId": 3884172321
-  },
-  {
-    "id": "cat-jolagreen23-3890340181",
-    "title": "JOLAF",
-    "artist": "Jolagreen23",
-    "project": "JOLAF (feat. La Fève)",
-    "year": 2026,
-    "releaseDate": "2026-03-12",
-    "deezerTrackId": 3890340181
-  },
-  {
-    "id": "cat-plk-3868639301",
-    "title": "Jamie Bynoe-Gittens",
-    "artist": "PLK",
-    "project": "Jamie Bynoe-Gittens",
-    "year": 2026,
-    "releaseDate": "2026-03-11",
-    "deezerTrackId": 3868639301
-  },
-  {
-    "id": "cat-plk-3868639331",
-    "title": "Porte d'Orléans",
-    "artist": "PLK",
-    "project": "Porte d'Orléans",
-    "year": 2026,
-    "releaseDate": "2026-03-10",
-    "deezerTrackId": 3868639331
-  },
-  {
-    "id": "cat-plk-3868639351",
-    "title": "Wemby",
-    "artist": "PLK",
-    "project": "Wemby",
-    "year": 2026,
-    "releaseDate": "2026-03-09",
-    "deezerTrackId": 3868639351
-  },
-  {
-    "id": "cat-black-cat-3877280951",
-    "title": "FENTY BEAUTY",
-    "artist": "Black Cat",
-    "project": "FENTY BEAUTY",
-    "year": 2026,
-    "releaseDate": "2026-03-06",
-    "deezerTrackId": 3877280951
-  },
-  {
-    "id": "cat-jolagreen23-3837460991",
-    "title": "LOCKED UP",
-    "artist": "Jolagreen23",
-    "project": "LOCKED UP (feat. Tiakola)",
-    "year": 2026,
-    "releaseDate": "2026-02-27",
-    "deezerTrackId": 3837460991
-  },
-  {
-    "id": "cat-plk-3842413311",
-    "title": "Sex Model",
-    "artist": "PLK",
-    "project": "Sex Model",
-    "year": 2026,
-    "releaseDate": "2026-02-20",
-    "deezerTrackId": 3842413311
-  },
-  {
-    "id": "cat-houdi-3769651922",
-    "title": "SCORE",
-    "artist": "Houdi",
-    "project": "SIROCCO +",
-    "year": 2026,
-    "releaseDate": "2026-02-20",
-    "deezerTrackId": 3769651922
   }
 ]

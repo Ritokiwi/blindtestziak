@@ -266,6 +266,13 @@
     "description": "Discographie Deezer"
   },
   {
+    "id": "saisai",
+    "name": "Saisai",
+    "catalog": "saisai.json",
+    "image": "assets/artists/saisai.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
     "id": "cat-rapfr",
     "name": "RAP FR",
     "catalog": "category-rapfr.json",
