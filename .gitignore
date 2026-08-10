@@ -4,3 +4,4 @@ scripts/generate.log
 scripts/completeness-report.json
 scripts/verify.log
 scripts/extra-check.log
+scripts/batch-add-artists-result.json

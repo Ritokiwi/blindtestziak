@@ -1,0 +1,586 @@
+[
+  {
+    "id": "iss-1694267477",
+    "title": "Sans refr#1",
+    "project": "Sans refr#1",
+    "year": 2022,
+    "releaseDate": "2022-03-23",
+    "deezerTrackId": 1694267477
+  },
+  {
+    "id": "iss-2036317857",
+    "title": "Sans Refr#3",
+    "project": "Sans Refr#3",
+    "year": 2022,
+    "releaseDate": "2022-11-25",
+    "deezerTrackId": 2036317857
+  },
+  {
+    "id": "iss-2079458637",
+    "title": "Sans Refr#4",
+    "project": "Sans Refr#4",
+    "year": 2023,
+    "releaseDate": "2023-01-04",
+    "deezerTrackId": 2079458637
+  },
+  {
+    "id": "iss-2141376907",
+    "title": "Sans refr#2",
+    "project": "Libre",
+    "year": 2023,
+    "releaseDate": "2023-02-17",
+    "deezerTrackId": 2141376907
+  },
+  {
+    "id": "iss-2141376937",
+    "title": "Libre",
+    "project": "Libre",
+    "year": 2023,
+    "releaseDate": "2023-02-17",
+    "deezerTrackId": 2141376937
+  },
+  {
+    "id": "iss-2141376947",
+    "title": "Munichois",
+    "project": "Libre",
+    "year": 2023,
+    "releaseDate": "2023-02-17",
+    "deezerTrackId": 2141376947
+  },
+  {
+    "id": "iss-2141376957",
+    "title": "C'est la zone",
+    "project": "Libre",
+    "year": 2023,
+    "releaseDate": "2023-02-17",
+    "deezerTrackId": 2141376957
+  },
+  {
+    "id": "iss-2316404515",
+    "title": "Sans Refr#5",
+    "project": "Sans Refr#5",
+    "year": 2023,
+    "releaseDate": "2023-06-14",
+    "deezerTrackId": 2316404515
+  },
+  {
+    "id": "iss-2348523885",
+    "title": "Libre 2.0 (freestyle)",
+    "project": "Libre 2.0 (freestyle)",
+    "year": 2023,
+    "releaseDate": "2023-07-04",
+    "deezerTrackId": 2348523885
+  },
+  {
+    "id": "iss-2348263405",
+    "title": "Intro",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263405
+  },
+  {
+    "id": "iss-2348263415",
+    "title": "Concentré",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263415
+  },
+  {
+    "id": "iss-2348263425",
+    "title": "Mafiosi",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263425
+  },
+  {
+    "id": "iss-2348263435",
+    "title": "Omerta",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263435
+  },
+  {
+    "id": "iss-2348263455",
+    "title": "Lové",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263455
+  },
+  {
+    "id": "iss-2348263465",
+    "title": "Cette vie",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263465
+  },
+  {
+    "id": "iss-2348263475",
+    "title": "Crie pas",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2348263475
+  },
+  {
+    "id": "iss-2424853135",
+    "title": "Coupé sport",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-09-15",
+    "deezerTrackId": 2424853135
+  },
+  {
+    "id": "iss-2424853145",
+    "title": "Contrôle d'identité",
+    "project": "Libre 2.0",
+    "year": 2023,
+    "releaseDate": "2023-09-15",
+    "deezerTrackId": 2424853145
+  },
+  {
+    "id": "iss-2504272751",
+    "title": "91 Charo Gang",
+    "project": "91 Charo Gang",
+    "year": 2023,
+    "releaseDate": "2023-10-27",
+    "deezerTrackId": 2504272751
+  },
+  {
+    "id": "iss-2547514882",
+    "title": "Collision",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514882
+  },
+  {
+    "id": "iss-2547514902",
+    "title": "Toujours au boulot",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514902
+  },
+  {
+    "id": "iss-2547514912",
+    "title": "Sac",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514912
+  },
+  {
+    "id": "iss-2547514922",
+    "title": "Péter les plombs",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514922
+  },
+  {
+    "id": "iss-2547514932",
+    "title": "Abonnés",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514932
+  },
+  {
+    "id": "iss-2547514942",
+    "title": "Mon cœur saigne",
+    "project": "Libre 3.0",
+    "year": 2023,
+    "releaseDate": "2023-12-01",
+    "deezerTrackId": 2547514942
+  },
+  {
+    "id": "iss-2683025632",
+    "title": "Salvatore",
+    "project": "Salvatore",
+    "year": 2024,
+    "releaseDate": "2024-03-06",
+    "deezerTrackId": 2683025632
+  },
+  {
+    "id": "iss-2745268831",
+    "title": "Favori",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-04-19",
+    "deezerTrackId": 2745268831
+  },
+  {
+    "id": "iss-2774665571",
+    "title": "Sans refr#6",
+    "project": "Sans refr#6",
+    "year": 2024,
+    "releaseDate": "2024-05-23",
+    "deezerTrackId": 2774665571
+  },
+  {
+    "id": "iss-2824255762",
+    "title": "Poto rentrant",
+    "project": "Poto rentrant",
+    "year": 2024,
+    "releaseDate": "2024-06-13",
+    "deezerTrackId": 2824255762
+  },
+  {
+    "id": "iss-3035729831",
+    "title": "Full black",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729831
+  },
+  {
+    "id": "iss-3035729851",
+    "title": "Allô",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729851
+  },
+  {
+    "id": "iss-3035729861",
+    "title": "Soleil plein",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729861
+  },
+  {
+    "id": "iss-3035729881",
+    "title": "Triste réalité",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729881
+  },
+  {
+    "id": "iss-3035729891",
+    "title": "Karma",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729891
+  },
+  {
+    "id": "iss-3035729901",
+    "title": "Hardcore",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729901
+  },
+  {
+    "id": "iss-3035729931",
+    "title": "Ma bella",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729931
+  },
+  {
+    "id": "iss-3035729941",
+    "title": "TOUTÂNKHAMON",
+    "project": "Favori",
+    "year": 2024,
+    "releaseDate": "2024-07-05",
+    "deezerTrackId": 3035729941
+  },
+  {
+    "id": "iss-3064109121",
+    "title": "SANS REFR#7",
+    "project": "SANS REFR#7",
+    "year": 2024,
+    "releaseDate": "2024-11-14",
+    "deezerTrackId": 3064109121
+  },
+  {
+    "id": "iss-3172307791",
+    "title": "PRODIGE",
+    "project": "EN ATTENDANT MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3172307791
+  },
+  {
+    "id": "iss-3172307801",
+    "title": "IA",
+    "project": "EN ATTENDANT MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3172307801
+  },
+  {
+    "id": "iss-3172307811",
+    "title": "T'ÉTAIS OÙ",
+    "project": "EN ATTENDANT MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3172307811
+  },
+  {
+    "id": "iss-3172307821",
+    "title": "LA CITÉ ROSE",
+    "project": "EN ATTENDANT MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3172307821
+  },
+  {
+    "id": "iss-3172307831",
+    "title": "RÉTROVISEUR",
+    "project": "EN ATTENDANT MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3172307831
+  },
+  {
+    "id": "iss-3315616631",
+    "title": "L'ARGENT DES GENS",
+    "project": "L'ARGENT DES GENS",
+    "year": 2025,
+    "releaseDate": "2025-04-25",
+    "deezerTrackId": 3315616631
+  },
+  {
+    "id": "iss-3354352771",
+    "title": "PAS CARRÉ",
+    "project": "PAS CARRÉ",
+    "year": 2025,
+    "releaseDate": "2025-05-16",
+    "deezerTrackId": 3354352771
+  },
+  {
+    "id": "iss-3407930611",
+    "title": "Suis-je le gardien de mon frère ?",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930611
+  },
+  {
+    "id": "iss-3407930621",
+    "title": "MICRO D'OR",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930621
+  },
+  {
+    "id": "iss-3407930641",
+    "title": "L'ŒIL DES GENS",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930641
+  },
+  {
+    "id": "iss-3407930651",
+    "title": "2 TEMPS",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930651
+  },
+  {
+    "id": "iss-3407930661",
+    "title": "TIKI TAKA",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930661
+  },
+  {
+    "id": "iss-3407930671",
+    "title": "ROUE LIBRE",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930671
+  },
+  {
+    "id": "iss-3407930691",
+    "title": "BATTEMENTS DE CŒUR",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930691
+  },
+  {
+    "id": "iss-3407930701",
+    "title": "DIAMANT ROUGE",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930701
+  },
+  {
+    "id": "iss-3407930711",
+    "title": "VICE VERSA",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930711
+  },
+  {
+    "id": "iss-3407930721",
+    "title": "UN MEMBRE DU GHETTO",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-06-20",
+    "deezerTrackId": 3407930721
+  },
+  {
+    "id": "iss-3481109321",
+    "title": "SHATTA CRIMINEL",
+    "project": "MICRO D'OR",
+    "year": 2025,
+    "releaseDate": "2025-08-13",
+    "deezerTrackId": 3481109321
+  },
+  {
+    "id": "iss-3935070251",
+    "title": "MIROIR",
+    "project": "MIROIR",
+    "year": 2026,
+    "releaseDate": "2026-04-10",
+    "deezerTrackId": 3935070251
+  },
+  {
+    "id": "iss-4000554711",
+    "title": "SANS REFR#8",
+    "project": "SANS REFR#8",
+    "year": 2026,
+    "releaseDate": "2026-05-08",
+    "deezerTrackId": 4000554711
+  },
+  {
+    "id": "iss-3987094421",
+    "title": "FEU VERT",
+    "project": "FEU VERT",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 3987094421
+  },
+  {
+    "id": "iss-4037474091",
+    "title": "CHOIX",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474091
+  },
+  {
+    "id": "iss-4037474101",
+    "title": "VAL KILMER",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474101
+  },
+  {
+    "id": "iss-4037474111",
+    "title": "VIE DE PACHA",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474111
+  },
+  {
+    "id": "iss-4037474121",
+    "title": "C'EST LA ZONE 2",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474121
+  },
+  {
+    "id": "iss-4037474131",
+    "title": "ENCORE",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474131
+  },
+  {
+    "id": "iss-4037474141",
+    "title": "L'ANCIEN",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474141
+  },
+  {
+    "id": "iss-4037474151",
+    "title": "L'HUMAIN",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474151
+  },
+  {
+    "id": "iss-4037474171",
+    "title": "C'EST NOUS",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474171
+  },
+  {
+    "id": "iss-4037474181",
+    "title": "4CDM",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474181
+  },
+  {
+    "id": "iss-4037474211",
+    "title": "MÉTÉO",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474211
+  },
+  {
+    "id": "iss-4037474221",
+    "title": "LA DANSE DES VOYOUS",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474221
+  },
+  {
+    "id": "iss-4037474231",
+    "title": "ACCÉLÉRER",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474231
+  },
+  {
+    "id": "iss-4037474241",
+    "title": "TSUNAMI",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474241
+  },
+  {
+    "id": "iss-4037474251",
+    "title": "HISTOIRE DE MA VIE",
+    "project": "VERSUS",
+    "year": 2026,
+    "releaseDate": "2026-06-19",
+    "deezerTrackId": 4037474251
+  }
+]

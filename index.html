@@ -47,10 +47,62 @@
             <div><p class="eyebrow">COMPTE</p><h3 id="loginPromptHeading">CONNECTE-TOI</h3></div>
             <button id="loginPromptClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button>
           </div>
-          <p class="login-prompt-text">Connecte-toi avec Google pour sauvegarder ton score, ton rang Ranked et débloquer le classement. Tu peux aussi continuer en invité.</p>
+          <p id="loginPromptText" class="login-prompt-text">Connecte-toi avec Google pour sauvegarder ton score, ton rang Ranked et débloquer le classement. Tu peux aussi continuer en invité.</p>
           <div class="login-prompt-actions">
             <button id="loginPromptGoogle" class="auth-button" type="button"><span class="google-logo">G</span><span>SE CONNECTER</span><span class="auth-arrow">↗</span></button>
             <button id="loginPromptGuest" class="text-button" type="button">CONTINUER EN INVITÉ →</button>
+          </div>
+        </section>
+      </div>
+
+      <div id="versusRoomOverlay" class="stats-overlay" hidden>
+        <section class="stats-panel" aria-labelledby="versusRoomHeading">
+          <div class="stats-heading">
+            <div><p class="eyebrow">SALON VERSUS</p><h3 id="versusRoomHeading">EN ATTENTE</h3></div>
+            <button id="versusRoomClose" class="leaderboard-close" type="button" aria-label="Quitter">×</button>
+          </div>
+          <div class="versus-room-info">
+            <p class="versus-room-code-label">CODE DU SALON</p>
+            <p id="versusRoomCode" class="versus-room-code">------</p>
+            <p id="versusRoomVisibility" class="versus-room-visibility">PUBLIC</p>
+          </div>
+          <div class="versus-room-players">
+            <div class="versus-room-player">
+              <img id="versusRoomHostPhoto" alt="" />
+              <strong id="versusRoomHostName">Hôte</strong>
+            </div>
+            <span class="versus-vs">VS</span>
+            <div class="versus-room-player">
+              <img id="versusRoomGuestPhoto" alt="" hidden />
+              <strong id="versusRoomGuestName">EN ATTENTE…</strong>
+            </div>
+          </div>
+          <p id="versusRoomSettings" class="versus-room-settings"></p>
+          <button id="versusStartButton" class="primary-button" type="button" hidden>LANCER LA PARTIE <span>→</span></button>
+          <button id="versusAbandonButton" class="text-button" type="button" hidden>ABANDONNER LE MATCH</button>
+          <p id="versusRoomStatus" class="leaderboard-status" role="status"></p>
+        </section>
+      </div>
+
+      <div id="versusResultOverlay" class="stats-overlay" hidden>
+        <section class="stats-panel" aria-labelledby="versusResultHeading">
+          <div class="stats-heading">
+            <div><p class="eyebrow">VERSUS TERMINÉ</p><h3 id="versusResultHeading">RÉSULTAT</h3></div>
+            <button id="versusResultClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button>
+          </div>
+          <p id="versusResultBanner" class="versus-result-banner">VICTOIRE</p>
+          <div class="versus-room-players">
+            <div class="versus-room-player">
+              <img id="versusResultMePhoto" alt="" />
+              <strong id="versusResultMeName">Toi</strong>
+              <span id="versusResultMeScore">0</span>
+            </div>
+            <span class="versus-vs">VS</span>
+            <div class="versus-room-player">
+              <img id="versusResultOpponentPhoto" alt="" />
+              <strong id="versusResultOpponentName">Adversaire</strong>
+              <span id="versusResultOpponentScore">0</span>
+            </div>
           </div>
         </section>
       </div>
@@ -74,8 +126,8 @@
               <input id="artistSearch" type="search" placeholder="Rechercher un artiste…" aria-label="Rechercher un artiste" autocomplete="off" />
             </label>
             <div class="artist-sort" role="group" aria-label="Trier les artistes">
-              <button class="artist-sort-option selected" data-sort="default" type="button">ÉDITO</button>
-              <button class="artist-sort-option" data-sort="alpha" type="button">A→Z</button>
+              <button class="artist-sort-option" data-sort="default" type="button">ÉDITO</button>
+              <button class="artist-sort-option selected" data-sort="alpha" type="button">A→Z</button>
             </div>
           </div>
           <div id="artistGrid" class="artist-grid" role="group" aria-label="Choisir un artiste"></div>
@@ -139,7 +191,45 @@
           <p id="speedDescription" class="speed-description" role="status"></p>
 
           <button id="startButton" class="primary-button" type="button">LANCER LE JEU <span>→</span></button>
-          <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
+          <div class="setup-secondary-actions">
+            <button id="leaderboardButton" class="leaderboard-trigger" type="button">LEADERBOARD <span>↗</span></button>
+            <button id="versusButton" class="leaderboard-trigger" type="button">VERSUS 1V1 <span>⚔</span></button>
+          </div>
+          <section id="versusPanel" class="leaderboard-panel" hidden>
+            <div class="leaderboard-heading"><div><p class="eyebrow">MULTIJOUEUR</p><h3>VERSUS 1V1</h3></div><button id="versusPanelClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
+            <div id="versusTabs" class="leaderboard-tabs" role="tablist" aria-label="Versus">
+              <button class="leaderboard-tab selected" data-versus-tab="create" role="tab" type="button">CRÉER</button>
+              <button class="leaderboard-tab" data-versus-tab="join" role="tab" type="button">REJOINDRE</button>
+              <button class="leaderboard-tab" data-versus-tab="browse" role="tab" type="button">SALONS PUBLICS</button>
+            </div>
+
+            <div id="versusCreateTab" class="versus-tab-panel">
+              <p class="versus-hint">Utilise l'artiste, le type de manche, la vitesse et le nombre de manches choisis ci-dessus.</p>
+              <div class="versus-visibility round-picker" role="group" aria-label="Visibilité du salon">
+                <span>VISIBILITÉ</span>
+                <div>
+                  <button class="round-option selected" data-visibility="public" type="button">PUBLIC</button>
+                  <button class="round-option" data-visibility="private" type="button">PRIVÉ</button>
+                </div>
+              </div>
+              <button id="versusCreateButton" class="primary-button compact" type="button">CRÉER LE SALON <span>→</span></button>
+              <p id="versusCreateStatus" class="leaderboard-status" role="status"></p>
+            </div>
+
+            <div id="versusJoinTab" class="versus-tab-panel" hidden>
+              <label class="versus-code-input">
+                <span>CODE DU SALON</span>
+                <input id="versusCodeInput" type="text" maxlength="6" autocomplete="off" placeholder="EX. A1B2C3" />
+              </label>
+              <button id="versusJoinButton" class="primary-button compact" type="button">REJOINDRE <span>→</span></button>
+              <p id="versusJoinStatus" class="leaderboard-status" role="status"></p>
+            </div>
+
+            <div id="versusBrowseTab" class="versus-tab-panel" hidden>
+              <p id="versusBrowseStatus" class="leaderboard-status" role="status"></p>
+              <ol id="versusRoomList" class="leaderboard-list versus-room-list"></ol>
+            </div>
+          </section>
           <section id="leaderboardPanel" class="leaderboard-panel" hidden>
             <div class="leaderboard-heading"><div><p id="leaderboardEyebrow" class="eyebrow">CLASSEMENT · ZIAK RANKED</p><h3>LES MEILLEURS</h3></div><button id="leaderboardClose" class="leaderboard-close" type="button" aria-label="Fermer">×</button></div>
             <div id="leaderboardRoundTypeTabs" class="leaderboard-tabs" role="tablist" aria-label="Type de manche">
@@ -167,6 +257,20 @@
       </section>
 
       <section id="gameScreen" class="screen game-screen hidden" aria-live="polite">
+        <div id="versusHeader" class="versus-header" hidden>
+          <div class="versus-player">
+            <img id="versusMePhoto" alt="" />
+            <span id="versusMeName">Toi</span>
+            <strong id="versusMeScoreLive">0</strong>
+          </div>
+          <span class="versus-vs">VS</span>
+          <div class="versus-player">
+            <img id="versusOpponentPhoto" alt="" />
+            <span id="versusOpponentName">Adversaire</span>
+            <strong id="versusOpponentScoreLive">0</strong>
+          </div>
+        </div>
+        <button id="versusInGameAbandon" class="text-button versus-abandon" type="button" hidden>ABANDONNER →</button>
         <div class="game-meta">
           <span id="roundLabel">MANCHE 01 / 10</span>
           <span id="rankLabel" class="rank-label" hidden>RANG <strong>BRONZE III</strong></span>

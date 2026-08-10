@@ -1,0 +1,626 @@
+[
+  {
+    "id": "oboy-453609902",
+    "title": "Hot Sauce",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609902
+  },
+  {
+    "id": "oboy-453609912",
+    "title": "Veste en cuir",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609912
+  },
+  {
+    "id": "oboy-453609922",
+    "title": "Cobra",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609922
+  },
+  {
+    "id": "oboy-453609932",
+    "title": "Extra",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609932
+  },
+  {
+    "id": "oboy-453609942",
+    "title": "Geronimo",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609942
+  },
+  {
+    "id": "oboy-453609952",
+    "title": "Nuit",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609952
+  },
+  {
+    "id": "oboy-453609962",
+    "title": "Cabeleira",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609962
+  },
+  {
+    "id": "oboy-453609972",
+    "title": "SLS",
+    "project": "Southside",
+    "year": 2018,
+    "releaseDate": "2018-03-16",
+    "deezerTrackId": 453609972
+  },
+  {
+    "id": "oboy-570529652",
+    "title": "Alpha",
+    "project": "Alpha",
+    "year": 2018,
+    "releaseDate": "2018-10-19",
+    "deezerTrackId": 570529652
+  },
+  {
+    "id": "oboy-599114642",
+    "title": "187",
+    "project": "187",
+    "year": 2018,
+    "releaseDate": "2018-12-07",
+    "deezerTrackId": 599114642
+  },
+  {
+    "id": "oboy-612438942",
+    "title": "R10",
+    "project": "R10",
+    "year": 2019,
+    "releaseDate": "2019-01-06",
+    "deezerTrackId": 612438942
+  },
+  {
+    "id": "oboy-668508462",
+    "title": "Boy",
+    "project": "Boy",
+    "year": 2019,
+    "releaseDate": "2019-04-25",
+    "deezerTrackId": 668508462
+  },
+  {
+    "id": "oboy-683627142",
+    "title": "Rien à fêter",
+    "project": "Rien à fêter",
+    "year": 2019,
+    "releaseDate": "2019-05-31",
+    "deezerTrackId": 683627142
+  },
+  {
+    "id": "oboy-694498192",
+    "title": "Je m'en tape",
+    "project": "Je m'en tape",
+    "year": 2019,
+    "releaseDate": "2019-06-14",
+    "deezerTrackId": 694498192
+  },
+  {
+    "id": "oboy-700948922",
+    "title": "Olympe",
+    "project": "Olympe",
+    "year": 2019,
+    "releaseDate": "2019-07-04",
+    "deezerTrackId": 700948922
+  },
+  {
+    "id": "oboy-708702162",
+    "title": "Wu-Tang",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702162
+  },
+  {
+    "id": "oboy-708702192",
+    "title": "Lazer / Champagne",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702192
+  },
+  {
+    "id": "oboy-708702202",
+    "title": "Avec Toi",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702202
+  },
+  {
+    "id": "oboy-708702212",
+    "title": "Beta",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702212
+  },
+  {
+    "id": "oboy-708702222",
+    "title": "Massa",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702222
+  },
+  {
+    "id": "oboy-708702232",
+    "title": "Léwé",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702232
+  },
+  {
+    "id": "oboy-708702252",
+    "title": "Roots",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702252
+  },
+  {
+    "id": "oboy-708702272",
+    "title": "Popo",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702272
+  },
+  {
+    "id": "oboy-708702292",
+    "title": "200",
+    "project": "OMEGA",
+    "year": 2019,
+    "releaseDate": "2019-07-12",
+    "deezerTrackId": 708702292
+  },
+  {
+    "id": "oboy-764262342",
+    "title": "Mia - La Relève",
+    "project": "Mia - La Relève",
+    "year": 2019,
+    "releaseDate": "2019-10-15",
+    "deezerTrackId": 764262342
+  },
+  {
+    "id": "oboy-932043772",
+    "title": "Rémus",
+    "project": "Rémus",
+    "year": 2020,
+    "releaseDate": "2020-04-24",
+    "deezerTrackId": 932043772
+  },
+  {
+    "id": "oboy-994778322",
+    "title": "Phantom",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778322
+  },
+  {
+    "id": "oboy-994778332",
+    "title": "Cabeza",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778332
+  },
+  {
+    "id": "oboy-994778342",
+    "title": "Meilleurs",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778342
+  },
+  {
+    "id": "oboy-994778352",
+    "title": "Fané",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778352
+  },
+  {
+    "id": "oboy-994778362",
+    "title": "Mélodie",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778362
+  },
+  {
+    "id": "oboy-994778382",
+    "title": "Lunettes noires",
+    "project": "Mafana",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 994778382
+  },
+  {
+    "id": "oboy-1122912282",
+    "title": "Cruel",
+    "project": "Cruel",
+    "year": 2020,
+    "releaseDate": "2020-11-06",
+    "deezerTrackId": 1122912282
+  },
+  {
+    "id": "oboy-1363146682",
+    "title": "No blata",
+    "project": "No blata",
+    "year": 2021,
+    "releaseDate": "2021-05-19",
+    "deezerTrackId": 1363146682
+  },
+  {
+    "id": "oboy-1400849492",
+    "title": "TDB",
+    "project": "TDB",
+    "year": 2021,
+    "releaseDate": "2021-07-02",
+    "deezerTrackId": 1400849492
+  },
+  {
+    "id": "oboy-1477152052",
+    "title": "Louis V",
+    "project": "Louis V",
+    "year": 2021,
+    "releaseDate": "2021-09-08",
+    "deezerTrackId": 1477152052
+  },
+  {
+    "id": "oboy-1445090052",
+    "title": "Ysl",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090052
+  },
+  {
+    "id": "oboy-1445090062",
+    "title": "Elvira",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090062
+  },
+  {
+    "id": "oboy-1445090072",
+    "title": "Cosmos",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090072
+  },
+  {
+    "id": "oboy-1445090082",
+    "title": "Air tlanta",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090082
+  },
+  {
+    "id": "oboy-1445090102",
+    "title": "Armada",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090102
+  },
+  {
+    "id": "oboy-1445090112",
+    "title": "Terrible",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090112
+  },
+  {
+    "id": "oboy-1445090132",
+    "title": "Ariel",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090132
+  },
+  {
+    "id": "oboy-1445090142",
+    "title": "P2 interlude",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090142
+  },
+  {
+    "id": "oboy-1445090152",
+    "title": "Aqua86",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090152
+  },
+  {
+    "id": "oboy-1445090162",
+    "title": "Bétoile",
+    "project": "No crari",
+    "year": 2021,
+    "releaseDate": "2021-09-10",
+    "deezerTrackId": 1445090162
+  },
+  {
+    "id": "oboy-1984728567",
+    "title": "FAST FAST",
+    "project": "FAST FAST",
+    "year": 2022,
+    "releaseDate": "2022-11-04",
+    "deezerTrackId": 1984728567
+  },
+  {
+    "id": "oboy-2351930535",
+    "title": "Quali",
+    "project": "Quali",
+    "year": 2023,
+    "releaseDate": "2023-07-13",
+    "deezerTrackId": 2351930535
+  },
+  {
+    "id": "oboy-2874733332",
+    "title": "Tout y est",
+    "project": "Tout y est",
+    "year": 2024,
+    "releaseDate": "2024-07-12",
+    "deezerTrackId": 2874733332
+  },
+  {
+    "id": "oboy-2977780751",
+    "title": "Un peu",
+    "project": "Un peu",
+    "year": 2024,
+    "releaseDate": "2024-09-13",
+    "deezerTrackId": 2977780751
+  },
+  {
+    "id": "oboy-3195463641",
+    "title": "Spécial",
+    "project": "Spécial",
+    "year": 2025,
+    "releaseDate": "2025-01-24",
+    "deezerTrackId": 3195463641
+  },
+  {
+    "id": "oboy-3237562721",
+    "title": "Maybach",
+    "project": "Maybach",
+    "year": 2025,
+    "releaseDate": "2025-02-25",
+    "deezerTrackId": 3237562721
+  },
+  {
+    "id": "oboy-3244375461",
+    "title": "Comme Ye",
+    "project": "Comme Ye",
+    "year": 2025,
+    "releaseDate": "2025-03-27",
+    "deezerTrackId": 3244375461
+  },
+  {
+    "id": "oboy-3299628061",
+    "title": "Uruski",
+    "project": "Uruski (feat. Lil Gotit)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628061
+  },
+  {
+    "id": "oboy-3299628071",
+    "title": "Double face",
+    "project": "Double face (feat. Leto)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628071
+  },
+  {
+    "id": "oboy-3299628081",
+    "title": "Joddy Boy",
+    "project": "Joddy Boy (feat. Josman)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628081
+  },
+  {
+    "id": "oboy-3299628091",
+    "title": "A temps / Calabasas",
+    "project": "A temps / Calabasas (feat. Beskri)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628091
+  },
+  {
+    "id": "oboy-3299628101",
+    "title": "Pourtant",
+    "project": "Pourtant (feat. Merveille)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628101
+  },
+  {
+    "id": "oboy-3299628111",
+    "title": "Savage",
+    "project": "Savage (feat. gisa)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628111
+  },
+  {
+    "id": "oboy-3299628121",
+    "title": "Rémunère",
+    "project": "Rémunère (feat. Keeqaid)",
+    "year": 2025,
+    "releaseDate": "2025-04-03",
+    "deezerTrackId": 3299628121
+  },
+  {
+    "id": "oboy-3302074801",
+    "title": "Mauvais comportement",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074801
+  },
+  {
+    "id": "oboy-3302074821",
+    "title": "Bijoux",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074821
+  },
+  {
+    "id": "oboy-3302074861",
+    "title": "Ex",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074861
+  },
+  {
+    "id": "oboy-3302074871",
+    "title": "Emoji",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074871
+  },
+  {
+    "id": "oboy-3302074881",
+    "title": "15G",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074881
+  },
+  {
+    "id": "oboy-3302074901",
+    "title": "le Zin / Racing",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074901
+  },
+  {
+    "id": "oboy-3302074931",
+    "title": "On verra",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074931
+  },
+  {
+    "id": "oboy-3302074971",
+    "title": "Force à eux",
+    "project": "Olyboy",
+    "year": 2025,
+    "releaseDate": "2025-04-04",
+    "deezerTrackId": 3302074971
+  },
+  {
+    "id": "oboy-3433988911",
+    "title": "Saint Laurent",
+    "project": "Saint Laurent",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3433988911
+  },
+  {
+    "id": "oboy-3450360781",
+    "title": "Zota",
+    "project": "Zota (feat. Tayc)",
+    "year": 2025,
+    "releaseDate": "2025-07-17",
+    "deezerTrackId": 3450360781
+  },
+  {
+    "id": "oboy-3450361791",
+    "title": "NPTQ",
+    "project": "Mafana 2",
+    "year": 2025,
+    "releaseDate": "2025-07-18",
+    "deezerTrackId": 3450361791
+  },
+  {
+    "id": "oboy-3450361811",
+    "title": "Jolie Go",
+    "project": "Mafana 2",
+    "year": 2025,
+    "releaseDate": "2025-07-18",
+    "deezerTrackId": 3450361811
+  },
+  {
+    "id": "oboy-3450361831",
+    "title": "Comment",
+    "project": "Mafana 2",
+    "year": 2025,
+    "releaseDate": "2025-07-18",
+    "deezerTrackId": 3450361831
+  },
+  {
+    "id": "oboy-3890634281",
+    "title": "Slimbaby",
+    "project": "Slimbaby",
+    "year": 2026,
+    "releaseDate": "2026-03-13",
+    "deezerTrackId": 3890634281
+  },
+  {
+    "id": "oboy-3912463101",
+    "title": "Caramel",
+    "project": "Caramel",
+    "year": 2026,
+    "releaseDate": "2026-03-27",
+    "deezerTrackId": 3912463101
+  },
+  {
+    "id": "oboy-3975050341",
+    "title": "Mission",
+    "project": "Mission",
+    "year": 2026,
+    "releaseDate": "2026-04-29",
+    "deezerTrackId": 3975050341
+  },
+  {
+    "id": "oboy-4124322601",
+    "title": "Toxic",
+    "project": "Toxic",
+    "year": 2026,
+    "releaseDate": "2026-07-10",
+    "deezerTrackId": 4124322601
+  },
+  {
+    "id": "oboy-4167478402",
+    "title": "BELLAGIO",
+    "project": "BELLAGIO",
+    "year": 2026,
+    "releaseDate": "2026-07-31",
+    "deezerTrackId": 4167478402
+  }
+]

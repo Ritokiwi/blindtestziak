@@ -1,0 +1,378 @@
+[
+  {
+    "id": "jrk19-1163325812",
+    "title": "Avenue Porte Brunet",
+    "project": "Avenue Porte Brunet",
+    "year": 2020,
+    "releaseDate": "2020-11-18",
+    "deezerTrackId": 1163325812
+  },
+  {
+    "id": "jrk19-2367349915",
+    "title": "Avenue Porte Brunet 3",
+    "project": "Avenue Porte Brunet 3",
+    "year": 2021,
+    "releaseDate": "2021-02-09",
+    "deezerTrackId": 2367349915
+  },
+  {
+    "id": "jrk19-2367398455",
+    "title": "Avenue Porte Brunet 2",
+    "project": "Avenue Porte Brunet 2",
+    "year": 2021,
+    "releaseDate": "2021-02-17",
+    "deezerTrackId": 2367398455
+  },
+  {
+    "id": "jrk19-2367408405",
+    "title": "M.A.V",
+    "project": "M.A.V",
+    "year": 2022,
+    "releaseDate": "2022-03-20",
+    "deezerTrackId": 2367408405
+  },
+  {
+    "id": "jrk19-2367349595",
+    "title": "Avenue Porte Brunet 6",
+    "project": "Avenue Porte Brunet 6",
+    "year": 2023,
+    "releaseDate": "2023-05-11",
+    "deezerTrackId": 2367349595
+  },
+  {
+    "id": "jrk19-2301162125",
+    "title": "GSO",
+    "project": "GSO",
+    "year": 2023,
+    "releaseDate": "2023-06-02",
+    "deezerTrackId": 2301162125
+  },
+  {
+    "id": "jrk19-2304168075",
+    "title": "Mec de Panam",
+    "project": "Mec de Panam",
+    "year": 2023,
+    "releaseDate": "2023-06-09",
+    "deezerTrackId": 2304168075
+  },
+  {
+    "id": "jrk19-2375702495",
+    "title": "Train de vie",
+    "project": "Train de vie",
+    "year": 2023,
+    "releaseDate": "2023-07-28",
+    "deezerTrackId": 2375702495
+  },
+  {
+    "id": "jrk19-2448610225",
+    "title": "MacGyver",
+    "project": "MacGyver",
+    "year": 2023,
+    "releaseDate": "2023-09-29",
+    "deezerTrackId": 2448610225
+  },
+  {
+    "id": "jrk19-2543976091",
+    "title": "Empire Brunet",
+    "project": "#FreeJRK",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2543976091
+  },
+  {
+    "id": "jrk19-2543976131",
+    "title": "Freestyle Perm",
+    "project": "#FreeJRK",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2543976131
+  },
+  {
+    "id": "jrk19-2543976161",
+    "title": "Rihanna",
+    "project": "#FreeJRK",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2543976161
+  },
+  {
+    "id": "jrk19-2543976171",
+    "title": "14 mois",
+    "project": "#FreeJRK",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2543976171
+  },
+  {
+    "id": "jrk19-2543976181",
+    "title": "Mec de Panam (Alternative Version)",
+    "project": "#FreeJRK",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2543976181
+  },
+  {
+    "id": "jrk19-2544227751",
+    "title": "Uber Eats",
+    "project": "Uber Eats",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2544227751
+  },
+  {
+    "id": "jrk19-2547685462",
+    "title": "Navou",
+    "project": "Navou",
+    "year": 2023,
+    "releaseDate": "2023-11-22",
+    "deezerTrackId": 2547685462
+  },
+  {
+    "id": "jrk19-2676064142",
+    "title": "SUBMVRINER",
+    "project": "SUBMVRINER",
+    "year": 2024,
+    "releaseDate": "2024-02-29",
+    "deezerTrackId": 2676064142
+  },
+  {
+    "id": "jrk19-2812719632",
+    "title": "BALADE",
+    "project": "BALADE",
+    "year": 2024,
+    "releaseDate": "2024-05-29",
+    "deezerTrackId": 2812719632
+  },
+  {
+    "id": "jrk19-2842347942",
+    "title": "DANS LA VILLE",
+    "project": "DANS LA VILLE",
+    "year": 2024,
+    "releaseDate": "2024-06-20",
+    "deezerTrackId": 2842347942
+  },
+  {
+    "id": "jrk19-2842445762",
+    "title": "C’EST COMMENT ?",
+    "project": "C’EST COMMENT ?",
+    "year": 2024,
+    "releaseDate": "2024-06-20",
+    "deezerTrackId": 2842445762
+  },
+  {
+    "id": "jrk19-2842450392",
+    "title": "PAS UN VRAI",
+    "project": "PAS UN VRAI",
+    "year": 2024,
+    "releaseDate": "2024-06-20",
+    "deezerTrackId": 2842450392
+  },
+  {
+    "id": "jrk19-2842364412",
+    "title": "INTRO",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364412
+  },
+  {
+    "id": "jrk19-2842364422",
+    "title": "GENARO",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364422
+  },
+  {
+    "id": "jrk19-2842364432",
+    "title": "CP COMPANY",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364432
+  },
+  {
+    "id": "jrk19-2842364452",
+    "title": "TARPÉ DANS L’APPART",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364452
+  },
+  {
+    "id": "jrk19-2842364472",
+    "title": "ALCATEL",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364472
+  },
+  {
+    "id": "jrk19-2842364502",
+    "title": "B.S.C",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364502
+  },
+  {
+    "id": "jrk19-2842364512",
+    "title": "AVENUE PORTE BRUNET 7",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364512
+  },
+  {
+    "id": "jrk19-2842364532",
+    "title": "MAUDIT À VIE",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364532
+  },
+  {
+    "id": "jrk19-2842364542",
+    "title": "GÉCHAR",
+    "project": "MAUDIT À VIE",
+    "year": 2024,
+    "releaseDate": "2024-06-21",
+    "deezerTrackId": 2842364542
+  },
+  {
+    "id": "jrk19-3102889811",
+    "title": "LE PLAN",
+    "project": "LE PLAN",
+    "year": 2024,
+    "releaseDate": "2024-11-27",
+    "deezerTrackId": 3102889811
+  },
+  {
+    "id": "jrk19-3087763981",
+    "title": "LA VIDA",
+    "project": "LA VIDA",
+    "year": 2025,
+    "releaseDate": "2025-01-10",
+    "deezerTrackId": 3087763981
+  },
+  {
+    "id": "jrk19-3222588201",
+    "title": "PARAMÈTRES",
+    "project": "PARAMÈTRES",
+    "year": 2025,
+    "releaseDate": "2025-02-11",
+    "deezerTrackId": 3222588201
+  },
+  {
+    "id": "jrk19-3222600351",
+    "title": "BONNE SOIRÉE",
+    "project": "BONNE SOIRÉE",
+    "year": 2025,
+    "releaseDate": "2025-02-11",
+    "deezerTrackId": 3222600351
+  },
+  {
+    "id": "jrk19-3222600361",
+    "title": "AYOU",
+    "project": "AYOU",
+    "year": 2025,
+    "releaseDate": "2025-02-11",
+    "deezerTrackId": 3222600361
+  },
+  {
+    "id": "jrk19-3222600381",
+    "title": "BELLINGHAM",
+    "project": "BELLINGHAM",
+    "year": 2025,
+    "releaseDate": "2025-02-11",
+    "deezerTrackId": 3222600381
+  },
+  {
+    "id": "jrk19-3222600401",
+    "title": "0.9",
+    "project": "0.9",
+    "year": 2025,
+    "releaseDate": "2025-02-11",
+    "deezerTrackId": 3222600401
+  },
+  {
+    "id": "jrk19-3222601231",
+    "title": "COHIBA",
+    "project": "ZÉRO BLUFF",
+    "year": 2025,
+    "releaseDate": "2025-02-13",
+    "deezerTrackId": 3222601231
+  },
+  {
+    "id": "jrk19-3222601281",
+    "title": "HAKIMI",
+    "project": "ZÉRO BLUFF",
+    "year": 2025,
+    "releaseDate": "2025-02-13",
+    "deezerTrackId": 3222601281
+  },
+  {
+    "id": "jrk19-3222601321",
+    "title": "PETIT FRÈRE",
+    "project": "ZÉRO BLUFF",
+    "year": 2025,
+    "releaseDate": "2025-02-13",
+    "deezerTrackId": 3222601321
+  },
+  {
+    "id": "jrk19-3538728501",
+    "title": "112",
+    "project": "112",
+    "year": 2025,
+    "releaseDate": "2025-09-12",
+    "deezerTrackId": 3538728501
+  },
+  {
+    "id": "jrk19-3602873662",
+    "title": "Mec 2 Panam (has to be you)",
+    "project": "Mec 2 Panam (has to be you)",
+    "year": 2025,
+    "releaseDate": "2025-10-15",
+    "deezerTrackId": 3602873662
+  },
+  {
+    "id": "jrk19-3590848152",
+    "title": "Astrid",
+    "project": "Astrid",
+    "year": 2025,
+    "releaseDate": "2025-10-17",
+    "deezerTrackId": 3590848152
+  },
+  {
+    "id": "jrk19-3665729482",
+    "title": "Omerta 19",
+    "project": "Omerta 19",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665729482
+  },
+  {
+    "id": "jrk19-4014649991",
+    "title": "CLAP 3X",
+    "project": "CLAP 3X",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 4014649991
+  },
+  {
+    "id": "jrk19-4060641031",
+    "title": "Devin Booker",
+    "project": "Devin Booker",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4060641031
+  },
+  {
+    "id": "jrk19-4126883651",
+    "title": "Paparazzi",
+    "project": "Paparazzi",
+    "year": 2026,
+    "releaseDate": "2026-07-10",
+    "deezerTrackId": 4126883651
+  }
+]

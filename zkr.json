@@ -1,0 +1,986 @@
+[
+  {
+    "id": "zkr-511659592",
+    "title": "Benef",
+    "project": "Benef",
+    "year": 2018,
+    "releaseDate": "2018-06-14",
+    "deezerTrackId": 511659592
+  },
+  {
+    "id": "zkr-515417412",
+    "title": "Freestyle 5 min #2",
+    "project": "Freestyle 5 min #2",
+    "year": 2018,
+    "releaseDate": "2018-06-22",
+    "deezerTrackId": 515417412
+  },
+  {
+    "id": "zkr-511417512",
+    "title": "Freestyle 5 min #1",
+    "project": "Freestyle 5 min #1",
+    "year": 2018,
+    "releaseDate": "2018-06-22",
+    "deezerTrackId": 511417512
+  },
+  {
+    "id": "zkr-535141962",
+    "title": "Freestyle 5 min #3",
+    "project": "Freestyle 5 min #3",
+    "year": 2018,
+    "releaseDate": "2018-07-31",
+    "deezerTrackId": 535141962
+  },
+  {
+    "id": "zkr-539436362",
+    "title": "Freestyle 5 min #4",
+    "project": "Freestyle 5 min #4",
+    "year": 2018,
+    "releaseDate": "2018-08-22",
+    "deezerTrackId": 539436362
+  },
+  {
+    "id": "zkr-552595452",
+    "title": "Nord fvce",
+    "project": "Nord fvce",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 552595452
+  },
+  {
+    "id": "zkr-569671462",
+    "title": "Demain",
+    "project": "Demain",
+    "year": 2018,
+    "releaseDate": "2018-10-31",
+    "deezerTrackId": 569671462
+  },
+  {
+    "id": "zkr-572744862",
+    "title": "Intro",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744862
+  },
+  {
+    "id": "zkr-572744892",
+    "title": "Je sais pas",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744892
+  },
+  {
+    "id": "zkr-572744902",
+    "title": "Putain",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744902
+  },
+  {
+    "id": "zkr-572744912",
+    "title": "Mauvais",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744912
+  },
+  {
+    "id": "zkr-572744922",
+    "title": "Absent",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744922
+  },
+  {
+    "id": "zkr-572744932",
+    "title": "Outro",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744932
+  },
+  {
+    "id": "zkr-572744942",
+    "title": "Freestyle 5 min #5 (Bonus Track)",
+    "project": "Absent",
+    "year": 2018,
+    "releaseDate": "2018-11-23",
+    "deezerTrackId": 572744942
+  },
+  {
+    "id": "zkr-669567022",
+    "title": "Freestyle - Joga Bonito",
+    "project": "Freestyle - Joga Bonito",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 669567022
+  },
+  {
+    "id": "zkr-743060612",
+    "title": "Champion (Freestyle)",
+    "project": "Champion (Freestyle)",
+    "year": 2019,
+    "releaseDate": "2019-09-13",
+    "deezerTrackId": 743060612
+  },
+  {
+    "id": "zkr-769284642",
+    "title": "Freestyle 5min #6",
+    "project": "Freestyle 5min #6",
+    "year": 2019,
+    "releaseDate": "2019-10-14",
+    "deezerTrackId": 769284642
+  },
+  {
+    "id": "zkr-811909092",
+    "title": "Sur le dos",
+    "project": "Sur le dos",
+    "year": 2019,
+    "releaseDate": "2019-11-28",
+    "deezerTrackId": 811909092
+  },
+  {
+    "id": "zkr-830143592",
+    "title": "Freestyle 5min #7",
+    "project": "Freestyle 5min #7",
+    "year": 2019,
+    "releaseDate": "2019-12-23",
+    "deezerTrackId": 830143592
+  },
+  {
+    "id": "zkr-863512072",
+    "title": "On se comprend",
+    "project": "On se comprend",
+    "year": 2020,
+    "releaseDate": "2020-02-12",
+    "deezerTrackId": 863512072
+  },
+  {
+    "id": "zkr-997381622",
+    "title": "Freestyle 5min #8",
+    "project": "Freestyle 5min #8",
+    "year": 2020,
+    "releaseDate": "2020-06-26",
+    "deezerTrackId": 997381622
+  },
+  {
+    "id": "zkr-1044336162",
+    "title": "Freestyle Anderson Silva",
+    "project": "Freestyle Anderson Silva",
+    "year": 2020,
+    "releaseDate": "2020-08-07",
+    "deezerTrackId": 1044336162
+  },
+  {
+    "id": "zkr-1067305422",
+    "title": "Romance criminelle",
+    "project": "Romance criminelle",
+    "year": 2020,
+    "releaseDate": "2020-09-04",
+    "deezerTrackId": 1067305422
+  },
+  {
+    "id": "zkr-1097009002",
+    "title": "Poursuite",
+    "project": "Poursuite",
+    "year": 2020,
+    "releaseDate": "2020-10-09",
+    "deezerTrackId": 1097009002
+  },
+  {
+    "id": "zkr-1148720642",
+    "title": "Freestyle 5min #10",
+    "project": "Freestyle 5min #10",
+    "year": 2020,
+    "releaseDate": "2020-11-25",
+    "deezerTrackId": 1148720642
+  },
+  {
+    "id": "zkr-1176864822",
+    "title": "J'ai fait le tour",
+    "project": "J'ai fait le tour",
+    "year": 2020,
+    "releaseDate": "2020-12-16",
+    "deezerTrackId": 1176864822
+  },
+  {
+    "id": "zkr-1198241192",
+    "title": "Tu vois comment ?",
+    "project": "Tu vois comment ?",
+    "year": 2021,
+    "releaseDate": "2021-01-07",
+    "deezerTrackId": 1198241192
+  },
+  {
+    "id": "zkr-1198241762",
+    "title": "Travail d'arabe",
+    "project": "Travail d'arabe",
+    "year": 2021,
+    "releaseDate": "2021-01-07",
+    "deezerTrackId": 1198241762
+  },
+  {
+    "id": "zkr-1198244922",
+    "title": "HLM",
+    "project": "HLM",
+    "year": 2021,
+    "releaseDate": "2021-01-07",
+    "deezerTrackId": 1198244922
+  },
+  {
+    "id": "zkr-1198248042",
+    "title": "Intro #9",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248042
+  },
+  {
+    "id": "zkr-1198248052",
+    "title": "Y'a trop",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248052
+  },
+  {
+    "id": "zkr-1198248072",
+    "title": "Comme un junkie",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248072
+  },
+  {
+    "id": "zkr-1198248092",
+    "title": "59 Carats",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248092
+  },
+  {
+    "id": "zkr-1198248102",
+    "title": "The wire",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248102
+  },
+  {
+    "id": "zkr-1198248112",
+    "title": "Bah oé",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248112
+  },
+  {
+    "id": "zkr-1198248132",
+    "title": "Même valeurs",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248132
+  },
+  {
+    "id": "zkr-1198248162",
+    "title": "Sourire de millionaire",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248162
+  },
+  {
+    "id": "zkr-1198248182",
+    "title": "Caractère",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248182
+  },
+  {
+    "id": "zkr-1198248192",
+    "title": "Pourquoi",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248192
+  },
+  {
+    "id": "zkr-1198248202",
+    "title": "Vie dure",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248202
+  },
+  {
+    "id": "zkr-1198248212",
+    "title": "Là-bas",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-01-08",
+    "deezerTrackId": 1198248212
+  },
+  {
+    "id": "zkr-1237064592",
+    "title": "Belle mine",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-02-12",
+    "deezerTrackId": 1237064592
+  },
+  {
+    "id": "zkr-1237064602",
+    "title": "Perdu",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-02-12",
+    "deezerTrackId": 1237064602
+  },
+  {
+    "id": "zkr-1237064612",
+    "title": "A l'arrêt",
+    "project": "Dans les mains",
+    "year": 2021,
+    "releaseDate": "2021-02-12",
+    "deezerTrackId": 1237064612
+  },
+  {
+    "id": "zkr-1414481642",
+    "title": "Freestyle 5min #11",
+    "project": "Freestyle 5min #11",
+    "year": 2021,
+    "releaseDate": "2021-06-30",
+    "deezerTrackId": 1414481642
+  },
+  {
+    "id": "zkr-1586317582",
+    "title": "En attente",
+    "project": "En attente",
+    "year": 2021,
+    "releaseDate": "2021-12-13",
+    "deezerTrackId": 1586317582
+  },
+  {
+    "id": "zkr-1586326652",
+    "title": "Lion du sol",
+    "project": "Lion du sol",
+    "year": 2021,
+    "releaseDate": "2021-12-16",
+    "deezerTrackId": 1586326652
+  },
+  {
+    "id": "zkr-2106085217",
+    "title": "Freestyle 5min #12",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085217
+  },
+  {
+    "id": "zkr-2106085227",
+    "title": "Philly",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085227
+  },
+  {
+    "id": "zkr-2106085237",
+    "title": "Sang froid",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085237
+  },
+  {
+    "id": "zkr-2106085247",
+    "title": "L'argent du Qatar",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085247
+  },
+  {
+    "id": "zkr-2106085257",
+    "title": "UFC",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085257
+  },
+  {
+    "id": "zkr-2106085267",
+    "title": "Les gentils bandits",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085267
+  },
+  {
+    "id": "zkr-2106085277",
+    "title": "Focus",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085277
+  },
+  {
+    "id": "zkr-2106085287",
+    "title": "Si tu voulais",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085287
+  },
+  {
+    "id": "zkr-2106085297",
+    "title": "À moitié",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085297
+  },
+  {
+    "id": "zkr-2106085307",
+    "title": "Monde à l'envers",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085307
+  },
+  {
+    "id": "zkr-2106085317",
+    "title": "Zone ouvrière",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085317
+  },
+  {
+    "id": "zkr-2106085327",
+    "title": "Temps perdu",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085327
+  },
+  {
+    "id": "zkr-2106085337",
+    "title": "Señora",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085337
+  },
+  {
+    "id": "zkr-2106085347",
+    "title": "Pinocchio",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085347
+  },
+  {
+    "id": "zkr-2106085357",
+    "title": "Or pur",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085357
+  },
+  {
+    "id": "zkr-2106085367",
+    "title": "Il était temps",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085367
+  },
+  {
+    "id": "zkr-2106085377",
+    "title": "Balafre",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085377
+  },
+  {
+    "id": "zkr-2106085387",
+    "title": "Douce France",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085387
+  },
+  {
+    "id": "zkr-2106085397",
+    "title": "Elle et moi",
+    "project": "Caméléon",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 2106085397
+  },
+  {
+    "id": "zkr-1748749437",
+    "title": "Booska'méléon",
+    "project": "Booska'méléon",
+    "year": 2022,
+    "releaseDate": "2022-05-16",
+    "deezerTrackId": 1748749437
+  },
+  {
+    "id": "zkr-2106085427",
+    "title": "Safari",
+    "project": "Safari",
+    "year": 2023,
+    "releaseDate": "2023-01-19",
+    "deezerTrackId": 2106085427
+  },
+  {
+    "id": "zkr-2110111637",
+    "title": "GTS",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111637
+  },
+  {
+    "id": "zkr-2110111657",
+    "title": "Holding",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111657
+  },
+  {
+    "id": "zkr-2110111667",
+    "title": "Gris nardo",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111667
+  },
+  {
+    "id": "zkr-2110111677",
+    "title": "Sans loi",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111677
+  },
+  {
+    "id": "zkr-2110111687",
+    "title": "Ferragamo",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111687
+  },
+  {
+    "id": "zkr-2110111697",
+    "title": "Comme toi",
+    "project": "Caméléon +",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2110111697
+  },
+  {
+    "id": "zkr-2612270352",
+    "title": "Freestyle 5min #13",
+    "project": "Freestyle 5min #13",
+    "year": 2024,
+    "releaseDate": "2024-01-11",
+    "deezerTrackId": 2612270352
+  },
+  {
+    "id": "zkr-2639770612",
+    "title": "Plaque de Blé",
+    "project": "Plaque de Blé",
+    "year": 2024,
+    "releaseDate": "2024-02-01",
+    "deezerTrackId": 2639770612
+  },
+  {
+    "id": "zkr-4017506451",
+    "title": "Kayano",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506451
+  },
+  {
+    "id": "zkr-4017506461",
+    "title": "Les Aviateurs",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506461
+  },
+  {
+    "id": "zkr-4017506481",
+    "title": "Mode Opératoire",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506481
+  },
+  {
+    "id": "zkr-4017506491",
+    "title": "RS11",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506491
+  },
+  {
+    "id": "zkr-4017506501",
+    "title": "La Coulade",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506501
+  },
+  {
+    "id": "zkr-4017506511",
+    "title": "Sang Merci",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506511
+  },
+  {
+    "id": "zkr-4017506521",
+    "title": "Baby Glock",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506521
+  },
+  {
+    "id": "zkr-4017506541",
+    "title": "Hall Eyes On Me",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506541
+  },
+  {
+    "id": "zkr-4017506551",
+    "title": "591",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506551
+  },
+  {
+    "id": "zkr-4017506571",
+    "title": "Mi-temps au mitard",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506571
+  },
+  {
+    "id": "zkr-4017506581",
+    "title": "Ken Block",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506581
+  },
+  {
+    "id": "zkr-4017506591",
+    "title": "Verisure",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506591
+  },
+  {
+    "id": "zkr-4017506601",
+    "title": "Souviens-toi",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506601
+  },
+  {
+    "id": "zkr-4017506611",
+    "title": "Ferguson",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506611
+  },
+  {
+    "id": "zkr-4017506621",
+    "title": "Beterbiev",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506621
+  },
+  {
+    "id": "zkr-4017506641",
+    "title": "X-ADV",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506641
+  },
+  {
+    "id": "zkr-4017506651",
+    "title": "Cœur lourd",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506651
+  },
+  {
+    "id": "zkr-4017506661",
+    "title": "Désolé",
+    "project": "Mode Opératoire, Vol. 1",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 4017506661
+  },
+  {
+    "id": "zkr-3443113671",
+    "title": "Freestyle 5 min #0",
+    "project": "Freestyle 5 min #0",
+    "year": 2025,
+    "releaseDate": "2025-07-10",
+    "deezerTrackId": 3443113671
+  },
+  {
+    "id": "zkr-3491269191",
+    "title": "Arrêt de bus",
+    "project": "Arrêt de bus",
+    "year": 2025,
+    "releaseDate": "2025-08-08",
+    "deezerTrackId": 3491269191
+  },
+  {
+    "id": "zkr-3665996812",
+    "title": "Black Angus",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996812
+  },
+  {
+    "id": "zkr-3665996822",
+    "title": "Ballon d'or",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996822
+  },
+  {
+    "id": "zkr-3665996832",
+    "title": "Charentaise",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996832
+  },
+  {
+    "id": "zkr-3665996842",
+    "title": "Veuve Cliquot",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996842
+  },
+  {
+    "id": "zkr-3665996862",
+    "title": "Tant de mal",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996862
+  },
+  {
+    "id": "zkr-3665996872",
+    "title": "César",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996872
+  },
+  {
+    "id": "zkr-3665996882",
+    "title": "Bouchée de pain",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996882
+  },
+  {
+    "id": "zkr-3665996892",
+    "title": "Faux sourire",
+    "project": "La Méthode Z",
+    "year": 2025,
+    "releaseDate": "2025-11-28",
+    "deezerTrackId": 3665996892
+  },
+  {
+    "id": "zkr-3804466402",
+    "title": "Bonita",
+    "project": "Bonita",
+    "year": 2026,
+    "releaseDate": "2026-01-30",
+    "deezerTrackId": 3804466402
+  },
+  {
+    "id": "zkr-3824580121",
+    "title": "Wolverine",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580121
+  },
+  {
+    "id": "zkr-3824580131",
+    "title": "Magasin",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580131
+  },
+  {
+    "id": "zkr-3824580141",
+    "title": "Chimaev",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580141
+  },
+  {
+    "id": "zkr-3824580151",
+    "title": "Beaux Arts",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580151
+  },
+  {
+    "id": "zkr-3824580161",
+    "title": "59 sang",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580161
+  },
+  {
+    "id": "zkr-3824580171",
+    "title": "Don Quichotte",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580171
+  },
+  {
+    "id": "zkr-3824580191",
+    "title": "Room Service",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580191
+  },
+  {
+    "id": "zkr-3824580201",
+    "title": "Venatus",
+    "project": "La Méthode K",
+    "year": 2026,
+    "releaseDate": "2026-02-06",
+    "deezerTrackId": 3824580201
+  },
+  {
+    "id": "zkr-3997704341",
+    "title": "Retro Horizon",
+    "project": "Retro Horizon",
+    "year": 2026,
+    "releaseDate": "2026-04-14",
+    "deezerTrackId": 3997704341
+  },
+  {
+    "id": "zkr-4002471911",
+    "title": "Cat Stevens",
+    "project": "Cat Stevens",
+    "year": 2026,
+    "releaseDate": "2026-05-06",
+    "deezerTrackId": 4002471911
+  },
+  {
+    "id": "zkr-4029079981",
+    "title": "Je t'explique",
+    "project": "Je t'explique",
+    "year": 2026,
+    "releaseDate": "2026-05-20",
+    "deezerTrackId": 4029079981
+  },
+  {
+    "id": "zkr-4047965921",
+    "title": "Palantir",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965921
+  },
+  {
+    "id": "zkr-4047965931",
+    "title": "Abracadabra",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965931
+  },
+  {
+    "id": "zkr-4047965941",
+    "title": "Balkany",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965941
+  },
+  {
+    "id": "zkr-4047965951",
+    "title": "Bouche cousue",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965951
+  },
+  {
+    "id": "zkr-4047965961",
+    "title": "Porte feuille",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965961
+  },
+  {
+    "id": "zkr-4047965971",
+    "title": "Si elle veut",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965971
+  },
+  {
+    "id": "zkr-4047965981",
+    "title": "Nevada",
+    "project": "La Méthode R",
+    "year": 2026,
+    "releaseDate": "2026-05-29",
+    "deezerTrackId": 4047965981
+  }
+]

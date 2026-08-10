@@ -90,13 +90,18 @@ const ui = {
   finalScore: $('#finalScore'), resultMode: $('#resultMode'), bestTime: $('#bestTime'),
   correct: $('#correctCount'), record: $('#recordScore'), played: $('#playedList'), restart: $('#restartButton'), home: $('#homeButton'),
   statsButton: $('#statsButton'), statsOverlay: $('#statsOverlay'), statsClose: $('#statsClose'), statsStatus: $('#statsStatus'), statsList: $('#statsList'),
-  loginButton: $('#loginButton'), loginPromptOverlay: $('#loginPromptOverlay'), loginPromptClose: $('#loginPromptClose'), loginPromptGoogle: $('#loginPromptGoogle'), loginPromptGuest: $('#loginPromptGuest')
+  loginButton: $('#loginButton'), loginPromptOverlay: $('#loginPromptOverlay'), loginPromptClose: $('#loginPromptClose'), loginPromptGoogle: $('#loginPromptGoogle'), loginPromptGuest: $('#loginPromptGuest'), loginPromptText: $('#loginPromptText')
 };
 
 let songs = [];
 let artists = [];
 let selectedArtist = null;
 let state = {};
+// Pointeur partagé par le moteur de lecture (loadTrack/autoplayTrack/setPlaying/
+// stopPlayback/showTrackReveal/toggleAudio) : pointe vers `state` en Solo/Ranked
+// et vers `vState` pendant un match VERSUS, pour réutiliser exactement la même
+// logique de lecture Deezer/SoundCloud sans dupliquer ce code sensible.
+let activeState = null;
 let soundcloudMessageHandler = null;
 let currentUser = null;
 let firestoreDb = null;
@@ -172,24 +177,24 @@ function setVolume(value) {
   else if (state.current?.soundcloudUrl) sendSoundcloud('setVolume', volume * 100);
 }
 function autoplayTrack(track) {
-  if (!state.current || state.current !== track || state.roundResolved || state.autoplayAttempted || state.speed?.listen) return;
-  state.autoplayAttempted = true;
+  if (!activeState.current || activeState.current !== track || activeState.roundResolved || activeState.autoplayAttempted || activeState.speed?.listen) return;
+  activeState.autoplayAttempted = true;
   if (track.deezerTrackId || track.audio) {
     ui.audio.play().then(() => {
       setPlaying(true);
-      clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, 20000);
+      clearClipTimer(); activeState.clipTimer = setTimeout(stopPlayback, 20000);
     }).catch(() => {
-      state.autoplayAttempted = false;
+      activeState.autoplayAttempted = false;
       ui.playerState.textContent = 'APPUYE POUR ÉCOUTER';
     });
-  } else if (state.scReady) {
+  } else if (activeState.scReady) {
     setVolume(getVolume());
-    if (state.scWidget) {
-      state.scWidget.seekTo(Number(track.clipStart || 0) * 1000); state.scWidget.play();
+    if (activeState.scWidget) {
+      activeState.scWidget.seekTo(Number(track.clipStart || 0) * 1000); activeState.scWidget.play();
     } else {
       sendSoundcloud('seekTo', Number(track.clipStart || 0) * 1000); sendSoundcloud('play');
     }
-    clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, Number(track.clipDuration || 20) * 1000);
+    clearClipTimer(); activeState.clipTimer = setTimeout(stopPlayback, Number(track.clipDuration || 20) * 1000);
   }
 }
 function readLocalStats() {
@@ -483,7 +488,7 @@ function updateLeaderboardRoundTypeAvailability() {
   }
 }
 let artistSearchQuery = '';
-let artistSortMode = 'default';
+let artistSortMode = 'alpha';
 let sourceTab = 'artists';
 function visibleArtists() {
   const query = normalise(artistSearchQuery);
@@ -492,10 +497,22 @@ function visibleArtists() {
   if (artistSortMode === 'alpha') list.sort((a, b) => a.name.localeCompare(b.name, 'fr', { sensitivity: 'base' }));
   return list;
 }
+function artistGroupKey(artist) {
+  const first = normalise(artist.name).charAt(0);
+  if (!first) return '#';
+  return /[0-9]/.test(first) ? '#' : first.toUpperCase();
+}
 function renderArtists() {
   if (!ui.artists) return;
   const list = visibleArtists();
+  const groupByLetter = artistSortMode === 'alpha' && sourceTab === 'artists';
+  let lastGroupKey = null;
   ui.artists.innerHTML = list.map(artist => {
+    let header = '';
+    if (groupByLetter) {
+      const key = artistGroupKey(artist);
+      if (key !== lastGroupKey) { header = `<div class="artist-group-header">${escapeHtml(key)}</div>`; lastGroupKey = key; }
+    }
     const description = artist.category && artist.description ? `<small>${escapeHtml(artist.description)}</small>` : '';
     if (artist.category) {
       let art = '';
@@ -508,10 +525,10 @@ function renderArtists() {
       } else if (artist.image) {
         art = `<img class="category-card-art" src="${escapeHtml(artist.image)}" alt="" loading="lazy" />`;
       }
-      return `<button class="artist-card category-card ${artist.image || artist.heroArt ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><strong>${escapeHtml(artist.name)}</strong>${description}${art}</button>`;
+      return `${header}<button class="artist-card category-card ${artist.image || artist.heroArt ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}"><strong>${escapeHtml(artist.name)}</strong>${description}${art}</button>`;
     }
     const photo = artist.image ? `<span class="artist-card-art"><img src="${escapeHtml(artist.image)}" alt="" loading="lazy" /></span>` : '';
-    return `<button class="artist-card ${artist.image ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong></button>`;
+    return `${header}<button class="artist-card ${artist.image ? '' : 'no-photo'} ${artist.id === selectedArtist?.id ? 'selected' : ''}" type="button" data-artist-id="${escapeHtml(artist.id)}">${photo}<strong>${escapeHtml(artist.name)}</strong></button>`;
   }).join('');
   ui.artists.querySelectorAll('.artist-card').forEach(button => button.addEventListener('click', () => selectArtist(button.dataset.artistId)));
   if (ui.artistEmptyState) {
@@ -569,7 +586,12 @@ async function loadSongs() {
 
 function handleStartClick() {
   if (!songs.length) return;
-  if (!currentUser) { ui.loginPromptOverlay.hidden = false; return; }
+  if (!currentUser) {
+    ui.loginPromptGuest.hidden = false;
+    ui.loginPromptText.textContent = 'Connecte-toi avec Google pour sauvegarder ton score, ton rang Ranked et débloquer le classement. Tu peux aussi continuer en invité.';
+    ui.loginPromptOverlay.hidden = false;
+    return;
+  }
   startGame();
 }
 async function startGame() {
@@ -587,7 +609,12 @@ async function startGame() {
   const rounds = Number(document.querySelector('.round-option.selected').dataset.rounds);
   const speedKey = mode === 'solo' ? (document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic') : 'classic';
   const speed = SPEED_PRESETS[speedKey] || SPEED_PRESETS.classic;
-  state = { artist: selectedArtist, mode, rounds, speed, roundType, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank(roundType) : null };
+  state = { artist: selectedArtist, mode, rounds, speed, roundType, score: 0, played: [], deck: shuffled(songs), deckIndex: 0, current: null, hints: 0, revealed: new Set(), active: true, startedAt: 0, timerId: null, challengeRemainingMs: CHALLENGE_SECONDS * 1000, rankBefore: mode === 'challenge' ? getPersistentRank(roundType) : null, onTrackReady };
+  state.onAnswerTimeout = () => resolveRound(false, 'Temps écoulé');
+  state.onCorrectGuess = (options) => resolveRound(true, '', options);
+  state.onWrongGuess = (button) => { if (state.roundType === 'qcm') disableQcmChoices(state.current.title, button); resolveRound(false, 'Réponse'); };
+  activeState = state;
+  ui.versusHeader.hidden = true; ui.versusInGameAbandon.hidden = true;
   show(ui.game);
   nextRound();
 }
@@ -605,10 +632,10 @@ function nextRound() {
   const freestylePrefix = state.roundType === 'title' ? freestylePrefixEnd(state.current.title) : null;
   ui.input.value = freestylePrefix !== null ? state.current.title.slice(0, freestylePrefix) : '';
   ui.input.placeholder = state.roundType === 'artist' ? "NOM DE L'ARTISTE" : 'NOM DU MORCEAU';
-  ui.input.disabled = isQcm; ui.validate.disabled = isQcm; ui.hint.disabled = isQcm; ui.skip.disabled = false;
+  ui.input.disabled = isQcm; ui.validate.disabled = isQcm; ui.hint.disabled = isQcm; ui.skip.disabled = false; ui.skip.hidden = false;
   ui.input.hidden = isQcm; ui.validate.hidden = isQcm; ui.hint.hidden = isQcm;
   ui.qcmChoices.hidden = !isQcm;
-  if (isQcm) renderQcmChoices();
+  if (isQcm) { state.qcmOptions = buildQcmOptions(state.current, songs); renderQcmChoices(); }
   ui.play.disabled = Boolean(state.speed?.listen) && !state.speed?.allowReplay;
   ui.answerCountdown.hidden = true; ui.waveform.classList.remove('hidden'); ui.playerControls.classList.remove('hidden');
   ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
@@ -630,63 +657,63 @@ function prefetchUpcoming() {
   if (upcoming?.deezerTrackId) prefetchDeezerTrack(upcoming.deezerTrackId);
 }
 function onTrackReady() {
-  if (!state.current || state.timerStarted || state.roundResolved) return;
-  state.timerStarted = true; state.trackReady = true;
-  if (state.speed?.listen) beginListenPhase(); else startTimer();
+  if (!activeState.current || activeState.timerStarted || activeState.roundResolved) return;
+  activeState.timerStarted = true; activeState.trackReady = true;
+  if (activeState.speed?.listen) beginListenPhase(); else startTimer();
 }
 function beginListenPhase() {
-  state.phase = 'listen';
-  if (state.current.deezerTrackId || state.current.audio) ui.audio.play().catch(() => {});
-  state.startedAt = performance.now();
-  clearInterval(state.timerId);
-  state.timerId = setInterval(() => updatePhaseTimer('listen'), 50);
+  activeState.phase = 'listen';
+  if (activeState.current.deezerTrackId || activeState.current.audio) ui.audio.play().catch(() => {});
+  activeState.startedAt = performance.now();
+  clearInterval(activeState.timerId);
+  activeState.timerId = setInterval(() => updatePhaseTimer('listen'), 50);
   updatePhaseTimer('listen');
 }
 function beginAnswerPhase() {
-  state.phase = 'answer';
-  state.scoreBudgetSeconds = state.speed.answer ?? state.speed.scoreBudget ?? ROUND_SECONDS;
-  state.startedAt = performance.now();
-  if (!state.speed.allowReplay) {
+  activeState.phase = 'answer';
+  activeState.scoreBudgetSeconds = activeState.speed.answer ?? activeState.speed.scoreBudget ?? ROUND_SECONDS;
+  activeState.startedAt = performance.now();
+  if (!activeState.speed.allowReplay) {
     ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE';
     ui.waveform.classList.add('hidden'); ui.playerControls.classList.add('hidden');
     ui.answerCountdown.hidden = false;
   }
-  clearInterval(state.timerId);
-  if (state.speed.answer == null) {
-    state.timerId = setInterval(updateUnlimitedTimer, 100);
+  clearInterval(activeState.timerId);
+  if (activeState.speed.answer == null) {
+    activeState.timerId = setInterval(updateUnlimitedTimer, 100);
     updateUnlimitedTimer();
   } else {
-    state.timerId = setInterval(() => updatePhaseTimer('answer'), 50);
+    activeState.timerId = setInterval(() => updatePhaseTimer('answer'), 50);
     updatePhaseTimer('answer');
   }
 }
 function updateUnlimitedTimer() {
-  const elapsed = (performance.now() - state.startedAt) / 1000;
+  const elapsed = (performance.now() - activeState.startedAt) / 1000;
   ui.timer.style.transform = 'scaleX(1)';
   ui.timerText.textContent = `${elapsed.toFixed(1)} S`;
 }
 function updatePhaseTimer(phase) {
   const now = performance.now();
-  const durationMs = (phase === 'listen' ? state.speed.listen : state.speed.answer) * 1000;
-  const left = Math.max(0, durationMs - (now - state.startedAt));
+  const durationMs = (phase === 'listen' ? activeState.speed.listen : activeState.speed.answer) * 1000;
+  const left = Math.max(0, durationMs - (now - activeState.startedAt));
   ui.timer.style.transform = `scaleX(${left / durationMs})`;
   const secondsLabel = `${(left / 1000).toFixed(1)} S`;
   ui.timerText.textContent = phase === 'listen' ? `ÉCOUTE ${secondsLabel}` : secondsLabel;
   if (phase === 'answer' && ui.answerCountdownValue) ui.answerCountdownValue.textContent = secondsLabel;
   if (left <= 0) {
-    clearInterval(state.timerId);
+    clearInterval(activeState.timerId);
     if (phase === 'listen') { stopPlayback(); beginAnswerPhase(); }
-    else resolveRound(false, 'Temps écoulé');
+    else activeState.onAnswerTimeout();
   }
 }
 function setPlaying(isPlaying) {
-  state.isPlaying = isPlaying;
+  activeState.isPlaying = isPlaying;
   ui.play.classList.toggle('is-playing', isPlaying); ui.waveform.classList.toggle('playing', isPlaying);
-  if (state.roundResolved) return;
-  if (!isPlaying && state.phase === 'answer' && state.speed?.listen && !state.speed?.allowReplay) { ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE'; return; }
+  if (activeState.roundResolved) return;
+  if (!isPlaying && activeState.phase === 'answer' && activeState.speed?.listen && !activeState.speed?.allowReplay) { ui.playerState.textContent = 'RÉÉCOUTE INDISPONIBLE'; return; }
   ui.playerState.textContent = isPlaying ? 'LECTURE EN COURS' : 'EXTRAIT EN PAUSE';
 }
-function clearClipTimer() { clearTimeout(state.clipTimer); state.clipTimer = null; }
+function clearClipTimer() { clearTimeout(activeState.clipTimer); activeState.clipTimer = null; }
 function sendSoundcloud(method, value) {
   if (!ui.soundcloud.contentWindow) return;
   ui.soundcloud.contentWindow.postMessage(JSON.stringify({ method, value }), 'https://w.soundcloud.com');
@@ -695,13 +722,13 @@ function stopPlayback() {
   clearClipTimer();
   ui.audio.pause();
   if (ui.soundcloud.src && ui.soundcloud.src !== 'about:blank') ui.soundcloud.src = 'about:blank';
-  if (state.scWidget) state.scWidget.pause();
-  else if (state.current?.soundcloudUrl) sendSoundcloud('pause');
+  if (activeState.scWidget) activeState.scWidget.pause();
+  else if (activeState.current?.soundcloudUrl) sendSoundcloud('pause');
   setPlaying(false);
 }
 function showTrackReveal() {
-  const meta = state.trackMeta || {};
-  const song = state.current;
+  const meta = activeState.trackMeta || {};
+  const song = activeState.current;
   const title = song.title || meta.title;
   const cover = meta.cover || song.cover || '';
   const releaseDate = meta.releaseDate || song.releaseDate || '';
@@ -730,27 +757,27 @@ function prefetchDeezerTrack(id) {
     .catch(() => { previewCache.delete(key); });
 }
 function loadTrack() {
-  stopPlayback(); state.scReady = false; state.scWidget = null; state.isPlaying = false;
-  state.autoplayAttempted = false; setVolume(getVolume());
-  state.trackMeta = null; state.revealVisible = false;
+  stopPlayback(); activeState.scReady = false; activeState.scWidget = null; activeState.isPlaying = false;
+  activeState.autoplayAttempted = false; setVolume(getVolume());
+  activeState.trackMeta = null; activeState.revealVisible = false;
   ui.reveal.hidden = true; ui.playerPanel.classList.remove('revealed'); ui.revealCover.removeAttribute('src');
   if (soundcloudMessageHandler) window.removeEventListener('message', soundcloudMessageHandler);
   soundcloudMessageHandler = null;
   ui.play.classList.remove('is-playing'); ui.waveform.classList.remove('playing');
   ui.playerState.textContent = 'EXTRAIT PRÊT';
-  if (state.current.deezerTrackId) {
-    const trackId = String(state.current.deezerTrackId);
-    const track = state.current;
-    ui.audio.removeAttribute('src'); ui.audio.load(); state.deezerPreviewUrl = '';
+  if (activeState.current.deezerTrackId) {
+    const trackId = String(activeState.current.deezerTrackId);
+    const track = activeState.current;
+    ui.audio.removeAttribute('src'); ui.audio.load(); activeState.deezerPreviewUrl = '';
     ui.soundcloud.hidden = true; ui.soundcloud.classList.remove('visible');
     ui.play.classList.remove('hidden'); ui.waveform.classList.remove('hidden');
     ui.soundcloudCredit.href = `https://www.deezer.com/track/${trackId}`;
     ui.soundcloudCredit.textContent = 'SOURCE : DEEZER ↗'; ui.soundcloudCredit.classList.remove('hidden');
     const applyTrack = (data) => {
-      if (state.current !== track || !data?.preview) return false;
-      state.deezerPreviewUrl = data.preview; state.trackMeta = data;
-      ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
-      if (state.revealVisible) showTrackReveal();
+      if (activeState.current !== track || !data?.preview) return false;
+      activeState.deezerPreviewUrl = data.preview; activeState.trackMeta = data;
+      ui.audio.src = data.preview; ui.audio.load(); ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); activeState.onTrackReady();
+      if (activeState.revealVisible) showTrackReveal();
       return true;
     };
     const cached = previewCache.get(trackId);
@@ -763,20 +790,20 @@ function loadTrack() {
           previewCache.set(trackId, data);
           if (!applyTrack(data)) throw new Error('Manche déjà changée');
         })
-        .catch(() => { if (state.current === track) { ui.playerState.textContent = 'APERÇU INDISPONIBLE'; onTrackReady(); } });
+        .catch(() => { if (activeState.current === track) { ui.playerState.textContent = 'APERÇU INDISPONIBLE'; activeState.onTrackReady(); } });
     }
-  } else if (state.current.soundcloudUrl) {
+  } else if (activeState.current.soundcloudUrl) {
     ui.audio.removeAttribute('src'); ui.audio.load(); ui.soundcloud.hidden = false; ui.soundcloud.classList.add('visible');
     ui.play.classList.add('hidden'); ui.waveform.classList.add('hidden');
-    ui.soundcloudCredit.href = state.current.soundcloudUrl; ui.soundcloudCredit.classList.remove('hidden');
-    const track = state.current;
+    ui.soundcloudCredit.href = activeState.current.soundcloudUrl; ui.soundcloudCredit.classList.remove('hidden');
+    const track = activeState.current;
     soundcloudMessageHandler = (event) => {
-      if (event.origin !== 'https://w.soundcloud.com' || state.current !== track) return;
+      if (event.origin !== 'https://w.soundcloud.com' || activeState.current !== track) return;
       let message;
       try { message = typeof event.data === 'string' ? JSON.parse(event.data) : event.data; } catch { return; }
       if (!message?.method) return;
       if (message.method === 'ready') {
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
+        activeState.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); activeState.onTrackReady();
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }
       if (message.method === 'play') setPlaying(true);
@@ -784,60 +811,60 @@ function loadTrack() {
     };
     window.addEventListener('message', soundcloudMessageHandler);
     ui.soundcloud.onload = () => {
-      if (state.current !== track) return;
+      if (activeState.current !== track) return;
       // Le widget n'émet pas toujours l'événement READY dans certains navigateurs.
       // Son iframe est toutefois prêt à recevoir les commandes une fois chargée.
       setTimeout(() => {
-        if (state.current !== track) return;
-        state.scReady = true;
-        if (!state.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
+        if (activeState.current !== track) return;
+        activeState.scReady = true;
+        if (!activeState.isPlaying) ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); activeState.onTrackReady();
         ['play', 'pause', 'finish'].forEach(name => sendSoundcloud('addEventListener', name));
       }, 500);
     };
-    ui.soundcloud.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(state.current.soundcloudUrl)}&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true`;
+    ui.soundcloud.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(activeState.current.soundcloudUrl)}&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=true`;
     if (window.SC?.Widget) {
       const widget = window.SC.Widget(ui.soundcloud);
-      state.scWidget = widget;
+      activeState.scWidget = widget;
       widget.bind(window.SC.Widget.Events.READY, () => {
-        if (state.current !== track || state.scWidget !== widget) return;
-        state.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); onTrackReady();
+        if (activeState.current !== track || activeState.scWidget !== widget) return;
+        activeState.scReady = true; ui.playerState.textContent = 'EXTRAIT PRÊT'; setVolume(getVolume()); autoplayTrack(track); activeState.onTrackReady();
       });
-      widget.bind(window.SC.Widget.Events.PLAY, () => { if (state.scWidget === widget) setPlaying(true); });
-      widget.bind(window.SC.Widget.Events.PAUSE, () => { if (state.scWidget === widget) setPlaying(false); });
-      widget.bind(window.SC.Widget.Events.FINISH, () => { if (state.scWidget === widget) setPlaying(false); });
+      widget.bind(window.SC.Widget.Events.PLAY, () => { if (activeState.scWidget === widget) setPlaying(true); });
+      widget.bind(window.SC.Widget.Events.PAUSE, () => { if (activeState.scWidget === widget) setPlaying(false); });
+      widget.bind(window.SC.Widget.Events.FINISH, () => { if (activeState.scWidget === widget) setPlaying(false); });
     }
   } else {
     ui.soundcloud.hidden = true; ui.soundcloud.classList.remove('visible'); ui.soundcloudCredit.classList.add('hidden');
     ui.play.classList.remove('hidden'); ui.waveform.classList.remove('hidden');
-    ui.audio.src = state.current.audio; ui.audio.load(); autoplayTrack(state.current);
+    ui.audio.src = activeState.current.audio; ui.audio.load(); autoplayTrack(activeState.current);
   }
 }
 function startTimer() {
-  clearInterval(state.timerId);
-  state.scoreBudgetSeconds = ROUND_SECONDS;
-  state.startedAt = performance.now();
-  state.timerId = setInterval(updateTimer, 50); updateTimer();
+  clearInterval(activeState.timerId);
+  activeState.scoreBudgetSeconds = ROUND_SECONDS;
+  activeState.startedAt = performance.now();
+  activeState.timerId = setInterval(updateTimer, 50); updateTimer();
 }
 function updateTimer() {
   const now = performance.now();
-  if (state.mode === 'challenge') {
+  if (activeState.mode === 'challenge') {
     const max = CHALLENGE_SECONDS * 1000;
-    const left = Math.max(0, state.challengeRemainingMs - (now - state.startedAt));
+    const left = Math.max(0, activeState.challengeRemainingMs - (now - activeState.startedAt));
     ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
     if (left <= 0) {
-      clearInterval(state.timerId); state.challengeRemainingMs = 0;
-      if (state.current && !state.roundResolved) {
-        state.roundResolved = true;
-        state.played.push({ ...state.current, correct: false, seconds: (now - state.startedAt) / 1000, points: 0 });
+      clearInterval(activeState.timerId); activeState.challengeRemainingMs = 0;
+      if (activeState.current && !activeState.roundResolved) {
+        activeState.roundResolved = true;
+        activeState.played.push({ ...activeState.current, correct: false, seconds: (now - activeState.startedAt) / 1000, points: 0 });
       }
       endGame();
     }
     return;
   }
   const max = ROUND_SECONDS * 1000;
-  const left = Math.max(0, max - (now - state.startedAt));
+  const left = Math.max(0, max - (now - activeState.startedAt));
   ui.timer.style.transform = `scaleX(${left / max})`; ui.timerText.textContent = `${(left / 1000).toFixed(1)} S`;
-  if (left <= 0) { clearInterval(state.timerId); resolveRound(false, 'Temps écoulé'); }
+  if (left <= 0) { clearInterval(activeState.timerId); activeState.onAnswerTimeout(); }
 }
 function freestylePrefixEnd(titleRaw) {
   if (!/freestyle/i.test(titleRaw)) return null;
@@ -845,28 +872,27 @@ function freestylePrefixEnd(titleRaw) {
   return match ? match.index : null;
 }
 function roundTargetText() {
-  if (state.roundType === 'artist') return state.current.artist || state.artist?.name || '';
-  return state.current.title;
+  if (activeState.roundType === 'artist') return activeState.current.artist || activeState.artist?.name || '';
+  return activeState.current.title;
 }
-function qcmDistractorSongs(song) {
+function buildQcmOptions(song, catalog) {
   const usedKeys = new Set([normalise(song.title)]);
   const distractors = [];
   const collect = (pool) => {
     for (const candidate of pool) {
       const key = normalise(candidate.title);
       if (usedKeys.has(key)) continue;
-      usedKeys.add(key); distractors.push(candidate);
+      usedKeys.add(key); distractors.push({ title: candidate.title, deezerTrackId: candidate.deezerTrackId || null });
       if (distractors.length === 3) break;
     }
   };
-  collect(shuffled(songs.filter(item => item !== song && (!item.artist || !song.artist || item.artist === song.artist))));
-  if (distractors.length < 3) collect(shuffled(songs.filter(item => item !== song)));
-  return distractors;
+  collect(shuffled(catalog.filter(item => item !== song && item.title !== song.title && (!item.artist || !song.artist || item.artist === song.artist))));
+  if (distractors.length < 3) collect(shuffled(catalog.filter(item => item !== song && item.title !== song.title)));
+  return shuffled([{ title: song.title, deezerTrackId: song.deezerTrackId || null }, ...distractors]);
 }
-function qcmCoverUrl(song) { return song.deezerTrackId ? `/api/deezer-cover?id=${encodeURIComponent(song.deezerTrackId)}` : ''; }
+function qcmCoverUrl(option) { return option.deezerTrackId ? `/api/deezer-cover?id=${encodeURIComponent(option.deezerTrackId)}` : ''; }
 function renderQcmChoices() {
-  const song = state.current;
-  const options = shuffled([song, ...qcmDistractorSongs(song)]);
+  const options = activeState.qcmOptions || [];
   ui.qcmChoices.innerHTML = options.map(item => {
     const coverUrl = qcmCoverUrl(item);
     const cover = coverUrl ? `<img class="qcm-choice-cover" src="${escapeHtml(coverUrl)}" alt="" loading="lazy" />` : '<span class="qcm-choice-cover"></span>';
@@ -882,79 +908,79 @@ function disableQcmChoices(correctTitle, clickedButton = null) {
 }
 function handleQcmChoiceClick(event) {
   const button = event.target.closest('.qcm-choice');
-  if (!button || state.roundResolved) return;
-  const correct = normalise(button.dataset.title) === normalise(state.current.title);
-  disableQcmChoices(state.current.title, button);
-  resolveRound(correct);
+  if (!button || activeState.roundResolved) return;
+  const correct = normalise(button.dataset.title) === normalise(activeState.current.title);
+  if (correct) activeState.onCorrectGuess({});
+  else activeState.onWrongGuess(button);
 }
 function renderHint() {
-  if (state.roundType === 'qcm') { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
+  if (activeState.roundType === 'qcm') { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
   const title = roundTargetText();
-  if (state.roundType !== 'artist' && freestylePrefixEnd(title) !== null && state.hints < 3) { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
+  if (activeState.roundType !== 'artist' && freestylePrefixEnd(title) !== null && activeState.hints < 3) { ui.hintText.hidden = true; ui.hintText.textContent = ''; return; }
   ui.hintText.hidden = false;
   const display = [...title].map((char, index) => {
     if (char === ' ') return ' / ';
-    return state.revealed.has(index) ? char.toUpperCase() : '_';
+    return activeState.revealed.has(index) ? char.toUpperCase() : '_';
   }).join(' ');
-  ui.hintText.textContent = state.hints === 3 ? `ANNÉE : ${state.current.year}` : display;
+  ui.hintText.textContent = activeState.hints === 3 ? `ANNÉE : ${activeState.current.year}` : display;
 }
 function useHint() {
-  if (state.hints >= HINTS_PER_ROUND || state.roundResolved || state.roundType === 'qcm') return;
-  state.hints++;
-  if (state.hints < 3) {
+  if (activeState.hints >= HINTS_PER_ROUND || activeState.roundResolved || activeState.roundType === 'qcm') return;
+  activeState.hints++;
+  if (activeState.hints < 3) {
     const target = roundTargetText();
-    const candidates = [...target].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !state.revealed.has(index));
-    if (candidates.length) state.revealed.add(candidates[Math.floor(Math.random() * candidates.length)].index);
+    const candidates = [...target].map((char, index) => ({ char, index })).filter(({ char, index }) => char !== ' ' && !activeState.revealed.has(index));
+    if (candidates.length) activeState.revealed.add(candidates[Math.floor(Math.random() * candidates.length)].index);
   }
-  ui.hintCount.textContent = `×${HINTS_PER_ROUND - state.hints}`; ui.hint.disabled = state.hints >= HINTS_PER_ROUND; renderHint();
+  ui.hintCount.textContent = `×${HINTS_PER_ROUND - activeState.hints}`; ui.hint.disabled = activeState.hints >= HINTS_PER_ROUND; renderHint();
 }
 function toggleAudio() {
-  if (!state.current || state.roundResolved) return;
-  if (state.current.deezerTrackId) {
-    if (!state.deezerPreviewUrl) { ui.playerState.textContent = 'EXTRAIT EN CHARGEMENT'; return; }
+  if (!activeState.current || activeState.roundResolved) return;
+  if (activeState.current.deezerTrackId) {
+    if (!activeState.deezerPreviewUrl) { ui.playerState.textContent = 'EXTRAIT EN CHARGEMENT'; return; }
     if (ui.audio.paused) {
       ui.audio.currentTime = 0;
       ui.audio.play().catch(() => { ui.playerState.textContent = 'LECTURE BLOQUÉE'; });
-      clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, (state.speed?.allowReplay ? state.speed.listen * 1000 : 20000));
+      clearClipTimer(); activeState.clipTimer = setTimeout(stopPlayback, (activeState.speed?.allowReplay ? activeState.speed.listen * 1000 : 20000));
     } else stopPlayback();
     return;
   }
-  if (state.current.soundcloudUrl) {
-    if (!state.scReady) { ui.playerState.textContent = 'CHARGEMENT SOUNDCLOUD…'; return; }
-    if (state.isPlaying) { stopPlayback(); return; }
-    if (state.scWidget) {
-      state.scWidget.seekTo(Number(state.current.clipStart || 0) * 1000); state.scWidget.play();
+  if (activeState.current.soundcloudUrl) {
+    if (!activeState.scReady) { ui.playerState.textContent = 'CHARGEMENT SOUNDCLOUD…'; return; }
+    if (activeState.isPlaying) { stopPlayback(); return; }
+    if (activeState.scWidget) {
+      activeState.scWidget.seekTo(Number(activeState.current.clipStart || 0) * 1000); activeState.scWidget.play();
     } else {
-      sendSoundcloud('seekTo', Number(state.current.clipStart || 0) * 1000); sendSoundcloud('play');
+      sendSoundcloud('seekTo', Number(activeState.current.clipStart || 0) * 1000); sendSoundcloud('play');
     }
-    clearClipTimer(); state.clipTimer = setTimeout(stopPlayback, Number(state.current.clipDuration || 20) * 1000);
+    clearClipTimer(); activeState.clipTimer = setTimeout(stopPlayback, Number(activeState.current.clipDuration || 20) * 1000);
   } else if (ui.audio.paused) { ui.audio.currentTime = 0; ui.audio.play().catch(() => { ui.playerState.textContent = 'EXTRAIT INTROUVABLE'; }); } else ui.audio.pause();
 }
 function checkGuess() {
-  if (state.roundResolved || state.roundType === 'qcm') return false;
+  if (activeState.roundResolved || activeState.roundType === 'qcm') return false;
   const rawGuess = ui.input.value;
   const guess = normalise(rawGuess);
   if (!guess) return false;
   const title = roundTargetText();
-  if (guess === normalise(title)) { resolveRound(true); return true; }
-  if (state.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return true; }
-  if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return true; }
+  if (guess === normalise(title)) { activeState.onCorrectGuess({}); return true; }
+  if (activeState.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { activeState.onCorrectGuess({}); return true; }
+  if (sameWordsAnyOrder(rawGuess, title)) { activeState.onCorrectGuess({ outOfOrder: true }); return true; }
   ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong'; ui.input.select();
   return false;
 }
 function handleGuessInput() {
-  if (state.roundResolved || !state.current || state.roundType === 'qcm') return;
+  if (activeState.roundResolved || !activeState.current || activeState.roundType === 'qcm') return;
   const rawGuess = ui.input.value;
   const guess = normalise(rawGuess);
   if (!guess) { ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; return; }
   const title = roundTargetText();
   const normalisedTitle = normalise(title);
-  if (guess === normalisedTitle) { resolveRound(true); return; }
-  if (state.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { resolveRound(true); return; }
-  if (sameWordsAnyOrder(rawGuess, title)) { resolveRound(true, '', { outOfOrder: true }); return; }
+  if (guess === normalisedTitle) { activeState.onCorrectGuess({}); return; }
+  if (activeState.roundType === 'title' && freestyleNumberMatch(rawGuess, title)) { activeState.onCorrectGuess({}); return; }
+  if (sameWordsAnyOrder(rawGuess, title)) { activeState.onCorrectGuess({ outOfOrder: true }); return; }
   if (guess.length >= normalisedTitle.length) {
     ui.feedback.textContent = 'Pas encore. Essaie à nouveau.'; ui.feedback.className = 'feedback wrong';
-    const prefixEnd = state.roundType === 'title' ? freestylePrefixEnd(title) : null;
+    const prefixEnd = activeState.roundType === 'title' ? freestylePrefixEnd(title) : null;
     ui.input.value = prefixEnd !== null ? title.slice(0, prefixEnd) : '';
     ui.input.setSelectionRange(ui.input.value.length, ui.input.value.length);
   }
@@ -1102,8 +1128,11 @@ function setupGoogleAuth() {
     const setMessage = (message = '') => { authMessage.textContent = message; };
     auth.onAuthStateChanged(user => {
       currentUser = user || null; loginButton.hidden = Boolean(user); profileArea.hidden = !user;
-      if (user) { profileName.textContent = user.displayName || user.email || 'Compte Google'; profilePhoto.src = user.photoURL || ''; accountBestReady = loadAccountBest(user).then(() => migrateGuestBest(user)); if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField()); setMessage(''); }
-      else { accountBestReady = Promise.resolve(); localStorage.removeItem('ziak-blindtest-last-uid'); accountBest = { solo: 0, challenge: 0 }; profilePhoto.removeAttribute('src'); refreshBest(); }
+      if (user) {
+        profileName.textContent = user.displayName || user.email || 'Compte Google'; profilePhoto.src = user.photoURL || ''; accountBestReady = loadAccountBest(user).then(() => migrateGuestBest(user)); if (!ui.leaderboardPanel.hidden) loadLeaderboard(currentLeaderboardField()); setMessage('');
+        if (pendingVersusAction) { const action = pendingVersusAction; pendingVersusAction = null; action(); }
+      }
+      else { accountBestReady = Promise.resolve(); localStorage.removeItem('ziak-blindtest-last-uid'); accountBest = { solo: {}, challenge: {} }; profilePhoto.removeAttribute('src'); refreshBest(); }
     });
     loginButton.addEventListener('click', async () => {
       loginButton.disabled = true; setMessage('Connexion…');
@@ -1118,3 +1147,475 @@ function setupGoogleAuth() {
   } catch { authMessage.textContent = 'Configuration Firebase invalide'; }
 }
 setupGoogleAuth();
+
+/* ===================== VERSUS 1V1 =====================
+   Salons multijoueurs synchronisés via Firestore (onSnapshot + transactions,
+   pas de backend dédié). Réutilise le moteur de lecture/minuteur partagé
+   (activeState) : versusStartRound joue le rôle de nextRound(), et
+   vState.onCorrectGuess/onWrongGuess/onAnswerTimeout branchent la fin de
+   manche sur des transactions Firestore au lieu du score local solo.
+   L'hôte du salon est la seule source d'autorité pour faire avancer les
+   manches (évite toute double-avance) ; n'importe quel joueur peut gagner
+   une manche via une transaction Firestore (le premier à committer gagne).
+*/
+const VERSUS_CODE_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; // sans 0/O/1/I/L, ambigus
+Object.assign(ui, {
+  versusButton: $('#versusButton'), versusPanel: $('#versusPanel'), versusPanelClose: $('#versusPanelClose'),
+  versusTabs: document.querySelectorAll('#versusTabs .leaderboard-tab'),
+  versusCreateTab: $('#versusCreateTab'), versusJoinTab: $('#versusJoinTab'), versusBrowseTab: $('#versusBrowseTab'),
+  versusVisibilityOptions: document.querySelectorAll('.versus-visibility .round-option'),
+  versusCreateButton: $('#versusCreateButton'), versusCreateStatus: $('#versusCreateStatus'),
+  versusCodeInput: $('#versusCodeInput'), versusJoinButton: $('#versusJoinButton'), versusJoinStatus: $('#versusJoinStatus'),
+  versusBrowseStatus: $('#versusBrowseStatus'), versusRoomList: $('#versusRoomList'),
+  versusRoomOverlay: $('#versusRoomOverlay'), versusRoomClose: $('#versusRoomClose'), versusRoomHeading: $('#versusRoomHeading'),
+  versusRoomCode: $('#versusRoomCode'), versusRoomVisibility: $('#versusRoomVisibility'),
+  versusRoomHostPhoto: $('#versusRoomHostPhoto'), versusRoomHostName: $('#versusRoomHostName'),
+  versusRoomGuestPhoto: $('#versusRoomGuestPhoto'), versusRoomGuestName: $('#versusRoomGuestName'),
+  versusRoomSettings: $('#versusRoomSettings'), versusStartButton: $('#versusStartButton'), versusAbandonButton: $('#versusAbandonButton'),
+  versusRoomStatus: $('#versusRoomStatus'),
+  versusResultOverlay: $('#versusResultOverlay'), versusResultClose: $('#versusResultClose'), versusResultBanner: $('#versusResultBanner'),
+  versusResultMePhoto: $('#versusResultMePhoto'), versusResultMeName: $('#versusResultMeName'), versusResultMeScore: $('#versusResultMeScore'),
+  versusResultOpponentPhoto: $('#versusResultOpponentPhoto'), versusResultOpponentName: $('#versusResultOpponentName'), versusResultOpponentScore: $('#versusResultOpponentScore'),
+  versusHeader: $('#versusHeader'), versusInGameAbandon: $('#versusInGameAbandon'),
+  versusMePhoto: $('#versusMePhoto'), versusMeName: $('#versusMeName'), versusMeScoreLive: $('#versusMeScoreLive'),
+  versusOpponentPhoto: $('#versusOpponentPhoto'), versusOpponentName: $('#versusOpponentName'), versusOpponentScoreLive: $('#versusOpponentScoreLive')
+});
+
+let pendingVersusAction = null;
+let vState = null;
+let versusActive = false;
+let versusRoomUnsub = null;
+let versusListUnsub = null;
+let versusRoomDoc = null;
+let versusMyRole = null;
+let activeVersusCatalog = null;
+let activeVersusCatalogRoomCode = null;
+
+function versusRoomRef(code) { return firestoreDb.collection('versusRooms').doc(code); }
+function randomRoomCode() {
+  let code = '';
+  for (let i = 0; i < 6; i++) code += VERSUS_CODE_ALPHABET[Math.floor(Math.random() * VERSUS_CODE_ALPHABET.length)];
+  return code;
+}
+async function generateUniqueRoomCode() {
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const code = randomRoomCode();
+    const snap = await versusRoomRef(code).get();
+    if (!snap.exists) return code;
+  }
+  throw new Error('Impossible de générer un code de salon unique');
+}
+async function getVersusCatalog(roomDoc) {
+  if (activeVersusCatalog && activeVersusCatalogRoomCode === roomDoc.code) return activeVersusCatalog;
+  const artistMeta = artists.find(item => item.id === roomDoc.artistId);
+  const response = await fetch(artistMeta?.catalog || 'songs.json', { cache: 'no-store' });
+  const data = await response.json();
+  activeVersusCatalog = Array.isArray(data) ? data : [];
+  activeVersusCatalogRoomCode = roomDoc.code;
+  return activeVersusCatalog;
+}
+async function buildVersusRoundQcmOptions(roomDoc, roundIndex) {
+  if (roomDoc.roundType !== 'qcm') return null;
+  const song = roomDoc.deck[roundIndex];
+  const catalog = await getVersusCatalog(roomDoc);
+  return buildQcmOptions(song, catalog);
+}
+function showVersusLoginPrompt() {
+  ui.loginPromptGuest.hidden = true;
+  ui.loginPromptText.textContent = "Le mode VERSUS 1V1 nécessite une connexion Google : c'est ce qui identifie chaque joueur dans le salon et permet de synchroniser le match.";
+  ui.loginPromptOverlay.hidden = false;
+}
+
+/* ---- Panneau CRÉER / REJOINDRE / SALONS PUBLICS ---- */
+function openVersusPanel() {
+  ui.versusPanel.hidden = false;
+  if (document.querySelector('#versusTabs .leaderboard-tab.selected')?.dataset.versusTab === 'browse') startVersusBrowseList();
+}
+function closeVersusPanel() { ui.versusPanel.hidden = true; stopVersusBrowseList(); }
+function switchVersusTab(tab) {
+  ui.versusTabs.forEach(button => button.classList.toggle('selected', button.dataset.versusTab === tab));
+  ui.versusCreateTab.hidden = tab !== 'create';
+  ui.versusJoinTab.hidden = tab !== 'join';
+  ui.versusBrowseTab.hidden = tab !== 'browse';
+  if (tab === 'browse') startVersusBrowseList(); else stopVersusBrowseList();
+}
+function stopVersusBrowseList() { if (versusListUnsub) { versusListUnsub(); versusListUnsub = null; } }
+function startVersusBrowseList() {
+  stopVersusBrowseList();
+  if (!currentUser || !firestoreDb) { ui.versusBrowseStatus.textContent = 'Connecte-toi avec Google pour voir les salons.'; ui.versusRoomList.innerHTML = ''; return; }
+  ui.versusBrowseStatus.textContent = 'Chargement…';
+  versusListUnsub = firestoreDb.collection('versusRooms')
+    .where('visibility', '==', 'public').where('status', '==', 'lobby').limit(20)
+    .onSnapshot(snapshot => {
+      const rooms = snapshot.docs.map(doc => doc.data()).filter(room => room.hostUid !== currentUser?.uid);
+      rooms.sort((a, b) => (b.createdAt?.toMillis?.() || 0) - (a.createdAt?.toMillis?.() || 0));
+      renderVersusRoomList(rooms);
+    }, error => { console.error('Versus room list error', error); ui.versusBrowseStatus.textContent = 'Impossible de charger les salons publics.'; });
+}
+function renderVersusRoomList(rooms) {
+  if (!rooms.length) { ui.versusBrowseStatus.textContent = 'Aucun salon public ouvert pour le moment.'; ui.versusRoomList.innerHTML = ''; return; }
+  ui.versusBrowseStatus.textContent = `${rooms.length} salon${rooms.length > 1 ? 's' : ''} ouvert${rooms.length > 1 ? 's' : ''}`;
+  ui.versusRoomList.innerHTML = rooms.map(room => {
+    const roundTypeLabel = ROUND_TYPES[room.roundType]?.label || room.roundType;
+    const speedLabel = SPEED_PRESETS[room.speedKey]?.label || room.speedKey;
+    return `<li>
+      <span class="versus-room-list-info">
+        <img src="${escapeHtml(room.hostPhoto || '')}" alt="" />
+        <span class="versus-room-list-copy"><strong>${escapeHtml(room.hostName || 'Hôte')}</strong><small>${escapeHtml((room.artistName || '').toUpperCase())} · ${escapeHtml(roundTypeLabel)} · ${escapeHtml(speedLabel)} · ${room.rounds} MANCHES</small></span>
+      </span>
+      <button class="versus-room-join" type="button" data-code="${escapeHtml(room.code)}">REJOINDRE</button>
+    </li>`;
+  }).join('');
+  ui.versusRoomList.querySelectorAll('.versus-room-join').forEach(button => button.addEventListener('click', () => joinVersusRoom(button.dataset.code)));
+}
+
+/* ---- Créer / rejoindre un salon ---- */
+async function createVersusRoom() {
+  if (!currentUser) { pendingVersusAction = createVersusRoom; showVersusLoginPrompt(); return; }
+  if (!songs.length) { ui.versusCreateStatus.textContent = 'Choisis un artiste avec au moins un morceau.'; return; }
+  ui.versusCreateButton.disabled = true; ui.versusCreateStatus.textContent = 'Création du salon…';
+  try {
+    let roundType = document.querySelector('.round-type-option.selected')?.dataset.roundType || 'title';
+    if (roundType === 'artist' && !selectedArtist?.category) {
+      const fallback = artists.find(item => item.id === ARTIST_ROUND_FALLBACK_ID) || artists.find(item => item.category);
+      if (fallback) await selectArtist(fallback.id);
+    }
+    if (!songs.length) { ui.versusCreateStatus.textContent = 'Catalogue indisponible.'; return; }
+    const speedKey = document.querySelector('#speedPicker .round-option.selected')?.dataset.speed || 'classic';
+    const roundsWanted = Number(document.querySelector('#roundPicker .round-option.selected')?.dataset.rounds) || 10;
+    const visibility = document.querySelector('.versus-visibility .round-option.selected')?.dataset.visibility || 'public';
+    const catalog = songs.slice();
+    const rounds = Math.max(1, Math.min(roundsWanted, catalog.length));
+    const deck = shuffled(catalog).slice(0, rounds).map(song => ({
+      title: song.title, artist: song.artist || selectedArtist?.name || '', project: song.project || '', year: song.year || null,
+      releaseDate: song.releaseDate || '', deezerTrackId: song.deezerTrackId || null, audio: song.audio || null,
+      soundcloudUrl: song.soundcloudUrl || null, clipStart: song.clipStart || null, clipDuration: song.clipDuration || null
+    }));
+    const code = await generateUniqueRoomCode();
+    const roomData = {
+      code, visibility, status: 'lobby',
+      hostUid: currentUser.uid, hostName: currentUser.displayName || currentUser.email || 'Hôte', hostPhoto: currentUser.photoURL || '',
+      guestUid: null, guestName: null, guestPhoto: null,
+      artistId: selectedArtist?.id || 'ziak', artistName: selectedArtist?.name || 'Ziak',
+      roundType, speedKey, rounds, deck,
+      roundIndex: 0, roundStartedAt: null, roundResolved: false, roundWinnerUid: null, roundQcmOptions: null,
+      scores: { [currentUser.uid]: 0 },
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(), updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    };
+    await versusRoomRef(code).set(roomData);
+    activeVersusCatalog = catalog; activeVersusCatalogRoomCode = code;
+    subscribeVersusRoom(code);
+    ui.versusCreateStatus.textContent = '';
+    closeVersusPanel();
+  } catch (error) {
+    console.error(error);
+    ui.versusCreateStatus.textContent = 'Impossible de créer le salon.';
+  } finally {
+    ui.versusCreateButton.disabled = false;
+  }
+}
+async function joinVersusRoom(codeRaw) {
+  const code = String(codeRaw || '').trim().toUpperCase();
+  if (!currentUser) { pendingVersusAction = () => joinVersusRoom(code); showVersusLoginPrompt(); return; }
+  if (!code) { ui.versusJoinStatus.textContent = 'Entre un code de salon.'; return; }
+  ui.versusJoinButton.disabled = true; ui.versusJoinStatus.textContent = 'Connexion au salon…';
+  const ref = versusRoomRef(code);
+  try {
+    await firestoreDb.runTransaction(async transaction => {
+      const snap = await transaction.get(ref);
+      if (!snap.exists) throw new Error('not-found');
+      const data = snap.data();
+      if (data.status !== 'lobby') throw new Error('not-joinable');
+      if (data.hostUid === currentUser.uid) throw new Error('own-room');
+      if (data.guestUid && data.guestUid !== currentUser.uid) throw new Error('full');
+      transaction.update(ref, {
+        guestUid: currentUser.uid, guestName: currentUser.displayName || currentUser.email || 'Joueur', guestPhoto: currentUser.photoURL || '',
+        [`scores.${currentUser.uid}`]: data.scores?.[currentUser.uid] ?? 0,
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    });
+    subscribeVersusRoom(code);
+    ui.versusJoinStatus.textContent = ''; ui.versusCodeInput.value = '';
+    closeVersusPanel();
+  } catch (error) {
+    const messages = { 'not-found': 'Salon introuvable.', 'not-joinable': 'Ce salon n’est plus disponible.', 'own-room': 'C’est ton propre salon — attends un adversaire.', full: 'Ce salon est déjà complet.' };
+    ui.versusJoinStatus.textContent = messages[error.message] || 'Impossible de rejoindre ce salon.';
+  } finally {
+    ui.versusJoinButton.disabled = false;
+  }
+}
+
+/* ---- Abonnement temps réel + réacteur central ---- */
+function subscribeVersusRoom(code) {
+  unsubscribeVersusRoom();
+  localStorage.setItem('blindtest-versus-room', code);
+  versusRoomUnsub = versusRoomRef(code).onSnapshot(snap => {
+    if (!snap.exists) { handleVersusRoomTerminated('Ce salon n’existe plus.'); return; }
+    handleVersusRoomUpdate({ code, ...snap.data() });
+  }, error => console.error('Versus room listener error', error));
+}
+function unsubscribeVersusRoom() { if (versusRoomUnsub) { versusRoomUnsub(); versusRoomUnsub = null; } }
+function handleVersusRoomUpdate(roomDoc) {
+  versusRoomDoc = roomDoc;
+  versusMyRole = currentUser && roomDoc.hostUid === currentUser.uid ? 'host' : (currentUser && roomDoc.guestUid === currentUser.uid ? 'guest' : null);
+  if (!versusMyRole) return;
+  if (roomDoc.status === 'cancelled') { handleVersusRoomTerminated('Le salon a été annulé.'); return; }
+  if (roomDoc.status === 'lobby') { ui.versusRoomOverlay.hidden = false; renderVersusRoomOverlay(roomDoc); return; }
+  if (roomDoc.status === 'playing') {
+    ui.versusRoomOverlay.hidden = true;
+    if (!versusActive) enterVersusMatch(roomDoc);
+    updateVersusMatchFromSnapshot(roomDoc);
+    return;
+  }
+  if (roomDoc.status === 'finished') {
+    versusActive = false;
+    showVersusResult(roomDoc);
+    unsubscribeVersusRoom();
+    localStorage.removeItem('blindtest-versus-room');
+  }
+}
+function handleVersusRoomTerminated(message) {
+  ui.versusRoomStatus.textContent = message;
+  ui.versusStartButton.hidden = true; ui.versusAbandonButton.hidden = true;
+  unsubscribeVersusRoom();
+  localStorage.removeItem('blindtest-versus-room');
+  setTimeout(() => {
+    ui.versusRoomOverlay.hidden = true; ui.versusHeader.hidden = true; ui.versusInGameAbandon.hidden = true;
+    versusRoomDoc = null; versusMyRole = null; vState = null; versusActive = false;
+    if (ui.game.classList.contains('hidden') === false) show(ui.setup);
+  }, 2000);
+}
+
+/* ---- Salle d'attente ---- */
+function renderVersusRoomOverlay(roomDoc) {
+  ui.versusRoomCode.textContent = roomDoc.code;
+  ui.versusRoomVisibility.textContent = roomDoc.visibility === 'public' ? 'SALON PUBLIC' : 'SALON PRIVÉ';
+  ui.versusRoomHostPhoto.src = roomDoc.hostPhoto || ''; ui.versusRoomHostName.textContent = roomDoc.hostName || 'Hôte';
+  if (roomDoc.guestUid) {
+    ui.versusRoomGuestPhoto.hidden = false; ui.versusRoomGuestPhoto.src = roomDoc.guestPhoto || '';
+    ui.versusRoomGuestName.textContent = roomDoc.guestName || 'Joueur';
+  } else {
+    ui.versusRoomGuestPhoto.hidden = true; ui.versusRoomGuestPhoto.removeAttribute('src');
+    ui.versusRoomGuestName.textContent = 'EN ATTENTE…';
+  }
+  const roundTypeLabel = ROUND_TYPES[roomDoc.roundType]?.label || roomDoc.roundType;
+  const speedLabel = SPEED_PRESETS[roomDoc.speedKey]?.label || roomDoc.speedKey;
+  ui.versusRoomSettings.textContent = `${(roomDoc.artistName || '').toUpperCase()} · ${roundTypeLabel} · ${speedLabel} · ${roomDoc.rounds} MANCHES`;
+  const isHost = versusMyRole === 'host';
+  ui.versusStartButton.hidden = !isHost;
+  ui.versusStartButton.disabled = !roomDoc.guestUid;
+  ui.versusAbandonButton.hidden = false;
+  ui.versusRoomStatus.textContent = isHost ? (roomDoc.guestUid ? '' : 'Partage le code, ou attends un joueur depuis les salons publics.') : 'En attente que l’hôte lance la partie…';
+}
+async function startVersusMatch() {
+  if (!versusRoomDoc || versusMyRole !== 'host' || !versusRoomDoc.guestUid) return;
+  ui.versusStartButton.disabled = true;
+  try {
+    const qcmOptions = await buildVersusRoundQcmOptions(versusRoomDoc, 0);
+    await versusRoomRef(versusRoomDoc.code).update({
+      status: 'playing', roundIndex: 0, roundStartedAt: Date.now(), roundResolved: false, roundWinnerUid: null,
+      roundQcmOptions: qcmOptions, updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } catch (error) {
+    console.error(error);
+    ui.versusRoomStatus.textContent = 'Impossible de lancer la partie.';
+    ui.versusStartButton.disabled = false;
+  }
+}
+
+/* ---- Match en cours (réutilise le moteur de lecture partagé) ---- */
+function enterVersusMatch(roomDoc) {
+  versusActive = true;
+  const opponentUid = versusMyRole === 'host' ? roomDoc.guestUid : roomDoc.hostUid;
+  const rawSpeed = SPEED_PRESETS[roomDoc.speedKey] || SPEED_PRESETS.classic;
+  // En versus, pas de bouton « passer » : une vitesse « illimitée » (Expert) est
+  // plafonnée pour garantir qu'une manche se termine toujours.
+  const adaptedSpeed = rawSpeed.answer == null ? { ...rawSpeed, answer: rawSpeed.scoreBudget || ROUND_SECONDS } : rawSpeed;
+  vState = {
+    code: roomDoc.code, myUid: currentUser.uid, opponentUid,
+    roundType: roomDoc.roundType, speed: adaptedSpeed, artist: { name: roomDoc.artistName },
+    lastRenderedRoundIndex: -1, lastRenderedRoundStartedAt: null,
+    roundResolved: false, timerId: null, phase: null, current: null, hints: 0, revealed: new Set(),
+    startedAt: 0, scoreBudgetSeconds: 0, autoplayAttempted: false, clipTimer: null, onTrackReady
+  };
+  vState.onAnswerTimeout = () => versusHandleTimeout();
+  vState.onCorrectGuess = (options) => versusSubmitAnswer(options);
+  vState.onWrongGuess = (button) => { if (vState.roundType === 'qcm') disableQcmChoices(vState.current.title, button); };
+  ui.versusHeader.hidden = false; ui.versusInGameAbandon.hidden = false;
+  ui.versusMePhoto.src = currentUser.photoURL || ''; ui.versusMeName.textContent = currentUser.displayName || currentUser.email || 'Toi';
+  const opponentName = versusMyRole === 'host' ? roomDoc.guestName : roomDoc.hostName;
+  const opponentPhoto = versusMyRole === 'host' ? roomDoc.guestPhoto : roomDoc.hostPhoto;
+  ui.versusOpponentName.textContent = opponentName || 'Adversaire'; ui.versusOpponentPhoto.src = opponentPhoto || '';
+  show(ui.game);
+}
+function updateVersusMatchFromSnapshot(roomDoc) {
+  ui.versusMeScoreLive.textContent = roomDoc.scores?.[vState.myUid] || 0;
+  ui.versusOpponentScoreLive.textContent = roomDoc.scores?.[vState.opponentUid] || 0;
+  if (roomDoc.roundIndex !== vState.lastRenderedRoundIndex || roomDoc.roundStartedAt !== vState.lastRenderedRoundStartedAt) versusStartRound(roomDoc);
+  else if (roomDoc.roundResolved && !vState.roundResolved) versusHandleRoundResolved(roomDoc);
+}
+function versusStartRound(roomDoc) {
+  clearInterval(vState.timerId);
+  vState.lastRenderedRoundIndex = roomDoc.roundIndex; vState.lastRenderedRoundStartedAt = roomDoc.roundStartedAt;
+  vState.roundResolved = false; vState.submitting = false; vState.current = roomDoc.deck[roomDoc.roundIndex]; vState.qcmOptions = roomDoc.roundQcmOptions || null;
+  vState.hints = 0; vState.revealed = new Set();
+  vState.timerStarted = false; vState.trackReady = false; vState.phase = 'listen'; vState.scoreBudgetSeconds = 0; vState.autoplayAttempted = false;
+  const isQcm = vState.roundType === 'qcm';
+  const freestylePrefix = vState.roundType === 'title' ? freestylePrefixEnd(vState.current.title) : null;
+  ui.input.value = freestylePrefix !== null ? vState.current.title.slice(0, freestylePrefix) : '';
+  ui.input.placeholder = vState.roundType === 'artist' ? "NOM DE L'ARTISTE" : 'NOM DU MORCEAU';
+  ui.input.disabled = isQcm; ui.validate.disabled = isQcm; ui.hint.disabled = isQcm;
+  ui.input.hidden = isQcm; ui.validate.hidden = isQcm; ui.hint.hidden = isQcm;
+  ui.skip.hidden = true; ui.skip.disabled = true;
+  ui.qcmChoices.hidden = !isQcm;
+  if (isQcm) renderQcmChoices();
+  ui.play.disabled = Boolean(vState.speed?.listen) && !vState.speed?.allowReplay;
+  ui.answerCountdown.hidden = true; ui.waveform.classList.remove('hidden'); ui.playerControls.classList.remove('hidden');
+  ui.feedback.textContent = ''; ui.feedback.className = 'feedback'; ui.hintCount.textContent = `×${HINTS_PER_ROUND}`;
+  ui.roundLabel.textContent = `VERSUS · MANCHE ${roomDoc.roundIndex + 1} / ${roomDoc.rounds}`;
+  ui.score.textContent = roomDoc.scores?.[vState.myUid] || 0;
+  if (ui.rankLabel) ui.rankLabel.hidden = true;
+  ui.timer.style.transform = 'scaleX(1)'; ui.timerText.textContent = 'CHARGEMENT…';
+  activeState = vState;
+  loadTrack();
+  renderHint();
+  if (!isQcm) ui.input.focus();
+}
+async function versusSubmitAnswer(options = {}) {
+  // Ne verrouille PAS vState.roundResolved ici : seule la snapshot Firestore
+  // (via versusHandleRoundResolved) doit déclencher l'affichage du résultat,
+  // sinon le joueur qui vient de gagner ne verrait jamais sa propre réponse
+  // révélée (le guard `!vState.roundResolved` bloquerait son propre passage
+  // dans versusHandleRoundResolved). `submitting` empêche juste un double-envoi.
+  if (!versusActive || vState.roundResolved || vState.submitting) return;
+  vState.submitting = true; clearInterval(vState.timerId);
+  const elapsedSeconds = (performance.now() - vState.startedAt) / 1000;
+  const budget = vState.scoreBudgetSeconds || ROUND_SECONDS;
+  let points = Math.max(100, Math.round((budget - Math.min(elapsedSeconds, budget)) * 20) - vState.hints * 35);
+  if (options.outOfOrder) points = Math.round(points * OUT_OF_ORDER_PENALTY_RATIO);
+  const ref = versusRoomRef(vState.code);
+  const roundIndexAtSubmit = vState.lastRenderedRoundIndex;
+  try {
+    await firestoreDb.runTransaction(async transaction => {
+      const snap = await transaction.get(ref);
+      const data = snap.data();
+      if (!data || data.roundIndex !== roundIndexAtSubmit || data.roundResolved) return;
+      transaction.update(ref, {
+        roundResolved: true, roundWinnerUid: vState.myUid,
+        [`scores.${vState.myUid}`]: (data.scores?.[vState.myUid] || 0) + points,
+        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    });
+  } catch (error) {
+    console.error('Versus answer transaction failed', error);
+  } finally {
+    vState.submitting = false;
+  }
+}
+async function versusHandleTimeout() {
+  if (!versusActive || vState.roundResolved || versusMyRole !== 'host') return;
+  const ref = versusRoomRef(vState.code);
+  const roundIndexAtTimeout = vState.lastRenderedRoundIndex;
+  try {
+    await firestoreDb.runTransaction(async transaction => {
+      const snap = await transaction.get(ref);
+      const data = snap.data();
+      if (!data || data.roundIndex !== roundIndexAtTimeout || data.roundResolved) return;
+      transaction.update(ref, { roundResolved: true, roundWinnerUid: null, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+    });
+  } catch (error) { console.error('Versus timeout transaction failed', error); }
+}
+function versusHandleRoundResolved(roomDoc) {
+  if (vState.roundResolved) return;
+  vState.roundResolved = true; clearInterval(vState.timerId); stopPlayback();
+  const winnerUid = roomDoc.roundWinnerUid; const iWon = winnerUid === vState.myUid; const nobodyWon = !winnerUid;
+  ui.input.disabled = true; ui.validate.disabled = true; ui.hint.disabled = true; ui.play.disabled = true;
+  if (vState.roundType === 'qcm') disableQcmChoices(vState.current.title);
+  const target = roundTargetText();
+  ui.feedback.textContent = nobodyWon ? `Temps écoulé : ${target}` : (iWon ? 'BIEN JOUÉ ! POINT MARQUÉ' : `${versusMyRole === 'host' ? roomDoc.guestName : roomDoc.hostName} a trouvé en premier : ${target}`);
+  ui.feedback.className = `feedback ${iWon ? 'correct' : 'wrong'}`;
+  if (vState.roundType !== 'qcm') ui.hintText.textContent = `${iWon ? '✓' : nobodyWon ? '…' : '✕'} ${target.toUpperCase()}`;
+  vState.revealVisible = true; showTrackReveal();
+  if (versusMyRole === 'host') setTimeout(() => versusAdvanceRound(roomDoc), 1700);
+}
+async function versusAdvanceRound(roomDoc) {
+  if (versusMyRole !== 'host' || !versusActive) return;
+  const ref = versusRoomRef(roomDoc.code);
+  const nextIndex = roomDoc.roundIndex + 1;
+  try {
+    if (nextIndex >= roomDoc.rounds) { await ref.update({ status: 'finished', updatedAt: firebase.firestore.FieldValue.serverTimestamp() }); return; }
+    const qcmOptions = await buildVersusRoundQcmOptions(roomDoc, nextIndex);
+    await ref.update({
+      roundIndex: nextIndex, roundStartedAt: Date.now(), roundResolved: false, roundWinnerUid: null, roundQcmOptions: qcmOptions,
+      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } catch (error) { console.error('Impossible d’avancer la manche versus', error); }
+}
+
+/* ---- Fin de match / abandon / sortie ---- */
+function showVersusResult(roomDoc) {
+  const myUid = currentUser.uid;
+  const isHostMe = roomDoc.hostUid === myUid;
+  const opponentUid = isHostMe ? roomDoc.guestUid : roomDoc.hostUid;
+  const myScore = roomDoc.scores?.[myUid] || 0;
+  const opponentScore = roomDoc.scores?.[opponentUid] || 0;
+  ui.versusHeader.hidden = true; ui.versusInGameAbandon.hidden = true;
+  show(ui.setup);
+  ui.versusResultMePhoto.src = currentUser.photoURL || ''; ui.versusResultMeName.textContent = currentUser.displayName || currentUser.email || 'Toi';
+  ui.versusResultMeScore.textContent = myScore;
+  ui.versusResultOpponentPhoto.src = (isHostMe ? roomDoc.guestPhoto : roomDoc.hostPhoto) || '';
+  ui.versusResultOpponentName.textContent = (isHostMe ? roomDoc.guestName : roomDoc.hostName) || 'Adversaire';
+  ui.versusResultOpponentScore.textContent = opponentScore;
+  let banner = 'ÉGALITÉ'; let cls = 'draw';
+  if (roomDoc.abandonedBy && roomDoc.abandonedBy !== myUid) { banner = 'VICTOIRE PAR ABANDON'; cls = ''; }
+  else if (roomDoc.abandonedBy && roomDoc.abandonedBy === myUid) { banner = 'ABANDON'; cls = 'lose'; }
+  else if (myScore > opponentScore) { banner = 'VICTOIRE'; cls = ''; }
+  else if (myScore < opponentScore) { banner = 'DÉFAITE'; cls = 'lose'; }
+  ui.versusResultBanner.textContent = banner; ui.versusResultBanner.className = `versus-result-banner ${cls}`;
+  ui.versusResultOverlay.hidden = false;
+}
+async function leaveVersusRoom() {
+  if (!versusRoomDoc) { ui.versusRoomOverlay.hidden = true; return; }
+  const code = versusRoomDoc.code; const role = versusMyRole; const status = versusRoomDoc.status;
+  unsubscribeVersusRoom();
+  ui.versusRoomOverlay.hidden = true; ui.versusHeader.hidden = true; ui.versusInGameAbandon.hidden = true;
+  localStorage.removeItem('blindtest-versus-room');
+  versusActive = false; versusRoomDoc = null; versusMyRole = null; vState = null;
+  if (status === 'lobby') {
+    try {
+      if (role === 'host') await versusRoomRef(code).update({ status: 'cancelled', updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+      else await versusRoomRef(code).update({ guestUid: null, guestName: null, guestPhoto: null, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+    } catch (error) { console.error('Impossible de nettoyer le salon', error); }
+  }
+  show(ui.setup);
+}
+async function abandonVersusMatch() {
+  if (!versusRoomDoc) return;
+  if (versusRoomDoc.status !== 'playing') { leaveVersusRoom(); return; }
+  try {
+    await versusRoomRef(versusRoomDoc.code).update({ status: 'finished', abandonedBy: currentUser.uid, updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+  } catch (error) { console.error(error); }
+}
+
+/* ---- Câblage des événements ---- */
+if (ui.versusButton) ui.versusButton.addEventListener('click', () => {
+  const wasHidden = ui.versusPanel.hidden;
+  ui.versusPanel.hidden = !ui.versusPanel.hidden;
+  if (wasHidden) openVersusPanel(); else closeVersusPanel();
+});
+if (ui.versusPanelClose) ui.versusPanelClose.addEventListener('click', closeVersusPanel);
+ui.versusTabs.forEach(button => button.addEventListener('click', () => switchVersusTab(button.dataset.versusTab)));
+ui.versusVisibilityOptions.forEach(button => button.addEventListener('click', () => {
+  ui.versusVisibilityOptions.forEach(item => item.classList.toggle('selected', item === button));
+}));
+if (ui.versusCreateButton) ui.versusCreateButton.addEventListener('click', createVersusRoom);
+if (ui.versusJoinButton) ui.versusJoinButton.addEventListener('click', () => joinVersusRoom(ui.versusCodeInput.value));
+if (ui.versusCodeInput) ui.versusCodeInput.addEventListener('keydown', event => { if (event.key === 'Enter') joinVersusRoom(ui.versusCodeInput.value); });
+if (ui.versusRoomClose) ui.versusRoomClose.addEventListener('click', leaveVersusRoom);
+if (ui.versusStartButton) ui.versusStartButton.addEventListener('click', startVersusMatch);
+if (ui.versusAbandonButton) ui.versusAbandonButton.addEventListener('click', leaveVersusRoom);
+if (ui.versusInGameAbandon) ui.versusInGameAbandon.addEventListener('click', abandonVersusMatch);
+if (ui.versusResultClose) ui.versusResultClose.addEventListener('click', () => {
+  ui.versusResultOverlay.hidden = true; versusRoomDoc = null; versusMyRole = null; vState = null;
+});
+if (ui.loginPromptClose) ui.loginPromptClose.addEventListener('click', () => { pendingVersusAction = null; });

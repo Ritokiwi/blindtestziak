@@ -1,0 +1,986 @@
+[
+  {
+    "id": "sasso-1523015632",
+    "title": "TMAX530",
+    "project": "TMAX530",
+    "year": 2019,
+    "releaseDate": "2019-04-06",
+    "deezerTrackId": 1523015632
+  },
+  {
+    "id": "sasso-1487810372",
+    "title": "Pardonne-moi",
+    "project": "Pardonne-moi",
+    "year": 2019,
+    "releaseDate": "2019-05-10",
+    "deezerTrackId": 1487810372
+  },
+  {
+    "id": "sasso-1354694042",
+    "title": "Cartelito",
+    "project": "Cartelito",
+    "year": 2019,
+    "releaseDate": "2019-07-04",
+    "deezerTrackId": 1354694042
+  },
+  {
+    "id": "sasso-1347527602",
+    "title": "Coca-Cherry",
+    "project": "Coca-Cherry",
+    "year": 2019,
+    "releaseDate": "2019-09-13",
+    "deezerTrackId": 1347527602
+  },
+  {
+    "id": "sasso-1354604452",
+    "title": "Rafa",
+    "project": "Rafa",
+    "year": 2019,
+    "releaseDate": "2019-10-05",
+    "deezerTrackId": 1354604452
+  },
+  {
+    "id": "sasso-1354641552",
+    "title": "Solo",
+    "project": "Solo",
+    "year": 2019,
+    "releaseDate": "2019-10-20",
+    "deezerTrackId": 1354641552
+  },
+  {
+    "id": "sasso-1487766252",
+    "title": "Ketru",
+    "project": "Ketru",
+    "year": 2020,
+    "releaseDate": "2020-01-31",
+    "deezerTrackId": 1487766252
+  },
+  {
+    "id": "sasso-1035407512",
+    "title": "On va tout casser",
+    "project": "On va tout casser",
+    "year": 2020,
+    "releaseDate": "2020-07-29",
+    "deezerTrackId": 1035407512
+  },
+  {
+    "id": "sasso-1030695242",
+    "title": "Parano",
+    "project": "Parano",
+    "year": 2020,
+    "releaseDate": "2020-08-07",
+    "deezerTrackId": 1030695242
+  },
+  {
+    "id": "sasso-1069659032",
+    "title": "J'picole",
+    "project": "J'picole",
+    "year": 2020,
+    "releaseDate": "2020-09-18",
+    "deezerTrackId": 1069659032
+  },
+  {
+    "id": "sasso-1136111832",
+    "title": "Freestyle Boudouki",
+    "project": "Freestyle Boudouki",
+    "year": 2020,
+    "releaseDate": "2020-11-13",
+    "deezerTrackId": 1136111832
+  },
+  {
+    "id": "sasso-1140089282",
+    "title": "Tout donner",
+    "project": "Tout donner (feat. Rémy)",
+    "year": 2020,
+    "releaseDate": "2020-11-27",
+    "deezerTrackId": 1140089282
+  },
+  {
+    "id": "sasso-1213911642",
+    "title": "Freestyle Kiwi",
+    "project": "Freestyle Kiwi",
+    "year": 2020,
+    "releaseDate": "2020-12-04",
+    "deezerTrackId": 1213911642
+  },
+  {
+    "id": "sasso-1159097422",
+    "title": "Night",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097422
+  },
+  {
+    "id": "sasso-1159097432",
+    "title": "Pour des années",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097432
+  },
+  {
+    "id": "sasso-1159097442",
+    "title": "Différent",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097442
+  },
+  {
+    "id": "sasso-1159097452",
+    "title": "J'pense",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097452
+  },
+  {
+    "id": "sasso-1159097462",
+    "title": "2h28",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097462
+  },
+  {
+    "id": "sasso-1159097482",
+    "title": "Le son des bandits",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097482
+  },
+  {
+    "id": "sasso-1159097492",
+    "title": "Beyoncé",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097492
+  },
+  {
+    "id": "sasso-1159097502",
+    "title": "Gros bolide",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097502
+  },
+  {
+    "id": "sasso-1159097512",
+    "title": "J'encaisse",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097512
+  },
+  {
+    "id": "sasso-1159097532",
+    "title": "12",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097532
+  },
+  {
+    "id": "sasso-1159097542",
+    "title": "J'entends des choses sur moi",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097542
+  },
+  {
+    "id": "sasso-1159097562",
+    "title": "Mama",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097562
+  },
+  {
+    "id": "sasso-1159097572",
+    "title": "Tout va mal",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097572
+  },
+  {
+    "id": "sasso-1159097582",
+    "title": "Afrodrill - Bonus track",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097582
+  },
+  {
+    "id": "sasso-1159097592",
+    "title": "Elle - Bonus track",
+    "project": "Enfant2LaRue Vol.1",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1159097592
+  },
+  {
+    "id": "sasso-1278138652",
+    "title": "Napoli",
+    "project": "Napoli",
+    "year": 2021,
+    "releaseDate": "2021-03-31",
+    "deezerTrackId": 1278138652
+  },
+  {
+    "id": "sasso-1396494392",
+    "title": "Les doigts en l'air",
+    "project": "Les doigts en l'air",
+    "year": 2021,
+    "releaseDate": "2021-06-18",
+    "deezerTrackId": 1396494392
+  },
+  {
+    "id": "sasso-1452521302",
+    "title": "Chacun sa vie",
+    "project": "Chacun sa vie",
+    "year": 2021,
+    "releaseDate": "2021-07-07",
+    "deezerTrackId": 1452521302
+  },
+  {
+    "id": "sasso-1409354242",
+    "title": "Intro",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354242
+  },
+  {
+    "id": "sasso-1409354252",
+    "title": "Hella",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354252
+  },
+  {
+    "id": "sasso-1409354262",
+    "title": "Balafres",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354262
+  },
+  {
+    "id": "sasso-1409354282",
+    "title": "Le sang",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354282
+  },
+  {
+    "id": "sasso-1409354292",
+    "title": "Midi pile",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354292
+  },
+  {
+    "id": "sasso-1409354302",
+    "title": "Disque d'or",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354302
+  },
+  {
+    "id": "sasso-1409354312",
+    "title": "À deux",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354312
+  },
+  {
+    "id": "sasso-1409354322",
+    "title": "Le son du ghetto",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354322
+  },
+  {
+    "id": "sasso-1409354332",
+    "title": "C'est ma vie",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354332
+  },
+  {
+    "id": "sasso-1409354342",
+    "title": "J'ai plus les mots",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354342
+  },
+  {
+    "id": "sasso-1409354362",
+    "title": "Je m'enfume",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354362
+  },
+  {
+    "id": "sasso-1409354372",
+    "title": "Los Angeles",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354372
+  },
+  {
+    "id": "sasso-1409354382",
+    "title": "Dans la zone",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354382
+  },
+  {
+    "id": "sasso-1409354392",
+    "title": "Elle veut",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354392
+  },
+  {
+    "id": "sasso-1409354402",
+    "title": "D.V.A.V",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354402
+  },
+  {
+    "id": "sasso-1409354412",
+    "title": "Chemin de la son-mai",
+    "project": "Enfant2LaRue Vol. 2",
+    "year": 2021,
+    "releaseDate": "2021-07-09",
+    "deezerTrackId": 1409354412
+  },
+  {
+    "id": "sasso-1563153672",
+    "title": "Freestyle Booska Billets",
+    "project": "Freestyle Booska Billets",
+    "year": 2021,
+    "releaseDate": "2021-12-07",
+    "deezerTrackId": 1563153672
+  },
+  {
+    "id": "sasso-1563104822",
+    "title": "Loco",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104822
+  },
+  {
+    "id": "sasso-1563104832",
+    "title": "Ailleurs",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104832
+  },
+  {
+    "id": "sasso-1563104842",
+    "title": "Je fais des tours",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104842
+  },
+  {
+    "id": "sasso-1563104852",
+    "title": "Chapeau de paille",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104852
+  },
+  {
+    "id": "sasso-1563104862",
+    "title": "Ma beauté",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104862
+  },
+  {
+    "id": "sasso-1563104872",
+    "title": "J'rigole",
+    "project": "Enfant2LaRue Vol. 2 (Réédition)",
+    "year": 2021,
+    "releaseDate": "2021-12-10",
+    "deezerTrackId": 1563104872
+  },
+  {
+    "id": "sasso-1663029342",
+    "title": "Elle m'a dit je t'aime",
+    "project": "Elle m'a dit je t'aime",
+    "year": 2022,
+    "releaseDate": "2022-03-04",
+    "deezerTrackId": 1663029342
+  },
+  {
+    "id": "sasso-1685556817",
+    "title": "J'ai pas le temps",
+    "project": "J'ai pas le temps",
+    "year": 2022,
+    "releaseDate": "2022-03-24",
+    "deezerTrackId": 1685556817
+  },
+  {
+    "id": "sasso-1702034287",
+    "title": "Ma jolie",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034287
+  },
+  {
+    "id": "sasso-1702034297",
+    "title": "Kichta balaise",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034297
+  },
+  {
+    "id": "sasso-1702034307",
+    "title": "Quand t'as mal",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034307
+  },
+  {
+    "id": "sasso-1702034317",
+    "title": "Toute l'année",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034317
+  },
+  {
+    "id": "sasso-1702034327",
+    "title": "C'est le zoo",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034327
+  },
+  {
+    "id": "sasso-1702034337",
+    "title": "Minuit passé",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034337
+  },
+  {
+    "id": "sasso-1702034347",
+    "title": "Ils courent les rats",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034347
+  },
+  {
+    "id": "sasso-1702034357",
+    "title": "J'ai pas sommeil",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034357
+  },
+  {
+    "id": "sasso-1702034367",
+    "title": "Coeurs abimés",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034367
+  },
+  {
+    "id": "sasso-1702034377",
+    "title": "Allez allez",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034377
+  },
+  {
+    "id": "sasso-1702034397",
+    "title": "On s'en bat les klaouis",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034397
+  },
+  {
+    "id": "sasso-1702034407",
+    "title": "M'en voulez pas",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034407
+  },
+  {
+    "id": "sasso-1702034417",
+    "title": "Trop de problèmes",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034417
+  },
+  {
+    "id": "sasso-1702034427",
+    "title": "Fusil sous le matelas",
+    "project": "2 Lions",
+    "year": 2022,
+    "releaseDate": "2022-05-13",
+    "deezerTrackId": 1702034427
+  },
+  {
+    "id": "sasso-1806151547",
+    "title": "Casemiro",
+    "project": "Casemiro",
+    "year": 2022,
+    "releaseDate": "2022-07-08",
+    "deezerTrackId": 1806151547
+  },
+  {
+    "id": "sasso-1818350927",
+    "title": "La Mafia d'Italie",
+    "project": "La Mafia d'Italie",
+    "year": 2022,
+    "releaseDate": "2022-07-21",
+    "deezerTrackId": 1818350927
+  },
+  {
+    "id": "sasso-1844504857",
+    "title": "E2LR",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504857
+  },
+  {
+    "id": "sasso-1844504867",
+    "title": "Nouveau chapitre",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504867
+  },
+  {
+    "id": "sasso-1844504877",
+    "title": "La neige",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504877
+  },
+  {
+    "id": "sasso-1844504887",
+    "title": "Billets violets",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504887
+  },
+  {
+    "id": "sasso-1844504907",
+    "title": "Mal à la tête",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504907
+  },
+  {
+    "id": "sasso-1844504927",
+    "title": "Oublie-moi",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504927
+  },
+  {
+    "id": "sasso-1844504937",
+    "title": "Je la connais",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504937
+  },
+  {
+    "id": "sasso-1844504947",
+    "title": "Mandat de dépôt",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504947
+  },
+  {
+    "id": "sasso-1844504957",
+    "title": "Hiya",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504957
+  },
+  {
+    "id": "sasso-1844504967",
+    "title": "Monaco",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504967
+  },
+  {
+    "id": "sasso-1844504977",
+    "title": "Ma voie",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504977
+  },
+  {
+    "id": "sasso-1844504987",
+    "title": "VINGT",
+    "project": "Enfant2LaRue Vol.3",
+    "year": 2022,
+    "releaseDate": "2022-08-26",
+    "deezerTrackId": 1844504987
+  },
+  {
+    "id": "sasso-2285272747",
+    "title": "Tour du monde",
+    "project": "Tour du monde",
+    "year": 2023,
+    "releaseDate": "2023-05-26",
+    "deezerTrackId": 2285272747
+  },
+  {
+    "id": "sasso-2324286765",
+    "title": "Redémarrer",
+    "project": "Redémarrer",
+    "year": 2023,
+    "releaseDate": "2023-06-21",
+    "deezerTrackId": 2324286765
+  },
+  {
+    "id": "sasso-2344469975",
+    "title": "Rêves de gosse",
+    "project": "Rêves de gosse",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2344469975
+  },
+  {
+    "id": "sasso-2625340672",
+    "title": "Livraisons",
+    "project": "Livraisons",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2625340672
+  },
+  {
+    "id": "sasso-2831157902",
+    "title": "Ça traine la night",
+    "project": "Ça traine la night",
+    "year": 2024,
+    "releaseDate": "2024-06-14",
+    "deezerTrackId": 2831157902
+  },
+  {
+    "id": "sasso-2861668282",
+    "title": "Bandito",
+    "project": "Bandito",
+    "year": 2024,
+    "releaseDate": "2024-06-27",
+    "deezerTrackId": 2861668282
+  },
+  {
+    "id": "sasso-2851805172",
+    "title": "GTO",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805172
+  },
+  {
+    "id": "sasso-2851805202",
+    "title": "Vice City",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805202
+  },
+  {
+    "id": "sasso-2851805212",
+    "title": "Controle",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805212
+  },
+  {
+    "id": "sasso-2851805222",
+    "title": "Bonbon",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805222
+  },
+  {
+    "id": "sasso-2851805232",
+    "title": "Petit Coeur",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805232
+  },
+  {
+    "id": "sasso-2851805242",
+    "title": "La folie",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805242
+  },
+  {
+    "id": "sasso-2851805252",
+    "title": "5AM",
+    "project": "VICE CITY",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2851805252
+  },
+  {
+    "id": "sasso-3037720981",
+    "title": "Excalibur",
+    "project": "Excalibur",
+    "year": 2024,
+    "releaseDate": "2024-10-18",
+    "deezerTrackId": 3037720981
+  },
+  {
+    "id": "sasso-3102432331",
+    "title": "Malade",
+    "project": "Malade",
+    "year": 2024,
+    "releaseDate": "2024-11-29",
+    "deezerTrackId": 3102432331
+  },
+  {
+    "id": "sasso-3137429081",
+    "title": "Sans toi",
+    "project": "Sans toi",
+    "year": 2024,
+    "releaseDate": "2024-12-17",
+    "deezerTrackId": 3137429081
+  },
+  {
+    "id": "sasso-3137429111",
+    "title": "Guardia",
+    "project": "Guardia",
+    "year": 2024,
+    "releaseDate": "2024-12-17",
+    "deezerTrackId": 3137429111
+  },
+  {
+    "id": "sasso-3112811061",
+    "title": "Si tu veux la guerre",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811061
+  },
+  {
+    "id": "sasso-3112811091",
+    "title": "La galère",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811091
+  },
+  {
+    "id": "sasso-3112811101",
+    "title": "Passat",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811101
+  },
+  {
+    "id": "sasso-3112811111",
+    "title": "La mondéo",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811111
+  },
+  {
+    "id": "sasso-3112811121",
+    "title": "Pas un mot",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811121
+  },
+  {
+    "id": "sasso-3112811131",
+    "title": "Train de vie",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811131
+  },
+  {
+    "id": "sasso-3112811141",
+    "title": "5h30",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811141
+  },
+  {
+    "id": "sasso-3112811151",
+    "title": "Samos",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811151
+  },
+  {
+    "id": "sasso-3112811161",
+    "title": "Dans mon coeur",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811161
+  },
+  {
+    "id": "sasso-3112811171",
+    "title": "Solitaire",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811171
+  },
+  {
+    "id": "sasso-3112811181",
+    "title": "Plaqué NL",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811181
+  },
+  {
+    "id": "sasso-3112811191",
+    "title": "France d'en bas",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811191
+  },
+  {
+    "id": "sasso-3112811211",
+    "title": "En bizarre",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811211
+  },
+  {
+    "id": "sasso-3112811221",
+    "title": "Dans la CR",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811221
+  },
+  {
+    "id": "sasso-3112811231",
+    "title": "Mode avion",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811231
+  },
+  {
+    "id": "sasso-3112811241",
+    "title": "Avenue Montaigne",
+    "project": "Stories",
+    "year": 2024,
+    "releaseDate": "2024-12-18",
+    "deezerTrackId": 3112811241
+  },
+  {
+    "id": "sasso-3223534391",
+    "title": "Pour la vie",
+    "project": "Stories (Version bonus)",
+    "year": 2025,
+    "releaseDate": "2025-02-14",
+    "deezerTrackId": 3223534391
+  },
+  {
+    "id": "sasso-3384676471",
+    "title": "J'tourne en rond",
+    "project": "J'tourne en rond",
+    "year": 2025,
+    "releaseDate": "2025-05-30",
+    "deezerTrackId": 3384676471
+  },
+  {
+    "id": "sasso-3417633181",
+    "title": "Sous les étoiles",
+    "project": "Sous les étoiles",
+    "year": 2025,
+    "releaseDate": "2025-06-27",
+    "deezerTrackId": 3417633181
+  },
+  {
+    "id": "sasso-3592858352",
+    "title": "HARDCORE",
+    "project": "HARDCORE",
+    "year": 2025,
+    "releaseDate": "2025-10-15",
+    "deezerTrackId": 3592858352
+  },
+  {
+    "id": "sasso-3745263162",
+    "title": "Toujours OP",
+    "project": "Toujours OP",
+    "year": 2026,
+    "releaseDate": "2026-01-09",
+    "deezerTrackId": 3745263162
+  },
+  {
+    "id": "sasso-3806658832",
+    "title": "On les payes",
+    "project": "On les payes",
+    "year": 2026,
+    "releaseDate": "2026-01-29",
+    "deezerTrackId": 3806658832
+  }
+]

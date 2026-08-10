@@ -273,6 +273,349 @@
     "description": "Discographie Deezer"
   },
   {
+    "id": "freeze-corleone",
+    "name": "Freeze Corleone",
+    "catalog": "freeze-corleone.json",
+    "image": "assets/artists/freeze-corleone.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "jrk19",
+    "name": "JRK 19",
+    "catalog": "jrk19.json",
+    "image": "assets/artists/jrk19.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "maes",
+    "name": "Maes",
+    "catalog": "maes.json",
+    "image": "assets/artists/maes.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "timal",
+    "name": "Timal",
+    "catalog": "timal.json",
+    "image": "assets/artists/timal.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "timar",
+    "name": "Timar",
+    "catalog": "timar.json",
+    "image": "assets/artists/timar.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "naps",
+    "name": "Naps",
+    "catalog": "naps.json",
+    "image": "assets/artists/naps.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "djadja-dinaz",
+    "name": "Djadja & Dinaz",
+    "catalog": "djadja-dinaz.json",
+    "image": "assets/artists/djadja-dinaz.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "fresh-la-douille",
+    "name": "Fresh laDouille",
+    "catalog": "fresh-la-douille.json",
+    "image": "assets/artists/fresh-la-douille.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "iss",
+    "name": "ISS",
+    "catalog": "iss.json",
+    "image": "assets/artists/iss.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "le-crime",
+    "name": "Le Crime",
+    "catalog": "le-crime.json",
+    "image": "assets/artists/le-crime.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "lacrim",
+    "name": "Lacrim",
+    "catalog": "lacrim.json",
+    "image": "assets/artists/lacrim.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "aya-nakamura",
+    "name": "Aya Nakamura",
+    "catalog": "aya-nakamura.json",
+    "image": "assets/artists/aya-nakamura.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "naza",
+    "name": "Naza",
+    "catalog": "naza.json",
+    "image": "assets/artists/naza.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "niro",
+    "name": "Niro",
+    "catalog": "niro.json",
+    "image": "assets/artists/niro.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "yl",
+    "name": "YL",
+    "catalog": "yl.json",
+    "image": "assets/artists/yl.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "sadek",
+    "name": "Sadek",
+    "catalog": "sadek.json",
+    "image": "assets/artists/sadek.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "rim-k",
+    "name": "Rim'K",
+    "catalog": "rim-k.json",
+    "image": "assets/artists/rim-k.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "gradur",
+    "name": "Gradur",
+    "catalog": "gradur.json",
+    "image": "assets/artists/gradur.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "booba",
+    "name": "Booba",
+    "catalog": "booba.json",
+    "image": "assets/artists/booba.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "kaaris",
+    "name": "Kaaris",
+    "catalog": "kaaris.json",
+    "image": "assets/artists/kaaris.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "heuss-lenfoire",
+    "name": "Heuss L'enfoiré",
+    "catalog": "heuss-lenfoire.json",
+    "image": "assets/artists/heuss-lenfoire.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "alonzo",
+    "name": "Alonzo",
+    "catalog": "alonzo.json",
+    "image": "assets/artists/alonzo.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "sch",
+    "name": "SCH",
+    "catalog": "sch.json",
+    "image": "assets/artists/sch.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "zkr",
+    "name": "Zkr",
+    "catalog": "zkr.json",
+    "image": "assets/artists/zkr.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "dosseh",
+    "name": "Dosseh",
+    "catalog": "dosseh.json",
+    "image": "assets/artists/dosseh.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "mister-you",
+    "name": "Mister you",
+    "catalog": "mister-you.json",
+    "image": "assets/artists/mister-you.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "hornet-la-frappe",
+    "name": "Hornet La Frappe",
+    "catalog": "hornet-la-frappe.json",
+    "image": "assets/artists/hornet-la-frappe.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "sasso",
+    "name": "Sasso",
+    "catalog": "sasso.json",
+    "image": "assets/artists/sasso.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "soso-maness",
+    "name": "Soso Maness",
+    "catalog": "soso-maness.json",
+    "image": "assets/artists/soso-maness.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "leto",
+    "name": "Leto",
+    "catalog": "leto.json",
+    "image": "assets/artists/leto.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "dinos",
+    "name": "Dinos",
+    "catalog": "dinos.json",
+    "image": "assets/artists/dinos.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "josman",
+    "name": "Josman",
+    "catalog": "josman.json",
+    "image": "assets/artists/josman.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "nekfeu",
+    "name": "Nekfeu",
+    "catalog": "nekfeu.json",
+    "image": "assets/artists/nekfeu.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "laylow",
+    "name": "Laylow",
+    "catalog": "laylow.json",
+    "image": "assets/artists/laylow.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "hamza",
+    "name": "Hamza",
+    "catalog": "hamza.json",
+    "image": "assets/artists/hamza.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "la-feve",
+    "name": "La Fève",
+    "catalog": "la-feve.json",
+    "image": "assets/artists/la-feve.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "so-la-lune",
+    "name": "So La Lune",
+    "catalog": "so-la-lune.json",
+    "image": "assets/artists/so-la-lune.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "guy2bezbar",
+    "name": "Guy2Bezbar",
+    "catalog": "guy2bezbar.json",
+    "image": "assets/artists/guy2bezbar.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "kalash-criminel",
+    "name": "Kalash Criminel",
+    "catalog": "kalash-criminel.json",
+    "image": "assets/artists/kalash-criminel.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "da-uzi",
+    "name": "DA Uzi",
+    "catalog": "da-uzi.json",
+    "image": "assets/artists/da-uzi.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "kofs",
+    "name": "Kofs",
+    "catalog": "kofs.json",
+    "image": "assets/artists/kofs.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "1plike140",
+    "name": "1PLIKÉ140",
+    "catalog": "1plike140.json",
+    "image": "assets/artists/1plike140.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "soolking",
+    "name": "Soolking",
+    "catalog": "soolking.json",
+    "image": "assets/artists/soolking.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "jokair",
+    "name": "Jok'air",
+    "catalog": "jokair.json",
+    "image": "assets/artists/jokair.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "franglish",
+    "name": "Franglish",
+    "catalog": "franglish.json",
+    "image": "assets/artists/franglish.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "kekra",
+    "name": "Kekra",
+    "catalog": "kekra.json",
+    "image": "assets/artists/kekra.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "green-montana",
+    "name": "Green Montana",
+    "catalog": "green-montana.json",
+    "image": "assets/artists/green-montana.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "oboy",
+    "name": "OBOY",
+    "catalog": "oboy.json",
+    "image": "assets/artists/oboy.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
+    "id": "alpha-wann",
+    "name": "Alpha Wann",
+    "catalog": "alpha-wann.json",
+    "image": "assets/artists/alpha-wann.jpg",
+    "description": "Discographie Deezer"
+  },
+  {
     "id": "cat-rapfr",
     "name": "RAP FR",
     "catalog": "category-rapfr.json",

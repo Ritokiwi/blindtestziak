@@ -1,0 +1,986 @@
+[
+  {
+    "id": "hornet-la-frappe-345196881",
+    "title": "2 fois plus",
+    "project": "2 fois plus",
+    "year": 2017,
+    "releaseDate": "2017-04-05",
+    "deezerTrackId": 345196881
+  },
+  {
+    "id": "hornet-la-frappe-357131991",
+    "title": "Igo",
+    "project": "Igo",
+    "year": 2017,
+    "releaseDate": "2017-05-12",
+    "deezerTrackId": 357131991
+  },
+  {
+    "id": "hornet-la-frappe-382035401",
+    "title": "Je pense à toi",
+    "project": "Je pense à toi",
+    "year": 2017,
+    "releaseDate": "2017-07-21",
+    "deezerTrackId": 382035401
+  },
+  {
+    "id": "hornet-la-frappe-411784602",
+    "title": "Dead ça",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784602
+  },
+  {
+    "id": "hornet-la-frappe-411784622",
+    "title": "Sale idée",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784622
+  },
+  {
+    "id": "hornet-la-frappe-411784632",
+    "title": "T'as géchan",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784632
+  },
+  {
+    "id": "hornet-la-frappe-411784652",
+    "title": "Poukie",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784652
+  },
+  {
+    "id": "hornet-la-frappe-411784662",
+    "title": "T'es un marrant",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784662
+  },
+  {
+    "id": "hornet-la-frappe-411784672",
+    "title": "Maghrébin",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784672
+  },
+  {
+    "id": "hornet-la-frappe-411784682",
+    "title": "Boca",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784682
+  },
+  {
+    "id": "hornet-la-frappe-411784692",
+    "title": "Terrain glissant",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784692
+  },
+  {
+    "id": "hornet-la-frappe-411784702",
+    "title": "Ça passe",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784702
+  },
+  {
+    "id": "hornet-la-frappe-411784722",
+    "title": "Misère",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784722
+  },
+  {
+    "id": "hornet-la-frappe-411784732",
+    "title": "Mon ex",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784732
+  },
+  {
+    "id": "hornet-la-frappe-411784742",
+    "title": "Gramme 2 peuf",
+    "project": "Nous-mêmes",
+    "year": 2017,
+    "releaseDate": "2017-09-29",
+    "deezerTrackId": 411784742
+  },
+  {
+    "id": "hornet-la-frappe-495448852",
+    "title": "Bourgeoisie",
+    "project": "Bourgeoisie",
+    "year": 2018,
+    "releaseDate": "2018-05-04",
+    "deezerTrackId": 495448852
+  },
+  {
+    "id": "hornet-la-frappe-552418582",
+    "title": "La peuf #3",
+    "project": "La peuf #3",
+    "year": 2018,
+    "releaseDate": "2018-09-12",
+    "deezerTrackId": 552418582
+  },
+  {
+    "id": "hornet-la-frappe-556377162",
+    "title": "Joe Dassin",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377162
+  },
+  {
+    "id": "hornet-la-frappe-556377172",
+    "title": "Echographie",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377172
+  },
+  {
+    "id": "hornet-la-frappe-556377182",
+    "title": "Même secteur",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377182
+  },
+  {
+    "id": "hornet-la-frappe-556377192",
+    "title": "Taga",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377192
+  },
+  {
+    "id": "hornet-la-frappe-556377202",
+    "title": "Bandit",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377202
+  },
+  {
+    "id": "hornet-la-frappe-556377212",
+    "title": "Flash à la main",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377212
+  },
+  {
+    "id": "hornet-la-frappe-556377222",
+    "title": "Rolls",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377222
+  },
+  {
+    "id": "hornet-la-frappe-556377232",
+    "title": "Ce matin",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377232
+  },
+  {
+    "id": "hornet-la-frappe-556377242",
+    "title": "T'as qu'à tirer",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377242
+  },
+  {
+    "id": "hornet-la-frappe-556377252",
+    "title": "Neuf trois huit",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377252
+  },
+  {
+    "id": "hornet-la-frappe-556377262",
+    "title": "Hanoute",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377262
+  },
+  {
+    "id": "hornet-la-frappe-556377272",
+    "title": "Sheitana",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377272
+  },
+  {
+    "id": "hornet-la-frappe-556377282",
+    "title": "Avec des si",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377282
+  },
+  {
+    "id": "hornet-la-frappe-556377292",
+    "title": "Sale gosse",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377292
+  },
+  {
+    "id": "hornet-la-frappe-556377312",
+    "title": "40 ans",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377312
+  },
+  {
+    "id": "hornet-la-frappe-556377332",
+    "title": "Warning",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377332
+  },
+  {
+    "id": "hornet-la-frappe-556377342",
+    "title": "Secret",
+    "project": "Dans les yeux",
+    "year": 2018,
+    "releaseDate": "2018-09-21",
+    "deezerTrackId": 556377342
+  },
+  {
+    "id": "hornet-la-frappe-561253692",
+    "title": "J'ai pris le mic",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253692
+  },
+  {
+    "id": "hornet-la-frappe-561253702",
+    "title": "La frappe arrive sur Ripa",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253702
+  },
+  {
+    "id": "hornet-la-frappe-561253712",
+    "title": "Mon équipe en air",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253712
+  },
+  {
+    "id": "hornet-la-frappe-561253722",
+    "title": "4'5'6",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253722
+  },
+  {
+    "id": "hornet-la-frappe-561253732",
+    "title": "Mon hood",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253732
+  },
+  {
+    "id": "hornet-la-frappe-561253742",
+    "title": "Lanyeince",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253742
+  },
+  {
+    "id": "hornet-la-frappe-561253752",
+    "title": "Foduzeyo",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253752
+  },
+  {
+    "id": "hornet-la-frappe-561253762",
+    "title": "Gobelet",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253762
+  },
+  {
+    "id": "hornet-la-frappe-561253772",
+    "title": "Mama j'y vais !",
+    "project": "Réussir ou \"Mounir\"",
+    "year": 2018,
+    "releaseDate": "2018-09-28",
+    "deezerTrackId": 561253772
+  },
+  {
+    "id": "hornet-la-frappe-562284142",
+    "title": "93 Coast",
+    "project": "93 Coast (Extrait du projet 93 Empire)",
+    "year": 2018,
+    "releaseDate": "2018-10-04",
+    "deezerTrackId": 562284142
+  },
+  {
+    "id": "hornet-la-frappe-1006888372",
+    "title": "Tourner la tête",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888372
+  },
+  {
+    "id": "hornet-la-frappe-1006888382",
+    "title": "Cash",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888382
+  },
+  {
+    "id": "hornet-la-frappe-1006888392",
+    "title": "Quechua",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888392
+  },
+  {
+    "id": "hornet-la-frappe-1006888402",
+    "title": "Vriller",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888402
+  },
+  {
+    "id": "hornet-la-frappe-1006888412",
+    "title": "Plus fort",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888412
+  },
+  {
+    "id": "hornet-la-frappe-1006888422",
+    "title": "G.M.",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888422
+  },
+  {
+    "id": "hornet-la-frappe-1006888432",
+    "title": "Des années",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888432
+  },
+  {
+    "id": "hornet-la-frappe-1006888442",
+    "title": "Calumet",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888442
+  },
+  {
+    "id": "hornet-la-frappe-1006888452",
+    "title": "Ma racli",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888452
+  },
+  {
+    "id": "hornet-la-frappe-1006888462",
+    "title": "C'est mort",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888462
+  },
+  {
+    "id": "hornet-la-frappe-1006888472",
+    "title": "Deux secondes",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888472
+  },
+  {
+    "id": "hornet-la-frappe-1006888482",
+    "title": "La médicale",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888482
+  },
+  {
+    "id": "hornet-la-frappe-1006888492",
+    "title": "Galère après galère",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888492
+  },
+  {
+    "id": "hornet-la-frappe-1006888502",
+    "title": "Divorce",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888502
+  },
+  {
+    "id": "hornet-la-frappe-1006888512",
+    "title": "K.O.",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888512
+  },
+  {
+    "id": "hornet-la-frappe-1006888522",
+    "title": "Fou",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888522
+  },
+  {
+    "id": "hornet-la-frappe-1006888532",
+    "title": "Si tôt",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888532
+  },
+  {
+    "id": "hornet-la-frappe-1006888542",
+    "title": "Gardav",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888542
+  },
+  {
+    "id": "hornet-la-frappe-1006888552",
+    "title": "La noche",
+    "project": "Ma ruche (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-01-31",
+    "deezerTrackId": 1006888552
+  },
+  {
+    "id": "hornet-la-frappe-669578252",
+    "title": "BEDO",
+    "project": "BEDO",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 669578252
+  },
+  {
+    "id": "hornet-la-frappe-697902962",
+    "title": "Bonnie",
+    "project": "Bonnie",
+    "year": 2019,
+    "releaseDate": "2019-06-21",
+    "deezerTrackId": 697902962
+  },
+  {
+    "id": "hornet-la-frappe-756807832",
+    "title": "La Peuf 4",
+    "project": "La Peuf 4",
+    "year": 2019,
+    "releaseDate": "2019-09-20",
+    "deezerTrackId": 756807832
+  },
+  {
+    "id": "hornet-la-frappe-823044832",
+    "title": "Plus le temps",
+    "project": "Plus le temps",
+    "year": 2019,
+    "releaseDate": "2019-12-05",
+    "deezerTrackId": 823044832
+  },
+  {
+    "id": "hornet-la-frappe-1169555422",
+    "title": "69.93",
+    "project": "69.93 (feat. ASHE 22)",
+    "year": 2020,
+    "releaseDate": "2020-12-11",
+    "deezerTrackId": 1169555422
+  },
+  {
+    "id": "hornet-la-frappe-1188536742",
+    "title": "Bon pied",
+    "project": "Bon pied",
+    "year": 2021,
+    "releaseDate": "2021-01-01",
+    "deezerTrackId": 1188536742
+  },
+  {
+    "id": "hornet-la-frappe-1188537172",
+    "title": "Quartiers nord",
+    "project": "Quartiers nord",
+    "year": 2021,
+    "releaseDate": "2021-01-01",
+    "deezerTrackId": 1188537172
+  },
+  {
+    "id": "hornet-la-frappe-1350383582",
+    "title": "La Big Mif",
+    "project": "La Big Mif (Extrait du projet Art de rue)",
+    "year": 2021,
+    "releaseDate": "2021-05-14",
+    "deezerTrackId": 1350383582
+  },
+  {
+    "id": "hornet-la-frappe-1377249072",
+    "title": "La Peuf 5",
+    "project": "La Peuf 5",
+    "year": 2021,
+    "releaseDate": "2021-06-02",
+    "deezerTrackId": 1377249072
+  },
+  {
+    "id": "hornet-la-frappe-1449616842",
+    "title": "Maison d’arrêt",
+    "project": "Maison d’arrêt (feat. Maes)",
+    "year": 2021,
+    "releaseDate": "2021-08-06",
+    "deezerTrackId": 1449616842
+  },
+  {
+    "id": "hornet-la-frappe-2154815487",
+    "title": "Main de fer",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815487
+  },
+  {
+    "id": "hornet-la-frappe-2154815497",
+    "title": "Charcleur",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815497
+  },
+  {
+    "id": "hornet-la-frappe-2154815507",
+    "title": "Kedaba",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815507
+  },
+  {
+    "id": "hornet-la-frappe-2154815517",
+    "title": "Image",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815517
+  },
+  {
+    "id": "hornet-la-frappe-2154815537",
+    "title": "Sors de mon sommeil",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815537
+  },
+  {
+    "id": "hornet-la-frappe-2154815547",
+    "title": "Raton",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815547
+  },
+  {
+    "id": "hornet-la-frappe-2154815557",
+    "title": "Riche comme un Tuche",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815557
+  },
+  {
+    "id": "hornet-la-frappe-2154815567",
+    "title": "Machiavélique",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815567
+  },
+  {
+    "id": "hornet-la-frappe-2154815577",
+    "title": "Reste comme t’es",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815577
+  },
+  {
+    "id": "hornet-la-frappe-2154815587",
+    "title": "Gasolina",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815587
+  },
+  {
+    "id": "hornet-la-frappe-2154815597",
+    "title": "D’un trait",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815597
+  },
+  {
+    "id": "hornet-la-frappe-2154815607",
+    "title": "Schott",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815607
+  },
+  {
+    "id": "hornet-la-frappe-2154815617",
+    "title": "Jasmin",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815617
+  },
+  {
+    "id": "hornet-la-frappe-2154815627",
+    "title": "Pulkra",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815627
+  },
+  {
+    "id": "hornet-la-frappe-2154815637",
+    "title": "Kawasaki",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815637
+  },
+  {
+    "id": "hornet-la-frappe-2154815647",
+    "title": "Il y a",
+    "project": "Toujours nous-mêmes",
+    "year": 2021,
+    "releaseDate": "2021-08-27",
+    "deezerTrackId": 2154815647
+  },
+  {
+    "id": "hornet-la-frappe-2110131147",
+    "title": "Hasni",
+    "project": "Hasni",
+    "year": 2023,
+    "releaseDate": "2023-01-27",
+    "deezerTrackId": 2110131147
+  },
+  {
+    "id": "hornet-la-frappe-2171862867",
+    "title": "Wax",
+    "project": "Wax",
+    "year": 2023,
+    "releaseDate": "2023-03-10",
+    "deezerTrackId": 2171862867
+  },
+  {
+    "id": "hornet-la-frappe-2329415225",
+    "title": "Eyes Contact",
+    "project": "Eyes Contact",
+    "year": 2023,
+    "releaseDate": "2023-06-23",
+    "deezerTrackId": 2329415225
+  },
+  {
+    "id": "hornet-la-frappe-2374273005",
+    "title": "Allo ? C’est les cités",
+    "project": "Allo ? C’est les cités",
+    "year": 2023,
+    "releaseDate": "2023-07-28",
+    "deezerTrackId": 2374273005
+  },
+  {
+    "id": "hornet-la-frappe-2432498815",
+    "title": "La Peuf 6",
+    "project": "La Peuf 6",
+    "year": 2023,
+    "releaseDate": "2023-09-08",
+    "deezerTrackId": 2432498815
+  },
+  {
+    "id": "hornet-la-frappe-2454159835",
+    "title": "Venum",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159835
+  },
+  {
+    "id": "hornet-la-frappe-2454159865",
+    "title": "À l’abri",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159865
+  },
+  {
+    "id": "hornet-la-frappe-2454159875",
+    "title": "Mains liées",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159875
+  },
+  {
+    "id": "hornet-la-frappe-2454159885",
+    "title": "Canon scié",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159885
+  },
+  {
+    "id": "hornet-la-frappe-2454159895",
+    "title": "Vie d’artiste",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159895
+  },
+  {
+    "id": "hornet-la-frappe-2454159905",
+    "title": "Matinal",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159905
+  },
+  {
+    "id": "hornet-la-frappe-2454159915",
+    "title": "Jdid",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159915
+  },
+  {
+    "id": "hornet-la-frappe-2454159925",
+    "title": "Drama",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159925
+  },
+  {
+    "id": "hornet-la-frappe-2454159935",
+    "title": "Hakuna",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159935
+  },
+  {
+    "id": "hornet-la-frappe-2454159945",
+    "title": "Tu vas comprendre",
+    "project": "Avant Cités d’or",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2454159945
+  },
+  {
+    "id": "hornet-la-frappe-2808330932",
+    "title": "Malaga",
+    "project": "Malaga (feat. Dwen & La Plaie)",
+    "year": 2024,
+    "releaseDate": "2024-05-18",
+    "deezerTrackId": 2808330932
+  },
+  {
+    "id": "hornet-la-frappe-2838513222",
+    "title": "Samira",
+    "project": "Samira",
+    "year": 2024,
+    "releaseDate": "2024-06-08",
+    "deezerTrackId": 2838513222
+  },
+  {
+    "id": "hornet-la-frappe-2865318792",
+    "title": "Ballon d'or",
+    "project": "Ballon d'or",
+    "year": 2024,
+    "releaseDate": "2024-06-26",
+    "deezerTrackId": 2865318792
+  },
+  {
+    "id": "hornet-la-frappe-2931859521",
+    "title": "Petit Champagne",
+    "project": "Petit Champagne (feat. Naza & Guy2bezbar)",
+    "year": 2024,
+    "releaseDate": "2024-08-03",
+    "deezerTrackId": 2931859521
+  },
+  {
+    "id": "hornet-la-frappe-3143353381",
+    "title": "Kaira",
+    "project": "Kaira",
+    "year": 2024,
+    "releaseDate": "2024-12-15",
+    "deezerTrackId": 3143353381
+  },
+  {
+    "id": "hornet-la-frappe-3175585921",
+    "title": "Pur Produit #1",
+    "project": "Pur Produit #1",
+    "year": 2025,
+    "releaseDate": "2025-01-08",
+    "deezerTrackId": 3175585921
+  },
+  {
+    "id": "hornet-la-frappe-3202455531",
+    "title": "Aliène",
+    "project": "Aliène",
+    "year": 2025,
+    "releaseDate": "2025-01-24",
+    "deezerTrackId": 3202455531
+  },
+  {
+    "id": "hornet-la-frappe-3215584991",
+    "title": "Complicado",
+    "project": "SOURCE",
+    "year": 2025,
+    "releaseDate": "2025-02-07",
+    "deezerTrackId": 3215584991
+  },
+  {
+    "id": "hornet-la-frappe-3215585001",
+    "title": "Faux gentils",
+    "project": "SOURCE",
+    "year": 2025,
+    "releaseDate": "2025-02-07",
+    "deezerTrackId": 3215585001
+  },
+  {
+    "id": "hornet-la-frappe-3215585011",
+    "title": "Mentality",
+    "project": "SOURCE",
+    "year": 2025,
+    "releaseDate": "2025-02-07",
+    "deezerTrackId": 3215585011
+  },
+  {
+    "id": "hornet-la-frappe-3215585021",
+    "title": "Chap Chap",
+    "project": "SOURCE",
+    "year": 2025,
+    "releaseDate": "2025-02-07",
+    "deezerTrackId": 3215585021
+  },
+  {
+    "id": "hornet-la-frappe-3215585031",
+    "title": "Heniya",
+    "project": "SOURCE",
+    "year": 2025,
+    "releaseDate": "2025-02-07",
+    "deezerTrackId": 3215585031
+  },
+  {
+    "id": "hornet-la-frappe-3496354151",
+    "title": "Quartier chaud",
+    "project": "Quartier chaud",
+    "year": 2025,
+    "releaseDate": "2025-09-12",
+    "deezerTrackId": 3496354151
+  },
+  {
+    "id": "hornet-la-frappe-3729052212",
+    "title": "Freestyle Bonne Année Habibi",
+    "project": "Freestyle Bonne Année Habibi",
+    "year": 2026,
+    "releaseDate": "2026-01-01",
+    "deezerTrackId": 3729052212
+  },
+  {
+    "id": "hornet-la-frappe-3959463211",
+    "title": "C'est un métier",
+    "project": "C'est un métier",
+    "year": 2026,
+    "releaseDate": "2026-04-24",
+    "deezerTrackId": 3959463211
+  },
+  {
+    "id": "hornet-la-frappe-3989306711",
+    "title": "Sentimental",
+    "project": "Sentimental",
+    "year": 2026,
+    "releaseDate": "2026-05-08",
+    "deezerTrackId": 3989306711
+  },
+  {
+    "id": "hornet-la-frappe-4058802821",
+    "title": "Café crème",
+    "project": "Café crème",
+    "year": 2026,
+    "releaseDate": "2026-06-10",
+    "deezerTrackId": 4058802821
+  },
+  {
+    "id": "hornet-la-frappe-4107852001",
+    "title": "Hood",
+    "project": "Hood",
+    "year": 2026,
+    "releaseDate": "2026-07-03",
+    "deezerTrackId": 4107852001
+  },
+  {
+    "id": "hornet-la-frappe-4155286542",
+    "title": "Khalele",
+    "project": "Khalele",
+    "year": 2026,
+    "releaseDate": "2026-07-24",
+    "deezerTrackId": 4155286542
+  }
+]

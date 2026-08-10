@@ -1,0 +1,354 @@
+[
+  {
+    "id": "timar-2385669735",
+    "title": "AC Milan",
+    "project": "AC Milan",
+    "year": 2023,
+    "releaseDate": "2023-07-29",
+    "deezerTrackId": 2385669735
+  },
+  {
+    "id": "timar-2406711395",
+    "title": "Araï",
+    "project": "Araï",
+    "year": 2023,
+    "releaseDate": "2023-08-12",
+    "deezerTrackId": 2406711395
+  },
+  {
+    "id": "timar-2464723345",
+    "title": "Beldia",
+    "project": "Beldia",
+    "year": 2023,
+    "releaseDate": "2023-09-22",
+    "deezerTrackId": 2464723345
+  },
+  {
+    "id": "timar-2486248441",
+    "title": "K9",
+    "project": "K9",
+    "year": 2023,
+    "releaseDate": "2023-10-04",
+    "deezerTrackId": 2486248441
+  },
+  {
+    "id": "timar-2639154652",
+    "title": "FRENCH CONNEXION, Pt.1",
+    "project": "FRENCH CONNEXION, Pt.1",
+    "year": 2024,
+    "releaseDate": "2024-01-31",
+    "deezerTrackId": 2639154652
+  },
+  {
+    "id": "timar-2745187791",
+    "title": "PÉNAVE",
+    "project": "PÉNAVE",
+    "year": 2024,
+    "releaseDate": "2024-04-12",
+    "deezerTrackId": 2745187791
+  },
+  {
+    "id": "timar-3019316471",
+    "title": "CAYMAN",
+    "project": "CAYMAN",
+    "year": 2024,
+    "releaseDate": "2024-10-02",
+    "deezerTrackId": 3019316471
+  },
+  {
+    "id": "timar-3122326471",
+    "title": "FRENCH CONNEXION, Pt.2",
+    "project": "FRENCH CONNEXION, Pt.2",
+    "year": 2024,
+    "releaseDate": "2024-12-04",
+    "deezerTrackId": 3122326471
+  },
+  {
+    "id": "timar-3190544571",
+    "title": "8014",
+    "project": "8014",
+    "year": 2025,
+    "releaseDate": "2025-01-17",
+    "deezerTrackId": 3190544571
+  },
+  {
+    "id": "timar-3213254951",
+    "title": "Déluge",
+    "project": "Déluge",
+    "year": 2025,
+    "releaseDate": "2025-02-02",
+    "deezerTrackId": 3213254951
+  },
+  {
+    "id": "timar-3252425791",
+    "title": "IA",
+    "project": "IA",
+    "year": 2025,
+    "releaseDate": "2025-02-27",
+    "deezerTrackId": 3252425791
+  },
+  {
+    "id": "timar-3317298541",
+    "title": "FINESSE",
+    "project": "FINESSE",
+    "year": 2025,
+    "releaseDate": "2025-04-16",
+    "deezerTrackId": 3317298541
+  },
+  {
+    "id": "timar-3342921081",
+    "title": "MAKING OFF",
+    "project": "MAKING OFF",
+    "year": 2025,
+    "releaseDate": "2025-04-30",
+    "deezerTrackId": 3342921081
+  },
+  {
+    "id": "timar-3359133051",
+    "title": "C’EST BON ?",
+    "project": "C’EST BON ?",
+    "year": 2025,
+    "releaseDate": "2025-05-15",
+    "deezerTrackId": 3359133051
+  },
+  {
+    "id": "timar-3423065881",
+    "title": "YAMAL",
+    "project": "YAMAL",
+    "year": 2025,
+    "releaseDate": "2025-06-26",
+    "deezerTrackId": 3423065881
+  },
+  {
+    "id": "timar-3484456821",
+    "title": "FDT",
+    "project": "FDT",
+    "year": 2025,
+    "releaseDate": "2025-08-06",
+    "deezerTrackId": 3484456821
+  },
+  {
+    "id": "timar-3562597861",
+    "title": "VENDETTA",
+    "project": "VENDETTA",
+    "year": 2025,
+    "releaseDate": "2025-09-25",
+    "deezerTrackId": 3562597861
+  },
+  {
+    "id": "timar-3653973152",
+    "title": "ADDICT",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973152
+  },
+  {
+    "id": "timar-3653973162",
+    "title": "BROSKI",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973162
+  },
+  {
+    "id": "timar-3653973172",
+    "title": "BEC ÂNE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973172
+  },
+  {
+    "id": "timar-3653973182",
+    "title": "MÉDICAMENT",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973182
+  },
+  {
+    "id": "timar-3653973192",
+    "title": "PARANOÏAQUE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973192
+  },
+  {
+    "id": "timar-3653973202",
+    "title": "SIERRA LEONE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973202
+  },
+  {
+    "id": "timar-3653973212",
+    "title": "CHE GUEVARA",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973212
+  },
+  {
+    "id": "timar-3653973222",
+    "title": "PÉRIMÈTRE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973222
+  },
+  {
+    "id": "timar-3653973232",
+    "title": "TEMPS DURS",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973232
+  },
+  {
+    "id": "timar-3653973242",
+    "title": "BOÎTE À CHAUSSURES",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973242
+  },
+  {
+    "id": "timar-3653973252",
+    "title": "GELATO",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973252
+  },
+  {
+    "id": "timar-3653973272",
+    "title": "FORMIDABLE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973272
+  },
+  {
+    "id": "timar-3653973282",
+    "title": "BOULOT",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973282
+  },
+  {
+    "id": "timar-3653973292",
+    "title": "INSIDE",
+    "project": "REQUIEM",
+    "year": 2025,
+    "releaseDate": "2025-12-04",
+    "deezerTrackId": 3653973292
+  },
+  {
+    "id": "timar-3909037091",
+    "title": "BOHÈME",
+    "project": "BOHÈME",
+    "year": 2026,
+    "releaseDate": "2026-03-25",
+    "deezerTrackId": 3909037091
+  },
+  {
+    "id": "timar-3924029561",
+    "title": "MERCI",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029561
+  },
+  {
+    "id": "timar-3924029581",
+    "title": "LES DÉMONS",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029581
+  },
+  {
+    "id": "timar-3924029611",
+    "title": "CANADA",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029611
+  },
+  {
+    "id": "timar-3924029621",
+    "title": "MIEUX QU’HIER",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029621
+  },
+  {
+    "id": "timar-3924029631",
+    "title": "EXPLICIT 69",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029631
+  },
+  {
+    "id": "timar-3924029641",
+    "title": "ALB",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029641
+  },
+  {
+    "id": "timar-3924029661",
+    "title": "CIAO",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029661
+  },
+  {
+    "id": "timar-3924029691",
+    "title": "KAMÉRA",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029691
+  },
+  {
+    "id": "timar-3924029721",
+    "title": "SHAYO",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029721
+  },
+  {
+    "id": "timar-3924029741",
+    "title": "ÉTOILE",
+    "project": "REQUIEM : MIEUX QU'HIER",
+    "year": 2026,
+    "releaseDate": "2026-04-02",
+    "deezerTrackId": 3924029741
+  },
+  {
+    "id": "timar-3982512151",
+    "title": "Besoin de temps",
+    "project": "Besoin de temps",
+    "year": 2026,
+    "releaseDate": "2026-04-28",
+    "deezerTrackId": 3982512151
+  },
+  {
+    "id": "timar-4116034381",
+    "title": "GROSEILLE",
+    "project": "GROSEILLE",
+    "year": 2026,
+    "releaseDate": "2026-07-02",
+    "deezerTrackId": 4116034381
+  }
+]

@@ -1,0 +1,322 @@
+[
+  {
+    "id": "le-crime-1709942367",
+    "title": "Demain",
+    "project": "Demain",
+    "year": 2022,
+    "releaseDate": "2022-04-06",
+    "deezerTrackId": 1709942367
+  },
+  {
+    "id": "le-crime-2198918027",
+    "title": "SERIE 1",
+    "project": "SERIE 1",
+    "year": 2023,
+    "releaseDate": "2023-03-09",
+    "deezerTrackId": 2198918027
+  },
+  {
+    "id": "le-crime-3025701981",
+    "title": "Comment je m'appelle",
+    "project": "Comment je m'appelle",
+    "year": 2024,
+    "releaseDate": "2024-10-01",
+    "deezerTrackId": 3025701981
+  },
+  {
+    "id": "le-crime-3289269161",
+    "title": "Oulala",
+    "project": "Oulala",
+    "year": 2024,
+    "releaseDate": "2024-11-15",
+    "deezerTrackId": 3289269161
+  },
+  {
+    "id": "le-crime-3289229421",
+    "title": "Prada",
+    "project": "Prada",
+    "year": 2025,
+    "releaseDate": "2025-01-23",
+    "deezerTrackId": 3289229421
+  },
+  {
+    "id": "le-crime-3315530191",
+    "title": "Silencieux",
+    "project": "Silencieux",
+    "year": 2025,
+    "releaseDate": "2025-04-18",
+    "deezerTrackId": 3315530191
+  },
+  {
+    "id": "le-crime-3378317951",
+    "title": "White",
+    "project": "White",
+    "year": 2025,
+    "releaseDate": "2025-05-30",
+    "deezerTrackId": 3378317951
+  },
+  {
+    "id": "le-crime-3450296191",
+    "title": "Boosk'armes et munitions",
+    "project": "Boosk'armes et munitions",
+    "year": 2025,
+    "releaseDate": "2025-07-03",
+    "deezerTrackId": 3450296191
+  },
+  {
+    "id": "le-crime-3553985941",
+    "title": "Enfermé",
+    "project": "Enfermé",
+    "year": 2025,
+    "releaseDate": "2025-07-03",
+    "deezerTrackId": 3553985941
+  },
+  {
+    "id": "le-crime-3560991041",
+    "title": "À l'étage",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991041
+  },
+  {
+    "id": "le-crime-3560991051",
+    "title": "Bercy",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991051
+  },
+  {
+    "id": "le-crime-3560991061",
+    "title": "Première Classe",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991061
+  },
+  {
+    "id": "le-crime-3560991101",
+    "title": "Hollande",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991101
+  },
+  {
+    "id": "le-crime-3560991111",
+    "title": "Ankara",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991111
+  },
+  {
+    "id": "le-crime-3560991121",
+    "title": "Invisible",
+    "project": "La Vague",
+    "year": 2025,
+    "releaseDate": "2025-07-04",
+    "deezerTrackId": 3560991121
+  },
+  {
+    "id": "le-crime-3605534992",
+    "title": "Ballon D'or",
+    "project": "Ballon D'or",
+    "year": 2025,
+    "releaseDate": "2025-10-23",
+    "deezerTrackId": 3605534992
+  },
+  {
+    "id": "le-crime-3605535012",
+    "title": "Washington DC",
+    "project": "Washington DC",
+    "year": 2025,
+    "releaseDate": "2025-10-23",
+    "deezerTrackId": 3605535012
+  },
+  {
+    "id": "le-crime-3605535052",
+    "title": "Love D'une Tana",
+    "project": "Love D'une Tana",
+    "year": 2025,
+    "releaseDate": "2025-10-23",
+    "deezerTrackId": 3605535052
+  },
+  {
+    "id": "le-crime-3605535202",
+    "title": "Kitchen",
+    "project": "Kitchen",
+    "year": 2025,
+    "releaseDate": "2025-10-23",
+    "deezerTrackId": 3605535202
+  },
+  {
+    "id": "le-crime-4029226401",
+    "title": "Black",
+    "project": "Après La Vague",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 4029226401
+  },
+  {
+    "id": "le-crime-4029226491",
+    "title": "Narvalo",
+    "project": "Après La Vague",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 4029226491
+  },
+  {
+    "id": "le-crime-4029226511",
+    "title": "Espagne",
+    "project": "Après La Vague",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 4029226511
+  },
+  {
+    "id": "le-crime-4029226551",
+    "title": "Entourage",
+    "project": "Après La Vague",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 4029226551
+  },
+  {
+    "id": "le-crime-4004613391",
+    "title": "Met Gala",
+    "project": "Met Gala",
+    "year": 2025,
+    "releaseDate": "2025-10-24",
+    "deezerTrackId": 4004613391
+  },
+  {
+    "id": "le-crime-3975116711",
+    "title": "Médaillon",
+    "project": "Médaillon",
+    "year": 2026,
+    "releaseDate": "2026-05-01",
+    "deezerTrackId": 3975116711
+  },
+  {
+    "id": "le-crime-4019206011",
+    "title": "Labess",
+    "project": "Labess",
+    "year": 2026,
+    "releaseDate": "2026-05-22",
+    "deezerTrackId": 4019206011
+  },
+  {
+    "id": "le-crime-4048381311",
+    "title": "Amiri",
+    "project": "Amiri",
+    "year": 2026,
+    "releaseDate": "2026-06-11",
+    "deezerTrackId": 4048381311
+  },
+  {
+    "id": "le-crime-4048381381",
+    "title": "OFM",
+    "project": "OFM",
+    "year": 2026,
+    "releaseDate": "2026-06-11",
+    "deezerTrackId": 4048381381
+  },
+  {
+    "id": "le-crime-4048381421",
+    "title": "Barbie",
+    "project": "Barbie",
+    "year": 2026,
+    "releaseDate": "2026-06-11",
+    "deezerTrackId": 4048381421
+  },
+  {
+    "id": "le-crime-4048381551",
+    "title": "Bodycount",
+    "project": "Bodycount",
+    "year": 2026,
+    "releaseDate": "2026-06-11",
+    "deezerTrackId": 4048381551
+  },
+  {
+    "id": "le-crime-4048381581",
+    "title": "Florence",
+    "project": "Florence",
+    "year": 2026,
+    "releaseDate": "2026-06-11",
+    "deezerTrackId": 4048381581
+  },
+  {
+    "id": "le-crime-4048380911",
+    "title": "Casus Belli",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048380911
+  },
+  {
+    "id": "le-crime-4048380941",
+    "title": "Zombies",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048380941
+  },
+  {
+    "id": "le-crime-4048380951",
+    "title": "Iridium",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048380951
+  },
+  {
+    "id": "le-crime-4048380971",
+    "title": "Poblado",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048380971
+  },
+  {
+    "id": "le-crime-4048381001",
+    "title": "Ghetta",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048381001
+  },
+  {
+    "id": "le-crime-4048381011",
+    "title": "Petit Lion",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048381011
+  },
+  {
+    "id": "le-crime-4048381031",
+    "title": "A.B.T",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048381031
+  },
+  {
+    "id": "le-crime-4048381061",
+    "title": "Crackhead",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048381061
+  },
+  {
+    "id": "le-crime-4048381071",
+    "title": "Sommet",
+    "project": "Casus Belli",
+    "year": 2026,
+    "releaseDate": "2026-06-12",
+    "deezerTrackId": 4048381071
+  }
+]

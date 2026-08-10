@@ -1,0 +1,834 @@
+[
+  {
+    "id": "kalash-criminel-135010088",
+    "title": "Famas",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010088
+  },
+  {
+    "id": "kalash-criminel-135010090",
+    "title": "Tu sais où nous trouver",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010090
+  },
+  {
+    "id": "kalash-criminel-135010092",
+    "title": "Makila",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010092
+  },
+  {
+    "id": "kalash-criminel-135010094",
+    "title": "Sauvagerie 2",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010094
+  },
+  {
+    "id": "kalash-criminel-135010096",
+    "title": "Sale sonorité",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010096
+  },
+  {
+    "id": "kalash-criminel-135010098",
+    "title": "Carré vip",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010098
+  },
+  {
+    "id": "kalash-criminel-135010100",
+    "title": "Arrêt du cœur",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010100
+  },
+  {
+    "id": "kalash-criminel-135010102",
+    "title": "10 12 14 bureau",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010102
+  },
+  {
+    "id": "kalash-criminel-135010104",
+    "title": "Shabba",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010104
+  },
+  {
+    "id": "kalash-criminel-135010106",
+    "title": "Guedro",
+    "project": "R.A.S",
+    "year": 2016,
+    "releaseDate": "2016-10-29",
+    "deezerTrackId": 135010106
+  },
+  {
+    "id": "kalash-criminel-143860784",
+    "title": "Euphorie",
+    "project": "Euphorie",
+    "year": 2017,
+    "releaseDate": "2017-03-11",
+    "deezerTrackId": 143860784
+  },
+  {
+    "id": "kalash-criminel-351669681",
+    "title": "Enterrez-les",
+    "project": "Enterrez-les",
+    "year": 2017,
+    "releaseDate": "2017-04-22",
+    "deezerTrackId": 351669681
+  },
+  {
+    "id": "kalash-criminel-355724431",
+    "title": "Hood",
+    "project": "Hood",
+    "year": 2017,
+    "releaseDate": "2017-05-04",
+    "deezerTrackId": 355724431
+  },
+  {
+    "id": "kalash-criminel-359312121",
+    "title": "Mélanger",
+    "project": "Mélanger",
+    "year": 2017,
+    "releaseDate": "2017-05-13",
+    "deezerTrackId": 359312121
+  },
+  {
+    "id": "kalash-criminel-362777071",
+    "title": "Polnareff",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777071
+  },
+  {
+    "id": "kalash-criminel-362777091",
+    "title": "Bénéfice",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777091
+  },
+  {
+    "id": "kalash-criminel-362777111",
+    "title": "Nada",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777111
+  },
+  {
+    "id": "kalash-criminel-362777131",
+    "title": "Piano sombre",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777131
+  },
+  {
+    "id": "kalash-criminel-362777141",
+    "title": "Je ne comprends pas",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777141
+  },
+  {
+    "id": "kalash-criminel-362777151",
+    "title": "Shottas",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777151
+  },
+  {
+    "id": "kalash-criminel-362777181",
+    "title": "Ce genre de mec",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777181
+  },
+  {
+    "id": "kalash-criminel-362777211",
+    "title": "T'es mort",
+    "project": "Oyoki",
+    "year": 2017,
+    "releaseDate": "2017-05-20",
+    "deezerTrackId": 362777211
+  },
+  {
+    "id": "kalash-criminel-550581152",
+    "title": "Roi des sauvages",
+    "project": "Roi des sauvages",
+    "year": 2018,
+    "releaseDate": "2018-09-07",
+    "deezerTrackId": 550581152
+  },
+  {
+    "id": "kalash-criminel-553540132",
+    "title": "Tête brûlée",
+    "project": "Tête brûlée",
+    "year": 2018,
+    "releaseDate": "2018-09-13",
+    "deezerTrackId": 553540132
+  },
+  {
+    "id": "kalash-criminel-594482502",
+    "title": "Cougar Gang",
+    "project": "Cougar Gang",
+    "year": 2018,
+    "releaseDate": "2018-11-02",
+    "deezerTrackId": 594482502
+  },
+  {
+    "id": "kalash-criminel-590612432",
+    "title": "La Sacem de Florent Pagny",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612432
+  },
+  {
+    "id": "kalash-criminel-590612442",
+    "title": "Ahou",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612442
+  },
+  {
+    "id": "kalash-criminel-590612452",
+    "title": "Dans la fosse",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612452
+  },
+  {
+    "id": "kalash-criminel-590612462",
+    "title": "Aucun lien",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612462
+  },
+  {
+    "id": "kalash-criminel-590612472",
+    "title": "Coltan",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612472
+  },
+  {
+    "id": "kalash-criminel-590612482",
+    "title": "47 AK",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612482
+  },
+  {
+    "id": "kalash-criminel-590612492",
+    "title": "Sombre",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612492
+  },
+  {
+    "id": "kalash-criminel-590612502",
+    "title": "A dix",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612502
+  },
+  {
+    "id": "kalash-criminel-590612512",
+    "title": "Ca va ma chérie",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612512
+  },
+  {
+    "id": "kalash-criminel-590612522",
+    "title": "Plus loin",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612522
+  },
+  {
+    "id": "kalash-criminel-590612532",
+    "title": "On fait la fête",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612532
+  },
+  {
+    "id": "kalash-criminel-590612542",
+    "title": "Savage",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612542
+  },
+  {
+    "id": "kalash-criminel-590612552",
+    "title": "Homicide volontaire",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612552
+  },
+  {
+    "id": "kalash-criminel-590612562",
+    "title": "Un jour de plus",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612562
+  },
+  {
+    "id": "kalash-criminel-590612582",
+    "title": "Encore",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612582
+  },
+  {
+    "id": "kalash-criminel-590612592",
+    "title": "Vrai",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612592
+  },
+  {
+    "id": "kalash-criminel-590612602",
+    "title": "Avant que j'parte",
+    "project": "La fosse aux lions",
+    "year": 2018,
+    "releaseDate": "2018-11-24",
+    "deezerTrackId": 590612602
+  },
+  {
+    "id": "kalash-criminel-667986012",
+    "title": "Fatality",
+    "project": "Fatality",
+    "year": 2019,
+    "releaseDate": "2019-04-22",
+    "deezerTrackId": 667986012
+  },
+  {
+    "id": "kalash-criminel-671490102",
+    "title": "Dans la tête",
+    "project": "La fosse aux lions (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 671490102
+  },
+  {
+    "id": "kalash-criminel-671490112",
+    "title": "Certitude",
+    "project": "La fosse aux lions (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 671490112
+  },
+  {
+    "id": "kalash-criminel-671490132",
+    "title": "Sale traître",
+    "project": "La fosse aux lions (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 671490132
+  },
+  {
+    "id": "kalash-criminel-671490142",
+    "title": "Nezo",
+    "project": "La fosse aux lions (Réédition)",
+    "year": 2019,
+    "releaseDate": "2019-04-26",
+    "deezerTrackId": 671490142
+  },
+  {
+    "id": "kalash-criminel-761488892",
+    "title": "Sauvagerie 3",
+    "project": "Sauvagerie 3",
+    "year": 2019,
+    "releaseDate": "2019-09-27",
+    "deezerTrackId": 761488892
+  },
+  {
+    "id": "kalash-criminel-904281242",
+    "title": "Pronostic",
+    "project": "Pronostic",
+    "year": 2020,
+    "releaseDate": "2020-03-19",
+    "deezerTrackId": 904281242
+  },
+  {
+    "id": "kalash-criminel-928892422",
+    "title": "Dans tous les sens",
+    "project": "Dans tous les sens",
+    "year": 2020,
+    "releaseDate": "2020-04-17",
+    "deezerTrackId": 928892422
+  },
+  {
+    "id": "kalash-criminel-988217852",
+    "title": "Écrasement de tête",
+    "project": "Écrasement de tête",
+    "year": 2020,
+    "releaseDate": "2020-06-12",
+    "deezerTrackId": 988217852
+  },
+  {
+    "id": "kalash-criminel-1007940672",
+    "title": "Peur de personne",
+    "project": "Peur de personne",
+    "year": 2020,
+    "releaseDate": "2020-07-03",
+    "deezerTrackId": 1007940672
+  },
+  {
+    "id": "kalash-criminel-1022185152",
+    "title": "J'ai quitté",
+    "project": "J'ai quitté",
+    "year": 2020,
+    "releaseDate": "2020-07-17",
+    "deezerTrackId": 1022185152
+  },
+  {
+    "id": "kalash-criminel-1037964272",
+    "title": "ADN (Extrait du projet Art de rue)",
+    "project": "ADN (Extrait du projet Art de rue)",
+    "year": 2020,
+    "releaseDate": "2020-08-19",
+    "deezerTrackId": 1037964272
+  },
+  {
+    "id": "kalash-criminel-1108586052",
+    "title": "But en or",
+    "project": "But en or",
+    "year": 2020,
+    "releaseDate": "2020-10-16",
+    "deezerTrackId": 1108586052
+  },
+  {
+    "id": "kalash-criminel-1146381832",
+    "title": "Turn Up",
+    "project": "Turn Up",
+    "year": 2020,
+    "releaseDate": "2020-11-19",
+    "deezerTrackId": 1146381832
+  },
+  {
+    "id": "kalash-criminel-1146382062",
+    "title": "Moments",
+    "project": "Moments",
+    "year": 2020,
+    "releaseDate": "2020-11-19",
+    "deezerTrackId": 1146382062
+  },
+  {
+    "id": "kalash-criminel-1146382122",
+    "title": "Tu paniques",
+    "project": "Tu paniques",
+    "year": 2020,
+    "releaseDate": "2020-11-19",
+    "deezerTrackId": 1146382122
+  },
+  {
+    "id": "kalash-criminel-1154950872",
+    "title": "Droga",
+    "project": "Droga",
+    "year": 2020,
+    "releaseDate": "2020-11-19",
+    "deezerTrackId": 1154950872
+  },
+  {
+    "id": "kalash-criminel-1396561712",
+    "title": "Insta Twitter",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561712
+  },
+  {
+    "id": "kalash-criminel-1396561722",
+    "title": "Doute",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561722
+  },
+  {
+    "id": "kalash-criminel-1396561732",
+    "title": "Tarifs",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561732
+  },
+  {
+    "id": "kalash-criminel-1396561752",
+    "title": "J'oublie pas",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561752
+  },
+  {
+    "id": "kalash-criminel-1396561772",
+    "title": "Sale boulot",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561772
+  },
+  {
+    "id": "kalash-criminel-1396561782",
+    "title": "Shooter",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561782
+  },
+  {
+    "id": "kalash-criminel-1396561792",
+    "title": "Dans la zone",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561792
+  },
+  {
+    "id": "kalash-criminel-1396561802",
+    "title": "Elle est gang",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561802
+  },
+  {
+    "id": "kalash-criminel-1396561822",
+    "title": "Death Note",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561822
+  },
+  {
+    "id": "kalash-criminel-1396561842",
+    "title": "Incompris",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561842
+  },
+  {
+    "id": "kalash-criminel-1396561852",
+    "title": "Très mauvais",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561852
+  },
+  {
+    "id": "kalash-criminel-1396561872",
+    "title": "Finish Him",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561872
+  },
+  {
+    "id": "kalash-criminel-1396561882",
+    "title": "La main",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561882
+  },
+  {
+    "id": "kalash-criminel-1396561892",
+    "title": "Josky",
+    "project": "Sélection naturelle",
+    "year": 2020,
+    "releaseDate": "2020-11-20",
+    "deezerTrackId": 1396561892
+  },
+  {
+    "id": "kalash-criminel-1245188932",
+    "title": "But en or - Deezer Black History Month Sessions",
+    "project": "Deezer Black History Month Sessions",
+    "year": 2021,
+    "releaseDate": "2021-02-23",
+    "deezerTrackId": 1245188932
+  },
+  {
+    "id": "kalash-criminel-1545817042",
+    "title": "Afflelou",
+    "project": "Afflelou",
+    "year": 2021,
+    "releaseDate": "2021-11-11",
+    "deezerTrackId": 1545817042
+  },
+  {
+    "id": "kalash-criminel-1545817112",
+    "title": "Violence",
+    "project": "Violence",
+    "year": 2021,
+    "releaseDate": "2021-11-11",
+    "deezerTrackId": 1545817112
+  },
+  {
+    "id": "kalash-criminel-1545824912",
+    "title": "Demarre",
+    "project": "Sélection naturelle",
+    "year": 2021,
+    "releaseDate": "2021-11-12",
+    "deezerTrackId": 1545824912
+  },
+  {
+    "id": "kalash-criminel-1545824922",
+    "title": "Iilaa Alliqa",
+    "project": "Sélection naturelle",
+    "year": 2021,
+    "releaseDate": "2021-11-12",
+    "deezerTrackId": 1545824922
+  },
+  {
+    "id": "kalash-criminel-1545824932",
+    "title": "O.G Thug",
+    "project": "Sélection naturelle",
+    "year": 2021,
+    "releaseDate": "2021-11-12",
+    "deezerTrackId": 1545824932
+  },
+  {
+    "id": "kalash-criminel-1545824962",
+    "title": "À toi",
+    "project": "Sélection naturelle",
+    "year": 2021,
+    "releaseDate": "2021-11-12",
+    "deezerTrackId": 1545824962
+  },
+  {
+    "id": "kalash-criminel-1849814877",
+    "title": "Nga na s'ani",
+    "project": "Nga na s'ani",
+    "year": 2022,
+    "releaseDate": "2022-08-02",
+    "deezerTrackId": 1849814877
+  },
+  {
+    "id": "kalash-criminel-2016831697",
+    "title": "States",
+    "project": "States",
+    "year": 2023,
+    "releaseDate": "2023-03-10",
+    "deezerTrackId": 2016831697
+  },
+  {
+    "id": "kalash-criminel-2285029477",
+    "title": "This is Oim",
+    "project": "This is Oim",
+    "year": 2023,
+    "releaseDate": "2023-05-19",
+    "deezerTrackId": 2285029477
+  },
+  {
+    "id": "kalash-criminel-2434035965",
+    "title": "Zénith",
+    "project": "Zénith",
+    "year": 2023,
+    "releaseDate": "2023-09-13",
+    "deezerTrackId": 2434035965
+  },
+  {
+    "id": "kalash-criminel-2600569182",
+    "title": "Une bonne santé et grave des lards",
+    "project": "Une bonne santé et grave des lards",
+    "year": 2024,
+    "releaseDate": "2024-01-03",
+    "deezerTrackId": 2600569182
+  },
+  {
+    "id": "kalash-criminel-2639934642",
+    "title": "VIENS QUE J'TE FRAPPE",
+    "project": "VIENS QUE J'TE FRAPPE",
+    "year": 2024,
+    "releaseDate": "2024-02-09",
+    "deezerTrackId": 2639934642
+  },
+  {
+    "id": "kalash-criminel-2668574032",
+    "title": "YEMEN, pt. I",
+    "project": "YEMEN, pt. I",
+    "year": 2024,
+    "releaseDate": "2024-02-22",
+    "deezerTrackId": 2668574032
+  },
+  {
+    "id": "kalash-criminel-2668574692",
+    "title": "ENCORE LES PROBLÈMES",
+    "project": "ENCORE LES PROBLÈMES",
+    "year": 2024,
+    "releaseDate": "2024-02-22",
+    "deezerTrackId": 2668574692
+  },
+  {
+    "id": "kalash-criminel-2668834272",
+    "title": "AVERTISSEMENT DE BAVARDAGE",
+    "project": "AVERTISSEMENT DE BAVARDAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-22",
+    "deezerTrackId": 2668834272
+  },
+  {
+    "id": "kalash-criminel-2668889692",
+    "title": "LE MONDE EST PETIT ET DIEU EST GRAND",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889692
+  },
+  {
+    "id": "kalash-criminel-2668889702",
+    "title": "AMI(E) NOIR(E)",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889702
+  },
+  {
+    "id": "kalash-criminel-2668889712",
+    "title": "T'ES PAS D'LA FAMILLE",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889712
+  },
+  {
+    "id": "kalash-criminel-2668889722",
+    "title": "YES YES YES",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889722
+  },
+  {
+    "id": "kalash-criminel-2668889742",
+    "title": "COUP D'ÉTAT",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889742
+  },
+  {
+    "id": "kalash-criminel-2668889752",
+    "title": "LE RECRUTEMENT DE BEN LADEN",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889752
+  },
+  {
+    "id": "kalash-criminel-2668889762",
+    "title": "NGANNOU SANS BOBBY",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889762
+  },
+  {
+    "id": "kalash-criminel-2668889782",
+    "title": "FALLAIT M'LE DIRE AVANT",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889782
+  },
+  {
+    "id": "kalash-criminel-2668889792",
+    "title": "KISS & FLY",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889792
+  },
+  {
+    "id": "kalash-criminel-2668889802",
+    "title": "LE FLOW DE MOBUTU SUR UNE PROD TRAP",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889802
+  },
+  {
+    "id": "kalash-criminel-2668889822",
+    "title": "TRAFFIC",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889822
+  },
+  {
+    "id": "kalash-criminel-2668889842",
+    "title": "SAUVAGERIE RADIO",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889842
+  },
+  {
+    "id": "kalash-criminel-2668889852",
+    "title": "COEUR BLANC COMME JUL",
+    "project": "BON COURAGE",
+    "year": 2024,
+    "releaseDate": "2024-02-23",
+    "deezerTrackId": 2668889852
+  },
+  {
+    "id": "kalash-criminel-3343511441",
+    "title": "On s'est croisé - Demain c'est loin",
+    "project": "On s'est croisé – Demain c'est loin",
+    "year": 2025,
+    "releaseDate": "2025-05-16",
+    "deezerTrackId": 3343511441
+  },
+  {
+    "id": "kalash-criminel-4019865391",
+    "title": "SAUVAGERIE 4",
+    "project": "SAUVAGERIE 4",
+    "year": 2026,
+    "releaseDate": "2026-06-03",
+    "deezerTrackId": 4019865391
+  }
+]

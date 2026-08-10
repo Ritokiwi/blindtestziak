@@ -1,0 +1,706 @@
+[
+  {
+    "id": "fresh-la-douille-1050226672",
+    "title": "La Douille 3",
+    "project": "La Douille 3",
+    "year": 2020,
+    "releaseDate": "2020-08-15",
+    "deezerTrackId": 1050226672
+  },
+  {
+    "id": "fresh-la-douille-1054088082",
+    "title": "Noir",
+    "project": "Noir",
+    "year": 2020,
+    "releaseDate": "2020-08-20",
+    "deezerTrackId": 1054088082
+  },
+  {
+    "id": "fresh-la-douille-1079299852",
+    "title": "Pas la Peine",
+    "project": "Pas la Peine",
+    "year": 2020,
+    "releaseDate": "2020-09-16",
+    "deezerTrackId": 1079299852
+  },
+  {
+    "id": "fresh-la-douille-1114644602",
+    "title": "Tourné",
+    "project": "Tourné",
+    "year": 2020,
+    "releaseDate": "2020-10-25",
+    "deezerTrackId": 1114644602
+  },
+  {
+    "id": "fresh-la-douille-1135449362",
+    "title": "Impliqué",
+    "project": "Impliqué",
+    "year": 2020,
+    "releaseDate": "2020-11-09",
+    "deezerTrackId": 1135449362
+  },
+  {
+    "id": "fresh-la-douille-1135730252",
+    "title": "Seul",
+    "project": "Seul",
+    "year": 2020,
+    "releaseDate": "2020-11-10",
+    "deezerTrackId": 1135730252
+  },
+  {
+    "id": "fresh-la-douille-1146850622",
+    "title": "Charbonner",
+    "project": "Charbonner",
+    "year": 2020,
+    "releaseDate": "2020-11-23",
+    "deezerTrackId": 1146850622
+  },
+  {
+    "id": "fresh-la-douille-1177566682",
+    "title": "La Rue",
+    "project": "La Rue",
+    "year": 2020,
+    "releaseDate": "2020-12-18",
+    "deezerTrackId": 1177566682
+  },
+  {
+    "id": "fresh-la-douille-1190399322",
+    "title": "Freestyle laDouille 1",
+    "project": "Freestyle laDouille 1",
+    "year": 2021,
+    "releaseDate": "2021-01-01",
+    "deezerTrackId": 1190399322
+  },
+  {
+    "id": "fresh-la-douille-1261249132",
+    "title": "La douille 4",
+    "project": "La douille 4",
+    "year": 2021,
+    "releaseDate": "2021-03-05",
+    "deezerTrackId": 1261249132
+  },
+  {
+    "id": "fresh-la-douille-1271974712",
+    "title": "GTA #20",
+    "project": "GTA #20",
+    "year": 2021,
+    "releaseDate": "2021-03-09",
+    "deezerTrackId": 1271974712
+  },
+  {
+    "id": "fresh-la-douille-1383078742",
+    "title": "Compte sur moi",
+    "project": "Compte sur moi",
+    "year": 2021,
+    "releaseDate": "2021-05-31",
+    "deezerTrackId": 1383078742
+  },
+  {
+    "id": "fresh-la-douille-1400021542",
+    "title": "4-4-2",
+    "project": "4-4-2",
+    "year": 2021,
+    "releaseDate": "2021-06-18",
+    "deezerTrackId": 1400021542
+  },
+  {
+    "id": "fresh-la-douille-1413781302",
+    "title": "Emotion",
+    "project": "Emotion",
+    "year": 2021,
+    "releaseDate": "2021-07-02",
+    "deezerTrackId": 1413781302
+  },
+  {
+    "id": "fresh-la-douille-1447181712",
+    "title": "La Douille #5",
+    "project": "La Douille #5",
+    "year": 2021,
+    "releaseDate": "2021-08-06",
+    "deezerTrackId": 1447181712
+  },
+  {
+    "id": "fresh-la-douille-1493722302",
+    "title": "2 Mi-temps",
+    "project": "2 Mi-temps (feat. Mig)",
+    "year": 2021,
+    "releaseDate": "2021-09-17",
+    "deezerTrackId": 1493722302
+  },
+  {
+    "id": "fresh-la-douille-1525028952",
+    "title": "Des noms",
+    "project": "Des noms",
+    "year": 2021,
+    "releaseDate": "2021-10-21",
+    "deezerTrackId": 1525028952
+  },
+  {
+    "id": "fresh-la-douille-1665196022",
+    "title": "La Douille #6",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196022
+  },
+  {
+    "id": "fresh-la-douille-1665196032",
+    "title": "PCX",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196032
+  },
+  {
+    "id": "fresh-la-douille-1665196042",
+    "title": "Des sous",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196042
+  },
+  {
+    "id": "fresh-la-douille-1665196052",
+    "title": "Bloqué",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196052
+  },
+  {
+    "id": "fresh-la-douille-1665196062",
+    "title": "Sortie",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196062
+  },
+  {
+    "id": "fresh-la-douille-1665196092",
+    "title": "Ivry Zoo",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196092
+  },
+  {
+    "id": "fresh-la-douille-1665196112",
+    "title": "La bise",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196112
+  },
+  {
+    "id": "fresh-la-douille-1665196122",
+    "title": "Capi De Capo",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196122
+  },
+  {
+    "id": "fresh-la-douille-1665196132",
+    "title": "Sur écoute",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196132
+  },
+  {
+    "id": "fresh-la-douille-1665196142",
+    "title": "0.9",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196142
+  },
+  {
+    "id": "fresh-la-douille-1665196152",
+    "title": "Abarth",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196152
+  },
+  {
+    "id": "fresh-la-douille-1665196162",
+    "title": "Incognito",
+    "project": "Sur écoute 2.0",
+    "year": 2021,
+    "releaseDate": "2021-10-22",
+    "deezerTrackId": 1665196162
+  },
+  {
+    "id": "fresh-la-douille-1528870962",
+    "title": "Booska sur écoute",
+    "project": "Booska sur écoute",
+    "year": 2021,
+    "releaseDate": "2021-10-27",
+    "deezerTrackId": 1528870962
+  },
+  {
+    "id": "fresh-la-douille-1625518202",
+    "title": "Le cachot (Freestyle Rapelite)",
+    "project": "Le cachot (Freestyle Rapelite)",
+    "year": 2022,
+    "releaseDate": "2022-01-21",
+    "deezerTrackId": 1625518202
+  },
+  {
+    "id": "fresh-la-douille-1851392637",
+    "title": "Habanna",
+    "project": "Habanna",
+    "year": 2022,
+    "releaseDate": "2022-08-12",
+    "deezerTrackId": 1851392637
+  },
+  {
+    "id": "fresh-la-douille-1934616317",
+    "title": "La R",
+    "project": "La R",
+    "year": 2022,
+    "releaseDate": "2022-10-05",
+    "deezerTrackId": 1934616317
+  },
+  {
+    "id": "fresh-la-douille-1959868737",
+    "title": "Gravé",
+    "project": "Gravé",
+    "year": 2022,
+    "releaseDate": "2022-10-21",
+    "deezerTrackId": 1959868737
+  },
+  {
+    "id": "fresh-la-douille-2009978937",
+    "title": "E°1016575",
+    "project": "E°1016575",
+    "year": 2022,
+    "releaseDate": "2022-11-16",
+    "deezerTrackId": 2009978937
+  },
+  {
+    "id": "fresh-la-douille-2056860307",
+    "title": "Yencli",
+    "project": "Yencli (feat. Zkr)",
+    "year": 2022,
+    "releaseDate": "2022-12-15",
+    "deezerTrackId": 2056860307
+  },
+  {
+    "id": "fresh-la-douille-2077706737",
+    "title": "La Douille #7",
+    "project": "La Douille #7",
+    "year": 2023,
+    "releaseDate": "2023-01-05",
+    "deezerTrackId": 2077706737
+  },
+  {
+    "id": "fresh-la-douille-2104807577",
+    "title": "Bénéfice",
+    "project": "Bénéfice",
+    "year": 2023,
+    "releaseDate": "2023-01-18",
+    "deezerTrackId": 2104807577
+  },
+  {
+    "id": "fresh-la-douille-2104808627",
+    "title": "Dope",
+    "project": "Dope",
+    "year": 2023,
+    "releaseDate": "2023-01-18",
+    "deezerTrackId": 2104808627
+  },
+  {
+    "id": "fresh-la-douille-2120553047",
+    "title": "Booska Voltaire",
+    "project": "Booska Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-18",
+    "deezerTrackId": 2120553047
+  },
+  {
+    "id": "fresh-la-douille-2104808147",
+    "title": "Cité",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808147
+  },
+  {
+    "id": "fresh-la-douille-2104808157",
+    "title": "Voltaire",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808157
+  },
+  {
+    "id": "fresh-la-douille-2104808177",
+    "title": "Ça débite",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808177
+  },
+  {
+    "id": "fresh-la-douille-2104808187",
+    "title": "Billets",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808187
+  },
+  {
+    "id": "fresh-la-douille-2104808217",
+    "title": "Elle me disait",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808217
+  },
+  {
+    "id": "fresh-la-douille-2104808227",
+    "title": "Avant 20 ans",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808227
+  },
+  {
+    "id": "fresh-la-douille-2104808237",
+    "title": "Passe D’",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808237
+  },
+  {
+    "id": "fresh-la-douille-2104808257",
+    "title": "Mon reuf",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808257
+  },
+  {
+    "id": "fresh-la-douille-2104808267",
+    "title": "C’est léger",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808267
+  },
+  {
+    "id": "fresh-la-douille-2104808277",
+    "title": "On connaît bien",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808277
+  },
+  {
+    "id": "fresh-la-douille-2104808287",
+    "title": "La night",
+    "project": "Voltaire",
+    "year": 2023,
+    "releaseDate": "2023-01-20",
+    "deezerTrackId": 2104808287
+  },
+  {
+    "id": "fresh-la-douille-2346542345",
+    "title": "Qualité",
+    "project": "Qualité",
+    "year": 2023,
+    "releaseDate": "2023-07-06",
+    "deezerTrackId": 2346542345
+  },
+  {
+    "id": "fresh-la-douille-2346542825",
+    "title": "Siete",
+    "project": "Siete",
+    "year": 2023,
+    "releaseDate": "2023-07-06",
+    "deezerTrackId": 2346542825
+  },
+  {
+    "id": "fresh-la-douille-2346559315",
+    "title": "Avant toi",
+    "project": "Voltaire (Deluxe)",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2346559315
+  },
+  {
+    "id": "fresh-la-douille-2346559335",
+    "title": "Les gens",
+    "project": "Voltaire (Deluxe)",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2346559335
+  },
+  {
+    "id": "fresh-la-douille-2346559345",
+    "title": "La cosa",
+    "project": "Voltaire (Deluxe)",
+    "year": 2023,
+    "releaseDate": "2023-07-07",
+    "deezerTrackId": 2346559345
+  },
+  {
+    "id": "fresh-la-douille-2440521795",
+    "title": "La Douille #8",
+    "project": "La Douille #8",
+    "year": 2023,
+    "releaseDate": "2023-09-14",
+    "deezerTrackId": 2440521795
+  },
+  {
+    "id": "fresh-la-douille-2543761321",
+    "title": "Solide",
+    "project": "Solide",
+    "year": 2023,
+    "releaseDate": "2023-11-23",
+    "deezerTrackId": 2543761321
+  },
+  {
+    "id": "fresh-la-douille-2615545782",
+    "title": "Ganté",
+    "project": "Ganté",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2615545782
+  },
+  {
+    "id": "fresh-la-douille-2635613302",
+    "title": "Indigent",
+    "project": "Indigent",
+    "year": 2024,
+    "releaseDate": "2024-02-02",
+    "deezerTrackId": 2635613302
+  },
+  {
+    "id": "fresh-la-douille-2670326342",
+    "title": "ADN",
+    "project": "ADN",
+    "year": 2024,
+    "releaseDate": "2024-02-28",
+    "deezerTrackId": 2670326342
+  },
+  {
+    "id": "fresh-la-douille-2856657262",
+    "title": "La calle",
+    "project": "La calle",
+    "year": 2024,
+    "releaseDate": "2024-06-28",
+    "deezerTrackId": 2856657262
+  },
+  {
+    "id": "fresh-la-douille-2882809592",
+    "title": "Ah ahah",
+    "project": "Ah ahah",
+    "year": 2024,
+    "releaseDate": "2024-07-18",
+    "deezerTrackId": 2882809592
+  },
+  {
+    "id": "fresh-la-douille-2882823972",
+    "title": "Autre part",
+    "project": "Sang limite",
+    "year": 2024,
+    "releaseDate": "2024-07-19",
+    "deezerTrackId": 2882823972
+  },
+  {
+    "id": "fresh-la-douille-2882824002",
+    "title": "Tout neuf",
+    "project": "Sang limite",
+    "year": 2024,
+    "releaseDate": "2024-07-19",
+    "deezerTrackId": 2882824002
+  },
+  {
+    "id": "fresh-la-douille-2882824012",
+    "title": "Dans le jeu",
+    "project": "Sang limite",
+    "year": 2024,
+    "releaseDate": "2024-07-19",
+    "deezerTrackId": 2882824012
+  },
+  {
+    "id": "fresh-la-douille-3076040761",
+    "title": "Pile ou face",
+    "project": "Pile ou face",
+    "year": 2024,
+    "releaseDate": "2024-11-14",
+    "deezerTrackId": 3076040761
+  },
+  {
+    "id": "fresh-la-douille-3205389061",
+    "title": "La Mélodie du Glock",
+    "project": "La Mélodie du Glock",
+    "year": 2025,
+    "releaseDate": "2025-02-06",
+    "deezerTrackId": 3205389061
+  },
+  {
+    "id": "fresh-la-douille-3346626911",
+    "title": "La Douille #9",
+    "project": "La Douille #9",
+    "year": 2025,
+    "releaseDate": "2025-05-08",
+    "deezerTrackId": 3346626911
+  },
+  {
+    "id": "fresh-la-douille-3356956541",
+    "title": "Vida Dolce",
+    "project": "Vida Dolce",
+    "year": 2025,
+    "releaseDate": "2025-05-28",
+    "deezerTrackId": 3356956541
+  },
+  {
+    "id": "fresh-la-douille-3366722101",
+    "title": "Peaky Blinders",
+    "project": "Peaky Blinders (feat. Guy2Bezbar)",
+    "year": 2025,
+    "releaseDate": "2025-06-05",
+    "deezerTrackId": 3366722101
+  },
+  {
+    "id": "fresh-la-douille-3366722111",
+    "title": "Hit Machine",
+    "project": "Hit Machine",
+    "year": 2025,
+    "releaseDate": "2025-06-05",
+    "deezerTrackId": 3366722111
+  },
+  {
+    "id": "fresh-la-douille-3366722121",
+    "title": "Bombarder",
+    "project": "Bombarder",
+    "year": 2025,
+    "releaseDate": "2025-06-05",
+    "deezerTrackId": 3366722121
+  },
+  {
+    "id": "fresh-la-douille-3400723601",
+    "title": "Benef max",
+    "project": "Benef max",
+    "year": 2025,
+    "releaseDate": "2025-06-05",
+    "deezerTrackId": 3400723601
+  },
+  {
+    "id": "fresh-la-douille-3391927391",
+    "title": "Sicarios",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927391
+  },
+  {
+    "id": "fresh-la-douille-3391927401",
+    "title": "Les Mains Sales",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927401
+  },
+  {
+    "id": "fresh-la-douille-3391927421",
+    "title": "Commission",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927421
+  },
+  {
+    "id": "fresh-la-douille-3391927431",
+    "title": "Ghetto",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927431
+  },
+  {
+    "id": "fresh-la-douille-3391927451",
+    "title": "Houdini",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927451
+  },
+  {
+    "id": "fresh-la-douille-3391927461",
+    "title": "The Wire",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927461
+  },
+  {
+    "id": "fresh-la-douille-3391927481",
+    "title": "Microbes",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927481
+  },
+  {
+    "id": "fresh-la-douille-3391927491",
+    "title": "Après 20 ans",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927491
+  },
+  {
+    "id": "fresh-la-douille-3391927501",
+    "title": "Les bails",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927501
+  },
+  {
+    "id": "fresh-la-douille-3391927521",
+    "title": "4 Saisons",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927521
+  },
+  {
+    "id": "fresh-la-douille-3391927531",
+    "title": "La familia",
+    "project": "Les mains sales",
+    "year": 2025,
+    "releaseDate": "2025-06-06",
+    "deezerTrackId": 3391927531
+  },
+  {
+    "id": "fresh-la-douille-3581483811",
+    "title": "Criminel",
+    "project": "Criminel",
+    "year": 2025,
+    "releaseDate": "2025-10-09",
+    "deezerTrackId": 3581483811
+  },
+  {
+    "id": "fresh-la-douille-3722770842",
+    "title": "31.12.2025",
+    "project": "31.12.2025",
+    "year": 2025,
+    "releaseDate": "2025-12-31",
+    "deezerTrackId": 3722770842
+  },
+  {
+    "id": "fresh-la-douille-3774402312",
+    "title": "Les clés en main",
+    "project": "Les clés en main",
+    "year": 2026,
+    "releaseDate": "2026-01-22",
+    "deezerTrackId": 3774402312
+  }
+]

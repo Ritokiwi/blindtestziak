@@ -1,0 +1,850 @@
+[
+  {
+    "id": "kofs-347947501",
+    "title": "Paradis",
+    "project": "Paradis",
+    "year": 2017,
+    "releaseDate": "2017-04-28",
+    "deezerTrackId": 347947501
+  },
+  {
+    "id": "kofs-373590581",
+    "title": "Maître Cohen",
+    "project": "Maître Cohen",
+    "year": 2017,
+    "releaseDate": "2017-06-30",
+    "deezerTrackId": 373590581
+  },
+  {
+    "id": "kofs-374256471",
+    "title": "Genèse",
+    "project": "Genèse",
+    "year": 2017,
+    "releaseDate": "2017-06-30",
+    "deezerTrackId": 374256471
+  },
+  {
+    "id": "kofs-441693062",
+    "title": "Cette année-là",
+    "project": "Cette année-là",
+    "year": 2017,
+    "releaseDate": "2017-12-22",
+    "deezerTrackId": 441693062
+  },
+  {
+    "id": "kofs-470513772",
+    "title": "A qui profite le crime",
+    "project": "A qui profite le crime",
+    "year": 2018,
+    "releaseDate": "2018-03-10",
+    "deezerTrackId": 470513772
+  },
+  {
+    "id": "kofs-521610552",
+    "title": "J'dors pas",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610552
+  },
+  {
+    "id": "kofs-521610562",
+    "title": "Booska noir",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610562
+  },
+  {
+    "id": "kofs-521610572",
+    "title": "Dans le noir",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610572
+  },
+  {
+    "id": "kofs-521610582",
+    "title": "Eau froide",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610582
+  },
+  {
+    "id": "kofs-521610592",
+    "title": "Des armes et des hommes",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610592
+  },
+  {
+    "id": "kofs-521610622",
+    "title": "Le numéro 8",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610622
+  },
+  {
+    "id": "kofs-521610632",
+    "title": "Applaudissez-moi",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-07-06",
+    "deezerTrackId": 521610632
+  },
+  {
+    "id": "kofs-540687632",
+    "title": "T'es mort",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-08-17",
+    "deezerTrackId": 540687632
+  },
+  {
+    "id": "kofs-552381502",
+    "title": "Là-haut",
+    "project": "Kofs",
+    "year": 2018,
+    "releaseDate": "2018-09-14",
+    "deezerTrackId": 552381502
+  },
+  {
+    "id": "kofs-562125842",
+    "title": "Violence",
+    "project": "Violence",
+    "year": 2018,
+    "releaseDate": "2018-10-10",
+    "deezerTrackId": 562125842
+  },
+  {
+    "id": "kofs-572770932",
+    "title": "Je saigne",
+    "project": "Je saigne",
+    "year": 2018,
+    "releaseDate": "2018-10-26",
+    "deezerTrackId": 572770932
+  },
+  {
+    "id": "kofs-585611522",
+    "title": "La pomme",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611522
+  },
+  {
+    "id": "kofs-585611532",
+    "title": "T'en fais pas",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611532
+  },
+  {
+    "id": "kofs-585611542",
+    "title": "Mon ombre",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611542
+  },
+  {
+    "id": "kofs-585611552",
+    "title": "Koschtowsky",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611552
+  },
+  {
+    "id": "kofs-585611562",
+    "title": "Disparus",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611562
+  },
+  {
+    "id": "kofs-585611572",
+    "title": "12C4",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611572
+  },
+  {
+    "id": "kofs-585611582",
+    "title": "Elena",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611582
+  },
+  {
+    "id": "kofs-585611612",
+    "title": "Alicante",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611612
+  },
+  {
+    "id": "kofs-585611622",
+    "title": "Secrétaire",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611622
+  },
+  {
+    "id": "kofs-585611632",
+    "title": "V",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611632
+  },
+  {
+    "id": "kofs-585611642",
+    "title": "Caractère",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611642
+  },
+  {
+    "id": "kofs-585611652",
+    "title": "Enfin",
+    "project": "V",
+    "year": 2018,
+    "releaseDate": "2018-11-16",
+    "deezerTrackId": 585611652
+  },
+  {
+    "id": "kofs-803617802",
+    "title": "Tout s'achète",
+    "project": "Tout s'achète",
+    "year": 2019,
+    "releaseDate": "2019-11-14",
+    "deezerTrackId": 803617802
+  },
+  {
+    "id": "kofs-828091272",
+    "title": "Booska Santé & Bonheur",
+    "project": "Booska Santé & Bonheur",
+    "year": 2019,
+    "releaseDate": "2019-12-12",
+    "deezerTrackId": 828091272
+  },
+  {
+    "id": "kofs-862676872",
+    "title": "Santé & Bonheur",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-01-30",
+    "deezerTrackId": 862676872
+  },
+  {
+    "id": "kofs-874261562",
+    "title": "Embourgeoisé",
+    "project": "Embourgeoisé",
+    "year": 2020,
+    "releaseDate": "2020-02-13",
+    "deezerTrackId": 874261562
+  },
+  {
+    "id": "kofs-881155672",
+    "title": "Au quartier",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155672
+  },
+  {
+    "id": "kofs-881155682",
+    "title": "Riz au lait",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155682
+  },
+  {
+    "id": "kofs-881155692",
+    "title": "Rendez pas fou",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155692
+  },
+  {
+    "id": "kofs-881155702",
+    "title": "Bosniaque",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155702
+  },
+  {
+    "id": "kofs-881155722",
+    "title": "Yemma",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155722
+  },
+  {
+    "id": "kofs-881155732",
+    "title": "Déçu",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155732
+  },
+  {
+    "id": "kofs-881155742",
+    "title": "Détail",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155742
+  },
+  {
+    "id": "kofs-881155752",
+    "title": "Hassan II",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155752
+  },
+  {
+    "id": "kofs-881155762",
+    "title": "Pardonne-moi",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155762
+  },
+  {
+    "id": "kofs-881155772",
+    "title": "Un mec plein",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155772
+  },
+  {
+    "id": "kofs-881155782",
+    "title": "Bellissima",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155782
+  },
+  {
+    "id": "kofs-881155792",
+    "title": "Les condés",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155792
+  },
+  {
+    "id": "kofs-881155812",
+    "title": "La nuit",
+    "project": "Santé & Bonheur",
+    "year": 2020,
+    "releaseDate": "2020-02-20",
+    "deezerTrackId": 881155812
+  },
+  {
+    "id": "kofs-1049999812",
+    "title": "Bande organisée",
+    "project": "Bande organisée",
+    "year": 2020,
+    "releaseDate": "2020-10-08",
+    "deezerTrackId": 1049999812
+  },
+  {
+    "id": "kofs-1503211822",
+    "title": "Laisse tomber (Extrait de la BO de \"Or Noir\")",
+    "project": "Laisse tomber (Extrait de la BO de \"Or Noir\")",
+    "year": 2021,
+    "releaseDate": "2021-09-23",
+    "deezerTrackId": 1503211822
+  },
+  {
+    "id": "kofs-1844894427",
+    "title": "Bête et méchant",
+    "project": "Bête et méchant",
+    "year": 2022,
+    "releaseDate": "2022-08-12",
+    "deezerTrackId": 1844894427
+  },
+  {
+    "id": "kofs-1882124717",
+    "title": "Enrico",
+    "project": "Enrico",
+    "year": 2022,
+    "releaseDate": "2022-09-02",
+    "deezerTrackId": 1882124717
+  },
+  {
+    "id": "kofs-1984832017",
+    "title": "Ce soir c'est Classico (Extrait de la bande originale du film Classico)",
+    "project": "Ce soir c'est Classico (Extrait de la bande originale du film Classico)",
+    "year": 2022,
+    "releaseDate": "2022-10-28",
+    "deezerTrackId": 1984832017
+  },
+  {
+    "id": "kofs-2541995991",
+    "title": "Intuition",
+    "project": "Intuition",
+    "year": 2022,
+    "releaseDate": "2022-11-14",
+    "deezerTrackId": 2541995991
+  },
+  {
+    "id": "kofs-2031706987",
+    "title": "Charger",
+    "project": "Charger",
+    "year": 2022,
+    "releaseDate": "2022-12-02",
+    "deezerTrackId": 2031706987
+  },
+  {
+    "id": "kofs-2086376217",
+    "title": "Bang Bang Bang",
+    "project": "Bang Bang Bang",
+    "year": 2023,
+    "releaseDate": "2023-01-06",
+    "deezerTrackId": 2086376217
+  },
+  {
+    "id": "kofs-2118096107",
+    "title": "Tony Montana",
+    "project": "Tony Montana",
+    "year": 2023,
+    "releaseDate": "2023-02-02",
+    "deezerTrackId": 2118096107
+  },
+  {
+    "id": "kofs-2118182677",
+    "title": "Le Fameux",
+    "project": "Le Fameux",
+    "year": 2023,
+    "releaseDate": "2023-02-02",
+    "deezerTrackId": 2118182677
+  },
+  {
+    "id": "kofs-2118182937",
+    "title": "Vaillant",
+    "project": "Vaillant",
+    "year": 2023,
+    "releaseDate": "2023-02-02",
+    "deezerTrackId": 2118182937
+  },
+  {
+    "id": "kofs-2118196467",
+    "title": "Omri",
+    "project": "Omri",
+    "year": 2023,
+    "releaseDate": "2023-02-02",
+    "deezerTrackId": 2118196467
+  },
+  {
+    "id": "kofs-2135598187",
+    "title": "Prison",
+    "project": "Prison",
+    "year": 2023,
+    "releaseDate": "2023-02-02",
+    "deezerTrackId": 2135598187
+  },
+  {
+    "id": "kofs-2126499387",
+    "title": "Sederi",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499387
+  },
+  {
+    "id": "kofs-2126499397",
+    "title": "Capitaine",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499397
+  },
+  {
+    "id": "kofs-2126499407",
+    "title": "Constellation",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499407
+  },
+  {
+    "id": "kofs-2126499427",
+    "title": "Johnny Hallyday",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499427
+  },
+  {
+    "id": "kofs-2126499437",
+    "title": "Hagar",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499437
+  },
+  {
+    "id": "kofs-2126499457",
+    "title": "Chargé",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499457
+  },
+  {
+    "id": "kofs-2126499477",
+    "title": "Effacé",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499477
+  },
+  {
+    "id": "kofs-2126499487",
+    "title": "Submariner",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499487
+  },
+  {
+    "id": "kofs-2126499507",
+    "title": "RG (Mon frère)",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499507
+  },
+  {
+    "id": "kofs-2126499527",
+    "title": "Tesla",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499527
+  },
+  {
+    "id": "kofs-2126499537",
+    "title": "Leçon",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499537
+  },
+  {
+    "id": "kofs-2126499547",
+    "title": "Game over",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499547
+  },
+  {
+    "id": "kofs-2126499557",
+    "title": "La famille ou la somme",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499557
+  },
+  {
+    "id": "kofs-2126499577",
+    "title": "Baby mafia",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499577
+  },
+  {
+    "id": "kofs-2126499587",
+    "title": "Air Bel Gang",
+    "project": "Matrixé",
+    "year": 2023,
+    "releaseDate": "2023-02-03",
+    "deezerTrackId": 2126499587
+  },
+  {
+    "id": "kofs-2355756955",
+    "title": "Algérien Fâché",
+    "project": "Algérien Fâché",
+    "year": 2023,
+    "releaseDate": "2023-07-14",
+    "deezerTrackId": 2355756955
+  },
+  {
+    "id": "kofs-2564879272",
+    "title": "ALGERIEN FACHE 2",
+    "project": "ALGERIEN FACHE 2",
+    "year": 2023,
+    "releaseDate": "2023-12-08",
+    "deezerTrackId": 2564879272
+  },
+  {
+    "id": "kofs-2496658641",
+    "title": "1990",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658641
+  },
+  {
+    "id": "kofs-2496658651",
+    "title": "APRES MINUIT",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658651
+  },
+  {
+    "id": "kofs-2496658661",
+    "title": "AMIN OU AMEN",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658661
+  },
+  {
+    "id": "kofs-2496658681",
+    "title": "ON T'AIME PAS",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658681
+  },
+  {
+    "id": "kofs-2496658691",
+    "title": "DANS MON COEUR",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658691
+  },
+  {
+    "id": "kofs-2496658701",
+    "title": "2MIN30",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658701
+  },
+  {
+    "id": "kofs-2496658711",
+    "title": "DANS LA VILLE",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658711
+  },
+  {
+    "id": "kofs-2496658721",
+    "title": "JACKSON",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658721
+  },
+  {
+    "id": "kofs-2496658731",
+    "title": "XADV",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658731
+  },
+  {
+    "id": "kofs-2496658741",
+    "title": "TOM FORD",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658741
+  },
+  {
+    "id": "kofs-2496658751",
+    "title": "STONE ISLAND",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658751
+  },
+  {
+    "id": "kofs-2496658761",
+    "title": "GRAND FRERE",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658761
+  },
+  {
+    "id": "kofs-2496658771",
+    "title": "LA RELIGION OU LA MALA",
+    "project": "APRES MINUIT",
+    "year": 2024,
+    "releaseDate": "2024-01-19",
+    "deezerTrackId": 2496658771
+  },
+  {
+    "id": "kofs-3346431511",
+    "title": "Mon Ecole",
+    "project": "Mon Ecole",
+    "year": 2025,
+    "releaseDate": "2025-05-09",
+    "deezerTrackId": 3346431511
+  },
+  {
+    "id": "kofs-3384422491",
+    "title": "J'viens de là",
+    "project": "J'viens de là",
+    "year": 2025,
+    "releaseDate": "2025-05-30",
+    "deezerTrackId": 3384422491
+  },
+  {
+    "id": "kofs-3390035571",
+    "title": "Bâtiment",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035571
+  },
+  {
+    "id": "kofs-3390035581",
+    "title": "Minimum",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035581
+  },
+  {
+    "id": "kofs-3390035591",
+    "title": "À la one again",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035591
+  },
+  {
+    "id": "kofs-3390035601",
+    "title": "Karaté",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035601
+  },
+  {
+    "id": "kofs-3390035611",
+    "title": "La loi du silence",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035611
+  },
+  {
+    "id": "kofs-3390035621",
+    "title": "Reste",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035621
+  },
+  {
+    "id": "kofs-3390035631",
+    "title": "Fier de moi",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035631
+  },
+  {
+    "id": "kofs-3390035641",
+    "title": "Reste tranquille",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035641
+  },
+  {
+    "id": "kofs-3390035651",
+    "title": "L'affranchi",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035651
+  },
+  {
+    "id": "kofs-3390035661",
+    "title": "Sosie",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035661
+  },
+  {
+    "id": "kofs-3390035671",
+    "title": "Niquer la fête",
+    "project": "Mon école (Vol. 1)",
+    "year": 2025,
+    "releaseDate": "2025-06-13",
+    "deezerTrackId": 3390035671
+  },
+  {
+    "id": "kofs-3709090532",
+    "title": "Mon École 2",
+    "project": "Mon École 2",
+    "year": 2025,
+    "releaseDate": "2025-12-12",
+    "deezerTrackId": 3709090532
+  },
+  {
+    "id": "kofs-3694429252",
+    "title": "On n'habite pas au Prado",
+    "project": "Mon école (Vol.2)",
+    "year": 2025,
+    "releaseDate": "2025-12-19",
+    "deezerTrackId": 3694429252
+  },
+  {
+    "id": "kofs-3694429262",
+    "title": "Dans la légende",
+    "project": "Mon école (Vol.2)",
+    "year": 2025,
+    "releaseDate": "2025-12-19",
+    "deezerTrackId": 3694429262
+  },
+  {
+    "id": "kofs-3826361361",
+    "title": "Walida",
+    "project": "Walida",
+    "year": 2026,
+    "releaseDate": "2026-02-08",
+    "deezerTrackId": 3826361361
+  },
+  {
+    "id": "kofs-4093487691",
+    "title": "Ma fille",
+    "project": "Ma fille",
+    "year": 2026,
+    "releaseDate": "2026-06-26",
+    "deezerTrackId": 4093487691
+  }
+]
