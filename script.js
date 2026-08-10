@@ -465,7 +465,7 @@ function shuffled(items) { return [...items].sort(() => Math.random() - .5); }
 
 function updateArtistBrand(artist) {
   const name = artist?.name || 'Blind Test';
-  document.title = `${name.toUpperCase()} // RAP KULTUUR`;
+  document.title = `${name.toUpperCase()} // RAP INSTINCT`;
   if (ui.activeArtist) ui.activeArtist.textContent = name.toUpperCase();
   updateLeaderboardEyebrow();
 }
